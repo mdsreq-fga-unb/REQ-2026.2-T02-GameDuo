@@ -1,0 +1,14 @@
+site_name: GameDuo
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: pt-BR
+
+plugins:
+  - search:
+      lang: pt
+
+nav:
+  - Home: index.md
