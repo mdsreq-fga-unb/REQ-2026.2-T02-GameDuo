@@ -52,8 +52,20 @@ Os principais obstáculos a serem superados incluem:
 - **Moderação e Segurança:** Implementar sistemas para evitar toxicidade, assédio e garantir um ambiente seguro, um desafio histórico em comunidades de jogos online.
 - **Tração Inicial:** Atrair simultaneamente consumidores e prestadores de serviço.
 
-!!! info "Em construção"
-    A seção **1.6 Mapa de Stakeholders** será adicionada em uma próxima versão deste documento.
+## 1.6 Mapa de Stakeholders
+
+Os principais stakeholders do projeto são: Ciro Vargas, como idealizador, cliente e principal responsável por validar as regras de negócio e as entregas; os consumidores, representados por jogadores que buscam evolução técnica ou companhia e esperam uma experiência de contratação segura e livre de toxicidade; os prestadores de serviço, que são os jogadores experientes (High Elo) interessados em rentabilizar seu tempo com garantia de recebimento; e a equipe de desenvolvimento, responsável por implementar a solução e viabilizar tecnicamente a segurança, as integrações e a usabilidade da plataforma.
+
+A seguir, é apresentado um quadro resumo dos stakeholders.
+
+![Mapa de Stakeholders do Projeto](../img/mapa-stakeholders.jpg)
+
+| Stakeholder | Relação com a solução | Interesse principal | Influência |
+|:---|:---|:---|:---|
+| **Ciro Vargas** | Idealizador e Cliente | Validar o modelo de negócio, as prioridades, a segurança das transações e as entregas do MVP. | Alta |
+| **Consumidores** (Jogadores comuns) | Usuários finais (Demanda) | Contratar serviços de coaching ou duo de forma segura, sem risco de fraudes ou assédio. | Média |
+| **Prestadores** (Jogadores High Elo) | Usuários finais (Oferta) | Rentabilizar seu conhecimento técnico de forma estruturada e com garantia do repasse financeiro. | Média |
+| **Equipe de desenvolvimento** | Responsável pela construção do produto | Entregar uma plataforma funcional, segura e viável dentro do prazo acadêmico estabelecido. | Alta |
 
 ## 1.7 Segmentação de Clientes
 
