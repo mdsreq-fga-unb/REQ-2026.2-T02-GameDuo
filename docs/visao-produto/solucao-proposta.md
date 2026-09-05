@@ -15,6 +15,7 @@ O objetivo do produto é estruturar e expandir a comercialização segura de ser
 ## 2.4 Tecnologias a serem utilizadas
 
 Para a construção do Gameduo, serão usados as seguintes tecnologias: Para o frontend, será usado React, devido ao conhecimento do grupo com a ferramenta e do cliente, para o backend, será usado PHP, e para salvar informações, será usado supabase, devido ao conhecimento.
+
 Para realizar pagamentos, será usado a API (insira api de pagamento aqui), para desenvolvimento do produto e salvar progresso, será usado git e github, além das técnicas de desenvolvimento citadas. O projeto também manterá questões de segurança e proteção de dados de acordo com a LGPD.
 
 !!! info "Em construção"
