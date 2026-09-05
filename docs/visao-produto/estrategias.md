@@ -54,8 +54,4 @@ Ciro Vargas é pessoa física, idealizador do produto e único tomador de decis�
 
 ---
 
-## Histórico de Versão
 
-| Data | Versão | Descrição | Autor |
-| --- | --- | --- | --- |
-| 05/09/2026 | 1.0 | Elaboração da seção 4 — Estratégias de Engenharia de Software | Equipe GoHorse |
