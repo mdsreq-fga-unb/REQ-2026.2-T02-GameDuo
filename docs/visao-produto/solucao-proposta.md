@@ -12,14 +12,24 @@ O objetivo do produto é estruturar e expandir a comercialização segura de ser
 - **(OE4):** Fomentar a qualidade da prestação de serviços e mitigar comportamentos inadequados por meio do acompanhamento de métricas de reputação.
 - **(OE5):** Criar uma base tecnológica flexível que suporte o aumento do volume de transações e a futura expansão do catálogo de jogos atendidos pela operação.
 
+## 2.3 Características de Produto (mapeadas com os Objetivos Específicos do Produto)
+
+Apresentamos a seguir as principais características que a solução GameDuo deve ter para atender às necessidades do cliente, alinhadas aos Objetivos Específicos (OE):
+
+| ID | Característica de Produto (CP) | Descrição resumida | Valor de negócio (VN) principal | Contribuição principal | Contribuição secundária |
+|:---|:---|:---|:---|:---|:---|
+| **CP1** | Perfil e verificação de credenciais | A solução deverá permitir o cadastro de usuários com mecanismos de verificação técnica, garantindo que o nível (Elo) e as credenciais dos prestadores de serviço sejam comprovadamente reais. | Aumento da confiança na plataforma e garantia de veracidade na oferta de serviços especializados. | OE3 | OE4 |
+| **CP2** | Catálogo e busca de serviços | A solução deverá disponibilizar uma busca estruturada onde os consumidores possam filtrar prestadores por jogo, nível, preço e tipo de serviço oferecido, englobando Coaching, Duo sob demanda, além do acesso a guias e tutoriais. | Melhoria da navegação, facilidade em conectar oferta e demanda de forma estruturada e disponibilização de material de apoio. | OE1 | OE5 |
+| **CP3** | Intermediação segura de pagamentos e repasse | A solução deverá processar pagamentos retendo os créditos em custódia. Após a validação bilateral da sessão, a plataforma fará o repasse automático da fatia devida para a carteira do prestador por meio de um gateway com tecnologia de split de pagamento. | Redução drástica de fraudes, inadimplência e quebra de acordos, profissionalizando a transação financeira e garantindo as taxas da plataforma. | OE2 | OE1 |
+| **CP4** | Sistema de avaliação, reputação e denúncias | A solução deverá permitir que os usuários avaliem uns aos outros após a partida (avaliação cruzada) e disponibilizará um canal seguro para denúncias, gerando indicadores visíveis de habilidade técnica e conduta. | Mitigação de toxicidade e assédio, fomentando um ambiente seguro e recompensando prestadores de qualidade. | OE4 | OE2 |
+| **CP5** | Administração do canal digital | A solução deverá fornecer um painel administrativo para controle das transações, moderação de denúncias e disputas, gestão de usuários ativos e monitoramento financeiro da plataforma. | Apoio à operação segura e criação de condições para a escalabilidade e expansão do negócio. | OE5 | OE2 |
+| **CP6** | Gestão da Sessão de Jogo e Comunicação | A solução deverá oferecer um ambiente para acompanhamento do serviço contratado, incluindo um chat integrado para comunicação direta entre as partes, facilitando o agendamento de horários e a confirmação da partida/aula. | Aumento da transparência, organização e confiabilidade operacional na prestação do serviço. | OE1 | OE3 |
+
 ## 2.4 Tecnologias a serem utilizadas
 
 Para a construção do Gameduo, serão usados as seguintes tecnologias: Para o frontend, será usado React, devido ao conhecimento do grupo com a ferramenta e do cliente, para o backend, será usado PHP, e para salvar informações, será usado supabase, devido ao conhecimento.
 
 Para realizar pagamentos, será usado a API (insira api de pagamento aqui), para desenvolvimento do produto e salvar progresso, será usado git e github, além das técnicas de desenvolvimento citadas. O projeto também manterá questões de segurança e proteção de dados de acordo com a LGPD.
-
-!!! info "Em construção"
-    A seção **2.3 Características do Produto** sera adicionada em uma próxima versão deste documento.
 
 ## 2.5 Pesquisa de Mercado e Análise Competitiva
 
