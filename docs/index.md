@@ -58,4 +58,6 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 
 | Data | Versão | Descrição | Autor(es) |
 |:---|:---|:---|:---|
-| 02/09/2026 | 1.0 | Abertura do documento e estruturação inicial | Guilherme Brandão |
+| 02/09/2026 | 0.1 | Abertura do documento e estruturação inicial | Guilherme Brandão |
+| 03/09/2026 | 0.2 | Primeira reunião com cliente  | Ricardo Lucas e Pedro Araujo |
+| 05/09/2026 | 0.3 | Elaboração da seção 4 — Estratégias de Engenharia de Software | Equipe GoHorse |
