@@ -1,0 +1,10 @@
+# MkDocs
+site/
+
+# Python virtual environment
+.venv/
+
+# macOS
+.DS_Store
+
+.env

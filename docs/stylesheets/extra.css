@@ -1,0 +1,151 @@
+/* =====================================================================
+   Paleta — tons de cinza/grafite + verde (identidade gamer/HUD)
+   Modo claro:  #2E3532 (grafite) · #6B7A72 (cinza-verde) · #F3F5F3 (fundo)
+   Modo escuro: cinza neutro padrão do Material + primary/accent em verde
+   ===================================================================== */
+
+:root {
+  --gd-radius: 12px;
+}
+
+/* Footer inferior (Anterior/Próximo + "Made with Material for MkDocs") removido */
+.md-footer {
+  display: none;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #2E3532;
+  --md-primary-fg-color--light: #6B7A72;
+  --md-primary-fg-color--dark:  #14181A;
+
+  --md-accent-fg-color:         #22C55E;
+
+  --md-default-bg-color:        #F3F5F3;
+}
+
+[data-md-color-scheme="slate"] {
+  /* mantém a escala de cinza padrão (neutra) do Material; só o primary/accent viram verde */
+  --md-primary-fg-color:        #3F4A45;
+  --md-primary-fg-color--light: #86EFAC;
+  --md-primary-fg-color--dark:  #0B0F0D;
+
+  --md-accent-fg-color:         #34D399;
+}
+
+/* ---------------------------------------------------------------------
+   Tipografia
+   --------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap');
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h1 {
+  background: linear-gradient(90deg, var(--md-primary-fg-color--light), var(--md-accent-fg-color), var(--md-primary-fg-color--light));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  padding-bottom: 0.1em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .md-typeset h1 {
+    animation: gd-shimmer 6s linear infinite alternate;
+  }
+}
+
+@keyframes gd-shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* ---------------------------------------------------------------------
+   Navegação e busca
+   --------------------------------------------------------------------- */
+
+.md-nav__link--active {
+  background-color: rgba(34, 197, 94, 0.14);
+  border-radius: 6px;
+}
+
+.md-search__form {
+  border-radius: 999px;
+}
+
+/* ---------------------------------------------------------------------
+   Cards de navegação (grid cards da home)
+   --------------------------------------------------------------------- */
+
+.md-typeset .grid.cards > ul > li {
+  border-radius: var(--gd-radius);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.18);
+  border-color: var(--md-accent-fg-color);
+}
+
+/* ---------------------------------------------------------------------
+   Imagens (diagramas, rich picture, ishikawa)
+   --------------------------------------------------------------------- */
+
+.md-typeset img {
+  border-radius: var(--gd-radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------------------------------------------------------------
+   Tabelas
+   --------------------------------------------------------------------- */
+
+.md-typeset table:not([class]) {
+  border-radius: var(--gd-radius);
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+/* ---------------------------------------------------------------------
+   Admonitions (blocos "Em construção" etc.)
+   --------------------------------------------------------------------- */
+
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: var(--md-accent-fg-color);
+}
+
+.md-typeset .admonition-title.info,
+.md-typeset summary.info {
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.md-typeset .admonition-title.info::before,
+.md-typeset summary.info::before {
+  background-color: var(--md-accent-fg-color);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .md-typeset .admonition.info,
+  .md-typeset details.info {
+    animation: gd-glow-pulse 2.6s ease-in-out infinite;
+  }
+}
+
+@keyframes gd-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(34, 197, 94, 0); }
+  50%      { box-shadow: 0 0 14px 2px rgba(34, 197, 94, 0.45); }
+}
