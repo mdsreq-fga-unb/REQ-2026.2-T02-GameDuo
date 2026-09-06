@@ -1,6 +1,6 @@
 
 
-# Interação entre Equipe e Cliente
+# 7 Interação entre Equipe e Cliente
 
 ##  7.1 Composição da Equipe
 
@@ -25,6 +25,7 @@ A equipe responsável pelo desenvolvimento do GameDuo é composta por cinco inte
 
 
 ## 7.2 Comunicação
+
 Ferramentas de comunicação:
 
 - Whatsapp: Comunicação entre a equipe e da equipe entre o cliente, com foco em conversas pontuais
@@ -45,3 +46,11 @@ Frequência de comunicação com o cliente:
 
 - Whatsapp: será usado pontualmente para tirar dúvidas rápidas.
 
+## 7.3 Processos de Validação
+Terão 3 passos necessários:
+
+- A garantia de seguir os requisitos durante reuniões, vendo documentação e confirmações com o cliente;
+
+- A espera da implementação de cada módulo ficar completa e testada;
+
+- E a validação com o cliente, para garantir que a implementação esteja na expectativa.

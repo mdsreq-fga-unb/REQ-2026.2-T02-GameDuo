@@ -1,4 +1,4 @@
-# Solução Proposta
+# 2 Solução Proposta
 
 ## 2.1 Objetivo Geral do Produto
 
@@ -38,3 +38,9 @@ O mercado de serviços para jogos eletrônicos já conta com soluções consolid
 Aplicativos de companhia, como o E-Pal, atendem à demanda por parceiros de jogo, mas priorizam o entretenimento social em detrimento da evolução técnica e não verificam o nível competitivo dos prestadores. Há ainda o mercado de boosting, hoje representado principalmente pela LFCarry (antiga Legionfarm), que entrega o objetivo mediante compartilhamento de conta. Essa prática viola os termos de serviço de praticamente todas as desenvolvedoras, sujeitando o contratante a banimento permanente e a risco de roubo de credenciais. Por fim, marketplaces generalistas como o Fiverr permitem anunciar esses serviços, mas não dispõem de validação de estatísticas, filtro por elo ou qualquer ferramenta específica do ecossistema gamer.
 
 A solução proposta se diferencia ao operar exclusivamente com coaching e duo, modalidades em que cada jogador permanece na própria conta, mantendo conformidade integral com as regras das desenvolvedoras. Sobre essa base, agrega três elementos ausentes nas alternativas analisadas: operação em real com meios de pagamento nacionais, custódia dos créditos até a validação bilateral da sessão e verificação obrigatória do elo declarado pelo prestador. O escopo contempla tanto a progressão em modos ranqueados quanto o auxílio pontual em desafios de campanha, categoria pouco atendida pelas plataformas existentes.
+
+## 2.7 Benefícios esperados
+
+Para o cliente: Fornecer um serviço para jogadores com necessidade de ajuda, jogadores profissionais que potencialmente podem ganhar dinheiro com a plataforma, e o ganho financeiro com o projeto que terá, além de colocar o nome dele no mercado.
+
+Para os usuários: Os jogadores que possuem dificuldade poderão ter uma forma de conversar com uma pessoa para conseguir a ajuda que precisava, sendo treinamento para ganho de elo/rank em jogos competitivos ou em chefões que não conseguem passar, e os coachs/jogadores profissionais podem conseguir ganhar dinheiro fornecendo seu conhecimento e experiência com o jogo.
