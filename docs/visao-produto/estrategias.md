@@ -2,7 +2,7 @@
 
 A partir das informações apresentadas nas seções [Cenário Atual do Cliente e do Negócio](cenario-atual.md) e [Solução Proposta](solucao-proposta.md), foram tomadas as decisões referentes às estratégias de engenharia de software a serem adotadas na construção do GameDuo.
 
-## Estratégia Priorizada
+## 4.1 Estratégia Priorizada
 
 **Abordagem de Desenvolvimento de Software: Ágil.**
 A abordagem ágil guiará o desenvolvimento do produto, permitindo flexibilidade, adaptação a mudanças e foco na entrega contínua de valor para os dois lados da plataforma — jogadores que buscam evolução técnica e prestadores que desejam rentabilizar seu conhecimento.
@@ -13,7 +13,7 @@ O ciclo iterativo e incremental permitirá construir a plataforma gradualmente, 
 **Processo de Engenharia de Software: OpenUP.**
 Processo de desenvolvimento adotado para a construção do produto, por organizar o trabalho em fases com marcos de decisão claros e por tratar a redução de risco arquitetural como atividade explícita das etapas iniciais.
 
-## Quadro Comparativo
+## 4.2 Quadro Comparativo
 
 O quadro a seguir compara dois processos de desenvolvimento que poderiam ser adotados no GameDuo:
 
@@ -33,7 +33,7 @@ O quadro a seguir compara dois processos de desenvolvimento que poderiam ser ado
 | **Suporte à equipe** | Papéis e responsabilidades definidos, com controle de progresso mais formal. | Não define papéis nem altera a estrutura existente — parte do princípio de melhoria evolutiva sobre o processo já praticado pela equipe. |
 | **Adaptação ao projeto GameDuo** | Adequado a um produto novo cujos maiores riscos são estruturais (custódia de créditos, meios de pagamento, integração com APIs de terceiros) e que precisa de marcos de validação claros dentro de um semestre letivo. | Mais indicado a contextos de fluxo contínuo e demanda recorrente — sustentação, manutenção evolutiva ou operação de um produto já existente — situação distinta da construção inicial do GameDuo. |
 
-## Justificativa
+## 4.3 Justificativa
 
 A escolha do OpenUP não decorre de qualquer limitação do Kanban como método, mas do ajuste entre cada processo e as condições concretas em que o GameDuo será desenvolvido.
 
