@@ -2,7 +2,7 @@
 
 ## 2.1 Objetivo Geral do Produto
 
-O objetivo do produto é estruturar e expandir a comercialização segura de serviços de expertise gamer, viabilizando um ambiente onde jogadores possam contratar sessões de *coaching* e companhia (*duo*) sob demanda para alcançar suas metas de progressão. A solução irá profissionalizar as transações financeiras desse nicho, reduzindo os riscos operacionais (como fraudes e quebras de acordo) e permitindo que o cliente consolide e escale suas operações no mercado brasileiro de entretenimento digital.
+O objetivo do produto é apoiar a estruturação e comercialização segura de serviços de expertise gamer, facilitando a conexão, de forma confiável e estruturada, entre quem precisa de orientação técnica e quem pode oferecê-la no ecossistema de jogos online. A solução irá permitir a criação de um ambiente integrado que resolve a incapacidade atual de pareamento desses usuários, garantindo aos especialistas uma plataforma profissional para ofertar seus serviços e, aos jogadores, uma experiência transparente e segura para o desenvolvimento de suas habilidades.
 
 ## 2.2 Objetivos Específicos (OE) do Produto
 
@@ -29,7 +29,7 @@ Apresentamos a seguir as principais características que a solução GameDuo dev
 
 Para a construção do Gameduo, serão usados as seguintes tecnologias: Para o frontend, será usado React, devido ao conhecimento do grupo com a ferramenta e do cliente, para o backend, será usado PHP, e para salvar informações, será usado supabase, devido ao conhecimento.
 
-Para realizar pagamentos, será usado a API (insira api de pagamento aqui), para desenvolvimento do produto e salvar progresso, será usado git e github, além das técnicas de desenvolvimento citadas. O projeto também manterá questões de segurança e proteção de dados de acordo com a LGPD.
+Para realizar pagamentos, será usado uma API de pagamentos que será decidida posteriormente, para desenvolvimento do produto e salvar progresso, será usado git e github, além das técnicas de desenvolvimento citadas. O projeto também manterá questões de segurança e proteção de dados de acordo com a LGPD.
 
 ## 2.5 Pesquisa de Mercado e Análise Competitiva
 
