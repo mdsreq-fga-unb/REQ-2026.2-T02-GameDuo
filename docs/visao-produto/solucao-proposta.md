@@ -39,6 +39,18 @@ Aplicativos de companhia, como o E-Pal, atendem à demanda por parceiros de jogo
 
 A solução proposta se diferencia ao operar exclusivamente com coaching e duo, modalidades em que cada jogador permanece na própria conta, mantendo conformidade integral com as regras das desenvolvedoras. Sobre essa base, agrega três elementos ausentes nas alternativas analisadas: operação em real com meios de pagamento nacionais, custódia dos créditos até a validação bilateral da sessão e verificação obrigatória do elo declarado pelo prestador. O escopo contempla tanto a progressão em modos ranqueados quanto o auxílio pontual em desafios de campanha, categoria pouco atendida pelas plataformas existentes.
 
+
+##  2.6 Viabilidade da Proposta
+
+A proposta é viável no contexto da disciplina. A equipe é composta por cinco integrantes com disponibilidade parcial ao longo de um semestre letivo, o que é suficiente para entregar um MVP funcional, desde que o escopo permaneça restrito às funcionalidades que sustentam a proposta de valor central: encontrar um prestador confiável, contratar uma sessão e concluir a transação com segurança para as duas partes.
+
+O acesso ao cliente é um facilitador importante. Ciro Vargas é o idealizador do produto e o único tomador de decisão, acessível por WhatsApp, Discord e Google Meet. Não há cadeia de aprovação, o que reduz o tempo entre a dúvida da equipe e a resposta do cliente. Sua experiência como arquiteto de software também torna as conversas técnicas mais diretas.
+
+Quanto ao conhecimento técnico, a equipe tem familiaridade com desenvolvimento web e domina as ferramentas de versionamento e documentação exigidas pelo projeto. As maiores incertezas estão nas integrações externas, especialmente a verificação de credenciais e o processamento de pagamentos, que serão tratadas por meio de provas de conceito antes de serem incorporadas ao produto.
+
+
+
+
 ## 2.7 Benefícios esperados
 
 Para o cliente: Fornecer um serviço para jogadores com necessidade de ajuda, jogadores profissionais que potencialmente podem ganhar dinheiro com a plataforma, e o ganho financeiro com o projeto que terá, além de colocar o nome dele no mercado.

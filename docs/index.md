@@ -61,3 +61,9 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 | 02/09/2026 | 0.1 | Abertura do documento e estruturação inicial | Guilherme Brandão |
 | 03/09/2026 | 0.2 | Primeira reunião com cliente  | Ricardo Lucas e Pedro Araujo |
 | 05/09/2026 | 0.3 | Elaboração da seção 4 — Estratégias de Engenharia de Software | Equipe GoHorse |
+| 05/09/2026 | 0.4 | adicionando mapa de stakeholders (sessão 1.6)  | Pedro Araujo|
+| 05/09/2026 | 0.5 | adiciona mapa de stakeholders (sessão 1.6) | Pedro Araujo|  
+| 06/09/2026 | 0.6 | 2.3  características do produto  | Pedro Araujo|   
+| 06/09/2026 | 0.7 | Arrumado alguns detalhes, colocado 2.7 e 7.3  | Ricardo Lucas| 
+| 06/09/2026 | 0.8 |  Viabilidade da Proposta e  Intervenção Social | Guilherme Brandão |
+
