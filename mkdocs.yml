@@ -64,7 +64,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-          
+
 nav:
   - Início: index.md
   - Visão do Produto e Projeto:
@@ -75,6 +75,7 @@ nav:
       - Engenharia de Requisitos: visao-produto/engenharia-requisitos.md
       - Cronograma Entregas: visao-produto/cronograma-entregas.md
       - Interação entre equipe e cliente: visao-produto/interacao-equipe.md
-     
+      - Lições Aprendidas: visao-produto/licoes-aprendidas.md
+      
       
 

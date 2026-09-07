@@ -1,4 +1,4 @@
-# 3.0 Intervenção Social
+# 3 Intervenção Social
 
 O GameDuo produz uma intervenção social ao transformar uma relação hoje conduzida de maneira informal entre jogadores em um serviço estruturado, com condições acordadas e resultado verificável para as duas partes.
 
