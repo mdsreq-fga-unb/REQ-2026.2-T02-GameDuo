@@ -54,7 +54,7 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 
 ---
 
-## :busts_in_silhouette: Integrantes do Projeto
+## Integrantes do Projeto
 
 <ul class="gd-team">
   <li>
@@ -68,8 +68,8 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
     <span class="gd-team__card" title="Desenvolvimento Backend · Banco de Dados">
       <img src="img/paulo-lucca.jpg" alt="Paulo Lucca" loading="lazy">
       <span class="gd-team__name">Paulo Lucca</span>
-      <!-- TODO: confirmar o @ do GitHub do Paulo e transformar em <a class="gd-team__card" href="..."> -->
-      <span class="gd-team__handle">@paulolucca</span>
+    
+      <span class="gd-team__handle">@Rukkakun</span>
     </span>
   </li>
   <li>
@@ -90,8 +90,7 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
     <span class="gd-team__card" title="Desenvolvimento Frontend (líder)">
       <img src="img/rodrigo-atila.jpg" alt="Rodrigo Átila" loading="lazy">
       <span class="gd-team__name">Rodrigo Átila</span>
-      <!-- TODO: confirmar o @ do GitHub do Rodrigo e transformar em <a class="gd-team__card" href="..."> -->
-      <span class="gd-team__handle">@rodrigoatila</span>
+      <span class="gd-team__handle">@Rodrigoatila09</span>
     </span>
   </li>
 </ul>
