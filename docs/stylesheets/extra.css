@@ -4,6 +4,8 @@
    Modo escuro: cinza neutro padrão do Material + primary/accent em verde
    ===================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap');
+
 :root {
   --gd-radius: 12px;
 }
@@ -35,8 +37,6 @@
 /* ---------------------------------------------------------------------
    Tipografia
    --------------------------------------------------------------------- */
-
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap');
 
 .md-typeset h1,
 .md-typeset h2,

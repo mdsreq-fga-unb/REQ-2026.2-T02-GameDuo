@@ -7,10 +7,10 @@
 
 | Fase do OpenUP | Período | Iterações | Marco de encerramento | Unidade da disciplina |
 | -------------- | ------- | --------- | --------------------- | --------------------- |
-| **Iniciação** | 11/08/2026 – 08/09/2026 | 1 e 2 | **Objetivos do Ciclo de Vida** — problema, escopo e visão do produto acordados com o cliente | Unidade 1 |
-| **Elaboração** | 09/09/2026 – 13/10/2026 | 3 e 4 | **Arquitetura do Ciclo de Vida** — requisitos estabilizados, riscos estruturais reduzidos por provas de conceito e MVP definido | Unidade 2 |
-| **Construção** | 14/10/2026 – 17/11/2026 | 5, 6 e 7 | **Capacidade Operacional Inicial** — MVP funcional, integrado e testado | Unidades 3 e 4 |
-| **Transição** | 18/11/2026 – 01/12/2026 | 8 | **Release do Produto** — produto homologado e aceito pelo cliente | Unidade 4 |
+| **Iniciação** | 11/08/2026 – 10/09/2026 | 1 e 2 | **Objetivos do Ciclo de Vida** — problema, escopo e visão do produto acordados com o cliente | Unidade 1 |
+| **Elaboração** | 15/09/2026 – 15/10/2026 | 3 e 4 | **Arquitetura do Ciclo de Vida** — requisitos estabilizados, riscos estruturais reduzidos por provas de conceito e MVP definido | Unidade 2 |
+| **Construção** | 20/10/2026 – 03/12/2026 | 5, 6 e 7 | **Capacidade Operacional Inicial** — MVP funcional, integrado e testado | Unidades 3 e 4 |
+| **Transição** | 08/12/2026 – 10/12/2026 | 8 | **Release do Produto** — produto homologado e aceito pelo cliente | Unidade 4 |
 
 ---
 
