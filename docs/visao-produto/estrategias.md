@@ -1,6 +1,6 @@
 # 4 Estratégias de Engenharia de Software
 
-A partir das informações apresentadas nas seções [Cenário Atual do Cliente e do Negócio](cenario-atual.md) e [Solução Proposta](solucao-proposta.md), foram tomadas as decisões referentes às estratégias de engenharia de software a serem adotadas na construção do GameDuo.
+A partir das informações apresentadas nas seções Cenário Atual do Cliente e do Negócio e Solução Proposta, foram tomadas as decisões referentes às estratégias de engenharia de software a serem adotadas na construção do GameDuo.
 
 ## 4.1 Estratégia Priorizada
 

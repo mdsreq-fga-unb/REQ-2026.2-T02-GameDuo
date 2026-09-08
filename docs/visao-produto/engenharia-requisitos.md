@@ -1,6 +1,6 @@
 # 5 Engenharia de Requisitos
 
-A partir do [Cenário Atual do Cliente e do Negócio](../cenario-atual/) e da [Solução Proposta](../solucao-proposta/), foram estabelecidas as atividades da Engenharia de Requisitos (ER), suas práticas e técnicas, em alinhamento ao **OpenUP**, processo definido na seção [Estratégias de Engenharia de Software](../estrategias/).
+A partir do Cenário Atual do Cliente e do Negócio e da Solução Proposta, foram estabelecidas as atividades da Engenharia de Requisitos (ER), suas práticas e técnicas, em alinhamento ao **OpenUP**, processo definido na seção Estratégias de Engenharia de Software.
 
 Duas características do projeto orientaram essa definição. A primeira é a natureza do domínio: o mercado de coaching e duo remunerado tem vocabulário próprio e uma fronteira delicada entre o que a plataforma pretende oferecer (coaching e duo, com cada jogador em sua própria conta) e o que ela precisa excluir (boosting por compartilhamento de conta). A segunda é a concentração de risco em decisões estruturais — a custódia dos créditos até a validação bilateral da sessão e a verificação do Elo por meio de APIs de terceiros. Por isso, as técnicas de descoberta e de validação foram concentradas nas fases iniciais, quando o custo de reverter uma decisão ainda é baixo.
 

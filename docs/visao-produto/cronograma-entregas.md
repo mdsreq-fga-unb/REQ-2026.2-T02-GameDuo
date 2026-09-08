@@ -1,11 +1,11 @@
 # 6 Cronograma e Entregas
 
-A partir da estratégia definida na seção [Estratégias de Engenharia de Software](../estrategias/) — abordagem ágil, ciclo de vida iterativo e incremental e processo **OpenUP** —, o planejamento temporal do GameDuo foi organizado em iterações agrupadas nas quatro fases do OpenUP e ancoradas no calendário da disciplina.
+A partir da estratégia definida na seção Estratégias de Engenharia de Software — abordagem ágil, ciclo de vida iterativo e incremental e processo **OpenUP** —, o planejamento temporal do GameDuo foi organizado em iterações agrupadas nas quatro fases do OpenUP e ancoradas no calendário da disciplina.
 
 Três decisões orientaram esse desenho:
 
 - **As iterações encerram junto com as Unidades da disciplina.** O calendário de Requisitos de Software divide o semestre em quatro Unidades, cada uma com uma semana de entrega ao final. As iterações do projeto foram dimensionadas em duas ou três semanas para que nenhuma entrega da disciplina caia no meio de uma iteração.
-- **Cada iteração encerra com validação do cliente.** Como definido na seção [Interação entre Equipe e Cliente](../interacao-equipe/), a equipe se reúne quinzenalmente com Ciro Vargas. Toda iteração termina em uma dessas reuniões, de modo que o ciclo se encerre com validação, e não apenas com entrega interna.
+- **Cada iteração encerra com validação do cliente.** Como definido na seção Interação entre Equipe e Cliente, a equipe se reúne quinzenalmente com Ciro Vargas. Toda iteração termina em uma dessas reuniões, de modo que o ciclo se encerre com validação, e não apenas com entrega interna.
 - **A atividade de ER é aplicada na Unidade em que é estudada.** Os temas de cada Unidade — elicitação e declaração na Unidade 2, representação e validação na Unidade 3 — definem qual atividade da Engenharia de Requisitos concentra o esforço em cada iteração.
 
 Este planejamento é **preliminar** e será atualizado ao final de cada iteração, conforme previsto no próprio OpenUP e nas retrospectivas de cada Unidade.
