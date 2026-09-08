@@ -26,8 +26,6 @@ theme:
     text: Inter
     code: Fira Code
   features:
-    - navigation.sections
-    - navigation.expand
     - navigation.indexes
     - navigation.top
     - toc.integrate
@@ -62,7 +60,10 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
-nav:
+extra_javascript:
+  - javascripts/sidebar-toggle.js
+
+nav:  
   - Início: index.md
   - Visão do Produto e Projeto:
       - "1. Cenário Atual do Cliente e do Negócio": visao-produto/cenario-atual.md
@@ -73,5 +74,8 @@ nav:
       - "6. Cronograma e Entregas": visao-produto/cronograma-entregas.md
       - "7. Interação entre Equipe e Cliente": visao-produto/interacao-equipe.md
       - "11. Lições Aprendidas": visao-produto/licoes-aprendidas.md
+      - "12. Referências Bibliográficas": visao-produto/referencias.md
+  - Entregas:
+      - "Unidade 1": entregas/unidade-1.md
 
 
