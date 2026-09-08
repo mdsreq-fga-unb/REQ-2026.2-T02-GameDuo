@@ -54,14 +54,57 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 
 ---
 
+## :busts_in_silhouette: Integrantes do Projeto
+
+<ul class="gd-team">
+  <li>
+    <a class="gd-team__card" href="https://github.com/Guibs969" title="Desenvolvimento Backend (líder)">
+      <img src="img/guilherme-brandao.jpg" alt="Guilherme Brandão" loading="lazy">
+      <span class="gd-team__name">Guilherme Brandão</span>
+      <span class="gd-team__handle">@Guibs969</span>
+    </a>
+  </li>
+  <li>
+    <span class="gd-team__card" title="Desenvolvimento Backend · Banco de Dados">
+      <img src="img/paulo-lucca.jpg" alt="Paulo Lucca" loading="lazy">
+      <span class="gd-team__name">Paulo Lucca</span>
+      <!-- TODO: confirmar o @ do GitHub do Paulo e transformar em <a class="gd-team__card" href="..."> -->
+      <span class="gd-team__handle">@paulolucca</span>
+    </span>
+  </li>
+  <li>
+    <a class="gd-team__card" href="https://github.com/PedroAraujo004" title="Product Owner · Analista de Requisitos (líder)">
+      <img src="img/pedro-araujo.jpg" alt="Pedro Araujo" loading="lazy">
+      <span class="gd-team__name">Pedro Araujo</span>
+      <span class="gd-team__handle">@PedroAraujo004</span>
+    </a>
+  </li>
+  <li>
+    <a class="gd-team__card" href="https://github.com/ChickRicks" title="Gerente de Projeto · QA · Banco de Dados (líder)">
+      <img src="img/ricardo-lucas.jpg" alt="Ricardo Lucas" loading="lazy">
+      <span class="gd-team__name">Ricardo Lucas</span>
+      <span class="gd-team__handle">@ChickRicks</span>
+    </a>
+  </li>
+  <li>
+    <span class="gd-team__card" title="Desenvolvimento Frontend (líder)">
+      <img src="img/rodrigo-atila.jpg" alt="Rodrigo Átila" loading="lazy">
+      <span class="gd-team__name">Rodrigo Átila</span>
+      <!-- TODO: confirmar o @ do GitHub do Rodrigo e transformar em <a class="gd-team__card" href="..."> -->
+      <span class="gd-team__handle">@rodrigoatila</span>
+    </span>
+  </li>
+</ul>
+
+---
+
 ## Histórico de Revisão
 
 | Data | Versão | Descrição | Autor(es) |
 |:---|:---|:---|:---|
 | 02/09/2026 | 0.1 | Abertura do documento e estruturação inicial | Guilherme Brandão |
 | 03/09/2026 | 0.2 | Primeira reunião com cliente  | Ricardo Lucas e Pedro Araujo |
-| 05/09/2026 | 0.3 | Elaboração da seção 4 — Estratégias de Engenharia de Software | Equipe GoHorse |
-
+| 05/09/2026 | 0.3 | Elaboração da seção 4 — Estratégias de Engenharia de Software |Equipe GoHorse |
 | 05/09/2026 | 0.5 | adiciona mapa de stakeholders  e(sessão 1.6) | Pedro Araujo|  
 | 06/09/2026 | 0.6 | 2.3  características do produto  | Pedro Araujo|   
 | 06/09/2026 | 0.7 | Arrumado alguns detalhes, colocado 2.7 e 7.3  | Ricardo Lucas| 
