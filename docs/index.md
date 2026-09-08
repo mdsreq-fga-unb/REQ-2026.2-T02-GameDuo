@@ -111,5 +111,4 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 | 06/09/2026 | 0.9 |  5.0 Engenharia de Requisitos | Equipe GoHorse | 
 | 06/09/2026 | 0.10 | 6.0 Cronograma  Entregas | Equipe GoHorse |
 | 06/09/2026 | 0.11 | Licoes Aprendidas | Equipe GoHorse |
-
-
+| 08/09/2026 | 0.12 | Adiciona video da entrega e ajusta navegação | Equipe GoHorse |
