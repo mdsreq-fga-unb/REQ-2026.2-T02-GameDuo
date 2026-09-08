@@ -65,12 +65,12 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
     </a>
   </li>
   <li>
-    <span class="gd-team__card" title="Desenvolvimento Backend · Banco de Dados">
+    <a class="gd-team__card" href="https://github.com/Rukkakun" title="Desenvolvimento Backend · Banco de Dados">
       <img src="img/paulo-lucca.jpg" alt="Paulo Lucca" loading="lazy">
       <span class="gd-team__name">Paulo Lucca</span>
     
       <span class="gd-team__handle">@Rukkakun</span>
-    </span>
+    </a>
   </li>
   <li>
     <a class="gd-team__card" href="https://github.com/PedroAraujo004" title="Product Owner · Analista de Requisitos (líder)">
@@ -87,11 +87,11 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
     </a>
   </li>
   <li>
-    <span class="gd-team__card" title="Desenvolvimento Frontend (líder)">
+    <a class="gd-team__card" href="https://github.com/Rodrigoatila09" title="Desenvolvimento Frontend (líder)">
       <img src="img/rodrigo-atila.jpg" alt="Rodrigo Átila" loading="lazy">
       <span class="gd-team__name">Rodrigo Átila</span>
       <span class="gd-team__handle">@Rodrigoatila09</span>
-    </span>
+    </a>
   </li>
 </ul>
 
