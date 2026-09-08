@@ -1,7 +1,5 @@
 # 5 Engenharia de Requisitos
 
-A partir do Cenário Atual do Cliente e do Negócio e da Solução Proposta, foram estabelecidas as atividades da Engenharia de Requisitos (ER), suas práticas e técnicas, em alinhamento ao **OpenUP**, processo definido na seção Estratégias de Engenharia de Software.
-
 Duas características do projeto orientaram essa definição. A primeira é a natureza do domínio: o mercado de coaching e duo remunerado tem vocabulário próprio e uma fronteira delicada entre o que a plataforma pretende oferecer (coaching e duo, com cada jogador em sua própria conta) e o que ela precisa excluir (boosting por compartilhamento de conta). A segunda é a concentração de risco em decisões estruturais — a custódia dos créditos até a validação bilateral da sessão e a verificação do Elo por meio de APIs de terceiros. Por isso, as técnicas de descoberta e de validação foram concentradas nas fases iniciais, quando o custo de reverter uma decisão ainda é baixo.
 
 ---
@@ -15,7 +13,6 @@ Duas características do projeto orientaram essa definição. A primeira é a na
 - **Análise de domínio de negócio:** estudo do ecossistema de e-sports e de jogos competitivos (League of Legends, Elden Ring) para compreender conceitos como elo, ranqueada, high elo, duo e coaching, garantindo que os requisitos sejam declarados com a terminologia usada pelos dois perfis de usuário.
 - **Análise documental:** leitura da documentação pública das APIs de jogos utilizadas para verificação de credenciais, dos termos de serviço das desenvolvedoras (que delimitam o que a plataforma pode oferecer) e da documentação do gateway de pagamento com split, para identificar restrições que se tornam requisitos.
 - **Análise competitiva (benchmarking):** exame das soluções já mapeadas na seção 2.5 — Metafy, ProGuides, E-Pal, LFCarry e Fiverr — para descobrir funcionalidades esperadas pelo mercado e identificar as lacunas que o GameDuo pretende preencher.
-- **Prova de conceito (spike técnico):** usada como instrumento de descoberta, e não apenas de implementação. O que a API de terceiros efetivamente permite consultar delimita o requisito de verificação de Elo; o que o gateway permite reter e repassar delimita o requisito de custódia. A prova de conceito é executada antes da declaração definitiva desses requisitos.
 
 ### Análise e Consenso
 
@@ -27,18 +24,15 @@ Duas características do projeto orientaram essa definição. A primeira é a na
 
 ### Declaração de Requisitos
 
-- **Glossário do domínio:** documento vivo com os termos do ecossistema gamer e do modelo de negócio (elo, high elo, duo, coaching, boosting, custódia, validação bilateral, split de pagamento). O glossário evita que membros da equipe e cliente atribuam sentidos diferentes ao mesmo termo, risco concreto num domínio em que boosting e duo se confundem com facilidade.
 - **Declaração padronizada de requisitos funcionais:** cada RF é escrito no formato "verbo no infinitivo + objeto + complemento", com identificador único, de modo a permitir rastreabilidade com as características de produto (CP1 a CP6) e com os objetivos específicos (OE1 a OE5).
 - **Classificação de requisitos não funcionais pelo modelo URPS+:** os RNFs são declarados e classificados em usabilidade, confiabilidade, desempenho, suportabilidade e restrições de projeto, incluindo as exigências de conformidade com a LGPD e a restrição de implementação (React, PHP e Supabase).
-- **User stories com INVEST:** os requisitos funcionais são derivados em histórias de usuário no formato "Como \<perfil\>, quero \<ação\>, para \<benefício\>", verificadas pelos critérios INVEST (Independente, Negociável, Valiosa, Estimável, Pequena, Testável). Os perfis refletem os dois lados da plataforma: consumidor, prestador e administrador.
+- **História de Usuarios:** os requisitos funcionais são derivados em histórias de usuário. Os perfis refletem os dois lados da plataforma: consumidor, prestador e administrador.
 - **Critérios de aceitação em BDD:** cada história recebe critérios no formato Dado/Quando/Então, o que é especialmente relevante para os fluxos com regra condicional, como a liberação do repasse somente após a validação bilateral da sessão.
 
 ### Representação de Requisitos
 
 - **Rich Picture:** representação do cenário atual, já elaborada na seção 1.3, mantida e atualizada conforme o entendimento do domínio evolui.
 - **Diagrama de Ishikawa:** representação das causas do problema central, apresentada na seção 1.4, usada como âncora para justificar a existência de cada requisito.
-- **Diagrama de casos de uso (UML):** representação dos atores (consumidor, prestador, administrador e sistemas externos de pagamento e de verificação de Elo) e de suas interações com a plataforma, artefato previsto pelo próprio OpenUP.
-- **Diagrama de atividades:** modelagem do fluxo de contratação de ponta a ponta — busca, contratação, retenção dos créditos, realização da sessão, validação bilateral e repasse —, incluindo os caminhos de exceção, como o não comparecimento de uma das partes e a abertura de disputa.
 - **Protótipos de baixa e de alta fidelidade:** wireframes para validar a estrutura das telas e protótipos navegáveis no Figma para validar a jornada completa com o cliente antes da implementação, prática coerente com a redução de risco prevista na fase de Elaboração do OpenUP.
 - **Matriz de rastreabilidade:** tabela que relaciona objetivos específicos, características de produto, valor de negócio, requisitos funcionais e requisitos não funcionais, permitindo verificar se toda característica está coberta e se todo requisito tem origem justificada.
 
@@ -48,15 +42,15 @@ Duas características do projeto orientaram essa definição. A primeira é a na
 - **Revisão por pares (walkthrough interno):** leitura conjunta dos requisitos pela equipe, com participação das frentes de frontend, backend e banco de dados, para identificar inviabilidades técnicas antes da validação com o cliente.
 - **Validação por prototipação:** apresentação dos protótipos ao cliente nas reuniões quinzenais, de modo que a validação ocorra sobre algo concreto e não apenas sobre texto.
 - **Revisão dos critérios de aceitação e testes de aceitação:** verificação, pelo Analista de Qualidade, de que o incremento entregue satisfaz os critérios em BDD declarados para cada história.
-- **Definition of Ready (DoR) e Definition of Done (DoD):** aplicadas como portões de entrada e de saída de cada iteração, garantindo que nenhum requisito entre em desenvolvimento sem critérios de aceitação e que nenhum incremento seja apresentado ao cliente sem estar testado.
+- **Definição de Pronto (DoR) e Definição de Concluído (DoD):** aplicadas como portões de entrada e de saída de cada iteração, garantindo que nenhum requisito entre em desenvolvimento sem critérios de aceitação e que nenhum incremento seja apresentado ao cliente sem estar testado.
 
 ### Organização e Atualização de Requisitos
 
 - **Lista de itens de trabalho e backlog do produto:** artefato central do OpenUP para organização dos requisitos, mantido priorizado e associado às iterações de cada fase.
-- **Refinamento contínuo do backlog (DEEP):** revisão periódica para manter o backlog Detalhado na medida certa, Emergente, Estimável e Priorizado, com os itens da próxima iteração mais detalhados do que os itens distantes.
+- **Refinamento contínuo do backlog:** revisão periódica para manter o backlog Detalhado na medida certa, Emergente, Estimável e Priorizado, com os itens da próxima iteração mais detalhados do que os itens distantes.
 - **Controle de versão e histórico de revisão:** todo o conteúdo é versionado em Git e publicado no GitPages, com registro de data, versão, descrição da alteração e autor, permitindo reconstituir quando e por que um requisito mudou.
 - **Manutenção da matriz de rastreabilidade:** a cada alteração de requisito, a matriz é atualizada para preservar o vínculo entre objetivos, características, requisitos e histórias, evitando requisitos órfãos e características descobertas.
-- **Registro das decisões de reunião:** as atas das reuniões com o cliente são publicadas no GitPages, servindo como fonte de verificação quando surge divergência sobre uma decisão tomada.
+
 
 ---
 
@@ -84,7 +78,7 @@ A tabela a seguir apresenta o mapeamento das atividades da ER, suas práticas e 
 | | Organização e Atualização | Publicação versionada da documentação | Controle de versão em Git e histórico de revisão no GitPages | Documento de visão publicado e rastreável por versão |
 | **Elaboração** | Elicitação e Descoberta | Detalhamento dos requisitos críticos | Entrevistas focadas, análise documental das APIs e do gateway, prova de conceito | Restrições técnicas identificadas e requisitos de custódia e de verificação de Elo esclarecidos |
 | | Análise e Consenso | Priorização e definição do MVP | Priorização MoSCoW, matriz valor de negócio × esforço, negociação com o cliente | Backlog priorizado e conjunto de funcionalidades do MVP acordado |
-| | Declaração | Especificação dos requisitos | Declaração padronizada de RF, classificação de RNF pelo modelo URPS+, user stories com INVEST, critérios de aceitação em BDD | Listas de RF e RNF declaradas e histórias de usuário com critérios de aceitação |
+| | Declaração | Especificação dos requisitos | Declaração padronizada de RF, classificação de RNF pelo modelo URPS+, historias de usuario, critérios de aceitação em BDD | Listas de RF e RNF declaradas e histórias de usuário com critérios de aceitação |
 | | Representação | Modelagem e prototipação | Diagrama de casos de uso (UML), diagrama de atividades do fluxo de contratação, wireframes e protótipo navegável | Fluxo de contratação e telas principais representados e compreendidos pela equipe e pelo cliente |
 | | Verificação e Validação | Inspeção e validação da linha-base | Inspeção com checklist, revisão por pares, validação por prototipação com o cliente | Requisitos verificados quanto a ambiguidade e testabilidade, e linha-base aprovada no marco da fase |
 | | Organização e Atualização | Estabelecimento da rastreabilidade | Matriz de rastreabilidade (OE → CP → VN → RF → RNF), Definition of Ready (DoR) | Backlog rastreável e itens prontos para entrar em desenvolvimento |

@@ -1,29 +1,20 @@
 # 6 Cronograma e Entregas
 
-A partir da estratégia definida na seção Estratégias de Engenharia de Software — abordagem ágil, ciclo de vida iterativo e incremental e processo **OpenUP** —, o planejamento temporal do GameDuo foi organizado em iterações agrupadas nas quatro fases do OpenUP e ancoradas no calendário da disciplina.
-
-Três decisões orientaram esse desenho:
-
-- **As iterações encerram junto com as Unidades da disciplina.** O calendário de Requisitos de Software divide o semestre em quatro Unidades, cada uma com uma semana de entrega ao final. As iterações do projeto foram dimensionadas em duas ou três semanas para que nenhuma entrega da disciplina caia no meio de uma iteração.
-- **Cada iteração encerra com validação do cliente.** Como definido na seção Interação entre Equipe e Cliente, a equipe se reúne quinzenalmente com Ciro Vargas. Toda iteração termina em uma dessas reuniões, de modo que o ciclo se encerre com validação, e não apenas com entrega interna.
-- **A atividade de ER é aplicada na Unidade em que é estudada.** Os temas de cada Unidade — elicitação e declaração na Unidade 2, representação e validação na Unidade 3 — definem qual atividade da Engenharia de Requisitos concentra o esforço em cada iteração.
-
-Este planejamento é **preliminar** e será atualizado ao final de cada iteração, conforme previsto no próprio OpenUP e nas retrospectivas de cada Unidade.
 
 ---
 
-## 6.1 Visão geral das fases
+##  Visão geral das fases
 
 | Fase do OpenUP | Período | Iterações | Marco de encerramento | Unidade da disciplina |
 | -------------- | ------- | --------- | --------------------- | --------------------- |
-| **Iniciação** | 11/08/2026 – 10/09/2026 | 1 e 2 | **Objetivos do Ciclo de Vida** — problema, escopo e visão do produto acordados com o cliente | Unidade 1 |
-| **Elaboração** | 15/09/2026 – 15/10/2026 | 3 e 4 | **Arquitetura do Ciclo de Vida** — requisitos estabilizados, riscos estruturais reduzidos por provas de conceito e MVP definido | Unidade 2 |
-| **Construção** | 20/10/2026 – 03/12/2026 | 5, 6 e 7 | **Capacidade Operacional Inicial** — MVP funcional, integrado e testado | Unidades 3 e 4 |
-| **Transição** | 08/12/2026 – 10/12/2026 | 8 | **Release do Produto** — produto homologado e aceito pelo cliente | Unidade 4 |
+| **Iniciação** | 11/08/2026 – 08/09/2026 | 1 e 2 | **Objetivos do Ciclo de Vida** — problema, escopo e visão do produto acordados com o cliente | Unidade 1 |
+| **Elaboração** | 09/09/2026 – 13/10/2026 | 3 e 4 | **Arquitetura do Ciclo de Vida** — requisitos estabilizados, riscos estruturais reduzidos por provas de conceito e MVP definido | Unidade 2 |
+| **Construção** | 14/10/2026 – 17/11/2026 | 5, 6 e 7 | **Capacidade Operacional Inicial** — MVP funcional, integrado e testado | Unidades 3 e 4 |
+| **Transição** | 18/11/2026 – 01/12/2026 | 8 | **Release do Produto** — produto homologado e aceito pelo cliente | Unidade 4 |
 
 ---
 
-## 6.2 Detalhamento das iterações
+##  Detalhamento das iterações
 
 | Iteração | Fase | Início | Fim | Objetivo principal | Entregas esperadas | Validação do cliente |
 | -------- | ---- | ------ | --- | ------------------ | ------------------ | -------------------- |
@@ -38,45 +29,11 @@ Este planejamento é **preliminar** e será atualizado ao final de cada iteraç�
 
 ---
 
-## 6.3 Entregas por Unidade da disciplina
 
-| Unidade | Período | Entrega | Produtos gerados |
-| ------- | ------- | ------- | ---------------- |
-| **Unidade 1** | 11/08/2026 – 10/09/2026 | 10/09/2026 | Visão do Produto e Projeto (seções 1 a 7): cenário atual, solução proposta, intervenção social, estratégias de engenharia de software, engenharia de requisitos, cronograma e interação com o cliente |
-| **Unidade 2** | 15/09/2026 – 15/10/2026 | 15/10/2026 | Requisitos funcionais e não funcionais, matriz de rastreabilidade, DoR e DoD, backlog do produto priorizado e definição do MVP |
-| **Unidade 3** | 20/10/2026 – 19/11/2026 | 19/11/2026 | Incrementos de software validados com o cliente, representação e validação dos requisitos, documento de Visão atualizado e lições aprendidas da Unidade |
-| **Unidade 4** | 24/11/2026 – 10/12/2026 | 10/12/2026 | MVP homologado, documentação consolidada, lições aprendidas e apresentação final |
 
 ---
 
-## 6.4 Representação temporal
-
-```mermaid
-gantt
-    title Cronograma preliminar do GameDuo — 2026.2
-    dateFormat  DD/MM/YYYY
-    axisFormat  %d/%m
-
-    section Iniciação
-    It. 1 — Formação da equipe            :done,   it1, 11/08/2026, 27/08/2026
-    It. 2 — Visão do produto (Unidade 1)  :active, it2, 01/09/2026, 10/09/2026
-
-    section Elaboração
-    It. 3 — Elicitação e declaração       :        it3, 15/09/2026, 01/10/2026
-    It. 4 — Backlog e MVP (Unidade 2)     :        it4, 06/10/2026, 15/10/2026
-
-    section Construção
-    It. 5 — Perfil e catálogo             :        it5, 20/10/2026, 05/11/2026
-    It. 6 — Contratação e custódia (Un. 3):        it6, 10/11/2026, 19/11/2026
-    It. 7 — Repasse e reputação           :        it7, 24/11/2026, 03/12/2026
-
-    section Transição
-    It. 8 — Homologação e entrega final   :        it8, 08/12/2026, 10/12/2026
-```
-
----
-
-## 6.5 Considerações importantes
+##  Considerações importantes
 
 1. **Duração das iterações.** As iterações têm duas ou três semanas. As de três semanas (1, 3 e 5) abrem cada bloco da disciplina e concentram o trabalho de descoberta e construção; as de duas semanas (2, 4, 6 e 7) fecham o bloco e coincidem com a semana de entrega da Unidade. A Iteração 8 tem uma semana e existe apenas para homologação e encerramento.
 

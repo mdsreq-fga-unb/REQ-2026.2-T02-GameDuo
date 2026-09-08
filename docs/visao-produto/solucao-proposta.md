@@ -46,9 +46,6 @@ A proposta é viável no contexto da disciplina. A equipe é composta por cinco 
 
 O acesso ao cliente é um facilitador importante. Ciro Vargas é o idealizador do produto e o único tomador de decisão, acessível por WhatsApp, Discord e Google Meet. Não há cadeia de aprovação, o que reduz o tempo entre a dúvida da equipe e a resposta do cliente. Sua experiência como arquiteto de software também torna as conversas técnicas mais diretas.
 
-Quanto ao conhecimento técnico, a equipe tem familiaridade com desenvolvimento web e domina as ferramentas de versionamento e documentação exigidas pelo projeto. As maiores incertezas estão nas integrações externas, especialmente a verificação de credenciais e o processamento de pagamentos, que serão tratadas por meio de provas de conceito antes de serem incorporadas ao produto.
-
-
 
 
 ## 2.7 Benefícios esperados
