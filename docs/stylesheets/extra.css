@@ -158,28 +158,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem 2.25rem;
-  max-width: 620px;
-  margin: 1.6em auto;
+  gap: 1.75rem 1.5rem;
+  max-width: 560px;
+  margin: 1.5em auto;
   padding: 0;
   list-style: none;
 }
 
 .md-typeset ul.gd-team > li {
-  width: 168px;
+  width: 150px;
   margin: 0;
   text-align: center;
 }
 
-.md-typeset .gd-team__card {
+.md-typeset ul.gd-team .gd-team__card {
   display: block;
   text-decoration: none;
   color: inherit;
 }
 
-.md-typeset .gd-team img {
-  width: 132px;
-  height: 132px;
+.md-typeset ul.gd-team li img {
+  width: 96px !important;
+  height: 96px !important;
+  max-width: 96px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--md-default-bg-color);
@@ -188,23 +189,25 @@
   transition: transform .18s ease, outline-color .18s ease, box-shadow .18s ease;
 }
 
-.md-typeset a.gd-team__card:hover img,
-.md-typeset a.gd-team__card:focus-visible img {
+.md-typeset ul.gd-team a.gd-team__card:hover img,
+.md-typeset ul.gd-team a.gd-team__card:focus-visible img {
   transform: translateY(-4px);
   outline-color: var(--md-accent-fg-color);
-  box-shadow: 0 14px 26px rgba(34, 197, 94, 0.28);
+  box-shadow: 0 12px 22px rgba(34, 197, 94, 0.28);
 }
 
-.md-typeset .gd-team .gd-team__name {
+.md-typeset ul.gd-team .gd-team__name {
   display: block;
-  margin-top: .85rem;
+  margin-top: .7rem;
   font-weight: 700;
+  font-size: .8rem;
+  line-height: 1.25;
   color: var(--md-default-fg-color);
 }
 
-.md-typeset .gd-team .gd-team__handle {
+.md-typeset ul.gd-team .gd-team__handle {
   display: block;
   margin-top: .1rem;
-  font-size: .78rem;
+  font-size: .72rem;
   color: var(--md-accent-fg-color);
 }
