@@ -113,3 +113,4 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 | 06/09/2026 | 0.11 | Licoes Aprendidas | Equipe GoHorse |
 | 08/09/2026 | 0.12 | Adiciona video da entrega e ajusta navegação | Equipe GoHorse |
 | 12/09/2026 | 0.13 |  Correções Issue do professor referente a Solução Proposta | Guilherme Brandão |
+| 12/09/2026 | 0.14 | Revisao e alteração de Intervenção Social e Lições aprendidas| Pedro Araujo |
