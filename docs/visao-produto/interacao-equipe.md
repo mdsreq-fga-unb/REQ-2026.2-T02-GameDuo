@@ -9,7 +9,7 @@ A equipe responsável pelo desenvolvimento do GameDuo é composta por cinco inte
 | Papel | Descrição | Líder  | Demais participantes |
 | --- | --- | --- | --- |
 | **Gerente de Projeto** | Coordena o projeto, conduz a comunicação entre a equipe e o cliente, acompanha o cronograma e o andamento das entregas previstas para cada Unidade da disciplina. | Ricardo | — |
-| **Product Owner** | Representa a visão do produto junto à equipe, mantém e prioriza o backlog e valida se as entregas atendem aos objetivos específicos definidos para a solução. | Pedro | — |
+| **Product Owner** | Representa a visão do produto junto à equipe: propõe e organiza os itens do backlog, prepara sua priorização e faz a primeira verificação de que uma entrega atende aos objetivos definidos, antes de submetê-la à validação do cliente. | Pedro | — |
 | **Analista de Requisitos** | Conduz a elicitação, a análise, a declaração e a validação dos requisitos junto ao cliente, mantendo a rastreabilidade entre objetivos, características de produto e requisitos. | Pedro |  Ricardo, Rodrigo, Guilherme, Paulo |
 | **Analista de Qualidade (QA)** | Garante a qualidade do produto por meio da verificação dos critérios de aceitação, da execução de testes funcionais e da aplicação da Definition of Done. | Ricardo | — |
 | **Desenvolvimento Frontend** | Responsável pela construção das interfaces da plataforma e pela implementação das funcionalidades no lado do cliente. | Rodrigo | Pedro, Guilherme |
@@ -21,6 +21,17 @@ A equipe responsável pelo desenvolvimento do GameDuo é composta por cinco inte
 
 !!! note "Sobre a atuação em múltiplos papéis"
     A atividade de Engenharia de Requisitos é conduzida por todos os integrantes, de modo que a equipe compartilhe o entendimento do domínio e das necessidades do cliente. Os papéis de desenvolvimento contam com um líder técnico responsável por coordenar as decisões de sua frente e por integrar o trabalho às demais.
+
+!!! note "Sobre a autoridade de decisão entre cliente e Product Owner"
+    Ciro Vargas, como cliente e idealizador do produto, é o único tomador de decisão formal do projeto: é ele quem aceita ou recusa uma entrega e quem aprova mudanças de escopo. O Product Owner não substitui essa autoridade — sua função é interna à equipe, de organização e preparo do trabalho a ser submetido ao cliente. Assim, a cadeia de responsabilidade é:
+
+    - **Propõe** os itens de backlog e as alternativas de solução: a equipe, com o Product Owner consolidando as propostas a partir da elicitação junto ao cliente;
+    - **Prioriza** o backlog: o Product Owner, com base no valor de negócio definido em conjunto com o cliente nas reuniões quinzenais;
+    - **Valida tecnicamente** as entregas, verificando se atendem aos critérios de aceitação e à Definition of Done: o Product Owner e o Analista de Qualidade, antes de a entrega ser apresentada ao cliente;
+    - **Aceita formalmente** a entrega: Ciro Vargas, único tomador de decisão, na reunião quinzenal de validação (seção 7.3).
+
+    A introdução do papel de Product Owner é uma adaptação deliberada do OpenUP, cujo conjunto de papéis padrão (Analista, Arquiteto, Desenvolvedor, Testador, Gerente de Projeto, entre outros) não prevê essa função. A equipe optou por incorporá-la para organizar internamente a priorização do backlog e a verificação preliminar das entregas, funções que, de outra forma, recairiam de modo difuso sobre o Gerente de Projeto e o Analista de Requisitos. Essa adaptação está registrada nesta seção e reflete-se na condução do processo descrito na seção 5.
+
 
 
 
@@ -45,6 +56,22 @@ Frequência de comunicação com o cliente:
 - Reunião quinzenal: a reunião será diretamente dos participantes da equipe de desenvolvimento e o cliente, para validação
 
 - Whatsapp: será usado pontualmente para tirar dúvidas rápidas.
+
+### Interação com consumidores e prestadores
+
+Ciro Vargas é o cliente e o canal formal de aceite do projeto, mas não é o usuário final: consumidores (quem contrata sessões) e prestadores (quem oferece coaching, duo e boosting) são os dois lados do marketplace e é para eles que o produto é desenhado. Por isso, além da comunicação regular com o cliente, a equipe prevê uma estratégia própria de interação com esses grupos:
+
+- **Recrutamento de representantes:** identificação, com apoio do cliente, de jogadores que se encaixem nos perfis de consumidor e de prestador, para participarem como usuários de referência ao longo do projeto;
+
+- **Validação antecipada com protótipos:** apresentação de wireframes e do protótipo navegável (seção 5) a representantes de cada perfil, antes da implementação, para checar se o fluxo de contratação, a verificação de credenciais e a avaliação cruzada fazem sentido na prática;
+
+- **Testes de aceitação com usuários reais:** inclusão de consumidores e prestadores nas demonstrações por iteração, executando os critérios de aceitação das histórias de usuário que os afetam diretamente;
+
+- **Canal de feedback assíncrono:** formulário ou grupo dedicado (fora do WhatsApp usado com o cliente) para que esses usuários relatem problemas e sugestões entre as reuniões, com o feedback registrado e rastreado junto ao backlog pelo Product Owner.
+
+ <!-- Pedro vai mudar aqui -->
+
+
 
 ## 7.3 Processos de Validação
 
