@@ -2,8 +2,6 @@
 
 Esta seção apresenta os requisitos funcionais e não funcionais do GameDuo e sua rastreabilidade com os objetivos específicos, as características de produto e o valor de negócio definidos na [seção 2 — Solução Proposta](solucao-proposta.md#22-objetivos-especificos-oe-do-produto).
 
-A especificação incorpora a revisão do [documento de requisitos](https://docs.google.com/document/d/1N4kywDXcI1_ONN4ulAbYZn21Mf2062dHjyn1VSL1RkU/edit), elaborado a partir do fluxograma e das discussões com o cliente. As regras de negócio permanecem nesse documento de apoio, separadas das listas de RFs e RNFs. A publicação desta versão não representa validação integral dos pontos ainda pendentes.
-
 ## 8.1 Lista de Requisitos Funcionais
 
 Os requisitos funcionais descrevem os comportamentos do sistema, incluindo ações dos usuários, integrações e processos automáticos. Cada requisito mantém seu identificador e o vínculo com as características de produto (CP).
@@ -315,14 +313,11 @@ O sistema deve permitir à administração atualizar as informações institucio
 **Rastreabilidade:** CP7.
 
 !!! note "Definições pendentes que afetam os RFs"
-    A seleção do gateway, as condições de saque e a base de cálculo das comissões ainda precisam ser definidas. Também permanecem pendentes os prazos de reagendamento e cancelamento, a validade das solicitações de serviço, as fórmulas dos indicadores e da reputação, a política de publicação das avaliações, o marco inicial das 48 horas de retenção e as condições de acesso aos conteúdos. Esses pontos estão detalhados no documento de apoio.
+    A seleção do gateway, as condições de saque e a base de cálculo das comissões ainda precisam ser definidas. Também permanecem pendentes os prazos de reagendamento e cancelamento, a validade das solicitações de serviço, as fórmulas dos indicadores e da reputação, a política de publicação das avaliações, o marco inicial das 48 horas de retenção e as condições de acesso aos conteúdos.
 
 ## 8.2 Lista de Requisitos Não Funcionais
 
-Os requisitos não funcionais descrevem propriedades de qualidade e restrições do sistema. A classificação utiliza URPS+ e, para segurança e restrições organizacionais ou legislativas, a taxonomia de Sommerville, conforme o documento de origem.
-
-!!! note "Estado da especificação"
-    O documento de origem ainda identifica RNF08 e RNF09 como propostas a confirmar em sua introdução. Os demais detalhes não definidos são indicados em cada requisito; sua publicação não presume que essas pendências tenham sido resolvidas.
+Os requisitos não funcionais descrevem propriedades de qualidade e restrições do sistema. A classificação utiliza URPS+ e, para segurança e restrições organizacionais ou legislativas, a taxonomia de Sommerville.
 
 ### RNF01 — Autenticação em dois fatores {#rnf01}
 
@@ -351,8 +346,6 @@ As alterações administrativas devem manter registros que identifiquem o respon
 **Classificação:** Sommerville — requisito de produto: segurança e auditabilidade.
 
 **Critério verificável:** Uma alteração administrativa registrada deve permitir identificar esses três elementos.
-
-**Observação:** Origem: fluxo administrativo.
 
 ### RNF04 — Configurabilidade de taxas {#rnf04}
 
@@ -392,8 +385,6 @@ O tratamento de dados pessoais deve observar os requisitos aplicáveis da LGPD.
 
 **Critério verificável:** Os critérios específicos de verificação devem ser definidos a partir dos dados e tratamentos efetivamente adotados.
 
-**Observação:** Origem: página de Engenharia de Requisitos. Este enunciado não comprova conformidade nem substitui seu detalhamento.
-
 ### RNF08 — Clareza das mensagens de validação {#rnf08}
 
 As mensagens de validação devem identificar o campo ou a operação com problema e indicar como corrigir a informação, em linguagem compreensível ao usuário.
@@ -412,7 +403,7 @@ O sistema deve preservar a consistência das reservas e dos saldos em solicitaç
 
 ## 8.3 Matriz-síntese de rastreabilidade
 
-A matriz relaciona as contribuições principal e secundária para os objetivos específicos (OE), as características de produto (CP), seu valor de negócio (VN), os requisitos funcionais e os não funcionais relacionados. Os objetivos e os valores de negócio reproduzem a [seção 2.3](solucao-proposta.md#23-caracteristicas-de-produto-cp); as associações com os requisitos representam a análise de rastreabilidade desta especificação.
+A matriz relaciona as contribuições principal e secundária para os objetivos específicos (OE), as características de produto (CP), seu valor de negócio (VN), os requisitos funcionais e os não funcionais relacionados. Os objetivos e os valores de negócio estão definidos na [seção 2.3](solucao-proposta.md#23-caracteristicas-de-produto-cp).
 
 | Contribuição principal | Contribuição secundária | CP | Valor de negócio (VN) | RFs relacionados | RNFs relacionados |
 | --- | --- | --- | --- | --- | --- |
@@ -426,5 +417,5 @@ A matriz relaciona as contribuições principal e secundária para os objetivos 
 
 RNF06 aplica-se transversalmente à implementação do produto. RNF07 aplica-se ao tratamento de dados pessoais em cada característica, e RNF08 às mensagens de validação das operações correspondentes. RNF01 está associado às áreas de conta e movimentação financeira, mas as operações que exigirão o segundo fator ainda precisam ser definidas. RNF03 relaciona-se aos registros de intervenções administrativas; RNF04 às configurações de taxas, comissões e penalidades; RNF05 ao processamento de reputação; e RNF09 à consistência das agendas e dos saldos.
 
-As relações com RNF08 e RNF09 indicam o alcance das propostas, sem convertê-las em requisitos já validados. A implementação do split em CP4 continua condicionada à análise de viabilidade com o gateway, e a política de publicação em CP6 permanece pendente.
+A implementação do split em CP4 continua condicionada à análise de viabilidade com o gateway, e a política de publicação em CP6 permanece pendente.
 
