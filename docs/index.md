@@ -114,3 +114,4 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 | 08/09/2026 | 0.12 | Adiciona video da entrega e ajusta navegação | Equipe GoHorse |
 | 12/09/2026 | 0.13 |  Correções Issue do professor referente a Solução Proposta | Guilherme Brandão |
 | 12/09/2026 | 0.14 | Revisao e alteração de Intervenção Social e Lições aprendidas| Pedro Araujo |
+| 21/09/2026 | 0.15 | Inclusão da seção 8 — Requisitos de Software: RFs, RNFs e matriz-síntese de rastreabilidade | Pedro Araujo |
