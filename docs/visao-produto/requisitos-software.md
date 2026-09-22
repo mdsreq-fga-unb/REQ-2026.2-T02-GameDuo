@@ -2,9 +2,9 @@
 
 Esta seção apresenta os requisitos funcionais e não funcionais do GameDuo e sua rastreabilidade com os objetivos específicos, as características de produto e o valor de negócio definidos na [seção 2 — Solução Proposta](solucao-proposta.md#22-objetivos-especificos-oe-do-produto).
 
-## 8.1 Lista de Requisitos Funcionais
+## 8.1 Lista de Requisitos Funcionais 
 
-Os requisitos funcionais descrevem os comportamentos do sistema, incluindo ações dos usuários, integrações e processos automáticos. Cada requisito mantém seu identificador e o vínculo com as características de produto (CP) de origem.
+Os requisitos abaixo descrevem as funcionalidades que o sistema busca atender para viabilizar, com segurança e transparência, a contratação de coaching e duo entre jogadores. Do cadastro e verificação de credenciais dos prestadores até a intermediação de pagamentos, o agendamento das sessões e a moderação de ocorrências. Cada requisito mantém seu identificador e o vínculo com a característica de produto (CP) de origem.
 
 | Código | Nome | Descrição | Rastreabilidade |
 | --- | --- | --- | --- |
@@ -93,6 +93,3 @@ A matriz relaciona as contribuições principal e secundária para os objetivos 
 | OE5 | OE4 | CP6 | Qualidade do serviço com risco de abuso controlado | [RF32](#rf32), [RF33](#rf33), [RF34](#rf34), [RF35](#rf35), [RF36](#rf36), [RF37](#rf37), [RF41](#rf41), [RF43](#rf43) | [RNF02](#rnf02), [RNF03](#rnf03), [RNF05](#rnf05), [RNF06](#rnf06), [RNF07](#rnf07), [RNF08](#rnf08), [RNF10](#rnf10), [RNF11](#rnf11), [RNF12](#rnf12) |
 | OE6 | OE2 | CP7 | Operação segura e escalável | [RF01](#rf01), [RF02](#rf02), [RF03](#rf03), [RF38](#rf38), [RF39](#rf39), [RF40](#rf40), [RF41](#rf41), [RF42](#rf42), [RF43](#rf43), [RF44](#rf44), [RF45](#rf45), [RF46](#rf46), [RF47](#rf47), [RF48](#rf48), [RF49](#rf49), [RF50](#rf50), [RF51](#rf51) | [RNF01](#rnf01), [RNF02](#rnf02), [RNF03](#rnf03), [RNF04](#rnf04), [RNF06](#rnf06), [RNF07](#rnf07), [RNF08](#rnf08), [RNF10](#rnf10), [RNF11](#rnf11), [RNF12](#rnf12) |
 
-RNF06 aplica-se transversalmente à implementação do produto. RNF07 aplica-se ao tratamento de dados pessoais em cada característica, e RNF08 às mensagens de validação das operações correspondentes. RNF01 está associado às áreas de conta e movimentação financeira, mas as operações que exigirão o segundo fator ainda precisam ser definidas. RNF03 relaciona-se aos registros de intervenções administrativas; RNF04 às configurações de taxas, comissões e penalidades; RNF05 ao processamento de reputação; e RNF09 à consistência das agendas e dos saldos. RNF10 e RNF12 aplicam-se transversalmente à interface de todas as telas autenticadas, e RNF11 às operações irreversíveis identificadas em CP3 (encerramento de oferta), CP5, CP6 e CP7.
-
-A implementação do split em CP4 continua condicionada à análise de viabilidade com o gateway, e a política de publicação em CP6 permanece pendente.
