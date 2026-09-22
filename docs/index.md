@@ -116,3 +116,4 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 | 12/09/2026 | 0.14 | Revisao e alteração de Intervenção Social e Lições aprendidas| Pedro Araujo |
 | 14/09/2026 | 0.15 | Correções da Issue 4 — refaz o quadro comparativo e a justificativa da seção 4 (OpenUP × RAD) | Rodrigo Átila |
 | 21/09/2026 | 0.16 | Inclusão da seção 8 — Requisitos de Software: RFs, RNFs e matriz-síntese de rastreabilidade | Pedro Araujo |
+|22/09/2026 | 0.17 | Reorganiza nomes, descrições e formatação dos requisitos na seção 8 | Equipe GoHorse |
