@@ -5,7 +5,7 @@ A partir das informações apresentadas nas seções Cenário Atual do Cliente e
 ## 4.1 Estratégia Priorizada
 
 **Abordagem de Desenvolvimento de Software: Ágil.**
-A abordagem ágil guiará o desenvolvimento do produto, permitindo flexibilidade, adaptação a mudanças e foco na entrega contínua de valor para os dois lados da plataforma — jogadores que buscam evolução técnica e prestadores que desejam rentabilizar seu conhecimento.
+A abordagem ágil guiará o desenvolvimento do produto, permitindo flexibilidade, adaptação a mudanças e foco na entrega contínua de valor para os dois lados da plataforma: jogadores que buscam evolução técnica e prestadores que desejam rentabilizar seu conhecimento.
 
 **Ciclo de vida: Iterativo e Incremental.**
 O ciclo iterativo e incremental permitirá construir a plataforma gradualmente, com validação a cada etapa das funcionalidades críticas, como a verificação de credenciais (Elo) e a custódia dos créditos até a validação bilateral da sessão.
@@ -15,43 +15,44 @@ Processo de desenvolvimento adotado para a construção do produto, por organiza
 
 ## 4.2 Quadro Comparativo
 
-O quadro a seguir compara dois processos de desenvolvimento que poderiam ser adotados no GameDuo:
+O quadro a seguir compara o OpenUP com o Rapid Application Development (RAD), dois processos de desenvolvimento de software iterativos e adaptativos que poderiam ser adotados na construção do GameDuo.
 
-| Características | OpenUP | Kanban |
+| Características | OpenUP | RAD |
 | --- | --- | --- |
-| **Abordagem geral** | Iterativo e incremental, ancorado em uma arquitetura estabelecida nas fases iniciais. | Fluxo contínuo de trabalho, com foco em visualizar o processo, limitar o trabalho em progresso e otimizar o tempo de atravessamento. |
-| **Estrutura de processos** | Fases delimitadas (Iniciação, Elaboração, Construção, Transição), com marcos de decisão ao final de cada uma. | Sem fases ou iterações prescritas: o trabalho é puxado conforme a capacidade da equipe, o que permite entregas contínuas e responde bem a demandas de chegada irregular. |
-| **Complexidade do processo** | Mais prescritivo: define papéis, disciplinas, artefatos e marcos, exigindo que a equipe compreenda a estrutura antes de operá-la. | Deliberadamente simples em sua formulação: começa a partir do processo já praticado e evolui por melhoria incremental. A simplicidade das regras, porém, transfere para a equipe a responsabilidade de estabelecer as políticas que farão o método funcionar. |
-| **Foco em arquitetura** | Trata a arquitetura como risco a ser reduzido cedo, com protótipos executáveis já na fase de Elaboração. | Neutro quanto à arquitetura: por ser um método de gestão de fluxo, opera sobre o processo de trabalho existente e deixa as decisões técnicas a critério da equipe. |
-| **Práticas de desenvolvimento** | Prescreve práticas ao longo das disciplinas: casos de uso, prototipação arquitetural, desenvolvimento orientado a testes e integração contínua entre as iterações. | Não prescreve práticas de construção. As práticas técnicas adotadas são escolha da equipe e podem ser incorporadas às políticas de cada etapa do quadro. |
-| **Flexibilidade de requisitos** | Flexível dentro das iterações, embora mudanças estruturais após a Elaboração tenham custo maior. | Flexibilidade máxima: a prioridade da fila pode ser alterada a qualquer momento, sem esperar o encerramento de um ciclo. |
-| **Colaboração com o cliente** | Envolvimento contínuo, com pontos formais de validação nos marcos de cada fase. | Não prescreve eventos de validação; a cadência de interação com o cliente é definida livremente pela equipe, conforme a natureza do fluxo. |
-| **Qualidade técnica** | Assegurada pela definição arquitetural prévia e pelas revisões a cada marco de fase. | Assegurada pelos critérios de passagem entre as etapas do quadro e pela redução de WIP, que diminui troca de contexto e retrabalho. |
-| **Controle de qualidade** | Exercido por verificações previstas no próprio processo: revisão de artefatos, avaliação de iteração e decisão de continuidade nos marcos de fase. | Exercido pelas políticas explícitas de cada coluna e pelo acompanhamento das métricas de fluxo, que expõem gargalos e itens bloqueados assim que surgem. |
-| **Documentação** | Documentação formal por fase, com ênfase em requisitos e arquitetura. | Documentação enxuta, centrada na política explícita de cada etapa e nas métricas de fluxo (lead time, throughput, diagrama de fluxo cumulativo). |
-| **Escalabilidade** | Escala por meio da estrutura de fases e da definição formal de papéis, o que facilita coordenar equipes maiores e distribuídas. | Escala por meio do encadeamento de quadros e da gestão de filas entre times, sendo particularmente eficaz quando há dependências entre equipes que operam em fluxo contínuo. |
-| **Suporte à equipe** | Papéis e responsabilidades definidos, com controle de progresso mais formal. | Não define papéis nem altera a estrutura existente — parte do princípio de melhoria evolutiva sobre o processo já praticado pela equipe. |
-| **Adaptação ao projeto GameDuo** | Adequado a um produto novo cujos maiores riscos são estruturais (custódia de créditos, meios de pagamento, integração com APIs de terceiros) e que precisa de marcos de validação claros dentro de um semestre letivo. | Mais indicado a contextos de fluxo contínuo e demanda recorrente — sustentação, manutenção evolutiva ou operação de um produto já existente — situação distinta da construção inicial do GameDuo. |
+| **Abordagem Geral** | Iterativo e incremental, com fases, papéis e artefatos definidos, mantendo agilidade moderada. | Iterativo, com forte foco em prototipação rápida e ciclos curtos de validação com o usuário. |
+| **Foco Principal** | Equilibrar requisitos, arquitetura e entregas incrementais, reduzindo risco a cada iteração. | Acelerar a entrega de versões funcionais para validação contínua. |
+| **Estrutura do Processo** | Quatro fases (Iniciação, Elaboração, Construção e Transição), cada uma com iterações internas e encerrada por um marco de decisão. | Quatro fases (planejamento de requisitos, design do usuário, construção e cutover), com o workshop de design do usuário no centro do processo. |
+| **Foco em Arquitetura** | Trata a arquitetura e os riscos técnicos de forma explícita já na Elaboração, antes que a Construção avance. | Prioriza a velocidade e pode postergar decisões arquiteturais, com risco de concentrar a atenção no que é visível na interface. |
+| **Tratamento dos Requisitos** | Casos de uso leves ou histórias de usuário, detalhados progressivamente, começando pelos de maior risco ou prioridade. | Requisitos de alto nível no início, detalhados durante a prototipação. Os protótipos servem ao mesmo tempo como especificação e como validação. |
+| **Práticas de Desenvolvimento** | Não define práticas de construção. Práticas como testes automatizados e integração contínua podem ser incorporadas, mas precisam ser adotadas pela equipe de forma explícita. | Também não define práticas de construção. Depende de ferramentas de prototipação e de frameworks de desenvolvimento rápido para sustentar o ritmo. |
+| **Documentação** | Enxuta, limitada a um conjunto mínimo de artefatos como visão, lista de requisitos e casos de uso simplificados, produzidos quando agregam valor ao projeto. | Mínima, concentrada em telas, fluxos de dados e modelo do banco de dados. |
+| **Colaboração com o Cliente** | Pontos de validação definidos ao final de cada iteração e nos marcos de fase. | Depende de participação frequente e contínua do cliente nos workshops de prototipação. |
+| **Flexibilidade de Requisitos** | Os requisitos evoluem a cada iteração conforme risco e valor. Mudanças estruturais após a Elaboração têm custo maior. | Alta flexibilidade, com requisitos que emergem do feedback sobre os protótipos. |
+| **Qualidade Técnica** | Não é garantida pelo processo. As fases e os marcos organizam as decisões, mas a qualidade depende das práticas, dos critérios e dos testes que a equipe adotar. | Também não é garantida pelo processo. O feedback rápido ajuda a detectar falhas de usabilidade, mas os requisitos não funcionais precisam de atenção deliberada. |
+| **Controle de Qualidade** | Exercido por revisão de artefatos, demonstrações e decisão de continuidade nos marcos de fase. | Exercido pela avaliação dos protótipos a cada ciclo, dependendo da frequência com que o cliente valida. |
+| **Perfil de Equipe** | Equipes pequenas e co-localizadas, tipicamente de três a dez pessoas. Oferece pouca orientação a equipes sem experiência prévia. | Equipes pequenas apoiadas por ferramentas de prototipação, com usuários disponíveis durante todo o projeto. |
+| **Adequação ao Contexto do GameDuo** | Compatível com uma equipe de cinco integrantes, um cliente disponível a cada quinze dias e marcos que coincidem com as Unidades da disciplina. | Perde força, pois depende de cliente altamente disponível e prioriza a entrega das telas, que é onde o projeto concentra menos risco. |
 
 ## 4.3 Justificativa
 
-A escolha do OpenUP não decorre de qualquer limitação do Kanban como método, mas do ajuste entre cada processo e as condições concretas em que o GameDuo será desenvolvido.
+A escolha do OpenUP não decorre de uma deficiência do RAD, mas do ajuste entre o que cada processo se propõe a resolver e as condições em que o GameDuo será desenvolvido.
 
-**Natureza do trabalho a ser realizado.**
-O Kanban foi concebido para gerir fluxo de demanda que chega continuamente e cuja prioridade muda ao longo do tempo. O GameDuo, nesta etapa, é a construção inicial de um produto cujo escopo já está delimitado pelos objetivos específicos (OE1 a OE5). Não há um fluxo de demanda a ser otimizado — há um produto a ser estruturado do zero, com uma sequência de decisões que precisam ser tomadas em ordem.
+**Onde está o risco do produto.**
+O RAD é eficaz quando os requisitos são difíceis de descrever, mas fáceis de visualizar, porque valida o sistema por meio de protótipos funcionais. Sua fraqueza conhecida é a tendência de concentrar atenção no que aparece na tela e deixar os aspectos não funcionais em segundo plano. O risco do GameDuo está justamente nesses aspectos: a custódia dos créditos até a validação bilateral da sessão, o split de pagamento e a verificação de Elo por meio de APIs de terceiros. São decisões estruturais, pouco visíveis na interface e caras de reverter depois de implementadas. O OpenUP trata esse tipo de risco na fase de Elaboração, que existe para reduzi-lo antes que a Construção avance.
 
-**Ausência de histórico para calibrar o método.**
-O valor do Kanban cresce à medida que a equipe acumula dados de fluxo: limites de trabalho em progresso ajustados à capacidade real, lead time medido e gargalos identificados por observação. Uma equipe recém-formada, atuando por um único semestre, não gera histórico suficiente para acionar esses mecanismos. Os principais instrumentos do método permaneceriam subaproveitados.
+**Disponibilidade do cliente.**
+O RAD depende de participação intensa do cliente durante todo o processo, com os workshops de prototipação como núcleo do trabalho. O GameDuo tem um único tomador de decisão, Ciro Vargas, disponível em reuniões quinzenais por Google Meet ou Discord e para dúvidas pontuais por WhatsApp. Essa disponibilidade sustenta as revisões e demonstrações previstas no OpenUP, mas não sustentaria workshops contínuos.
 
-**Risco concentrado em decisões estruturais.**
-A custódia dos créditos até a validação bilateral da sessão e a verificação de Elo por meio de APIs de terceiros são decisões caras de reverter depois de implementadas. O OpenUP endereça esse ponto diretamente: a fase de Elaboração existe para reduzir risco arquitetural por meio de protótipos executáveis antes que a Construção avance. O Kanban não trata dessa dimensão — não por deficiência, mas porque não é o problema que se propõe a resolver.
+**Ferramental disponível.**
+O ritmo do RAD pressupõe ferramentas de prototipação e frameworks de desenvolvimento rápido. A construção do GameDuo foi definida sobre React, PHP e Supabase, sem plataforma de geração acelerada de aplicações. Adotar o RAD exigiria rever essa decisão ou operar o processo sem o apoio que o torna viável.
 
-**Necessidade de marcos alinhados à disciplina.**
-As entregas do projeto seguem as Unidades da disciplina, com datas fixas e artefatos definidos. Os marcos de fase do OpenUP se encaixam nessa estrutura e oferecem pontos naturais de validação com o cliente. O Kanban, por não prescrever cadência, exigiria que a equipe construísse do zero seus próprios pontos de sincronização com o cronograma e com o stakeholder.
+**Marcos alinhados ao calendário da disciplina.**
+As entregas seguem as Unidades da disciplina, com datas fixas e artefatos definidos. Os marcos de fase do OpenUP se encaixam nessa estrutura e oferecem pontos naturais de validação com o cliente, conforme detalhado na seção 6. O RAD concentra a entrega final no cutover, o que daria menos pontos formais de verificação ao longo do semestre.
 
-**Acesso ao cliente e capacidade de validação.**
-Ciro Vargas é pessoa física, idealizador do produto e único tomador de decisão, acessível por WhatsApp, Discord e Google Meet. Sua disponibilidade viabiliza os momentos de validação previstos nos marcos do OpenUP, sem a rigidez de uma cadeia de aprovação corporativa e sem depender de uma cadência que a equipe precisaria definir por conta própria.
+**A qualidade depende das práticas adotadas.**
+Nenhum dos dois processos garante qualidade técnica por si. As fases e os marcos do OpenUP organizam as decisões e criam oportunidades de verificação, mas a qualidade vem das práticas que a equipe aplica de fato. Por isso elas estão declaradas na seção 5 e não são pressupostas aqui: inspeção com checklist, revisão por pares antes da validação com o cliente, critérios de aceitação em BDD, testes de aceitação conduzidos pelo Analista de Qualidade, validação por prototipação nas reuniões quinzenais e as definições de Pronto (DoR) e de Concluído (DoD) como portões de entrada e de saída de cada iteração.
+
+**Limitação assumida.**
+O OpenUP oferece pouca orientação a equipes sem experiência prévia, e esta é a primeira vez que a equipe o utiliza. A mitigação está nos papéis definidos na seção 7.1, nas reuniões internas previstas na seção 7.2 e na revisão por pares aplicada antes de cada validação com o cliente.
 
 ---
-
-

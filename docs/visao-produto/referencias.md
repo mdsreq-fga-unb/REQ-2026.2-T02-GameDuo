@@ -10,6 +10,8 @@ LFCARRY. LFCarry: boosting & carry services (antiga Legionfarm). [s.d.]. Dispon�
 
 MAJOR, Louis; FRANCIS, Gill A.; TSAPALI, Maria. The effectiveness of technology-supported personalised learning in low- and middle-income countries: a meta-analysis. British Journal of Educational Technology, v. 52, n. 5, p. 1935-1964, 2021. Disponível em: <https://doi.org/10.1111/bjet.13116>. Acesso em: 29 ago. 2026.
 
+MARSICANO, George. Requisitos de Software: comunicação é tudo! Versão 1.1, draft. [S.l.: s.n.], 2026. Material didático da disciplina Requisitos de Software, Faculdade do Gama, Universidade de Brasília.
+
 METAFY. Metafy: coaching de e-sports 1:1 com os melhores jogadores do mundo. [s.d.]. Disponível em: <https://metafy.gg/>. Acesso em: 27 ago. 2026.
 
 PISKE, Diener Maick; MENEZES, Crediné Silva de. Jogos educacionais adaptativos: promovendo experiências personalizadas. In: SIMPÓSIO BRASILEIRO DE JOGOS E ENTRETENIMENTO DIGITAL (SBGames), 14., 2015, Teresina. Anais [...]. Teresina: SBGames, 2015. p. 936-944. Disponível em: <https://www.sbgames.org/sbgames2015/anaispdf/cultura-full/147533.pdf>. Acesso em: 29 ago. 2026.
