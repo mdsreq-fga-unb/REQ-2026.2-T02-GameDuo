@@ -12,3 +12,7 @@
     Pagamento: A definir
     League of Legends: Riot API
     Counter Strike 2: leetify, que utiliza steam D64
+
+## Ajuste e validação de requisitos
+
+[Registro de análise dos feedbacks, ajustes e validação](ajuste-validacao-requisitos.md).
