@@ -1,8 +1,8 @@
-# 13 Cronograma
+# 13 Provas de produção
 
 ---
 
-## Visão Geral do Cronograma
+## Visão Geral das provas
 
 Esta seção registra a execução do projeto ao longo das iterações. Cada linha relaciona a iteração, os casos de uso envolvidos, a atividade de Engenharia de Requisitos realizada com a evidência esperada, o status e o período.
 

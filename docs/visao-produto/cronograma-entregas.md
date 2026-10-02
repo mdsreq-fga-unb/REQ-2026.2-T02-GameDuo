@@ -42,9 +42,9 @@
 
 3. **Riscos estruturais tratados antes da Construção.** As provas de conceito da verificação de Elo (Iteração 3) e da custódia com split de pagamento (Iteração 4) foram deliberadamente posicionadas na fase de Elaboração. São as duas decisões mais caras de reverter, e o marco de Arquitetura do Ciclo de Vida só é considerado atingido quando ambas estiverem resolvidas.
 
-4. **Entregas incrementais alinhadas ao MVP.** As Iterações 5, 6 e 7 constroem, nessa ordem, os três passos da proposta de valor central: encontrar um prestador confiável, contratar a sessão e concluir a transação com segurança para as duas partes. Cada incremento é utilizável e validado antes que o seguinte comece.
+4. **Entregas incrementais alinhadas ao MVP.** As Iterações 5, 6, 7, 8 e 9 constroem, nessa ordem, os três passos da proposta de valor central: encontrar um prestador confiável, contratar a sessão e concluir a transação com segurança para as duas partes. Cada incremento é utilizável e validado antes que o seguinte comece.
 
-5. **Folga concentrada no fim do semestre.** A Unidade 4 é a mais curta do calendário. Por isso, o MVP é fechado ao final da Iteração 7, em (arrumando), e a última semana fica reservada para correções, homologação e apresentação — sem funcionalidade nova prevista.
+5. **Folga concentrada no fim do semestre.** A Unidade 4 é a mais curta do calendário. Por isso, o MVP é fechado ao final da Iteração 10, em (arrumando), e a última semana fica reservada para correções, homologação e apresentação — sem funcionalidade nova prevista.
 
 6. **Atualização sucessiva do planejamento.** Ao final de cada iteração, o cronograma é revisado à luz do que foi efetivamente entregue e das mudanças de prioridade acordadas com o cliente. As alterações são registradas no histórico de revisão do documento, no GitPages.
 
