@@ -118,3 +118,5 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 | 21/09/2026 | 0.16 | Inclusão da seção 8 — Requisitos de Software: RFs, RNFs e matriz-síntese de rastreabilidade | Pedro Araujo |
 |22/09/2026 | 0.17 | Reorganiza nomes, descrições e formatação dos requisitos na seção 8 | Equipe GoHorse |
 | 02/10/2026 | 0.18 | Revisão das seções 3 — Intervenção Social, 7 — Interação entre Equipe e Cliente e 11 — Lições Aprendidas: complementa a análise de riscos sociais, define participantes e responsabilidades na validação e detalha ações de melhoria e impactos da redução da equipe. | Pedro Araujo |
+|02/10/2026 | 0.19 | Corrige representações visuais (rich picture, ishikawa e mapa stakeholders) da seção 1 com base nos feedbacks das issue 1 | Rodrigo Átila |
+

@@ -20,7 +20,7 @@ O público-alvo do GameDuo tem duas frentes: de um lado, jogadores que querem ev
 
 ## 1.3 Rich Picture
 
-![Rich Picture do cenário atual do GameDuo](../img/rich-picture.jpg)
+![Rich Picture do cenário atual do GameDuo](../img/rich-picture.png)
 
 O cenário atual é fragmentado:
 
