@@ -6,7 +6,9 @@
 - **Tipo:** Pessoa Física (Idealizador / Empreendedor independente)
 - **Representante:** Ciro Vargas
 - **Forma de contato:** WhatsApp, Discord e Google Meet
-- **Vínculo com o projeto:** Cliente. Principal stakeholder e especialista de domínio. Contato principal como tomador de decisões e responsável pelo alinhamento das necessidades do projeto.
+- **Vínculo com o projeto:** Cliente. Principal stakeholder e especialista de domínio. Contato principal como tomador de decisões e responsável pelo alinhamento das necessidades do projeto. Também atuará como administrador e moderador da plataforma.
+
+Yan Guimarães e Victor Camara participam como representantes dos consumidores e dos prestadores, respectivamente, conforme o mapa de stakeholders e a [Seção 7.2](interacao-equipe.md#72-comunicacao). Suas contribuições têm caráter consultivo; Ciro mantém a decisão final sobre o projeto.
 
 ## 1.2 Introdução ao Negócio e Contexto
 
@@ -56,15 +58,17 @@ Os principais obstáculos a serem superados incluem:
 
 Os principais stakeholders do projeto são: Ciro Vargas, como idealizador, cliente e principal responsável por validar as regras de negócio e as entregas; os consumidores, representados por jogadores que buscam evolução técnica ou companhia e esperam uma experiência de contratação segura e livre de toxicidade; os prestadores de serviço, que são os jogadores experientes (High Elo) interessados em rentabilizar seu tempo com garantia de recebimento; e a equipe de desenvolvimento, responsável por implementar a solução e viabilizar tecnicamente a segurança, as integrações e a usabilidade da plataforma.
 
+Yan Guimarães, jogador de League of Legends, representará os consumidores. Victor Camara, que já alcançou o nível Global no Counter-Strike, representará os prestadores. Ambos contribuirão com necessidades e validação das jornadas de seus perfis, com influência consultiva menor que a de Ciro, que terá a palavra final e também atuará como administrador e moderador.
+
 A seguir, é apresentado um quadro resumo dos stakeholders.
 
 ![Mapa de Stakeholders do Projeto](../img/mapa-stakeholders.jpg)
 
 | Stakeholder | Relação com a solução | Interesse principal | Influência |
 |:---|:---|:---|:---|
-| **Ciro Vargas** | Idealizador e Cliente | Validar o modelo de negócio, as prioridades, a segurança das transações e as entregas do MVP. | Alta |
-| **Consumidores** (Jogadores comuns) | Usuários finais (Demanda) | Contratar serviços de coaching ou duo de forma segura, sem risco de fraudes ou assédio. | Média |
-| **Prestadores** (Jogadores High Elo) | Usuários finais (Oferta) | Rentabilizar seu conhecimento técnico de forma estruturada e com garantia do repasse financeiro. | Média |
+| **Ciro Vargas** | Idealizador, cliente principal, administrador e moderador | Validar regras de negócio, prioridades, segurança, fluxos administrativos e de moderação e entregas do MVP; decidir sobre escopo e aceite formal. | Alta — decisão final |
+| **Consumidores**, representados por **Yan Guimarães** | Usuários finais (Demanda) | Contratar serviços de coaching ou duo de forma segura, sem risco de fraudes ou assédio. | Média — consultiva, subordinada à decisão final de Ciro |
+| **Prestadores**, representados por **Victor Camara** | Usuários finais (Oferta) | Rentabilizar seu conhecimento técnico de forma estruturada e com garantia do repasse financeiro. | Média — consultiva, subordinada à decisão final de Ciro |
 | **Equipe de desenvolvimento** | Responsável pela construção do produto | Entregar uma plataforma funcional, segura e viável dentro do prazo acadêmico estabelecido. | Alta |
 
 ## 1.7 Segmentação de Clientes

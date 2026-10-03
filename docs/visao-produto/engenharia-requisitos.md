@@ -9,6 +9,7 @@ Duas características do projeto orientaram essa definição. A primeira é a na
 ### Elicitação e Descoberta
 
 - **Entrevistas com o cliente:** entrevistas conduzidas com Ciro Vargas por Google Meet e Discord, nas reuniões quinzenais, para levantar as regras de negócio da custódia de créditos, os critérios de validação bilateral da sessão, as políticas de repasse e a fronteira entre coaching, duo e boosting. Como o cliente é o idealizador, o único tomador de decisão e arquiteto de software, as entrevistas cobrem tanto a necessidade de negócio quanto as restrições técnicas.
+- **Entrevistas com representantes dos usuários:** levantamento com Yan Guimarães, consumidor que joga LoL, e Victor Camara, prestador que já alcançou o nível Global no CS, antes da implementação das jornadas correspondentes. Suas contribuições serão registradas pelo Product Owner e submetidas a Ciro quando envolverem decisões de prioridade, regras de negócio ou escopo. Ciro também contribuirá como futuro administrador e moderador.
 - **Brainstorming:** sessões realizadas nas reuniões internas da equipe (segundas e quartas, 20h30) para gerar alternativas de solução para problemas ainda em aberto, como o mecanismo de comprovação de que a sessão contratada foi efetivamente prestada e o formato da avaliação cruzada entre consumidor e prestador.
 - **Análise de domínio de negócio:** estudo do ecossistema de e-sports e de jogos competitivos (League of Legends, Elden Ring) para compreender conceitos como elo, ranqueada, high elo, duo e coaching, garantindo que os requisitos sejam declarados com a terminologia usada pelos dois perfis de usuário.
 - **Análise documental:** leitura da documentação pública das APIs de jogos utilizadas para verificação de credenciais, dos termos de serviço das desenvolvedoras (que delimitam o que a plataforma pode oferecer) e da documentação do gateway de pagamento com split, para identificar restrições que se tornam requisitos.
@@ -33,14 +34,14 @@ Duas características do projeto orientaram essa definição. A primeira é a na
 
 - **Rich Picture:** representação do cenário atual, já elaborada na seção 1.3, mantida e atualizada conforme o entendimento do domínio evolui.
 - **Diagrama de Ishikawa:** representação das causas do problema central, apresentada na seção 1.4, usada como âncora para justificar a existência de cada requisito.
-- **Protótipos de baixa e de alta fidelidade:** wireframes para validar a estrutura das telas e protótipos navegáveis no Figma para validar a jornada completa com o cliente antes da implementação, prática coerente com a redução de risco prevista na fase de Elaboração do OpenUP.
+- **Protótipos de baixa e de alta fidelidade:** wireframes para validar a estrutura das telas e protótipos navegáveis no Figma para validar, antes da implementação, as jornadas de consumo com Yan, de prestação com Victor e de administração e moderação com Ciro, prática coerente com a redução de risco prevista na fase de Elaboração do OpenUP.
 - **Matriz de rastreabilidade:** tabela que relaciona objetivos específicos, características de produto, valor de negócio, requisitos funcionais e requisitos não funcionais, permitindo verificar se toda característica está coberta e se todo requisito tem origem justificada.
 
 ### Verificação e Validação de Requisitos
 
 - **Inspeção com checklist:** revisão de cada requisito quanto a completude, ausência de ambiguidade, consistência com os demais e testabilidade, conduzida pelo Analista de Requisitos antes de o item ser considerado pronto para desenvolvimento.
 - **Revisão por pares (walkthrough interno):** leitura conjunta dos requisitos pela equipe, com participação das frentes de frontend, backend e banco de dados, para identificar inviabilidades técnicas antes da validação com o cliente.
-- **Validação por prototipação:** apresentação dos protótipos ao cliente nas reuniões quinzenais, de modo que a validação ocorra sobre algo concreto e não apenas sobre texto.
+- **Validação por prototipação:** apresentação dos protótipos a Ciro nas reuniões quinzenais e a Yan e Victor em sessões agendadas para seus respectivos perfis, antes da implementação e quando houver alterações relevantes nos fluxos. As observações serão registradas e rastreadas até seu encaminhamento, mantendo o aceite formal com Ciro.
 - **Revisão dos critérios de aceitação e testes de aceitação:** verificação, pelo Analista de Qualidade, de que o incremento entregue satisfaz os critérios em BDD declarados para cada história.
 - **Definição de Pronto (DoR) e Definição de Concluído (DoD):** aplicadas como portões de entrada e de saída de cada iteração, garantindo que nenhum requisito entre em desenvolvimento sem critérios de aceitação e que nenhum incremento seja apresentado ao cliente sem estar testado.
 
@@ -57,6 +58,8 @@ Duas características do projeto orientaram essa definição. A primeira é a na
 ## 5.2 Engenharia de Requisitos e o OpenUP
 
 O OpenUP organiza o desenvolvimento em quatro fases, cada uma encerrada por um marco de decisão. As atividades da ER se distribuem por todas elas, mudando de ênfase conforme o objetivo da fase.
+
+Como adaptação deliberada dos papéis do OpenUP, conforme a [Seção 4.1](estrategias.md#41-estrategia-priorizada), Pedro atua como Product Owner ao longo dessas fases: consolida as propostas da equipe e o feedback de Ciro, Yan e Victor, organiza e prioriza o backlog segundo o valor de negócio acordado e verifica preliminarmente as entregas com o Analista de Qualidade. O Analista de Requisitos conduz a elicitação e mantém a rastreabilidade, enquanto o Gerente de Projeto coordena a comunicação e o cronograma. Yan e Victor validam a adequação às necessidades de seus perfis; Ciro também avalia os fluxos administrativos e de moderação e mantém a decisão final sobre prioridades, regras de negócio, escopo e aceite formal. Divergências e decisões serão registradas conforme a [Seção 7.3](interacao-equipe.md#73-processos-de-validacao).
 
 **Iniciação.** O foco é entender o problema, delimitar o escopo e alcançar consenso sobre a visão do produto. A ER concentra-se em elicitação ampla e em representação do cenário. O marco de fase é o acordo sobre objetivos e escopo com o cliente.
 
@@ -80,12 +83,12 @@ A tabela a seguir apresenta o mapeamento das atividades da ER, suas práticas e 
 | | Análise e Consenso | Priorização e definição do MVP | Priorização MoSCoW, matriz valor de negócio × esforço, negociação com o cliente | Backlog priorizado e conjunto de funcionalidades do MVP acordado |
 | | Declaração | Especificação dos requisitos | Declaração padronizada de RF, classificação de RNF pelo modelo URPS+, historias de usuario, critérios de aceitação em BDD | Listas de RF e RNF declaradas e histórias de usuário com critérios de aceitação |
 | | Representação | Modelagem e prototipação | Diagrama de casos de uso (UML), diagrama de atividades do fluxo de contratação, wireframes e protótipo navegável | Fluxo de contratação e telas principais representados e compreendidos pela equipe e pelo cliente |
-| | Verificação e Validação | Inspeção e validação da linha-base | Inspeção com checklist, revisão por pares, validação por prototipação com o cliente | Requisitos verificados quanto a ambiguidade e testabilidade, e linha-base aprovada no marco da fase |
+| | Verificação e Validação | Inspeção e validação da linha-base | Inspeção com checklist, revisão por pares, validação por prototipação com Ciro, Yan e Victor | Requisitos verificados quanto a ambiguidade e testabilidade, e linha-base aprovada no marco da fase |
 | | Organização e Atualização | Estabelecimento da rastreabilidade | Matriz de rastreabilidade (OE → CP → VN → RF → RNF), Definition of Ready (DoR) | Backlog rastreável e itens prontos para entrar em desenvolvimento |
 | **Construção** | Elicitação e Descoberta | Refinamento por iteração | Entrevistas pontuais por WhatsApp, coleta de dúvidas sobre regras de negócio | Lacunas e ambiguidades resolvidas antes da implementação do incremento |
 | | Declaração | Detalhamento dos itens da iteração | Critérios de aceitação em BDD, aplicação da DoR | Histórias da iteração prontas, com critérios claros e objetivos definidos |
 | | Representação | Prototipação incremental | Wireframes e telas de alta fidelidade das funcionalidades da iteração | Interfaces definidas antes da codificação, reduzindo retrabalho de frontend |
-| | Verificação e Validação | Validação do incremento com o cliente | Revisão dos critérios de aceitação, testes de aceitação, aplicação da DoD, demonstração quinzenal | Incremento verificado pela equipe e validado pelo cliente |
+| | Verificação e Validação | Validação do incremento com o cliente | Revisão dos critérios de aceitação, testes de aceitação, aplicação da DoD, demonstração quinzenal a Ciro e avaliação com Yan e Victor nas jornadas correspondentes | Incremento verificado pela equipe e validado pelo cliente |
 | | Análise e Consenso | Replanejamento de escopo | Renegociação de prioridades, reavaliação da lista de riscos | Prioridades ajustadas conforme o feedback e o andamento real do projeto |
 | | Organização e Atualização | Manutenção do backlog e da rastreabilidade | Refinamento contínuo (DEEP), atualização da matriz de rastreabilidade e do histórico de revisão | Backlog atualizado, priorizado e coerente com o produto construído |
 | **Transição** | Verificação e Validação | Homologação do produto | Testes de aceitação com o cliente e uso assistido com usuários dos dois perfis | Aceite formal do produto e confirmação de que os requisitos foram atendidos |

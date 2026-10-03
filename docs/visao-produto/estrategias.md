@@ -13,6 +13,9 @@ O ciclo iterativo e incremental permitirá construir a plataforma gradualmente, 
 **Processo de Engenharia de Software: OpenUP.**
 Processo de desenvolvimento adotado para a construção do produto, por organizar o trabalho em fases com marcos de decisão claros e por tratar a redução de risco arquitetural como atividade explícita das etapas iniciais.
 
+**Adaptação dos papéis do OpenUP.**
+O GameDuo incorpora deliberadamente o papel de Product Owner, exercido por Pedro, para centralizar a organização e a priorização do backlog e a verificação preliminar das entregas, evitando dispersar essas responsabilidades entre o Gerente de Projeto e o Analista de Requisitos. A equipe propõe soluções; o Product Owner consolida as contribuições de Ciro, Yan e Victor e prioriza o trabalho conforme o valor de negócio acordado; o Product Owner e o Analista de Qualidade verificam as entregas; e Ciro mantém a decisão final sobre prioridades, escopo e aceite formal. Yan e Victor contribuem como representantes dos consumidores e prestadores, enquanto Ciro também valida as jornadas de administração e moderação. A aplicação dessa adaptação está descrita nas [Seções 5.2](engenharia-requisitos.md#52-engenharia-de-requisitos-e-o-openup) e [7](interacao-equipe.md).
+
 ## 4.2 Quadro Comparativo
 
 O quadro a seguir compara o OpenUP com o Rapid Application Development (RAD), dois processos de desenvolvimento de software iterativos e adaptativos que poderiam ser adotados na construção do GameDuo.
