@@ -14,8 +14,10 @@ Entre os **impactos pretendidos**, destacam-se:
 Ao mesmo tempo, a solução pode gerar **efeitos emergentes**, não totalmente previstos, que precisam ser observados, como:
 
 - precarização ou informalização do trabalho, pressão para redução de preços e dependência dos prestadores em relação às taxas e às regras da plataforma;
-- criação de identidades e credenciais falsas, bem como avaliações retaliatórias capazes de distorcer a reputação dos usuários;
+- assédio, discriminação por gênero, voz, idade, região ou desempenho e exposição de menores a interações inadequadas;
+- fraudes, identidades e credenciais falsas e avaliações retaliatórias que prejudiquem a confiança e a reputação dos usuários;
 - incentivo indireto ao *boosting* e conflitos sobre a qualidade subjetiva do coaching, já que evolução e aprendizado não são resultados imediatamente mensuráveis;
-- retenção indevida de pagamentos quando houver falha na validação bilateral da sessão ou demora na resolução de uma disputa;
+- retenção indevida de pagamentos e dificuldades para apurar disputas e definir responsabilidades por interações fora dos canais da plataforma;
+- dependência de plataformas e APIs externas, cujas falhas ou mudanças de regras podem comprometer a verificação de credenciais e a continuidade dos serviços.
 
-Assim, a intervenção social do GameDuo não se resume a aproximar dois perfis de jogadores. Ela poderá ampliar acesso, renda e confiança, mas também reorganizar relações de trabalho e reproduzir riscos presentes no ecossistema gamer. Por isso, os requisitos deverão considerar transparência nas taxas e nos pagamentos, verificação de identidade, contestação de avaliações e disputas e prevenção ao *boosting*.
+Assim, a intervenção social do GameDuo não se resume a aproximar dois perfis de jogadores. Ela poderá ampliar acesso, renda e confiança, mas também reorganizar relações de trabalho e reproduzir riscos presentes no ecossistema gamer. Por isso, os requisitos deverão considerar transparência nas taxas e nos pagamentos, verificação de identidade, contestação de avaliações, prevenção ao *boosting*, combate ao assédio e à discriminação, proteção de menores, tratamento de falhas externas e regras para disputas envolvendo interações dentro e fora da plataforma.
