@@ -34,6 +34,9 @@ theme:
     - content.code.copy
     - content.tooltips
 
+hooks:
+  - hooks/dialog_block.py
+
 plugins:
   - search:
       lang: pt
@@ -59,9 +62,11 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/modais.css
 
 extra_javascript:
   - javascripts/sidebar-toggle.js
+  - javascripts/modais.js
 
 nav:  
   - Início: index.md

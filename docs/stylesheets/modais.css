@@ -1,0 +1,79 @@
+/* ---------------------------------------------------------------------
+   Modais das iterações (cronograma)
+   Cores vêm das variáveis do Material: acompanham modo claro e escuro.
+   --------------------------------------------------------------------- */
+
+/* Gatilho na tabela: mesma cor do texto das outras células (o link padrão
+   usa --md-primary-fg-color, que no modo escuro some no fundo) */
+.md-typeset [data-modal] {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.md-typeset [data-modal]:hover,
+.md-typeset [data-modal]:focus-visible {
+  color: var(--md-accent-fg-color);
+}
+
+dialog.modal-iteracao {
+  position: fixed;
+  width: min(52rem, calc(100% - 2rem));
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--gd-radius, 12px);
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
+}
+
+dialog.modal-iteracao::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Títulos como parágrafos (não <h*>) para não entrarem no sumário da página */
+dialog.modal-iteracao .modal-titulo {
+  margin-top: 0;
+  padding-right: 2.5rem;
+  font-size: 1.25em;
+}
+
+dialog.modal-iteracao .modal-secao {
+  margin: 1.5em 0 0.5em;
+  font-size: 1.05em;
+}
+
+dialog.modal-iteracao .modal-fechar {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: -0.75rem -1.25rem 0 0;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+dialog.modal-iteracao .modal-fechar:hover,
+dialog.modal-iteracao .modal-fechar:focus-visible {
+  background-color: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color);
+}
+
+@media screen and (max-width: 30em) {
+  dialog.modal-iteracao {
+    padding: 1.25rem 1rem;
+  }
+
+  dialog.modal-iteracao .modal-fechar {
+    margin: -0.5rem -0.25rem 0 0;
+  }
+}
