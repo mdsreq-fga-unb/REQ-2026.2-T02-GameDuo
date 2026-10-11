@@ -119,4 +119,5 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 |22/09/2026 | 0.17 | Reorganiza nomes, descrições e formatação dos requisitos na seção 8 | Equipe GoHorse |
 | 02/10/2026 | 0.18 | Revisão das seções 3 — Intervenção Social, 7 — Interação entre Equipe e Cliente e 11 — Lições Aprendidas: complementa a análise de riscos sociais, define participantes e responsabilidades na validação e detalha ações de melhoria e impactos da redução da equipe. | Pedro Araujo |
 |02/10/2026 | 0.19 | Corrige representações visuais (rich picture, ishikawa e mapa stakeholders) da seção 1 com base nos feedbacks das issue 1 | Rodrigo Átila |
+| 11/10/2026 | 0.20 | Criação da seção 14 — Evidências, organizada por iteração, com resumos das reuniões, priorização MoSCoW, transcrição dos RFs e RNFs do MVP e incorporação de vídeos, Figmas e imagens; inclusão no menu; organização do feedback de pagamentos na iteração 4 com botão para o PDF; atualização dos Figmas das reuniões 2 e 5 e inclusão dos dois vídeos da reunião 4; remoção da seção 13 — Provas de produção e validação do build do MkDocs. | Guilherme Brandão e Pedro Araújo |
 
