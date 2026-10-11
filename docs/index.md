@@ -117,3 +117,4 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 | 14/09/2026 | 0.15 | Correções da Issue 4 — refaz o quadro comparativo e a justificativa da seção 4 (OpenUP × RAD) | Rodrigo Átila |
 | 21/09/2026 | 0.16 | Inclusão da seção 8 — Requisitos de Software: RFs, RNFs e matriz-síntese de rastreabilidade | Pedro Araujo |
 |22/09/2026 | 0.17 | Reorganiza nomes, descrições e formatação dos requisitos na seção 8 | Equipe GoHorse |
+| 11/10/2026 | 0.18 | Inclusão da seção 13 — Regras de Negócio: RN01 a RN42 do MVP e rastreabilidade com os requisitos | Pedro Araujo |
