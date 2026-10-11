@@ -32,6 +32,10 @@ document$.subscribe(function () {
       var dialog = document.getElementById(gatilho.getAttribute("data-modal"));
       if (dialog && typeof dialog.showModal === "function") {
         event.preventDefault();
+        var pdf = dialog.querySelector(".modal-pdf-visualizador");
+        if (pdf && !pdf.getAttribute("src")) {
+          pdf.src = gatilho.href;
+        }
         dialog.showModal();
       }
     });
