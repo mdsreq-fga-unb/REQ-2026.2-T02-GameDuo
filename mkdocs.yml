@@ -34,6 +34,9 @@ theme:
     - content.code.copy
     - content.tooltips
 
+hooks:
+  - hooks/dialog_block.py
+
 plugins:
   - search:
       lang: pt
@@ -59,9 +62,11 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/modais.css
 
 extra_javascript:
   - javascripts/sidebar-toggle.js
+  - javascripts/modais.js
 
 nav:  
   - Início: index.md
@@ -74,9 +79,11 @@ nav:
       - "6. Cronograma e Entregas": visao-produto/cronograma-entregas.md
       - "7. Interação entre Equipe e Cliente": visao-produto/interacao-equipe.md
       - "8. Requisitos de Software": visao-produto/requisitos-software.md
+      - "9. DoR e DoD": visao-produto/dordod.md
       - "11. Lições Aprendidas": visao-produto/licoes-aprendidas.md
       - "12. Referências Bibliográficas": visao-produto/referencias.md
       - "13. Regras de Negócio": visao-produto/regras-negocio.md
+      - "14. Evidências": visao-produto/evidencias.md
   - Entregas:
       - "Unidade 1": entregas/unidade-1.md
       - "Unidade 2": entregas/unidade-2.md

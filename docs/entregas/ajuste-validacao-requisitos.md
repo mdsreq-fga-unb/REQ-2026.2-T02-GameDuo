@@ -112,7 +112,7 @@ Principais alterações:
 | Backup | **Não aceito** | Frequência e guarda das cópias de segurança dependem da hospedagem, que ainda não foi escolhida. |
 | Acessibilidade | **Não aceito** | A equipe não priorizou acessibilidade nesta versão, que tem foco em contratação, pagamento e moderação. Pode entrar em uma versão futura. |
 | Compatibilidade | **Não aceito** | Navegadores e versões serão definidos no plano de testes. |
-| Responsividade | **Não aceito** | A equipe não priorizou a adaptação para outros tamanhos de tela nesta versão, que tem foco em contratação, pagamento e moderação. |
+| Responsividade | **Aceito** | Vimos que realmente é uma parte fundamental para a experiência do usuário e adicionamos como RNF |
 | Proteção de dados | **Parcialmente aceito** | Criamos o RNF14, que protege as senhas e exige conexão criptografada. Não exigimos criptografia de todos os dados armazenados. |
 | Gestão de sessão | **Não aceito** | Expiração e sessões simultâneas fazem parte das regras de autenticação, ainda a definir com o cliente. |
 | Proteção contra abuso | **Não aceito** | O limite de tentativas faz parte das regras de autenticação, ainda a definir com o cliente. |

@@ -25,12 +25,12 @@ A equipe responsável pelo desenvolvimento do GameDuo é composta por cinco inte
 !!! note "Sobre a autoridade de decisão entre cliente e Product Owner"
     Ciro Vargas, como cliente e idealizador do produto, é o único tomador de decisão formal do projeto: é ele quem aceita ou recusa uma entrega e quem aprova mudanças de escopo. O Product Owner não substitui essa autoridade — sua função é interna à equipe, de organização e preparo do trabalho a ser submetido ao cliente. Assim, a cadeia de responsabilidade é:
 
-    - **Propõe** os itens de backlog e as alternativas de solução: a equipe, com o Product Owner consolidando as propostas a partir da elicitação junto ao cliente;
-    - **Prioriza** o backlog: o Product Owner, com base no valor de negócio definido em conjunto com o cliente nas reuniões quinzenais;
+    - **Propõe** os itens de backlog e as alternativas de solução: a equipe, com o Product Owner consolidando as propostas a partir da elicitação junto a Ciro, Yan e Victor;
+    - **Prioriza** o backlog: o Product Owner, com base no valor de negócio definido em conjunto com o cliente nas reuniões quinzenais, submetendo divergências de prioridade à decisão final de Ciro;
     - **Valida tecnicamente** as entregas, verificando se atendem aos critérios de aceitação e à Definition of Done: o Product Owner e o Analista de Qualidade, antes de a entrega ser apresentada ao cliente;
     - **Aceita formalmente** a entrega: Ciro Vargas, único tomador de decisão, na reunião quinzenal de validação (seção 7.3).
 
-    A introdução do papel de Product Owner é uma adaptação deliberada do OpenUP, cujo conjunto de papéis padrão (Analista, Arquiteto, Desenvolvedor, Testador, Gerente de Projeto, entre outros) não prevê essa função. A equipe optou por incorporá-la para organizar internamente a priorização do backlog e a verificação preliminar das entregas, funções que, de outra forma, recairiam de modo difuso sobre o Gerente de Projeto e o Analista de Requisitos. Essa adaptação está registrada nesta seção e reflete-se na condução do processo descrito na seção 5.
+    A introdução do papel de Product Owner é uma adaptação deliberada do OpenUP, cujo conjunto de papéis padrão (Analista, Arquiteto, Desenvolvedor, Testador, Gerente de Projeto, entre outros) não prevê essa função. A equipe optou por incorporá-la para organizar internamente a priorização do backlog e a verificação preliminar das entregas, funções que, de outra forma, recairiam de modo difuso sobre o Gerente de Projeto e o Analista de Requisitos. Essa adaptação está registrada na [estratégia adotada (Seção 4.1)](estrategias.md#41-estrategia-priorizada) e na [condução do processo (Seção 5.2)](engenharia-requisitos.md#52-engenharia-de-requisitos-e-o-openup).
 
 
 
@@ -59,17 +59,29 @@ Frequência de comunicação com o cliente:
 
 ### Interação com consumidores e prestadores
 
-Ciro Vargas é o cliente e o canal formal de aceite do projeto, mas não é o usuário final: consumidores (quem contrata sessões) e prestadores (quem oferece coaching, duo e boosting) são os dois lados do marketplace e é para eles que o produto é desenhado. Por isso, além da comunicação regular com o cliente, a equipe prevê uma estratégia própria de interação com esses grupos:
+Ciro Vargas permanece como cliente principal, idealizador e responsável pela decisão final sobre prioridades, regras de negócio, mudanças de escopo e aceite das entregas. Ele também atuará como **administrador e moderador** do GameDuo, contribuindo para a validação dos fluxos de gestão da plataforma, análise de denúncias e tratamento de disputas.
 
-- **Recrutamento de representantes:** identificação, com apoio do cliente, de jogadores que se encaixem nos perfis de consumidor e de prestador, para participarem como usuários de referência ao longo do projeto;
+Yan Guimarães e Victor Camara passam a participar como representantes dos dois lados do marketplace, respectivamente consumidor (quem contrata sessões) e prestador (quem oferece coaching e duo):
 
-- **Validação antecipada com protótipos:** apresentação de wireframes e do protótipo navegável (seção 5) a representantes de cada perfil, antes da implementação, para checar se o fluxo de contratação, a verificação de credenciais e a avaliação cruzada fazem sentido na prática;
+| Participante | Papel na validação | Experiência e contribuição |
+| --- | --- | --- |
+| **Yan Guimarães** | Representante dos consumidores | Joga League of Legends (LoL). Contribuirá com necessidades e feedback sobre busca, escolha de prestadores, contratação e avaliação das sessões. |
+| **Victor Camara** | Representante dos prestadores | Já alcançou o nível Global no Counter-Strike (CS). Contribuirá com necessidades e feedback sobre oferta de serviços, apresentação de credenciais, realização das sessões e recebimento dos pagamentos. |
+| **Ciro Vargas** | Cliente principal, administrador e moderador | Validará as regras de negócio e os fluxos administrativos e de moderação, mantendo a autoridade final sobre o projeto. |
+
+A participação de Yan e Victor é consultiva, com influência menor que a de Ciro: suas observações orientarão os requisitos e a avaliação de usabilidade, mas o aceite formal e a resolução de divergências caberão a Ciro. O Product Owner registrará as contribuições e as decisões, incluindo a justificativa quando uma sugestão não for incorporada.
+
+A interação será organizada da seguinte forma:
+
+- **Participantes e agendamento:** Yan e Victor são os representantes de referência. Ricardo, como Gerente de Projeto, combinará com eles as sessões de levantamento e validação por Meet ou Discord, antes da implementação dos fluxos de cada perfil e ao final das iterações que os afetarem, conforme disponibilidade;
+
+- **Validação antecipada com protótipos:** apresentação de wireframes e do protótipo navegável (seção 5) a Yan e Victor, cada um avaliando seu perfil, antes da implementação, para checar se o fluxo de contratação, a verificação de credenciais e a avaliação cruzada fazem sentido na prática;
 
 - **Testes de aceitação com usuários reais:** inclusão de consumidores e prestadores nas demonstrações por iteração, executando os critérios de aceitação das histórias de usuário que os afetam diretamente;
 
 - **Canal de feedback assíncrono:** formulário ou grupo dedicado (fora do WhatsApp usado com o cliente) para que esses usuários relatem problemas e sugestões entre as reuniões, com o feedback registrado e rastreado junto ao backlog pelo Product Owner.
 
- <!-- Pedro vai mudar aqui -->
+
 
 
 
@@ -87,7 +99,7 @@ Na Elaboração e no refinamento de cada iteração, os requisitos passarão por
 
 ### Validação das jornadas e redução dos riscos técnicos
 
-Na Elaboração e sempre que uma alteração de fluxo exigir nova avaliação, os fluxos serão validados com **wireframes e protótipos navegáveis no Figma**, envolvendo o cliente e representantes dos dois perfis de usuários: consumidores e prestadores de coaching e duo. Os participantes percorrerão tarefas como encontrar um serviço, avaliar o perfil de um prestador, contratar uma sessão e informar sua conclusão ou uma divergência. Serão observadas a compreensão das informações, as dificuldades de navegação e a adequação das regras às necessidades de cada perfil, permitindo ajustes antes da codificação.
+Na Elaboração e sempre que uma alteração de fluxo exigir nova avaliação, os fluxos serão validados com **wireframes e protótipos navegáveis no Figma**, envolvendo Ciro Vargas, Yan Guimarães como consumidor e Victor Camara como prestador de coaching e duo. Ciro avaliará também os fluxos de administração e moderação, incluindo análise de denúncias e tratamento de disputas. Os participantes percorrerão tarefas como encontrar um serviço, avaliar o perfil de um prestador, contratar uma sessão e informar sua conclusão ou uma divergência. Serão observadas a compreensão das informações, as dificuldades de navegação e a adequação das regras às necessidades de cada perfil, permitindo ajustes antes da codificação.
 
 As hipóteses técnicas de maior risco serão avaliadas por **provas de conceito**, especialmente a consulta de Elo por API oficial, quando disponível, e a retenção e o repasse de créditos pelo gateway de pagamento. Os resultados e as limitações encontrados serão registrados e usados para revisar os requisitos e a arquitetura antes da implementação das funcionalidades dependentes.
 
@@ -99,12 +111,12 @@ O Analista de Qualidade verificará os resultados com apoio dos desenvolvedores.
 
 Ao final de cada iteração de Construção, nas reuniões quinzenais previstas na Seção 7.2, a equipe demonstrará o incremento verificado a Ciro Vargas. O cliente avaliará os fluxos com base nos critérios de aceitação definidos antes do desenvolvimento, registrando o resultado da validação e os ajustes necessários. Essas demonstrações permitirão revisar entregas parciais e orientar a próxima iteração.
 
-Consumidores e prestadores também participarão da avaliação dos incrementos relacionados às suas jornadas, por meio de execução de tarefas e coleta de feedback, dando continuidade à validação iniciada com os protótipos. A seleção dos participantes e o agendamento das sessões com usuários serão acordados pela equipe com o cliente, tanto para os protótipos quanto para os incrementos e a homologação.
+Consumidores e prestadores também participarão da avaliação dos incrementos relacionados às suas jornadas, por meio de execução de tarefas e coleta de feedback, dando continuidade à validação iniciada com os protótipos. Yan e Victor serão os participantes de referência de seus respectivos perfis. Ricardo coordenará o agendamento com eles e com Ciro, tanto para os protótipos quanto para os incrementos e a homologação.
 
 ### Homologação do produto
 
-Na Transição, serão realizados testes de aceitação com o cliente e uso assistido com representantes dos dois perfis, avaliando a jornada integrada de oferta, busca, contratação e conclusão de uma sessão, incluindo o tratamento de disputas. Os resultados serão confrontados com os requisitos e critérios de aceitação do escopo acordado. O registro da homologação reunirá as evidências dos testes, o resultado da avaliação do cliente e as pendências identificadas, com os encaminhamentos acordados para correção ou evolução futura.
+Na Transição, serão realizados testes de aceitação com Ciro, incluindo sua atuação como administrador e moderador, e uso assistido com Yan e Victor em seus respectivos perfis, avaliando a jornada integrada de oferta, busca, contratação e conclusão de uma sessão, incluindo o tratamento de disputas. Os resultados serão confrontados com os requisitos e critérios de aceitação do escopo acordado. O registro da homologação reunirá as evidências dos testes, o resultado da avaliação do cliente e as pendências identificadas, com os encaminhamentos acordados para correção ou evolução futura.
 
 ### Registro e acompanhamento do feedback
 
-Em todos os momentos de validação, o **feedback será registrado e rastreado** em atas e itens de trabalho no GitHub, indicando data, participante ou perfil, artefato e versão avaliados, requisito ou história relacionada, observação, encaminhamento, responsável pelo acompanhamento e situação. Os ajustes serão vinculados ao backlog e à matriz de rastreabilidade, com atualização do histórico de revisão. Cada pendência será acompanhada até sua correção e nova validação, ou até o registro de uma decisão justificada sobre seu tratamento.
+Em todos os momentos de validação, o **feedback será registrado e rastreado** em atas e itens de trabalho no GitHub, indicando data, participante ou perfil, artefato e versão avaliados, requisito ou história relacionada, observação, encaminhamento, responsável pelo acompanhamento e situação. Os ajustes serão vinculados ao backlog e à matriz de rastreabilidade, com atualização do histórico de revisão. O Product Owner consolidará esse registro e submeterá a Ciro as divergências entre as necessidades de consumidores, prestadores e administração. A decisão final de Ciro e sua justificativa serão vinculadas ao item correspondente e comunicadas aos participantes afetados. Cada pendência será acompanhada até sua correção e nova validação, ou até o registro de uma decisão justificada sobre seu tratamento.
