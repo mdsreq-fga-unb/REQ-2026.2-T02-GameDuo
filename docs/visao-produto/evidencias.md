@@ -359,7 +359,7 @@ Gravação ainda sem URL informada para incorporação.
 
 **Fluxograma do MVP — Figma**
 
-<iframe src="https://embed.figma.com/board/LH2mEi8MRBysizoEl4KS4D/Untitled?node-id=0-1&amp;embed-host=share" title="Fluxograma do MVP do GameDuo — Reunião 5" width="100%" height="500" style="border: 0;" allowfullscreen loading="lazy"></iframe>
+[Fluxograma no contexto do Backlog](backlog-produto.md#fluxograma-do-mvp)
 
 [Abrir no Figma](https://embed.figma.com/board/LH2mEi8MRBysizoEl4KS4D/Untitled?node-id=0-1&embed-host=share)
 
