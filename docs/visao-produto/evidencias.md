@@ -10,7 +10,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 | --- | --- | --- | --- |
 | [1](#iteracao-1) | Iniciação | 11/08/2026 a 31/08/2026 | Escolha do projeto |
 | [2](#iteracao-2) | Iniciação | 01/09/2026 a 08/09/2026 | [Reunião 1 — Características de Produto](#reuniao-1) |
-| [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2) |
+| [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2); [Validação dos requisitos com o monitor](#validacao-monitor) |
 | [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
 | [5](#iteracao-5) | Elaboração | 07/10/2026 a 13/10/2026 | [Reunião 5 — Validação do MVP](#reuniao-5) |
 | [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Planejada |
@@ -112,6 +112,21 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 [Abrir no Figma](https://embed.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%25C3%25ADtulo?node-id=0-1&p=f&embed-host=share)
 
 [Transcrição da Reunião 2 — Fluxograma (PDF)](../Evidencias/Reuniao%2002%20-%20Evidencias%20-Fluxograma.pdf). Evidências: cadastro e agenda, pp. 1–6; pagamentos e cancelamento, pp. 7–17; moderação e conta única, pp. 18–25; comissões, avaliação e encaminhamentos, pp. 26–34.
+
+### Validação dos requisitos com o monitor {#validacao-monitor}
+
+**Data:** 19/09/2026, às 14h42 (UTC−03:00).  
+**Participantes:** equipe GoHorse e monitor da disciplina.  
+**Objetivo:** revisar os requisitos funcionais e não funcionais com o monitor antes de sua publicação no GitPages.
+
+!!! abstract "Resumo"
+    A equipe apresentou ao monitor os requisitos levantados a partir do fluxograma validado na Reunião 2, para verificar a declaração e a classificação dos requisitos antes da publicação da seção de Requisitos de Software.
+
+#### Vídeo
+
+<iframe src="https://www.youtube.com/embed/p0EIO0XwIdA" title="Validação dos requisitos com o monitor" width="100%" style="aspect-ratio: 16 / 9; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+
+[Abrir no YouTube](https://youtu.be/p0EIO0XwIdA)
 
 ## Iteração 4 — Elaboração {#iteracao-4}
 
