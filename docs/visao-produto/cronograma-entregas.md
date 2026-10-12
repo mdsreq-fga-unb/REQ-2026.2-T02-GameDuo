@@ -1,51 +1,78 @@
 # 6 Cronograma e Entregas
 
+---
+
+Esta seção apresenta o planejamento de todo o projeto, organizado pelas quatro fases do OpenUP e por dez iterações. As iterações já realizadas registram o que foi efetivamente produzido e apontam para a respectiva [evidência](evidencias.md). As iterações futuras representam o planejamento vigente e são revisadas ao final de cada iteração.
+
+**Status:** <span class="gd-status gd-status--done">Executada</span> <span class="gd-status gd-status--doing">Em andamento</span> <span class="gd-status gd-status--next">Planejada</span>
 
 ---
 
-##  Visão geral das fases
+## 6.1 Visão geral das fases
 
-| Fase do OpenUP | Período | Iterações | Marco de encerramento | Unidade da disciplina |
-| -------------- | ------- | --------- | --------------------- | --------------------- |
-| **Iniciação** | 11/08/2026 – 08/09/2026 | 1 e 2 | **Objetivos do Ciclo de Vida** — problema, escopo e visão do produto acordados com o cliente | Unidade 1 |
-| **Elaboração** | 09/09/2026 – 13/10/2026 | 3, 4 e 5| **Arquitetura do Ciclo de Vida** — requisitos estabilizados, riscos estruturais reduzidos por provas de conceito e MVP definido | Unidade 2 |
-| **Construção** | 14/10/2026 – 17/11/2026 |  6, 7 e 8 | **Capacidade Operacional Inicial** — MVP funcional, integrado e testado | Unidades 3 e 4 |
-| **Transição** | 18/11/2026 – 01/12/2026 | 9 e 10 | **Release do Produto** — produto homologado e aceito pelo cliente | Unidade 4 |
----
-
-##  Detalhamento das iterações
-
-| Iteração | Fase | Início | Fim | Objetivo principal | Entregas esperadas | Validação do cliente |
-| -------- | ---- | ------ | --- | ------------------ | ------------------ | -------------------- |
-| **1** | Iniciação | 11/08/2026 | 27/08/2026 | Formação da equipe e definição do domínio do projeto | - Definição dos papéis da equipe GoHorse<br>- Repositório e site do projeto (GitPages) configurados<br>- Prospecção e primeiro contato com o cliente | Alinhamento inicial sobre disponibilidade, forma de contato e interesse no projeto |
-| **2** | Iniciação | 01/09/2026 | 08/09/2026 | Compreensão do problema e construção da visão do produto | - **Entrega da Unidade 1:** documento de Visão do Produto e Projeto (seções 1 a 7)<br>- Rich picture, diagrama de Ishikawa e mapa de stakeholders<br>- Objetivos específicos (OE1–OE5) e características de produto (CP1–CP6)<br>- Estratégia de engenharia de software e plano de ER definidos | Primeira reunião com o cliente: validação do problema central, do modelo de negócio e do escopo pretendido |
-| **3** | Elaboração | 09/09/2026 | 22/09/2026 | Elicitação, análise e declaração em tabela<br>- Prova de conceito da verificação de Elo via API de terceiros | Validação dos requisitos declarados e do que é tecnicamente verificável na integração de credenciais |
-| **4** | Elaboração | 23/10/2026 | 06/10/2026 | Definição do backlog, do MVP e redução do risco de pagamento | - Matriz de rastreabilidade (OE → CP → VN → RF → RNF)<br>- Prova de conceito da custódia e do split de pagamento- Validação de funcionalidades com os clientes finais do projeto, tanto o prestador, o usuário e o Ciro | Homologação do backlog priorizado e do recorte do MVP |
-| **5** | Elaboração | 07/10/2026 | 13/10/2026 | Finalização da unidade 2 e finalizar qualquer pendência | - **Entrega da Unidade 2:** backlog do produto priorizado, MVP definido, DoR e DoD<br> | Homologação do backlog priorizado e do recorte do MVP | 
-| **6** | Construção | 14/10/2026 | 27/10/2026 | Primeiro incremento: identidade e descoberta de prestadores | - Cadastro e perfil de usuário com verificação de credenciais (CP1)<br>- Catálogo e busca de serviços por jogo, nível, preço e tipo (CP2)<br>- Protótipos e diagramas de caso de uso da jornada de contratação | Demonstração do incremento: o consumidor consegue encontrar e avaliar um prestador verificado |
-| **7** | Construção | 28/10/2026 | 10/11/2026 | Segundo incremento: contratação e custódia | - Fluxo de contratação com retenção de créditos em custódia (CP3)<br>- Gestão da sessão e chat integrado entre as partes (CP6)<br>- Verificação e validação dos requisitos implementados- Validação de funcionalidades com os clientes finais do projeto, tanto o prestador, o usuário e o Ciro | Validação do fluxo de contratação de ponta a ponta, incluindo os caminhos de exceção<br>- Avaliação cruzada, reputação e canal de denúncias (CP4)<br> |
-| **8** | Construção | 11/11/2026 | 17/11/2026 | Segundo incremento: contratação e custódia | - **Entrega da Unidade 3**<br>- Fluxo de contratação com retenção de créditos em custódia (CP3)<br>| Validação do fluxo de contratação de ponta a ponta, incluindo os caminhos de exceção |
-| **9** | Construção | 18/11/2026 | 01/12/2026 | Terceiro incremento: validação bilateral, repasse e confiança | - Validação bilateral da sessão e repasse automático ao prestador (CP3)<br>- Painel administrativo de transações, disputas e usuários (CP5)<br>- Backlog e matriz de rastreabilidade atualizados | Validação do ciclo completo da transação e das regras de moderação |
-| **10** | Transição | 02/12/2026 | 10/12/2026 | Homologação, entrega e encerramento | - **Entrega final (Unidade 4):** MVP integrado, corrigido e testado<br>- Testes de aceitação com usuários dos dois perfis (consumidor e prestador)<br>- Documentação consolidada e lições aprendidas<br>- Apresentação final do produto | Homologação e aceite formal do produto pelo cliente |
+| Fase do OpenUP | Período | Iterações | Marco de encerramento | Unidade da disciplina | Status |
+| -------------- | ------- | --------- | --------------------- | --------------------- | ------ |
+| **Iniciação** | 11/08/2026 – 08/09/2026 | 1 e 2 | **Objetivos do Ciclo de Vida** — problema, escopo e visão do produto acordados com o cliente | Unidade 1 | <span class="gd-status gd-status--done">Executada</span> |
+| **Elaboração** | 09/09/2026 – 13/10/2026 | 3, 4 e 5 | **Arquitetura do Ciclo de Vida** — requisitos estabilizados, regras de negócio registradas, MVP definido e riscos de pagamento e de verificação tratados | Unidade 2 | <span class="gd-status gd-status--done">Executada</span> |
+| **Construção** | 14/10/2026 – 01/12/2026 | 6, 7, 8 e 9 | **Capacidade Operacional Inicial** — MVP funcional, integrado e testado | Unidade 3 | <span class="gd-status gd-status--next">Planejada</span> |
+| **Transição** | 02/12/2026 – 10/12/2026 | 10 | **Release do Produto** — produto homologado e aceito pelo cliente | Unidade 4 | <span class="gd-status gd-status--next">Planejada</span> |
 
 ---
 
+## 6.2 Iniciação
 
+| Iteração | Status | Objetivo | Entregas | Validação com o cliente | Evidência |
+| -------- | ------ | -------- | -------- | ----------------------- | --------- |
+| **1**<br>11/08 – 31/08 | <span class="gd-status gd-status--done">Executada</span> | Formação da equipe e escolha do domínio do projeto | - Definição dos papéis da equipe GoHorse<br>- Primeiro contato com o cliente | Alinhamento inicial sobre disponibilidade, forma de contato e interesse no projeto | [Iteração 1](evidencias.md#iteracao-1) |
+| **2**<br>01/09 – 08/09 | <span class="gd-status gd-status--done">Executada</span> | Compreensão do problema e construção da visão do produto | - Repositório e site do projeto (GitPages) estruturados<br>- Rich picture, diagrama de Ishikawa e mapa de stakeholders<br>- Objetivos específicos e características de produto<br>- **Entrega da Unidade 1:** documento de visão do produto e vídeo de apresentação | Reunião 1 com Ciro: características de produto e modelo de pagamento | [Reunião 1](evidencias.md#reuniao-1) |
 
 ---
 
-##  Considerações importantes
+## 6.3 Elaboração
 
-1. **Duração das iterações.** As iterações têm uma ou duas semanas. As de duas semanas abrem cada bloco da disciplina e concentram o trabalho de descoberta e construção, ou são finalizadores de conteúdo para fazer a validação de fim de conteúdo com o cliente; as de uma semana fecham o bloco e coincidem com a semana de entrega da Unidade. As iterações de uma semana podem ser usadas como finalização de iteração de produção de projeto, mas será apenas pra terminar o que deveria ter sido terminado nas iterações anteriores.
+| Iteração | Status | Objetivo | Entregas | Validação com o cliente | Evidência |
+| -------- | ------ | -------- | -------- | ----------------------- | --------- |
+| **3**<br>09/09 – 22/09 | <span class="gd-status gd-status--done">Executada</span> | Elicitação e declaração dos requisitos | - Fluxograma completo do produto<br>- Escolha das APIs de jogos e de pagamento<br>- Requisitos funcionais, não funcionais e matriz de rastreabilidade | Reunião 2 com Ciro: fluxograma completo | [Reunião 2](evidencias.md#reuniao-2) |
+| **4**<br>23/09 – 06/10 | <span class="gd-status gd-status--done">Executada</span> | Revisão dos requisitos, priorização e definição do MVP | - Análise e ajuste dos requisitos a partir da avaliação cruzada<br>- Fluxo de pagamentos<br>- Correções das issues da Unidade 1<br>- Priorização MoSCoW<br>- Matriz 4x4 e proposta de MVP da equipe | Fluxo de pagamentos e Reunião 3 com Ciro: priorização MoSCoW | [Fluxo de pagamentos](evidencias.md#validacao-pagamentos), [Reunião 3](evidencias.md#reuniao-3), [Reunião 4](evidencias.md#reuniao-4) |
+| **5**<br>07/10 – 13/10 | <span class="gd-status gd-status--done">Executada</span> | Validação do MVP e fechamento da Unidade 2 | - DoR e DoD<br>- Regras de negócio<br>- Registro das evidências<br>- **Entrega da Unidade 2** | Reunião 5 com Ciro: validação do MVP | [Reunião 5](evidencias.md#reuniao-5) |
 
-2. **Validação ao final de cada iteração.** Toda iteração de duas semanas encerra com uma reunião de validação com Ciro Vargas, por Google Meet ou Discord. Dúvidas pontuais entre as reuniões seguem por WhatsApp.
+---
 
-3. **Riscos estruturais tratados antes da Construção.** As provas de conceito da verificação de Elo (Iteração 3) e da custódia com split de pagamento (Iteração 4) foram deliberadamente posicionadas na fase de Elaboração. São as duas decisões mais caras de reverter, e o marco de Arquitetura do Ciclo de Vida só é considerado atingido quando ambas estiverem resolvidas.
+## 6.4 Construção
 
-4. **Entregas incrementais alinhadas ao MVP.** As Iterações 5, 6, 7, 8 e 9 constroem, nessa ordem, os três passos da proposta de valor central: encontrar um prestador confiável, contratar a sessão e concluir a transação com segurança para as duas partes. Cada incremento é utilizável e validado antes que o seguinte comece.
+Cada iteração de Construção entrega um incremento utilizável do MVP. A primeira já permite contratar um serviço de ponta a ponta, ainda sem pagamento, e as seguintes acrescentam créditos, conclusão da sessão e repasse.
 
-5. **Folga concentrada no fim do semestre.** A Unidade 4 é a mais curta do calendário. Por isso, o MVP é fechado ao final da Iteração 10, em (arrumando), e a última semana fica reservada para correções, homologação e apresentação — sem funcionalidade nova prevista.
+Os requisitos não funcionais obrigatórios ao MVP valem para todos os incrementos: RNF02, RNF06, RNF07, RNF10 e RNF14. Os demais RNFs do MVP são indicados na iteração em que passam a se aplicar.
 
-6. **Atualização sucessiva do planejamento.** Ao final de cada iteração, o cronograma é revisado à luz do que foi efetivamente entregue e das mudanças de prioridade acordadas com o cliente. As alterações são registradas no histórico de revisão do documento, no GitPages.
+| Iteração | Status | Objetivo | Entregas | Validação com o cliente | Evidência |
+| -------- | ------ | -------- | -------- | ----------------------- | --------- |
+| **6**<br>14/10 – 27/10 | <span class="gd-status gd-status--next">Planejada</span> | Fluxo vertical mínimo de contratação | **Incremento 1:** cadastro, login, perfil de prestador, criação e consulta de oferta, agenda e agendamento<br>RF01, RF02, RF04, RF10, RF11, RF14, RF16<br>RNF09 | Demonstração do incremento a Ciro | — |
+| **7**<br>28/10 – 10/11 | <span class="gd-status gd-status--next">Planejada</span> | Créditos e reserva | **Incremento 2:** compra de combos no sandbox do gateway, carteira, reserva de créditos, cancelamento com devolução, encerramento de oferta, disponibilidade e manutenção dos jogos<br>RF13, RF15, RF18, RF22, RF23, RF25, RF50<br>RNF11, RNF13, RNF15 | Demonstração do incremento a Ciro | — |
+| **8**<br>11/11 – 17/11 | <span class="gd-status gd-status--next">Planejada</span> | Conclusão da sessão e entrega da Unidade 3 | **Incremento 3:** resultado da sessão, liberação dos valores retidos, divisão de receita e recuperação de senha<br>RF03, RF26, RF27, RF31<br>RNF13<br>**Entrega da Unidade 3** | Demonstração do ciclo de contratação completo a Ciro | — |
+| **9**<br>18/11 – 01/12 | <span class="gd-status gd-status--next">Planejada</span> | Repasse, administração e complementos | **Incremento 4:** dados de recebimento, saque, consulta de disputas e de usuários, perfil do prestador e filtros do catálogo<br>RF05, RF07, RF09, RF28, RF38, RF44<br>RNF13, RNF15 | Demonstração do incremento a Ciro, incluindo a área administrativa | — |
 
-7. **Retrospectiva por Unidade.** Ao final de cada Unidade, a equipe realiza uma retrospectiva cujos resultados são registrados na seção de Lições Aprendidas, incluindo as dificuldades enfrentadas e as ações de melhoria adotadas. Ela será realizada durante a semana de realização de documento.
+---
+
+## 6.5 Transição
+
+| Iteração | Status | Objetivo | Entregas | Validação com o cliente | Evidência |
+| -------- | ------ | -------- | -------- | ----------------------- | --------- |
+| **10**<br>02/12 – 10/12 | <span class="gd-status gd-status--next">Planejada</span> | Homologação, entrega e encerramento | - MVP integrado, corrigido e testado<br>- Backlog remanescente priorizado para versões futuras<br>- Documentação consolidada e lições aprendidas<br>- **Entrega final (Unidade 4)** e apresentação do produto | Testes de aceitação e aceite formal do produto por Ciro | — |
+
+---
+
+## 6.6 Considerações importantes
+
+1. **Duração e continuidade das iterações.** As iterações têm uma ou duas semanas e são contíguas, sem intervalos entre elas. As iterações de uma semana coincidem com as semanas de entrega das Unidades e concentram o fechamento, a revisão da documentação e a apresentação.
+
+2. **Recorte inicial de jogos.** O MVP atende a League of Legends e Counter-Strike 2. O nível de jogo é declarado pelo prestador ([RN13](regras-negocio.md#rn13)); a verificação por integração com o jogo (RF06) não faz parte do MVP, o que reduz a complexidade e a dependência de APIs de terceiros na Construção.
+
+3. **Risco de pagamento e alternativa.** A integração de pagamentos usa a conta de sandbox do gateway escolhido, conforme acordado com o cliente na [Reunião 3](evidencias.md#reuniao-3). O gateway é necessário apenas na compra de créditos e no saque: a reserva, a liberação e a divisão dos valores ocorrem sobre os saldos internos da plataforma. Se a integração não estiver disponível a tempo, a Construção prossegue com créditos de teste registrados internamente, preservando o fluxo de contratação e de custódia.
+
+4. **Incrementos verticais.** A Iteração 6 entrega um fluxo completo, ainda que simplificado, do cadastro ao agendamento. As iterações seguintes acrescentam créditos, conclusão da sessão e repasse, de modo que cada incremento é utilizável e validado antes que o seguinte comece.
+
+5. **Participação dos usuários.** Ciro valida o resultado de cada iteração nas reuniões quinzenais. Os representantes dos consumidores e dos prestadores avaliam os incrementos desde a Iteração 6, nas jornadas correspondentes a seus perfis.
+
+6. **Atualização sucessiva do planejamento.** Ao final de cada iteração, o cronograma é revisado conforme o que foi efetivamente entregue e as mudanças de prioridade acordadas com o cliente. A distribuição dos requisitos nas iterações de Construção é preliminar e pode ser ajustada no planejamento de cada iteração.
+
+7. **Retrospectiva por Unidade.** Ao final de cada Unidade, a equipe realiza uma retrospectiva cujos resultados são registrados na seção de Lições Aprendidas, incluindo as dificuldades enfrentadas e as ações de melhoria adotadas.

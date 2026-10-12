@@ -63,7 +63,7 @@ Como adaptação deliberada dos papéis do OpenUP, conforme a [Seção 4.1](estr
 
 **Iniciação.** O foco é entender o problema, delimitar o escopo e alcançar consenso sobre a visão do produto. A ER concentra-se em elicitação ampla e em representação do cenário. O marco de fase é o acordo sobre objetivos e escopo com o cliente.
 
-**Elaboração.** O foco é reduzir risco. A ER detalha e estabiliza a base de requisitos que sustenta as decisões arquiteturais, especialmente as relativas à custódia de créditos e à verificação de Elo, e valida essa base com protótipos e provas de conceito. O marco de fase é a aprovação da arquitetura e da linha-base de requisitos.
+**Elaboração.** O foco é reduzir risco. A ER detalha e estabiliza a base de requisitos que sustenta as decisões arquiteturais, especialmente as relativas à custódia de créditos e à verificação de Elo, e valida essa base com fluxogramas, protótipos e a análise das APIs e do gateway de pagamento. O marco de fase é a aprovação da arquitetura e da linha-base de requisitos.
 
 **Construção.** O foco é construir o produto por incrementos. A ER passa a operar por iteração: refinamento dos itens que entram na iteração, validação do que sai dela e atualização contínua do backlog e da rastreabilidade. O marco de fase é a capacidade operacional inicial do produto.
 
@@ -79,7 +79,7 @@ A tabela a seguir apresenta o mapeamento das atividades da ER, suas práticas e 
 | | Representação | Modelagem do cenário atual | Rich Picture, diagrama de Ishikawa, mapa de stakeholders | Cenário, causas do problema e partes interessadas representados visualmente |
 | | Verificação e Validação | Validação da visão com o cliente | Walkthrough da visão na reunião quinzenal | Visão do produto aprovada por Ciro Vargas, encerrando o marco da fase |
 | | Organização e Atualização | Publicação versionada da documentação | Controle de versão em Git e histórico de revisão no GitPages | Documento de visão publicado e rastreável por versão |
-| **Elaboração** | Elicitação e Descoberta | Detalhamento dos requisitos críticos | Entrevistas focadas, análise documental das APIs e do gateway, prova de conceito | Restrições técnicas identificadas e requisitos de custódia e de verificação de Elo esclarecidos |
+| **Elaboração** | Elicitação e Descoberta | Detalhamento dos requisitos críticos | Entrevistas focadas, análise documental das APIs e do gateway | Restrições técnicas identificadas e requisitos de custódia e de verificação de Elo esclarecidos |
 | | Análise e Consenso | Priorização e definição do MVP | Priorização MoSCoW, matriz valor de negócio × esforço, negociação com o cliente | Backlog priorizado e conjunto de funcionalidades do MVP acordado |
 | | Declaração | Especificação dos requisitos | Declaração padronizada de RF, classificação de RNF pelo modelo URPS+, historias de usuario, critérios de aceitação em BDD | Listas de RF e RNF declaradas e histórias de usuário com critérios de aceitação |
 | | Representação | Modelagem e prototipação | Diagrama de casos de uso (UML), diagrama de atividades do fluxo de contratação, wireframes e protótipo navegável | Fluxo de contratação e telas principais representados e compreendidos pela equipe e pelo cliente |

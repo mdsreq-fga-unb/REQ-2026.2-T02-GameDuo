@@ -101,7 +101,7 @@ Na Elaboração e no refinamento de cada iteração, os requisitos passarão por
 
 Na Elaboração e sempre que uma alteração de fluxo exigir nova avaliação, os fluxos serão validados com **wireframes e protótipos navegáveis no Figma**, envolvendo Ciro Vargas, Yan Guimarães como consumidor e Victor Camara como prestador de coaching e duo. Ciro avaliará também os fluxos de administração e moderação, incluindo análise de denúncias e tratamento de disputas. Os participantes percorrerão tarefas como encontrar um serviço, avaliar o perfil de um prestador, contratar uma sessão e informar sua conclusão ou uma divergência. Serão observadas a compreensão das informações, as dificuldades de navegação e a adequação das regras às necessidades de cada perfil, permitindo ajustes antes da codificação.
 
-As hipóteses técnicas de maior risco serão avaliadas por **provas de conceito**, especialmente a consulta de Elo por API oficial, quando disponível, e a retenção e o repasse de créditos pelo gateway de pagamento. Os resultados e as limitações encontrados serão registrados e usados para revisar os requisitos e a arquitetura antes da implementação das funcionalidades dependentes.
+As hipóteses técnicas de maior risco serão avaliadas por **análise documental das APIs e do gateway de pagamento**, especialmente a consulta de Elo por API oficial, quando disponível, e a retenção e o repasse de créditos. Os resultados e as limitações encontrados serão registrados e usados para revisar os requisitos e o recorte do MVP antes da implementação das funcionalidades dependentes.
 
 ### Verificação e validação a cada iteração
 

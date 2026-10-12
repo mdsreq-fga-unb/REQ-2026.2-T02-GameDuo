@@ -8,7 +8,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 | Iteração | Fase | Período | Reuniões e evidências |
 | --- | --- | --- | --- |
-| [1](#iteracao-1) | Iniciação | 11/08/2026 a 27/08/2026 | Escolha do projeto |
+| [1](#iteracao-1) | Iniciação | 11/08/2026 a 31/08/2026 | Escolha do projeto |
 | [2](#iteracao-2) | Iniciação | 01/09/2026 a 08/09/2026 | [Reunião 1 — Características de Produto](#reuniao-1) |
 | [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2) |
 | [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
@@ -24,7 +24,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 ## Iteração 1 — Iniciação {#iteracao-1}
 
-**Período:** 11/08/2026 a 27/08/2026.
+**Período:** 11/08/2026 a 31/08/2026.
 
 **Atividade registrada:** escolha do GameDuo como projeto da equipe. Não foi fornecida ata específica dessa escolha; não há reunião individualizada a detalhar nesta iteração.
 
