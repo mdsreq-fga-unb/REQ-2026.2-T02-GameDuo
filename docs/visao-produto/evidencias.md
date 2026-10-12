@@ -107,7 +107,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 **Fluxograma completo — Figma**
 
-<iframe src="https://embed.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%25C3%25ADtulo?node-id=0-1&amp;p=f&amp;embed-host=share" title="Fluxograma completo do GameDuo" width="100%" height="500" style="border: 0;" allowfullscreen loading="lazy"></iframe>
+[Figma no contexto do MVP](backlog-produto.md#1013-fluxograma-completo)
 
 [Abrir no Figma](https://embed.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%25C3%25ADtulo?node-id=0-1&p=f&embed-host=share)
 
