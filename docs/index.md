@@ -8,7 +8,7 @@ Este é o site oficial da documentação do produto **GameDuo**.
 
 ## Sobre o Projeto
 
-O **GameDuo** é uma plataforma que conecta jogadores para a contratação de sessões de **coaching** (orientação técnica) e parcerias remuneradas para jogar em dupla (**duo**) — do pareamento em jogos competitivos de alta exigência, como *League of Legends*.
+O **GameDuo** é uma plataforma que conecta jogadores para a contratação de sessões de **coaching** (orientação técnica) e parcerias remuneradas para jogar em dupla (**duo**) em jogos competitivos de alta exigência, como *League of Legends*.
 
 Hoje, esse tipo de contratação acontece de forma informal, por canais como WhatsApp e Discord, sem verificação de credenciais nem garantia de pagamento — o que gera desconfiança entre as partes. O GameDuo resolve isso com um fluxo de contratação padronizado e seguro, verificação do nível técnico (elo) dos prestadores e custódia do pagamento até a validação da sessão.
 
