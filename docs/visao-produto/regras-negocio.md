@@ -1,8 +1,8 @@
-# 13 Regras de Negócio
+# 8.4 Regras de Negócio
 
-Esta seção apresenta as regras de negócio já estabelecidas para o MVP do GameDuo, organizadas por área e relacionadas aos [requisitos de software](requisitos-software.md). Os códigos RN01 a RN43 identificam as condições, permissões, restrições e cálculos do produto. As subseções 13.1 a 13.8 reúnem as regras aplicáveis ao recorte da entrega, e a [subseção 13.9](#139-regras-previstas-para-versoes-futuras) reúne as regras previstas para versões futuras.
+Esta seção apresenta as regras de negócio já estabelecidas para o MVP do GameDuo, organizadas por área e relacionadas aos [requisitos de software](requisitos-software.md). Os códigos RN01 a RN43 identificam as condições, permissões, restrições e cálculos do produto. As subseções 8.4.1 a 8.4.8 reúnem as regras aplicáveis ao recorte da entrega, e a [subseção 8.4.9](#849-regras-previstas-para-versoes-futuras) reúne as regras previstas para versões futuras.
 
-## 13.1 Conta, acesso e prestação
+## 8.4.1 Conta, acesso e prestação
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
@@ -14,7 +14,7 @@ Esta seção apresenta as regras de negócio já estabelecidas para o MVP do Gam
 | <a id="rn06"></a>RN06 | O prestador deve fornecer dados de recebimento. Para realizar saque por Pix, deve possuir chave Pix e CPF cadastrados. | RF05. |
 | <a id="rn07"></a>RN07 | Configurar o perfil de prestação não retira da conta a possibilidade de contratar serviços como consumidora. | RF04, RF16. |
 
-## 13.2 Ofertas e catálogo
+## 8.4.2 Ofertas e catálogo
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ Esta seção apresenta as regras de negócio já estabelecidas para o MVP do Gam
 | <a id="rn13"></a>RN13 | O nível de jogo informado pelo prestador é declarado por ele. A entrega selecionada não inclui sua verificação por integração com o jogo. | RF04, RF07 e exclusão de RF06. |
 | <a id="rn14"></a>RN14 | A manutenção dos jogos disponíveis no catálogo é uma atribuição administrativa. | RF50. |
 
-## 13.3 Agenda e contratação
+## 8.4.3 Agenda e contratação
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
@@ -38,7 +38,7 @@ Esta seção apresenta as regras de negócio já estabelecidas para o MVP do Gam
 | <a id="rn20"></a>RN20 | Um prestador não pode ter duas contratações com horários sobrepostos, ainda que pertençam a ofertas diferentes. Ao ser contratado, o horário deixa de estar disponível em todas as ofertas do prestador. | RF14, RF15, RF16, [RNF09](requisitos-software.md#rnf09). |
 | <a id="rn21"></a>RN21 | Após a contratação, consumidor e prestador recebem uma forma de contato entre si para viabilizar o atendimento, conforme a forma de comunicação informada na oferta. | RF10, RF16. |
 
-## 13.4 Créditos e carteira
+## 8.4.4 Créditos e carteira
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ Esta seção apresenta as regras de negócio já estabelecidas para o MVP do Gam
 | <a id="rn25"></a>RN25 | Uma mesma operação financeira não pode produzir créditos, débitos ou repasses duplicados. Uma mesma confirmação de pagamento não pode creditar duas vezes e uma mesma sessão não pode gerar dois pagamentos ao prestador. | [RNF13](requisitos-software.md#rnf13). |
 | <a id="rn26"></a>RN26 | O valor recebido pelo prestador permanece como saldo na plataforma e pode ser destinado a saque. | RF23, RF28 e anotação validada. |
 
-## 13.5 Cancelamento, resultado e atendimento
+## 8.4.5 Cancelamento, resultado e atendimento
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
@@ -59,14 +59,14 @@ Esta seção apresenta as regras de negócio já estabelecidas para o MVP do Gam
 | <a id="rn31"></a>RN31 | Além do registro no resultado da sessão, o participante pode detalhar o ocorrido e enviar evidências pelo canal de atendimento informado pela plataforma. | Fluxograma; RF31, RF38. |
 | <a id="rn32"></a>RN32 | A conclusão da contratação permite liberar os valores retidos para distribuição e reconhecer o valor devido ao prestador. Isso não implica disponibilidade imediata para saque: aplica-se a carência financeira de 30 dias, conforme [RN40](#rn40). | RF26. |
 
-## 13.6 Divisão de receita e saque
+## 8.4.6 Divisão de receita e saque
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
 | <a id="rn33"></a>RN33 | No MVP, a divisão da receita da contratação é fixa: 70% para o prestador e 30% para a plataforma. | RF27 e fluxograma. |
 | <a id="rn35"></a>RN35 | O prestador solicita o saque do saldo disponível para a chave Pix cadastrada, respeitando os dados exigidos, o valor mínimo e a reserva do valor solicitado. | RF05, RF28. |
 
-## 13.7 Administração e autorização
+## 8.4.7 Administração e autorização
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ Esta seção apresenta as regras de negócio já estabelecidas para o MVP do Gam
 | <a id="rn37"></a>RN37 | A administração e a moderação só podem consultar dados de usuários, ocorrências, participantes e evidências para os quais possuam autorização. | RF38, RF44, [RNF02](requisitos-software.md#rnf02). |
 | <a id="rn38"></a>RN38 | O cliente responsável pelo negócio também exercerá inicialmente a função de moderador, conforme a anotação do fluxo. | RF38 e anotação validada. |
 
-## 13.8 Regras financeiras complementares — evidências de pagamentos
+## 8.4.8 Regras financeiras complementares — evidências de pagamentos
 
 | Código | Regra de negócio | Rastreabilidade |
 | --- | --- | --- |
@@ -83,7 +83,7 @@ Esta seção apresenta as regras de negócio já estabelecidas para o MVP do Gam
 | <a id="rn41"></a>RN41 | Ao solicitar um saque, o valor solicitado deve ser reservado e deixar de compor o saldo disponível, impedindo que seja comprometido novamente em outro saque. | RF23, RF28; [RNF13](requisitos-software.md#rnf13); PDF, pp. 2 e 4. |
 | <a id="rn42"></a>RN42 | A solicitação de saque deve respeitar um valor mínimo permitido. | RF28; PDF, pp. 2 e 4. O valor mínimo não está informado e permanece pendente. |
 
-## 13.9 Regras previstas para versões futuras
+## 8.4.9 Regras previstas para versões futuras
 
 As regras abaixo foram validadas com o cliente, mas dependem de funcionalidades que não fazem parte do MVP. Elas permanecem registradas para orientar as próximas versões do produto.
 

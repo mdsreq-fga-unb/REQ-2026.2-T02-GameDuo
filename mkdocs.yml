@@ -68,7 +68,7 @@ extra_javascript:
   - javascripts/sidebar-toggle.js
   - javascripts/modais.js
 
-nav:  
+nav:
   - Início: index.md
   - Visão do Produto e Projeto:
       - "1. Cenário Atual do Cliente e do Negócio": visao-produto/cenario-atual.md
@@ -78,14 +78,15 @@ nav:
       - "5. Engenharia de Requisitos": visao-produto/engenharia-requisitos.md
       - "6. Cronograma e Entregas": visao-produto/cronograma-entregas.md
       - "7. Interação entre Equipe e Cliente": visao-produto/interacao-equipe.md
-      - "8. Requisitos de Software": visao-produto/requisitos-software.md
+      - "8. Requisitos de Software":
+          - "Requisitos Funcionais e Não Funcionais": visao-produto/requisitos-software.md
+          - "Regras de Negócio": visao-produto/regras-negocio.md
       - "9. DoR e DoD": visao-produto/dordod.md
       - "10. Backlog de Produto": visao-produto/backlog-produto.md
       - "11. Lições Aprendidas": visao-produto/licoes-aprendidas.md
       - "12. Referências Bibliográficas": visao-produto/referencias.md
-      - "13. Regras de Negócio": visao-produto/regras-negocio.md
-      - "14. Evidências": visao-produto/evidencias.md
   - Entregas:
       - "Unidade 1": entregas/unidade-1.md
       - "Unidade 2": entregas/unidade-2.md
       - "Ajuste e validação de requisitos": entregas/ajuste-validacao-requisitos.md
+      - "Evidências": visao-produto/evidencias.md

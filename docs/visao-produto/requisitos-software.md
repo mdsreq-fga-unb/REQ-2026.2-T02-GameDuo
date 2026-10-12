@@ -1,6 +1,6 @@
 # 8 Requisitos de Software
 
-Esta seção apresenta os requisitos funcionais e não funcionais do GameDuo e sua rastreabilidade com os objetivos específicos, as características de produto e o valor de negócio definidos na [seção 2 — Solução Proposta](solucao-proposta.md#22-objetivos-especificos-oe-do-produto).
+Esta seção apresenta os requisitos funcionais e não funcionais do GameDuo e sua rastreabilidade com os objetivos específicos, as características de produto e o valor de negócio definidos na [seção 2 — Solução Proposta](solucao-proposta.md#22-objetivos-especificos-oe-do-produto). As regras de negócio que complementam esses requisitos estão na [seção 8.4 — Regras de Negócio](regras-negocio.md).
 
 ## 8.1 Lista de Requisitos Funcionais
 
