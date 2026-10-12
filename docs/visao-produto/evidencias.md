@@ -115,8 +115,8 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 ### Validação dos requisitos com o monitor {#validacao-monitor}
 
-**Data:** 19/09/2026, às 14h42 (UTC−03:00).  
-**Participantes:** equipe GoHorse e monitor da disciplina.  
+**Data:** 19/09/2026.  
+**Participantes:** equipe GoHorse e André (monitor da disciplina).  
 **Objetivo:** revisar os requisitos funcionais e não funcionais com o monitor antes de sua publicação no GitPages.
 
 !!! abstract "Resumo"
