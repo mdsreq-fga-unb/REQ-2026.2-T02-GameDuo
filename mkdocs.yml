@@ -82,6 +82,7 @@ nav:
           - "Requisitos Funcionais e Não Funcionais": visao-produto/requisitos-software.md
           - "Regras de Negócio": visao-produto/regras-negocio.md
       - "9. DoR e DoD": visao-produto/dordod.md
+      - "10. Backlog de Produto": visao-produto/backlog-produto.md
       - "11. Lições Aprendidas": visao-produto/licoes-aprendidas.md
       - "12. Referências Bibliográficas": visao-produto/referencias.md
   - Entregas:

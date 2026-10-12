@@ -1,5 +1,9 @@
 # UNIDADE 2
 
+## Backlog de produto
+
+[Seção 10 — Backlog de Produto](../visao-produto/backlog-produto.md): backlog geral, priorização por valor de negócio e esforço técnico, recorte do MVP e fluxogramas completo e do MVP.
+
 ## Iteração 3:
 
 ### Reunião com o cliente iteração 3:

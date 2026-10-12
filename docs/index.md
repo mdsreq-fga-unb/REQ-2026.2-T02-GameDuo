@@ -146,5 +146,6 @@ Explore as principais áreas da documentação:
 | 11/10/2026 | 0.20 | Criação da seção 14 — Evidências, organizada por iteração, com resumos das reuniões, priorização MoSCoW, transcrição dos RFs e RNFs do MVP e incorporação de vídeos, Figmas e imagens; inclusão no menu; organização do feedback de pagamentos na iteração 4 com botão para o PDF; atualização dos Figmas das reuniões 2 e 5 e inclusão dos dois vídeos da reunião 4; remoção da seção 13 — Provas de produção e validação do build do MkDocs. | Guilherme Brandão e Pedro Araújo |
 | 11/10/2026 | 0.21 | Inclusão da seção 13 — Regras de Negócio: RN01 a RN42 do MVP e rastreabilidade com os requisitos | Pedro Araujo |
 | 12/10/2026 | 0.22 | Ajusta a seção 13 — Regras de Negócio ao recorte do MVP: revisa RN04, RN20, RN21, RN26, RN27, RN30, RN31 e RN33 e cria a subseção 13.9 com as regras previstas para versões futuras (RN34 e RN43) | Rodrigo Átila |
-| 12/10/2026 | 0.23 | Reestruturação do Cronograma e Entregas | Rodrigo Átila |
-| 12/10/2026 | 0.24 | Reorganização do Pages | Rodrigo Átila |
+| 12/10/2026 | 0.23 | Inclusão e organização da seção 10 — Backlog de Produto: backlog geral com RFs e RNFs, priorização MoSCoW e avaliação técnica consolidada, definição do recorte do MVP e incorporação dos fluxogramas completo e do MVP. | Pedro Araujo e Ricardo Lucas |
+| 12/10/2026 | 0.24 | Reestruturação do Cronograma e Entregas | Rodrigo Átila |
+| 12/10/2026 | 0.25 | Reorganização do Pages | Rodrigo Átila |
