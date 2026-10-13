@@ -149,3 +149,4 @@ Explore as principais áreas da documentação:
 | 12/10/2026 | 0.23 | Inclusão e organização da seção 10 — Backlog de Produto: backlog geral com RFs e RNFs, priorização MoSCoW e avaliação técnica consolidada, definição do recorte do MVP e incorporação dos fluxogramas completo e do MVP. | Pedro Araujo e Ricardo Lucas |
 | 12/10/2026 | 0.24 | Reestruturação do Cronograma e Entregas | Rodrigo Átila |
 | 12/10/2026 | 0.25 | Reorganização do Pages | Rodrigo Átila |
+| 12/10/2026 | 0.26 | Revisão da seção 9 com checklists de DoR e DoD e remoção das menções a BDD | Rodrigo Átila |

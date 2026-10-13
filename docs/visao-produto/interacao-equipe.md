@@ -95,7 +95,7 @@ Na Iniciação, a equipe realizará um **walkthrough da visão do produto** com 
 
 ### Verificação dos requisitos e preparação para desenvolvimento
 
-Na Elaboração e no refinamento de cada iteração, os requisitos passarão por **inspeção com checklist e revisão por pares**, verificando clareza, completude, consistência, viabilidade e testabilidade. As histórias de usuário deverão estar vinculadas aos requisitos e possuir critérios de aceitação em formato Dado/Quando/Então. A **Definition of Ready (DoR)** será aplicada antes de iniciar o desenvolvimento, verificando se o item está suficientemente definido, com critérios de aceitação estabelecidos e dependências ou impedimentos relevantes resolvidos.
+Na Elaboração e no refinamento de cada iteração, os requisitos passarão por **inspeção com checklist e revisão por pares**, verificando clareza, completude, consistência, viabilidade e testabilidade. As histórias de usuário deverão estar vinculadas aos requisitos e possuir critérios de aceitação objetivos e verificáveis. A **Definition of Ready (DoR)** será aplicada antes de iniciar o desenvolvimento, verificando se o item está suficientemente definido, com critérios de aceitação estabelecidos e dependências ou impedimentos relevantes resolvidos.
 
 ### Validação das jornadas e redução dos riscos técnicos
 

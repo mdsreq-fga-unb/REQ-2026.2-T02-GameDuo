@@ -96,6 +96,24 @@
   border-color: var(--md-accent-fg-color);
 }
 
+/* Checklists do DoR e DoD (seção 9.3): cards fixos, sem efeito de hover */
+.md-typeset .grid.cards.gd-checklist > ul > li:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .gd-checklist > ul > li > p:first-child {
+  margin-bottom: .4em;
+  font-size: .9rem;
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .gd-checklist .task-list-item {
+  margin-bottom: .35em;
+  line-height: 1.5;
+}
+
 /* ---------------------------------------------------------------------
    Imagens (diagramas, rich picture, ishikawa)
    --------------------------------------------------------------------- */
