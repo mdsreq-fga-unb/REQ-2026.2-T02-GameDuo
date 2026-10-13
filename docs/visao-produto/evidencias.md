@@ -345,7 +345,7 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “
 ### Reunião 5 — Cliente: validação do MVP {#reuniao-5}
 
 **Data:** 07/10/2026  
-**Participantes:** Ricardo Lucas, Pedro Araujo Lucena e Ciro Vargas. O encontro informado envolve o cliente e a equipe, mas não foi fornecida lista de presença.  
+**Participantes:** Ricardo Lucas, Pedro Araujo Lucena e Ciro Vargas.
 **Objetivo:** submeter o MVP definido pela equipe à validação de Ciro Vargas.
 
 !!! abstract "Resumo"
