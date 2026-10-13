@@ -219,7 +219,14 @@
   }
 
   #__toc ~ .md-nav__link[for="__toc"] .md-icon::after {
-    content: "";
+    -webkit-mask-image: var(--md-nav-icon--next);
+    mask-image: var(--md-nav-icon--next);
+    transform: rotate(90deg);
+    transition: transform .2s ease;
+  }
+
+  #__toc:checked ~ .md-nav__link[for="__toc"] .md-icon::after {
+    transform: rotate(0deg);
   }
 
   #__toc ~ .md-nav__link[for="__toc"] + .md-nav__link {
@@ -268,4 +275,105 @@
   body.gd-nav-collapsed .md-sidebar--primary {
     display: none;
   }
+}
+
+/* ---------------------------------------------------------------------
+   Menu lateral — hover, item ativo e grupos
+   --------------------------------------------------------------------- */
+
+.md-nav--primary .md-nav__link {
+  padding: .2rem .45rem;
+  margin-left: -.45rem;
+  border-radius: 6px;
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.md-nav--primary .md-nav__link:hover {
+  background-color: rgba(34, 197, 94, 0.10);
+  color: var(--md-accent-fg-color);
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-weight: 700;
+}
+
+/* Seta nas páginas que possuem subtópicos (fechadas) */
+.md-nav--primary .md-nav__item:not(.md-nav__item--nested) > a.md-nav__link::after {
+  content: "";
+  flex-shrink: 0;
+  width: .9rem;
+  height: .9rem;
+  margin-left: auto;
+  background-color: currentColor;
+  -webkit-mask-image: var(--md-nav-icon--next);
+  mask-image: var(--md-nav-icon--next);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  opacity: .5;
+}
+
+/* Sem seta: subtópicos da página aberta e páginas sem subtópicos */
+.md-nav--primary .md-nav--secondary .md-nav__item:not(.md-nav__item--nested) > a.md-nav__link::after,
+.md-nav--primary .md-nav__item:not(.md-nav__item--nested) > a.md-nav__link[href*="intervencao-social"]::after,
+.md-nav--primary .md-nav__item:not(.md-nav__item--nested) > a.md-nav__link[href*="referencias"]::after {
+  content: none;
+}
+
+/* ---------------------------------------------------------------------
+   Selos de status (cronograma)
+   --------------------------------------------------------------------- */
+
+.md-typeset .gd-status {
+  display: inline-block;
+  padding: .1em .6em;
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.md-typeset .gd-status--done {
+  background-color: rgba(34, 197, 94, 0.16);
+  color: #15803D;
+}
+
+.md-typeset .gd-status--doing {
+  background-color: rgba(245, 158, 11, 0.18);
+  color: #B45309;
+}
+
+.md-typeset .gd-status--next {
+  background-color: rgba(107, 122, 114, 0.16);
+  color: var(--md-default-fg-color--light);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .gd-status--done {
+  color: #86EFAC;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .gd-status--doing {
+  color: #FCD34D;
+}
+
+.gd-sidebar-btn svg {
+  transition: transform .2s ease;
+}
+
+body.gd-nav-collapsed .gd-sidebar-btn svg {
+  transform: rotate(180deg);
+}
+
+/* Mesmo tom para todas as setas do menu */
+.md-nav--primary .md-nav__icon {
+  opacity: .5;
+}
+
+.md-nav--primary .md-nav__link:hover .md-nav__icon,
+.md-nav--primary .md-nav__link:hover::after {
+  opacity: 1;
 }

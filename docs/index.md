@@ -8,7 +8,7 @@ Este é o site oficial da documentação do produto **GameDuo**.
 
 ## Sobre o Projeto
 
-O **GameDuo** é uma plataforma que conecta jogadores para a contratação de sessões de **coaching** (orientação técnica) e parcerias remuneradas para jogar em dupla (**duo**) — do pareamento em jogos competitivos de alta exigência, como *League of Legends*, até jogos de alta dificuldade, como *Elden Ring*.
+O **GameDuo** é uma plataforma que conecta jogadores para a contratação de sessões de **coaching** (orientação técnica) e parcerias remuneradas para jogar em dupla (**duo**) em jogos competitivos de alta exigência, como *League of Legends*.
 
 Hoje, esse tipo de contratação acontece de forma informal, por canais como WhatsApp e Discord, sem verificação de credenciais nem garantia de pagamento — o que gera desconfiança entre as partes. O GameDuo resolve isso com um fluxo de contratação padronizado e seguro, verificação do nível técnico (elo) dos prestadores e custódia do pagamento até a validação da sessão.
 
@@ -38,7 +38,7 @@ Hoje, esse tipo de contratação acontece de forma informal, por canais como Wha
 
 ## Navegação Rápida
 
-Explore as seções da documentação do projeto por meio dos painéis interativos abaixo:
+Explore as principais áreas da documentação:
 
 <div class="grid cards" markdown>
 
@@ -46,9 +46,33 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 
     ---
 
-    Cenário atual do cliente, oportunidade de negócio, solução proposta e pesquisa de mercado.
+    Cenário atual do cliente, oportunidade de negócio, solução proposta e estratégias de engenharia.
 
-    [Acessar Documentação](visao-produto/cenario-atual.md)
+    [:octicons-arrow-right-24: Acessar](visao-produto/cenario-atual.md)
+
+-   :material-format-list-checks: __Requisitos e Regras de Negócio__
+
+    ---
+
+    Requisitos funcionais e não funcionais, rastreabilidade e regras de negócio do MVP.
+
+    [:octicons-arrow-right-24: Acessar](visao-produto/requisitos-software.md)
+
+-   :material-calendar-range: __Cronograma__
+
+    ---
+
+    Fases do OpenUP, iterações executadas e planejamento da construção do MVP.
+
+    [:octicons-arrow-right-24: Acessar](visao-produto/cronograma-entregas.md)
+
+-   :material-folder-check-outline: __Entregas e Evidências__
+
+    ---
+
+    Entregas de cada Unidade e registros das reuniões e validações com o cliente.
+
+    [:octicons-arrow-right-24: Acessar](entregas/unidade-1.md)
 
 </div>
 
@@ -119,4 +143,9 @@ Explore as seções da documentação do projeto por meio dos painéis interativ
 |22/09/2026 | 0.17 | Reorganiza nomes, descrições e formatação dos requisitos na seção 8 | Equipe GoHorse |
 | 02/10/2026 | 0.18 | Revisão das seções 3 — Intervenção Social, 7 — Interação entre Equipe e Cliente e 11 — Lições Aprendidas: complementa a análise de riscos sociais, define participantes e responsabilidades na validação e detalha ações de melhoria e impactos da redução da equipe. | Pedro Araujo |
 |02/10/2026 | 0.19 | Corrige representações visuais (rich picture, ishikawa e mapa stakeholders) da seção 1 com base nos feedbacks das issue 1 | Rodrigo Átila |
-
+| 11/10/2026 | 0.20 | Criação da seção 14 — Evidências, organizada por iteração, com resumos das reuniões, priorização MoSCoW, transcrição dos RFs e RNFs do MVP e incorporação de vídeos, Figmas e imagens; inclusão no menu; organização do feedback de pagamentos na iteração 4 com botão para o PDF; atualização dos Figmas das reuniões 2 e 5 e inclusão dos dois vídeos da reunião 4; remoção da seção 13 — Provas de produção e validação do build do MkDocs. | Guilherme Brandão e Pedro Araújo |
+| 11/10/2026 | 0.21 | Inclusão da seção 13 — Regras de Negócio: RN01 a RN42 do MVP e rastreabilidade com os requisitos | Pedro Araujo |
+| 12/10/2026 | 0.22 | Ajusta a seção 13 — Regras de Negócio ao recorte do MVP: revisa RN04, RN20, RN21, RN26, RN27, RN30, RN31 e RN33 e cria a subseção 13.9 com as regras previstas para versões futuras (RN34 e RN43) | Rodrigo Átila |
+| 12/10/2026 | 0.23 | Inclusão e organização da seção 10 — Backlog de Produto: backlog geral com RFs e RNFs, priorização MoSCoW e avaliação técnica consolidada, definição do recorte do MVP e incorporação dos fluxogramas completo e do MVP. | Pedro Araujo e Ricardo Lucas |
+| 12/10/2026 | 0.24 | Reestruturação do Cronograma e Entregas | Rodrigo Átila |
+| 12/10/2026 | 0.25 | Reorganização do Pages | Rodrigo Átila |

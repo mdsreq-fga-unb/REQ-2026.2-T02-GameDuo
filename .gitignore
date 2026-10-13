@@ -9,3 +9,6 @@ venv/
 .DS_Store
 
 .env
+
+# Python
+__pycache__/

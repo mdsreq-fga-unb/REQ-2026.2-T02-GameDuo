@@ -35,7 +35,7 @@
     var button = document.createElement("button");
     button.type = "button";
     button.className = "gd-sidebar-btn";
-    button.textContent = "\u2630";
+    button.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.41 7.41 17 6l-6 6 6 6 1.41-1.41L13.83 12l4.58-4.59m-6 0L11 6l-6 6 6 6 1.41-1.41L7.83 12l4.58-4.59Z"/></svg>';
     button.addEventListener("click", function () {
       apply(!document.body.classList.contains("gd-nav-collapsed"), true);
     });
