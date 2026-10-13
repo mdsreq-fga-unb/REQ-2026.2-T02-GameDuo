@@ -227,8 +227,8 @@ O PDF contém um resumo automático e a transcrição, sem uma tabela final pree
 
 ### Reunião 4 — Equipe: matriz 4x4 e MVP da equipe {#reuniao-4}
 
-**Data:** [DATA DA REUNIÃO 4], na iteração de 23/09/2026 a 06/10/2026.  
-**Participantes:** equipe GoHorse; [PARTICIPANTES DA REUNIÃO 4].  
+**Data:** 05/10/2026.
+**Participantes:** equipe GoHorse. 
 **Objetivo:** combinar a priorização do cliente com a análise de esforço técnico na matriz 4x4 e definir a proposta de MVP da equipe.
 
 !!! abstract "Resumo"
@@ -335,8 +335,8 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “
 
 ### Reunião 5 — Cliente: validação do MVP {#reuniao-5}
 
-**Data:** [DATA DA REUNIÃO 5]. A Reunião 3 registra agendamento para 07/10/2026, às 19h30; falta comprovação da data efetiva.  
-**Participantes:** [PARTICIPANTES DA REUNIÃO 5]. O encontro informado envolve o cliente e a equipe, mas não foi fornecida lista de presença.  
+**Data:** 07/10/2026  
+**Participantes:** Ricardo Lucas, Pedro Araujo Lucena e Ciro Vargas. O encontro informado envolve o cliente e a equipe, mas não foi fornecida lista de presença.  
 **Objetivo:** submeter o MVP definido pela equipe à validação de Ciro Vargas.
 
 !!! abstract "Resumo"
@@ -351,9 +351,12 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “
 
 #### Vídeo
 
-**[LINK DO VÍDEO DA REUNIÃO 5]**
+**Sem link, segue os pontos importantes discutidos**
 
-Gravação ainda sem URL informada para incorporação.
+A reunião abriu com a discussão contextual, explicando ao Ciro qual a situação atual do projeto, que a equipe escolheu os RFs e os RNFs para o MVP, e começou a mostragem.
+
+Não houve nenhuma discordância sobre qual requisito deveria ou não deveria parar no MVP, os requisitos selecionados pela equipe foram aprovados pelo Ciro e o projeto poderá andar para frente.
+
 
 #### Artefatos
 
