@@ -103,6 +103,8 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 [Abrir no Google Drive](https://drive.google.com/file/d/19kv2NZ-MmCV9_V8NVWMS4t6Ms5MJOU2k/preview)
 
+[Notas da reunião:](https://docs.google.com/document/d/1DdExtkVQYN1dsL89_5yhMa0H33b32Jh61hItbdcQEKg/edit?usp=drivesdk)
+
 #### Artefatos
 
 **Fluxograma completo — Figma**
@@ -131,6 +133,13 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 ## Iteração 4 — Elaboração {#iteracao-4}
 
 **Período:** 23/09/2026 a 06/10/2026.
+
+### Escolha de APIS:
+    Pagamento: ASAAS
+    League of Legends: Riot API
+    Counter Strike 2: leetify, que utiliza steam D64
+
+
 
 ### Validação assíncrona do fluxo de pagamentos {#validacao-pagamentos}
 
