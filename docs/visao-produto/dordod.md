@@ -17,7 +17,6 @@ Um item só entra em uma iteração da fase de Construção quando atende a todo
 | As regras de negócio do item estão identificadas. | As regras da [seção 13](regras-negocio.md) que se aplicam ao item estão listadas na task, e nenhuma aguarda decisão do Ciro. |
 | O item tem critérios de aceitação escritos. | Cada critério descreve uma ação e o resultado esperado, que pode ser marcado como atendido ou não atendido. Os critérios cobrem o fluxo principal e as exceções e servem de base para os testes de aceitação do DoD. Palavras como "rápido", "fácil" ou "intuitivo" não são usadas. |
 | Os requisitos não funcionais do item estão identificados. | Os RNFs da [seção 8](requisitos-software.md) que afetam o item estão listados na task. |
-| O item faz parte do escopo priorizado. | O item consta no MVP da [seção 10](backlog-produto.md), ou o Ciro aprovou a sua inclusão e a decisão está registrada nas evidências. |
 | As telas do item estão no protótipo. | As telas estão no Figma e foram revisadas por pelo menos dois integrantes. Itens sem tela têm os dados de entrada e saída descritos na task. |
 | O Ciro validou o entendimento do item. | O Ciro confirmou o que o item deve fazer e que ele atende à necessidade de consumidores e prestadores, em reunião ou por mensagem, com registro nas evidências. |
 | O item cabe em uma iteração. | A estimativa de esforço do backlog cabe na duração da iteração. Itens maiores são divididos antes de entrar. |
@@ -33,15 +32,13 @@ Um item só é apresentado ao Ciro na demonstração do incremento quando atende
 | Critério | Como é verificado |
 | -------- | ----------------- |
 | O código está integrado à branch principal. | O merge foi feito e a funcionalidade roda no ambiente usado na demonstração da iteração. |
-| Todos os critérios de aceitação foram atendidos. | Cada critério escrito no DoR foi conferido e marcado como atendido. |
 | A implementação segue as regras de negócio e o protótipo. | As regras listadas na task foram implementadas e as telas correspondem ao Figma. Se houver diferença, o código é corrigido ou o protótipo é atualizado e validado de novo com o Ciro. |
 | Os testes de aceitação foram aprovados. | O Analista de Qualidade executou os testes do fluxo principal e das exceções e anotou o resultado nas evidências da iteração. |
 | O saldo continua correto em operações repetidas ou simultâneas. | Repetir a mesma operação não gera lançamento duplicado, duas operações ao mesmo tempo sobre o mesmo saldo não geram diferença, e o saldo exibido é igual à soma dos lançamentos. |
 | As falhas de serviços externos e os pedidos simultâneos são tratados. | Com o serviço de pagamento indisponível, a operação não fica pela metade e o usuário recebe um aviso. Dois pedidos para o mesmo horário não geram duas contratações. |
 | O acesso respeita o perfil do usuário. | Consumidor, prestador e administrador acessam apenas as telas e rotas permitidas ao seu perfil, e os dados pessoais de um usuário não aparecem para outro fora do fluxo previsto. |
 | A interface atende aos critérios de usabilidade. | As telas autenticadas mostram o usuário e o seu perfil, e ações como cancelar uma contratação ou encerrar uma oferta pedem confirmação. |
-| O item foi revisado. | O revisor, que não é quem implementou, aprovou o código e a parte visual, e não há defeito de severidade alta ou crítica em aberto. |
-| O Ciro aprovou o item. | A funcionalidade foi demonstrada na reunião de fim da iteração, e o aceite ou os ajustes pedidos estão anotados nas evidências. |
+| O item foi revisado. | O revisor, que não é quem implementou, aprovou o código e a parte visual, e não há defeito de severidade alta ou crítica em aberto. |\
 | A documentação está atualizada. | A situação do item no backlog, as evidências da iteração e o histórico de revisão estão atualizados no GitPages. |
 
 ---
