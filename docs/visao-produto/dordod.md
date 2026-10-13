@@ -58,7 +58,6 @@ Ao criar a task de um item do backlog, as duas listas abaixo são copiadas para 
     - [ ] Regras de negócio listadas
     - [ ] Critérios de aceitação escritos
     - [ ] RNFs listados
-    - [ ] Item no escopo priorizado
     - [ ] Telas no protótipo
     - [ ] Entendimento validado pelo Ciro
     - [ ] Item cabe em uma iteração
@@ -70,7 +69,6 @@ Ao criar a task de um item do backlog, as duas listas abaixo são copiadas para 
     ---
 
     - [ ] Código integrado à branch principal
-    - [ ] Critérios de aceitação atendidos
     - [ ] Regras de negócio e protótipo seguidos
     - [ ] Testes de aceitação aprovados
     - [ ] Saldo correto em operações repetidas ou simultâneas, se aplicável
@@ -78,7 +76,6 @@ Ao criar a task de um item do backlog, as duas listas abaixo são copiadas para 
     - [ ] Acesso por perfil respeitado
     - [ ] Critérios de usabilidade atendidos
     - [ ] Revisão aprovada
-    - [ ] Item aprovado pelo Ciro
     - [ ] Documentação atualizada
 
 </div>
