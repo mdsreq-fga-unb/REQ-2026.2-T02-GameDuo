@@ -150,3 +150,4 @@ Explore as principais áreas da documentação:
 | 12/10/2026 | 0.24 | Reestruturação do Cronograma e Entregas | Rodrigo Átila |
 | 12/10/2026 | 0.25 | Reorganização do Pages | Rodrigo Átila |
 | 12/10/2026 | 0.26 | Revisão da seção 9 com checklists de DoR e DoD e remoção das menções a BDD | Rodrigo Átila |
+| 12/10/2026 | 0.27 | Inclusão do vídeo da entrega da Unidade 2 | Rodrigo Átila |
