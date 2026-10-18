@@ -1,0 +1,19 @@
+/* Estrutura das páginas: HUD (header), footer, layouts de auth e de conteúdo */
+.hud { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; min-height: 76px; padding: 10px max(24px, calc((100vw - 1200px) / 2)); border-bottom: 4px solid var(--border); background: rgba(17,19,34,.95); box-shadow: 0 4px 0 var(--shadow); }
+.hud nav { display: flex; align-items: center; gap: 13px; }
+.player-chip { display: flex; align-items: center; gap: 10px; padding: 4px 12px 4px 4px; border: 2px solid var(--border); background: var(--night); text-align: left; }
+.player-chip > span:last-child { display: flex; flex-direction: column; font-size: .85rem; }
+.player-chip small { color: var(--coin); }
+
+footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px max(24px, calc((100vw - 1200px) / 2)); border-top: 4px solid var(--border); color: var(--muted); background: var(--night-deep); font-size: .85rem; }
+
+.auth-layout { display: grid; place-items: center; padding: 72px 24px; }
+
+.back-floating { position: absolute; top: 28px; left: 28px; }
+
+.detail-main { width: min(calc(100% - 48px), 1050px); margin: auto; padding: 50px 0 100px; }
+.detail-main > .btn { margin-bottom: 38px; }
+.detail-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 34px; align-items: start; }
+.detail-grid .dialog-panel { width: 100%; }
+
+.detail-copy { color: var(--muted); line-height: 1.5; }

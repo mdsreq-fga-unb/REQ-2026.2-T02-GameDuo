@@ -1,0 +1,55 @@
+/* Reset, cenário de fundo e tipografia global */
+* { box-sizing: border-box; border-radius: 0 !important; }
+html { background: var(--night); color: var(--text); font-family: var(--body); font-size: 18px; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select { font: inherit; }
+button { color: inherit; }
+button, select { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+::selection { color: var(--night); background: var(--coin); }
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(0, 0, 0, .08) 4px);
+  opacity: .5;
+}
+
+.scene { position: relative; min-height: 100vh; isolation: isolate; overflow: hidden; background: var(--night); }
+.scene::before {
+  content: "";
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(244,244,244,.75) 0 1px, transparent 2px),
+    radial-gradient(circle at 71% 9%, rgba(115,239,247,.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 90% 30%, rgba(255,205,117,.6) 0 1px, transparent 2px),
+    radial-gradient(circle at 44% 22%, rgba(244,244,244,.55) 0 1px, transparent 2px),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 50%, #20295a 100%);
+  background-size: 190px 170px, 240px 190px, 300px 230px, 370px 270px, 100% 100%;
+}
+.scene::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  left: 0; right: 0; bottom: 0;
+  height: 36vh;
+  opacity: .32;
+  background:
+    linear-gradient(145deg, transparent 0 35%, #29366f 36% 49%, transparent 50%) 0 0/30% 100%,
+    linear-gradient(215deg, transparent 0 38%, #5d275d 39% 56%, transparent 57%) 100% 0/38% 100%,
+    repeating-linear-gradient(90deg, transparent 0 10%, rgba(65,166,246,.3) 10.3% 10.6%, transparent 11% 20%),
+    repeating-linear-gradient(0deg, transparent 0 18%, rgba(65,166,246,.28) 18.5% 19%, transparent 19.5% 38%);
+  clip-path: polygon(0 38%, 12% 18%, 20% 30%, 35% 0, 48% 38%, 66% 8%, 78% 31%, 91% 5%, 100% 22%, 100% 100%, 0 100%);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: var(--title); line-height: 1.55; }
+h1 { font-size: clamp(1.25rem, 2.5vw, 2.25rem); }
+h2 { font-size: clamp(1rem, 1.8vw, 1.4rem); }
+h3 { font-size: .8rem; }
+.eyebrow { color: var(--cyan); font-family: var(--title); font-size: .6rem; letter-spacing: .16em; line-height: 1.7; }

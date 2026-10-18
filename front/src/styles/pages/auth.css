@@ -1,0 +1,33 @@
+/* Telas de autenticação e recuperação de senha */
+.auth-heading { text-align: center; margin-bottom: 28px; }
+.auth-heading .logo { margin-bottom: 28px; }
+.auth-heading h1 { margin-bottom: 10px; font-size: clamp(1rem, 2.3vw, 1.5rem); }
+.auth-heading > p:last-child { color: var(--muted); margin-bottom: 0; }
+.intro-copy { color: var(--muted); text-align: center; line-height: 1.45; margin-bottom: 24px; }
+
+.demo-hint { margin: -8px 0 20px; color: var(--coin); font-family: var(--title); font-size: .48rem; line-height: 1.7; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+.form-grid__full { grid-column: 1 / -1; }
+.auth-links { padding-top: 24px; text-align: center; border-top: 2px dashed var(--border); margin-top: 28px; }
+.auth-links p { margin: 7px 0; color: var(--muted); }
+.auth-links--stack { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+
+.rpg-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+.rpg-options button { position: relative; display: flex; align-items: center; gap: 8px; height: 50px; padding: 0 14px; border: 3px solid var(--border); color: var(--muted); background: var(--night); font-weight: 700; }
+.rpg-options button i { visibility: hidden; color: var(--coin); font-style: normal; animation: blink .9s steps(1) infinite; }
+.rpg-options button b { width: 12px; height: 12px; margin-left: auto; border: 2px solid var(--border-light); }
+.rpg-options button.active { color: var(--text); border-color: var(--blue); }
+.rpg-options button.active i { visibility: visible; }
+.rpg-options button.active b { border: 3px solid var(--night); background: var(--cyan); box-shadow: 0 0 0 2px var(--cyan); }
+.code-input { height: 66px !important; font-family: var(--title) !important; font-size: 1.3rem !important; letter-spacing: .48em; text-align: center; }
+.quest-list { display: grid; gap: 8px; padding: 16px; margin: 2px 0 24px; border-left: 4px solid var(--coin); background: rgba(26,28,44,.65); }
+.quest-list p { margin-bottom: 6px; color: var(--coin); font-family: var(--title); font-size: .52rem; }
+.quest-list span { color: var(--muted); }
+.quest-list span i { display: inline-block; width: 26px; color: var(--border-light); font-style: normal; font-weight: 700; }
+.quest-list span.done { color: var(--lime); }
+.quest-list span.done i { color: var(--lime); }
+.stage-clear { text-align: center; }
+.stage-clear h1 { color: var(--coin); text-transform: uppercase; text-shadow: 4px 4px 0 var(--purple); }
+.stage-clear > p:not(.eyebrow) { color: var(--muted); }
+.trophy { display: grid; place-items: center; width: 104px; height: 104px; margin: 18px auto 24px; border: 4px solid var(--coin); color: var(--coin); background: var(--panel-blue); box-shadow: 8px 8px 0 var(--shadow), inset 0 0 0 5px var(--night); font-size: 3rem; animation: trophy-hop 1.2s steps(3) infinite; }
+@keyframes trophy-hop { 50% { transform: translateY(-8px); } }

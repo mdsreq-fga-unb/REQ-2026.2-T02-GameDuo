@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap");
+@import "tailwindcss";
+
+@import "./theme.css";
+@import "./base.css";
+@import "./components.css";
+@import "./layout.css";
+@import "./pages/auth.css";
+@import "./pages/catalog.css";
+@import "./pages/offer-details.css";
+@import "./pages/account.css";
+@import "./responsive.css";
