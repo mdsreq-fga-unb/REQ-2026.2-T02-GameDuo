@@ -1,0 +1,93 @@
+/*
+  COMPONENTE: Input (components/input/Input.jsx)
+  Campo de formulário: rótulo, caixa de texto, botão de olho (senha),
+  texto de ajuda e mensagem de erro.
+  As classes .field também são usadas pelo componente Select e pelo
+  campo de código da página PaginaValidarCodigo.
+*/
+
+/* Bloco do campo inteiro */
+.field {
+  display: block;
+  margin-bottom: 22px;
+}
+
+/* Rótulo acima da caixa */
+.field__label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Envolve a caixa (para posicionar o olho e a setinha do select) */
+.field__control {
+  position: relative;
+  display: block;
+}
+
+/* Caixa de texto / lista de opções */
+.field input,
+.field select {
+  width: 100%;
+  height: 52px;
+  padding: 0 15px;
+  border: 3px solid var(--border);
+  background: var(--night);
+  color: var(--text);
+  box-shadow: inset 4px 4px 0 rgba(0, 0, 0, .28);
+}
+
+.field input::placeholder {
+  color: #94a0b3;
+  opacity: 1;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--blue);
+  outline-color: var(--cyan);
+  caret-color: var(--cyan);
+}
+
+/* Campo com erro: borda laranja */
+.field--error input {
+  border-color: var(--primary-hover);
+}
+
+/* Texto de ajuda e mensagem de erro abaixo da caixa */
+.field__help,
+.field__error {
+  display: block;
+  margin-top: 7px;
+  font-size: .82rem;
+  line-height: 1.3;
+}
+
+.field__help {
+  color: var(--muted);
+}
+
+.field__error {
+  color: #ff9f80;
+  font-weight: 600;
+}
+
+/* Botão de olho (mostrar/ocultar senha) */
+.eye-button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 48px;
+  height: 46px;
+  border: 0;
+  border-left: 2px solid var(--border);
+  color: var(--blue);
+  background: var(--night);
+  font-size: 1.2rem;
+}
+
+/* Abre espaço na caixa para o texto não ficar embaixo do olho */
+.field:has(.eye-button) input {
+  padding-right: 58px;
+}

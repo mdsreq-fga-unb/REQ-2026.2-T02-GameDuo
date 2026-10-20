@@ -1,0 +1,11 @@
+/*
+  PÁGINA: PaginaMinhaConta (pages/paginaMinhaConta/PaginaMinhaConta.jsx)
+  Página da conta do jogador. Os cartões têm CSS próprio
+  (PlayerProfileCard.css e ProviderModeCard.css) e as duas colunas
+  (.detail-main / .detail-grid) estão no index.css.
+*/
+
+/* Título "Minha conta" acima dos cartões */
+.account-title {
+  margin-bottom: 32px;
+}

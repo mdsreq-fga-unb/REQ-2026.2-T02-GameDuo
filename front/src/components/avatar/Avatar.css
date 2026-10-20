@@ -1,0 +1,59 @@
+/*
+  COMPONENTE: Avatar (components/avatar/Avatar.jsx)
+  Quadrado colorido com as iniciais do jogador.
+  Tamanhos: small, médio (padrão) e large. Cada cor tem sua classe.
+*/
+
+/* Tamanho médio (padrão) */
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 52px;
+  height: 52px;
+  border: 3px solid var(--text);
+  color: var(--night);
+  background: var(--blue);
+  box-shadow: 3px 3px 0 var(--shadow);
+  font-family: var(--title);
+  font-size: .55rem;
+}
+
+/* Tamanhos */
+.avatar--small {
+  flex-basis: 38px;
+  height: 38px;
+  font-size: .4rem;
+}
+
+.avatar--large {
+  width: 86px;
+  height: 86px;
+  margin: auto;
+  font-size: .85rem;
+}
+
+/* Cores */
+.avatar--pink {
+  background: #ef7d9a;
+}
+
+.avatar--blue {
+  background: var(--cyan);
+}
+
+.avatar--orange {
+  background: var(--primary-hover);
+}
+
+.avatar--purple {
+  color: var(--text);
+  background: #a855b3;
+}
+
+.avatar--green {
+  background: var(--lime);
+}
+
+.avatar--yellow {
+  background: var(--coin);
+}

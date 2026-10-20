@@ -1,0 +1,11 @@
+/*
+  COMPONENTE: PixelIcon (components/pixelIcon/PixelIcon.jsx)
+  Ícones feitos com caracteres de texto. Só a moeda tem cor própria;
+  os outros usam a cor do texto em volta.
+*/
+
+/* Moeda de créditos */
+.pixel-icon--coin {
+  color: var(--coin);
+  text-shadow: 2px 0 0 #b86f50;
+}

@@ -1,0 +1,125 @@
+/*
+  COMPONENTE: CatalogHero (components/catalogHero/CatalogHero.jsx)
+  Banner do topo da página inicial: título grande à esquerda e,
+  à direita, dois bonequinhos de pixel com o balão "READY?".
+*/
+
+/* Banner: texto | bonecos */
+.catalog-hero {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  align-items: center;
+  min-height: 390px;
+  padding: 65px 5%;
+}
+
+.catalog-hero h1 {
+  margin-bottom: 20px;
+  font-size: clamp(1.7rem, 4.4vw, 3.3rem);
+  letter-spacing: -.04em;
+  text-shadow: 5px 5px 0 var(--purple);
+}
+
+/* "Nunca jogue só." em amarelo */
+.catalog-hero h1 span {
+  color: var(--coin);
+}
+
+/* Parágrafo abaixo do título */
+.catalog-hero > div > p:last-child {
+  max-width: 590px;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+/* Área dos bonecos */
+.hero-party {
+  position: relative;
+  height: 230px;
+}
+
+/* Balão de fala "READY?" */
+.hero-speech {
+  position: absolute;
+  top: 8px;
+  left: 22%;
+  padding: 12px;
+  border: 3px solid var(--text);
+  color: var(--night);
+  background: var(--text);
+  font-family: var(--title);
+  font-size: .58rem;
+  box-shadow: 5px 5px 0 var(--purple);
+}
+
+/* Pontinha do balão */
+.hero-speech::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 18px;
+  width: 12px;
+  height: 12px;
+  background: var(--text);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Boneco (o formato é recortado com clip-path) */
+.hero-char {
+  position: absolute;
+  bottom: 22px;
+  width: 76px;
+  height: 104px;
+  background: var(--blue);
+  box-shadow: inset 0 12px 0 var(--cyan), inset 0 -18px 0 var(--panel-blue), 8px 8px 0 var(--shadow);
+  clip-path: polygon(20% 0, 80% 0, 80% 10%, 100% 10%, 100% 65%, 85% 65%, 85% 100%, 55% 100%, 55% 72%, 42% 72%, 42% 100%, 12% 100%, 12% 65%, 0 65%, 0 10%, 20% 10%);
+}
+
+/* Olhos do boneco */
+.hero-char::after {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 35px;
+  width: 9px;
+  height: 9px;
+  background: var(--night);
+  box-shadow: 28px 0 0 var(--night);
+}
+
+/* Boneco azul (esquerda) */
+.hero-char--one {
+  left: 18%;
+}
+
+/* Boneco vermelho (direita), um pouco menor */
+.hero-char--two {
+  right: 14%;
+  transform: scale(.88);
+  background: var(--primary);
+  box-shadow: inset 0 12px 0 var(--primary-hover), inset 0 -18px 0 var(--purple), 8px 8px 0 var(--shadow);
+}
+
+/* Tablet: só o texto, sem os bonecos */
+@media (max-width: 980px) {
+  .catalog-hero {
+    grid-template-columns: 1fr;
+    min-height: 450px;
+  }
+
+  .hero-party {
+    display: none;
+  }
+}
+
+/* Celular */
+@media (max-width: 680px) {
+  .catalog-hero {
+    min-height: 330px;
+    padding: 55px 5% 35px;
+  }
+
+  .catalog-hero h1 {
+    font-size: 1.75rem;
+  }
+}

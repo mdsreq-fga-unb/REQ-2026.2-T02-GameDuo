@@ -1,0 +1,63 @@
+/*
+  PÁGINA: PaginaDetalhesOferta (pages/paginaDetalhesOferta/PaginaDetalhesOferta.jsx)
+  Detalhes de uma oferta: cartão do prestador à esquerda e
+  cartão de contratação (vantagens + preço) à direita.
+  As duas colunas (.detail-main / .detail-grid) estão no index.css.
+*/
+
+/* Cartão do prestador (esquerda) */
+.detail-profile {
+  text-align: center;
+}
+
+.detail-profile .avatar {
+  margin-bottom: 22px;
+}
+
+.detail-profile h1 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+/* @nick do prestador */
+.detail-profile strong {
+  color: var(--cyan);
+}
+
+.detail-profile .tag-row {
+  justify-content: center;
+  margin-top: 22px;
+}
+
+/* Lista de vantagens com ✓ verde */
+.perk-list {
+  list-style: none;
+  padding: 0;
+  color: var(--lime);
+  line-height: 2;
+}
+
+/* Caixa com o preço total */
+.detail-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  margin: 22px 0;
+  border: 3px solid var(--border);
+  background: var(--night);
+}
+
+.detail-price strong {
+  color: var(--coin);
+  font-size: 1.3rem;
+}
+
+/* Celular: "Total" em cima, preço embaixo */
+@media (max-width: 680px) {
+  .detail-price {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+}

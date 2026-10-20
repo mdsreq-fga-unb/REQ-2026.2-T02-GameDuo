@@ -1,0 +1,25 @@
+/*
+  COMPONENTE: AuthHeading (components/authHeading/AuthHeading.jsx)
+  Cabeçalho centralizado das telas de autenticação:
+  logo, "PLAYER SELECT", título e subtítulo.
+*/
+
+.auth-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-heading .logo {
+  margin-bottom: 28px;
+}
+
+.auth-heading h1 {
+  margin-bottom: 10px;
+  font-size: clamp(1rem, 2.3vw, 1.5rem);
+}
+
+/* Subtítulo */
+.auth-heading > p:last-child {
+  color: var(--muted);
+  margin-bottom: 0;
+}

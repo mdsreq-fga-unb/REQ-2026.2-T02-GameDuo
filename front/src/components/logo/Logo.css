@@ -1,0 +1,80 @@
+/*
+  COMPONENTE: Logo (components/logo/Logo.jsx)
+  Logo "GameDuo" com o desenho do controle e um pulinho de vez em quando.
+*/
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  font-family: var(--title);
+  font-size: 1rem;
+  padding: 6px;
+  text-shadow: 3px 3px 0 var(--purple);
+  animation: logo-bob 3s steps(2) infinite;
+}
+
+/* Parte "Duo" do texto, em laranja */
+.logo > span:last-child > span {
+  color: var(--primary-hover);
+}
+
+/* Desenho do controle */
+.logo-mark {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+  width: 31px;
+  height: 25px;
+  background: var(--blue);
+  border: 4px solid var(--text);
+  box-shadow: 3px 3px 0 var(--purple);
+}
+
+/* Direcional (cruz) do controle */
+.logo-mark::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 4px;
+  left: 2px;
+  top: 7px;
+  background: var(--night);
+  box-shadow: 3px -3px 0 var(--night), 3px 3px 0 var(--night);
+}
+
+/* Botões amarelos do controle */
+.logo-mark i {
+  width: 4px;
+  height: 4px;
+  margin: 3px 0 0 1px;
+  background: var(--coin);
+}
+
+.logo-mark i:first-child {
+  margin-left: 17px;
+}
+
+/* Versão menor (Header e Footer) */
+.logo--compact {
+  font-size: .8rem;
+}
+
+@keyframes logo-bob {
+  0%, 94%, 100% {
+    transform: translateY(0);
+  }
+  96% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Celular: esconde o desenho do controle */
+@media (max-width: 680px) {
+  .logo-mark {
+    display: none;
+  }
+}

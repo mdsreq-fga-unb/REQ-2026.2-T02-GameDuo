@@ -1,0 +1,24 @@
+/*
+  COMPONENTE: Footer (components/footer/Footer.jsx)
+  Rodapé com logo, frase e copyright.
+*/
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px max(24px, calc((100vw - 1200px) / 2));
+  border-top: 4px solid var(--border);
+  color: var(--muted);
+  background: var(--night-deep);
+  font-size: .85rem;
+}
+
+/* Celular: itens um embaixo do outro */
+@media (max-width: 680px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

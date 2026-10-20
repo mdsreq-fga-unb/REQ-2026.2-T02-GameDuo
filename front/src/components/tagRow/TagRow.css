@@ -1,0 +1,20 @@
+/*
+  COMPONENTE: TagRow (components/tagRow/TagRow.jsx)
+  Linha de etiquetas (jogo e modalidade) usada no cartão de oferta
+  e na página de detalhes.
+*/
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+/* Cada etiqueta */
+.tag-row span {
+  padding: 5px 8px;
+  border-left: 3px solid var(--blue);
+  color: var(--muted);
+  background: var(--night);
+  font-size: .8rem;
+}

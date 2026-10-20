@@ -1,0 +1,88 @@
+/*
+  COMPONENTE: Button (components/button/Button.jsx)
+  Botão de pixel com sombra. Variações: primary (padrão), secondary,
+  ghost e link. A classe btn--full deixa o botão com 100% da largura.
+*/
+
+/* Botão padrão (primary) */
+.btn {
+  min-height: 45px;
+  padding: 13px 18px;
+  border: 3px solid var(--text);
+  background: var(--primary);
+  color: var(--text);
+  box-shadow: 4px 4px 0 var(--shadow);
+  font-family: var(--title);
+  font-size: .58rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  transition: color .12s, background .12s, transform .08s, box-shadow .08s;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  color: var(--night);
+}
+
+/* Efeito de "afundar" ao clicar */
+.btn:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--shadow);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: .42;
+  filter: grayscale(1);
+}
+
+/* Variação secondary: fundo de painel */
+.btn--secondary {
+  color: var(--text);
+  border-color: var(--border-light);
+  background: var(--panel);
+}
+
+/* Variação ghost: fundo escuro, borda discreta */
+.btn--ghost {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--night);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+.btn--secondary:hover:not(:disabled),
+.btn--ghost:hover:not(:disabled) {
+  color: var(--night);
+  background: var(--cyan);
+}
+
+/* Variação link: parece um link sublinhado, sem caixa */
+.btn--link {
+  min-height: 0;
+  padding: 2px;
+  border: 0;
+  color: var(--blue);
+  background: transparent;
+  box-shadow: none;
+  font-family: var(--body);
+  font-size: 1rem;
+  text-transform: none;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+}
+
+.btn--link:hover:not(:disabled) {
+  color: var(--cyan);
+  background: transparent;
+}
+
+.btn--link:active:not(:disabled) {
+  transform: translateY(2px);
+}
+
+/* Ocupa a largura toda */
+.btn--full {
+  width: 100%;
+}

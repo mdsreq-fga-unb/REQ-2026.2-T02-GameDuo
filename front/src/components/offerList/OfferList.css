@@ -1,0 +1,75 @@
+/*
+  COMPONENTE: OfferList (components/offerList/OfferList.jsx)
+  Seção "Ofertas em destaque": título com contador de resultados
+  e a grade de cartões (OfferCard).
+*/
+
+.offers-section {
+  padding-top: 80px;
+}
+
+/* Título + linha pontilhada + contador */
+.section-heading {
+  display: flex;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.section-heading p {
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+}
+
+/* Linha pontilhada que ocupa o espaço do meio */
+.section-heading__line {
+  flex: 1;
+  border-top: 3px dotted var(--border);
+  margin-bottom: 12px;
+}
+
+/* Quadrado com a quantidade de ofertas */
+.result-count {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--coin);
+  color: var(--coin);
+  background: var(--night);
+  font-family: var(--title);
+  font-size: .55rem;
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+/* Grade de cartões: 3 por linha */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Tablet: 2 por linha */
+@media (max-width: 980px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celular: 1 por linha, sem a linha pontilhada */
+@media (max-width: 680px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading__line {
+    display: none;
+  }
+
+  .result-count {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,42 @@
+/*
+  PÁGINA: PaginaSenhaAlterada (pages/paginaSenhaAlterada/PaginaSenhaAlterada.jsx)
+  Tela de sucesso "Stage clear!" depois de trocar a senha,
+  com um troféu pulando.
+*/
+
+.stage-clear {
+  text-align: center;
+}
+
+/* Título "Stage clear!" em amarelo */
+.stage-clear h1 {
+  color: var(--coin);
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 var(--purple);
+}
+
+/* Texto abaixo da mensagem */
+.stage-clear > p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+/* Quadrado do troféu */
+.trophy {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  margin: 18px auto 24px;
+  border: 4px solid var(--coin);
+  color: var(--coin);
+  background: var(--panel-blue);
+  box-shadow: 8px 8px 0 var(--shadow), inset 0 0 0 5px var(--night);
+  font-size: 3rem;
+  animation: trophy-hop 1.2s steps(3) infinite;
+}
+
+@keyframes trophy-hop {
+  50% {
+    transform: translateY(-8px);
+  }
+}

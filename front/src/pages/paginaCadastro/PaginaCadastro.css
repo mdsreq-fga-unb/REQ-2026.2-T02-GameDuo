@@ -1,0 +1,28 @@
+/*
+  PÁGINA: PaginaCadastro (pages/paginaCadastro/PaginaCadastro.jsx)
+  Formulário de cadastro em duas colunas. Nickname e o botão
+  ocupam a linha inteira (.form-grid__full).
+*/
+
+/* Formulário em duas colunas */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 22px;
+}
+
+/* Item que ocupa as duas colunas */
+.form-grid__full {
+  grid-column: 1 / -1;
+}
+
+/* Celular: uma coluna só */
+@media (max-width: 680px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid__full {
+    grid-column: auto;
+  }
+}

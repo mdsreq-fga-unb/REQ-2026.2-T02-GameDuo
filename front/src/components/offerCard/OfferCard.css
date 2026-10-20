@@ -1,0 +1,106 @@
+/*
+  COMPONENTE: OfferCard (components/offerCard/OfferCard.jsx)
+  Cartão de uma oferta no catálogo: avatar, nível, nick, título,
+  etiquetas, duração, preço e o botão "Ver detalhes".
+*/
+
+.offer-card {
+  position: relative;
+  padding: 22px;
+  border: 3px solid var(--border-light);
+  background: linear-gradient(160deg, rgba(51, 60, 87, .98), rgba(26, 28, 44, .98));
+  box-shadow: 6px 6px 0 var(--shadow);
+  transition: transform .15s, border-color .15s;
+}
+
+/* Tracinho amarelo no topo do cartão */
+.offer-card::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 18px;
+  width: 45px;
+  height: 6px;
+  background: var(--coin);
+}
+
+/* Cartão sobe um pouco ao passar o mouse */
+.offer-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cyan);
+}
+
+/* Linha de cima: avatar + nível/nick + "ON" */
+.offer-card__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.offer-card__top > div {
+  min-width: 0;
+}
+
+/* Nível do jogador (ex.: "Faceit Nível 10") */
+.offer-card__level {
+  margin: 0 0 3px;
+  color: var(--coin);
+  font-family: var(--title);
+  font-size: .45rem;
+  text-transform: uppercase;
+}
+
+/* @nick (corta com "..." se for grande) */
+.offer-card__nick {
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted);
+  text-overflow: ellipsis;
+}
+
+/* Selo "ON" (online) */
+.online-dot {
+  margin-left: auto;
+  padding: 4px 5px;
+  color: var(--lime);
+  border: 1px solid var(--green);
+  font-family: var(--title);
+  font-size: .38rem;
+}
+
+/* Título da oferta */
+.offer-card h3 {
+  min-height: 49px;
+  margin-bottom: 18px;
+}
+
+/* Linha com duração e preço, entre tracejados */
+.offer-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  margin: 20px 0;
+  border-top: 2px dashed var(--border);
+  border-bottom: 2px dashed var(--border);
+  color: var(--muted);
+}
+
+/* Preço */
+.offer-card__meta strong {
+  color: var(--coin);
+  font-size: 1.2rem;
+}
+
+/* Botão "Ver detalhes" com largura total */
+.offer-card .btn {
+  width: 100%;
+}
+
+/* Celular */
+@media (max-width: 680px) {
+  .offer-card h3 {
+    min-height: 0;
+  }
+}

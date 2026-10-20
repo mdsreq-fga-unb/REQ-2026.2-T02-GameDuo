@@ -1,0 +1,277 @@
+/*
+  ESTILOS GLOBAIS DO GAMEDUO
+  Vale para o site inteiro. Os estilos de cada componente ficam no .css
+  dentro da pasta do próprio componente (ex.: components/header/Header.css).
+*/
+
+
+/* ========== Cores e fontes (variáveis usadas em todos os .css) ========== */
+
+:root {
+  --night: #1a1c2c;
+  --night-deep: #111322;
+  --panel: #333c57;
+  --panel-blue: #29366f;
+  --border: #566c86;
+  --border-light: #94b0c2;
+  --text: #f4f4f4;
+  --muted: #b8cad3;
+  --primary: #b13e53;
+  --primary-hover: #ef7d57;
+  --blue: #41a6f6;
+  --cyan: #73eff7;
+  --purple: #5d275d;
+  --green: #38b764;
+  --lime: #a7f070;
+  --coin: #ffcd75;
+  --shadow: #0b0c18;
+  --title: "Press Start 2P", monospace;
+  --body: "Pixelify Sans", system-ui, sans-serif;
+}
+
+
+/* ========== Reset: tira os estilos padrão do navegador ========== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+  border-radius: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+button, select {
+  cursor: pointer;
+}
+
+::placeholder {
+  opacity: 1;
+}
+
+
+/* ========== Página (html e body) ========== */
+
+html {
+  background: var(--night);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Linhas horizontais por cima de tudo, imitando tela de TV antiga */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(0, 0, 0, .08) 4px);
+  opacity: .5;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--night);
+  background: var(--coin);
+}
+
+
+/* ========== Cenário de fundo (estrelas + montanhas) ==========
+   Usado pelos componentes AuthLayout e MainLayout. */
+
+.scene {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--night);
+}
+
+/* Estrelas */
+.scene::before {
+  content: "";
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(244, 244, 244, .75) 0 1px, transparent 2px),
+    radial-gradient(circle at 71% 9%, rgba(115, 239, 247, .65) 0 1px, transparent 2px),
+    radial-gradient(circle at 90% 30%, rgba(255, 205, 117, .6) 0 1px, transparent 2px),
+    radial-gradient(circle at 44% 22%, rgba(244, 244, 244, .55) 0 1px, transparent 2px),
+    linear-gradient(180deg, var(--night-deep) 0%, var(--night) 50%, #20295a 100%);
+  background-size: 190px 170px, 240px 190px, 300px 230px, 370px 270px, 100% 100%;
+}
+
+/* Montanhas no rodapé da tela */
+.scene::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 36vh;
+  opacity: .32;
+  background:
+    linear-gradient(145deg, transparent 0 35%, #29366f 36% 49%, transparent 50%) 0 0 / 30% 100%,
+    linear-gradient(215deg, transparent 0 38%, #5d275d 39% 56%, transparent 57%) 100% 0 / 38% 100%,
+    repeating-linear-gradient(90deg, transparent 0 10%, rgba(65, 166, 246, .3) 10.3% 10.6%, transparent 11% 20%),
+    repeating-linear-gradient(0deg, transparent 0 18%, rgba(65, 166, 246, .28) 18.5% 19%, transparent 19.5% 38%);
+  clip-path: polygon(0 38%, 12% 18%, 20% 30%, 35% 0, 48% 38%, 66% 8%, 78% 31%, 91% 5%, 100% 22%, 100% 100%, 0 100%);
+}
+
+
+/* ========== Títulos e textos ========== */
+
+h1, h2, h3 {
+  font-family: var(--title);
+  line-height: 1.55;
+}
+
+h1 {
+  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+h2 {
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+}
+
+h3 {
+  font-size: .8rem;
+}
+
+/* Texto pequeno em ciano acima dos títulos (ex.: "PLAYER SELECT") */
+.eyebrow {
+  color: var(--cyan);
+  font-family: var(--title);
+  font-size: .6rem;
+  letter-spacing: .16em;
+  line-height: 1.7;
+}
+
+
+/* ========== Conteúdo em duas colunas ==========
+   Usado pelas páginas PaginaDetalhesOferta e PaginaMinhaConta. */
+
+.detail-main {
+  width: min(calc(100% - 48px), 1050px);
+  margin: auto;
+  padding: 50px 0 100px;
+}
+
+/* Botão "Voltar" no topo da página */
+.detail-main > .btn {
+  margin-bottom: 38px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.detail-grid .dialog-panel {
+  width: 100%;
+}
+
+/* Parágrafo descritivo em cinza */
+.detail-copy {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+
+/* ========== Animação de piscar ==========
+   Usada nos componentes Message, ModalityTabs e RecoveryChannelPicker. */
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* ========== Telas menores ========== */
+
+@media (max-width: 980px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  html {
+    font-size: 16px;
+  }
+
+  .detail-main {
+    width: min(calc(100% - 28px), 1050px);
+    padding-top: 28px;
+  }
+
+  .detail-grid {
+    gap: 24px;
+  }
+}
+
+/* Usuário pediu menos animação no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
