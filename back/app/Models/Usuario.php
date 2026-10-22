@@ -20,5 +20,11 @@ class Usuario extends Model
 
   "senha",
   ];
-
+  
+  protected $fillable = [
+    "email",
+    "nome",
+    "senha",
+    "nickname",
+  ];
 }
