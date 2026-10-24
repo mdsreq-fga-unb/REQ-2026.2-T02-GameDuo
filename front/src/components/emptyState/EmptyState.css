@@ -1,0 +1,44 @@
+/*
+  COMPONENTE: EmptyState (components/emptyState/EmptyState.jsx)
+  Aviso exibido quando nenhuma oferta passa nos filtros.
+*/
+
+.empty-state {
+  padding: 60px 20px;
+  border: 3px dashed var(--border);
+  background: rgba(26, 28, 44, .8);
+  text-align: center;
+}
+
+.empty-state p {
+  color: var(--muted);
+}
+
+/* Quadrado com o "?" */
+.empty-art {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px;
+  border: 4px solid var(--border-light);
+  background: var(--panel-blue);
+  box-shadow: 7px 7px 0 var(--shadow);
+}
+
+.empty-art span {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--coin);
+  font-family: var(--title);
+  font-size: 2rem;
+}
+
+/* Lupa no canto */
+.empty-art b {
+  position: absolute;
+  right: -20px;
+  bottom: -15px;
+  color: var(--cyan);
+  font-size: 2.5rem;
+}

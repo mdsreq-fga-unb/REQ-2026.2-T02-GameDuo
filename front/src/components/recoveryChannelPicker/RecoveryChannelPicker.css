@@ -1,0 +1,66 @@
+/*
+  COMPONENTE: RecoveryChannelPicker (components/recoveryChannelPicker/RecoveryChannelPicker.jsx)
+  Escolha entre E-mail e Telefone na recuperação de senha,
+  no estilo de menu de RPG (setinha piscando na opção escolhida).
+*/
+
+/* Duas opções lado a lado */
+.rpg-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+/* Cada opção */
+.rpg-options button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 14px;
+  border: 3px solid var(--border);
+  color: var(--muted);
+  background: var(--night);
+  font-weight: 700;
+}
+
+/* Setinha ► (só aparece na opção escolhida) */
+.rpg-options button i {
+  visibility: hidden;
+  color: var(--coin);
+  font-style: normal;
+  animation: blink .9s steps(1) infinite;
+}
+
+/* Quadradinho de marcação à direita */
+.rpg-options button b {
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+  border: 2px solid var(--border-light);
+}
+
+/* Opção escolhida */
+.rpg-options button.active {
+  color: var(--text);
+  border-color: var(--blue);
+}
+
+.rpg-options button.active i {
+  visibility: visible;
+}
+
+.rpg-options button.active b {
+  border: 3px solid var(--night);
+  background: var(--cyan);
+  box-shadow: 0 0 0 2px var(--cyan);
+}
+
+/* Celular: uma opção embaixo da outra */
+@media (max-width: 680px) {
+  .rpg-options {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+/*
+  PÁGINA: PaginaValidarCodigo (pages/paginaValidarCodigo/PaginaValidarCodigo.jsx)
+  Campo grande para digitar o código de 6 dígitos.
+  O visual básico do campo vem do Input.css (.field); aqui só
+  deixamos a caixa mais alta e os números maiores e espaçados.
+  O !important é necessário para vencer a regra ".field input".
+*/
+
+.code-input {
+  height: 66px !important;
+  font-family: var(--title) !important;
+  font-size: 1.3rem !important;
+  letter-spacing: .48em;
+  text-align: center;
+}

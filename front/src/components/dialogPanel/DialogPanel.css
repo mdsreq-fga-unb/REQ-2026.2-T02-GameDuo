@@ -1,0 +1,53 @@
+/*
+  COMPONENTE: DialogPanel (components/dialogPanel/DialogPanel.jsx)
+  Caixa estilo "janela de diálogo de RPG", com borda dupla e cantos amarelos.
+  Usada nos formulários de login/cadastro e nos cartões das páginas internas.
+*/
+
+.dialog-panel {
+  position: relative;
+  width: min(100%, 570px);
+  padding: 38px;
+  border: 4px solid var(--border-light);
+  background: linear-gradient(135deg, rgba(51, 60, 87, .98), rgba(26, 28, 44, .98));
+  box-shadow: 0 0 0 4px var(--night), 0 0 0 8px var(--border), 12px 12px 0 rgba(0, 0, 0, .45);
+}
+
+/* Quadradinhos amarelos nos cantos */
+.dialog-panel::before,
+.dialog-panel::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--coin);
+}
+
+/* Canto de cima, à esquerda */
+.dialog-panel::before {
+  top: -4px;
+  left: -4px;
+  border-right: 4px solid var(--night);
+  border-bottom: 4px solid var(--night);
+}
+
+/* Canto de baixo, à direita */
+.dialog-panel::after {
+  right: -4px;
+  bottom: -4px;
+  border-left: 4px solid var(--night);
+  border-top: 4px solid var(--night);
+}
+
+/* Versão larga (tela de cadastro) */
+.dialog-panel--wide {
+  width: min(100%, 790px);
+}
+
+/* Celular: menos espaço interno e sombra menor */
+@media (max-width: 680px) {
+  .dialog-panel {
+    padding: 27px 20px;
+    box-shadow: 0 0 0 3px var(--night), 0 0 0 6px var(--border), 7px 7px 0 rgba(0, 0, 0, .45);
+  }
+}

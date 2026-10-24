@@ -1,0 +1,69 @@
+/*
+  COMPONENTE: Message (components/message/Message.jsx)
+  Caixa de aviso estilo "fala de personagem": ícone à esquerda,
+  texto no meio e setinha piscando no canto.
+  Cores: success (verde), error (laranja), info (azul).
+*/
+
+.message {
+  position: relative;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  padding: 15px 35px 15px 14px;
+  margin-bottom: 22px;
+  border: 3px solid var(--border-light);
+  background: var(--night);
+  box-shadow: 4px 4px 0 var(--shadow);
+  line-height: 1.35;
+  animation: message-in .25s steps(4);
+}
+
+.message--success {
+  border-color: var(--green);
+}
+
+.message--error {
+  border-color: var(--primary-hover);
+}
+
+.message--info {
+  border-color: var(--blue);
+}
+
+/* Quadradinho com o ícone (✓, ! ou i) */
+.message__portrait {
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  height: 30px;
+  color: var(--night);
+  background: var(--coin);
+  font-family: var(--title);
+  font-size: .65rem;
+}
+
+.message--success .message__portrait {
+  background: var(--lime);
+}
+
+.message--error .message__portrait {
+  background: var(--primary-hover);
+}
+
+/* Setinha piscando no canto (animação "blink" fica no index.css) */
+.message__next {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  color: var(--coin);
+  font-size: .65rem;
+  animation: blink .8s steps(1) infinite;
+}
+
+@keyframes message-in {
+  from {
+    opacity: 0;
+    transform: scaleX(.7);
+  }
+}

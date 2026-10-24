@@ -1,0 +1,61 @@
+/*
+  COMPONENTE: PlayerProfileCard (components/playerProfileCard/PlayerProfileCard.jsx)
+  Cartão com os dados do jogador na página Minha Conta:
+  avatar, nome, @ e a lista de e-mail, telefone e saldo.
+*/
+
+/* Avatar ao lado do nome */
+.account-player {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.account-player .avatar {
+  margin: 0;
+}
+
+.account-player h2,
+.account-player p {
+  margin-bottom: 5px;
+}
+
+/* @handle */
+.account-player p {
+  color: var(--muted);
+}
+
+/* Lista de dados (E-mail, Telefone, Saldo) */
+.account-data {
+  margin: 28px 0 0;
+}
+
+/* Cada linha: rótulo à esquerda, valor à direita */
+.account-data > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-top: 2px dashed var(--border);
+}
+
+.account-data dt {
+  color: var(--muted);
+}
+
+.account-data dd {
+  margin: 0;
+}
+
+/* Saldo em amarelo */
+.account-data div:last-child dd {
+  color: var(--coin);
+}
+
+/* Celular: rótulo em cima, valor embaixo */
+@media (max-width: 680px) {
+  .account-data > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+}

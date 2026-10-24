@@ -1,0 +1,71 @@
+/*
+  COMPONENTE: AuthLayout (components/authLayout/AuthLayout.jsx)
+  Centraliza o conteúdo das telas de autenticação.
+  Também guarda as classes repetidas em várias dessas telas
+  (Login, Cadastro, RecuperarSenha e ValidarCodigo).
+*/
+
+/* Conteúdo centralizado na tela */
+.auth-layout {
+  display: grid;
+  place-items: center;
+  padding: 72px 24px;
+}
+
+/* Texto de explicação centralizado abaixo do título */
+.intro-copy {
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.45;
+  margin-bottom: 24px;
+}
+
+/* Dica amarela com os dados de teste (modo demonstração) */
+.demo-hint {
+  margin: -8px 0 20px;
+  color: var(--coin);
+  font-family: var(--title);
+  font-size: .48rem;
+  line-height: 1.7;
+}
+
+/* Links no fim do formulário ("Criar conta", "Recuperar senha"...) */
+.auth-links {
+  padding-top: 24px;
+  text-align: center;
+  border-top: 2px dashed var(--border);
+  margin-top: 28px;
+}
+
+.auth-links p {
+  margin: 7px 0;
+  color: var(--muted);
+}
+
+/* Versão com os links um embaixo do outro */
+.auth-links--stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Botão "Voltar ao catálogo" solto no canto da tela de login */
+.back-floating {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+/* Celular */
+@media (max-width: 680px) {
+  .auth-layout {
+    padding: 55px 18px;
+    align-items: start;
+  }
+
+  .back-floating {
+    position: static;
+    margin-top: 35px;
+  }
+}

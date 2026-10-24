@@ -1,0 +1,50 @@
+/*
+  COMPONENTE: ProviderModeCard (components/providerModeCard/ProviderModeCard.jsx)
+  Cartão "Modo prestador" da página Minha Conta, com o
+  interruptor ON/OFF do perfil de prestador.
+*/
+
+/* Interruptor (o botão inteiro) */
+.toggle-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  margin: 24px 0;
+  border: 3px solid var(--border);
+  background: var(--night);
+  text-align: left;
+}
+
+/* Título e descrição à esquerda */
+.toggle-card span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.toggle-card small {
+  color: var(--muted);
+}
+
+/* Selo ON/OFF à direita */
+.toggle-card i {
+  padding: 8px;
+  color: var(--muted);
+  border: 2px solid var(--border);
+  font-family: var(--title);
+  font-size: .5rem;
+  font-style: normal;
+}
+
+/* Ligado: borda verde e selo verde */
+.toggle-card.active {
+  border-color: var(--green);
+}
+
+.toggle-card.active i {
+  color: var(--night);
+  border-color: var(--lime);
+  background: var(--lime);
+}

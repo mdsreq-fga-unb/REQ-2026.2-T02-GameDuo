@@ -1,0 +1,23 @@
+/*
+  COMPONENTE: Select (components/select/Select.jsx)
+  Lista de opções. Reaproveita o visual de campo do Input.css
+  e só troca a setinha padrão do navegador por uma setinha amarela.
+*/
+
+/* Esconde a setinha padrão do navegador */
+.field select {
+  appearance: none;
+  padding-right: 42px;
+}
+
+/* Setinha amarela no canto direito */
+.field--select .field__control::after {
+  content: "▼";
+  position: absolute;
+  right: 14px;
+  top: 17px;
+  color: var(--coin);
+  font-family: var(--title);
+  font-size: .55rem;
+  pointer-events: none;
+}
