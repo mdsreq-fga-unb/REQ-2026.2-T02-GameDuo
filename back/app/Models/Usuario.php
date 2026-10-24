@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
 
-class Usuario extends Model
+class Usuario extends Authenticatable implements JWTSubject
 {
   protected $table = "Usuario";
   protected $primaryKey = "email";
@@ -16,15 +18,52 @@ class Usuario extends Model
 
   public $timestamps = false;
 
-  protected $hidden = [ 
+  protected $hidden = [
 
   "senha",
   ];
-  
+
   protected $fillable = [
     "email",
     "nome",
     "senha",
     "nickname",
   ];
+
+  public function provedor(): HasOne
+  {
+    return $this->hasOne(Provedor::class, "email", "email");
+  }
+
+  public function ehPrestador(): bool
+  {
+    return $this->provedor()->exists();
+  }
+
+  // dados do usuário devolvidos pela API (login e /me)
+  public function resumo(): array
+  {
+    return [
+      "email" => $this->email,
+      "nome" => $this->nome,
+      "nickname" => $this->nickname,
+      "prestador" => $this->ehPrestador(),
+    ];
+  }
+
+  public function getAuthPasswordName(): string
+  {
+    return "senha";
+  }
+
+  // identificador gravado no token (o e-mail, que é a chave primária)
+  public function getJWTIdentifier(): mixed
+  {
+    return $this->getKey();
+  }
+
+  public function getJWTCustomClaims(): array
+  {
+    return [];
+  }
 }

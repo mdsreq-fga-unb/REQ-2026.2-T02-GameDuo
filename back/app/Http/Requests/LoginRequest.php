@@ -11,6 +11,14 @@ class LoginRequest extends FormRequest
         return true;
     }
 
+    // o cadastro grava o e-mail em minúsculas; o login precisa comparar do mesmo jeito
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'email' => strtolower(trim((string) $this->input('email'))),
+        ]);
+    }
+
     public function rules(): array
     {
         return [

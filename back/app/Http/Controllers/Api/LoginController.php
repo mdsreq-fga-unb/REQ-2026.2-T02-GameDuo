@@ -7,6 +7,7 @@ use App\Http\Requests\LoginRequest;
 use App\Services\Classes\LoginService;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Throwable;
 
 class LoginController extends Controller
@@ -23,13 +24,14 @@ class LoginController extends Controller
                 $dados['senha']
             );
 
+            $token = auth('api')->login($usuario);
+
             return response()->json([
-                'message' => 'Credenciais válidas.',
-                'usuario' => [
-                    'email' => $usuario->email,
-                    'nome' => $usuario->nome,
-                    'nickname' => $usuario->nickname,
-                ],
+                'message' => 'Login realizado com sucesso.',
+                'token' => $token,
+                'token_type' => 'Bearer',
+                'expires_in' => auth('api')->factory()->getTTL() * 60,
+                'usuario' => $usuario->resumo(),
             ]);
         } catch (AuthenticationException $exception) {
             return response()->json([
@@ -42,5 +44,22 @@ class LoginController extends Controller
                 'message' => 'Não foi possível realizar o login. Tente novamente.',
             ], 500);
         }
+    }
+
+    public function me(Request $request): JsonResponse
+    {
+        return response()->json([
+            'usuario' => $request->user()->resumo(),
+        ]);
+    }
+
+    public function logout(): JsonResponse
+    {
+        // o token entra na blacklist (cache) e deixa de ser aceito
+        auth('api')->logout();
+
+        return response()->json([
+            'message' => 'Logout realizado com sucesso.',
+        ]);
     }
 }

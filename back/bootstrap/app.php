@@ -13,7 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // API sem página de login web: visitante sem token recebe 401 em vez de redirect
+        $middleware->redirectGuestsTo(fn () => null);
+
+        $middleware->alias([
+            'prestador' => \App\Http\Middleware\GarantirPrestador::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
