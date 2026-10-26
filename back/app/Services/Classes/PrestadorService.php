@@ -9,10 +9,15 @@ class PrestadorService
 {
     public function ativar(Usuario $usuario, array $dados): Provedor
     {
-        return Provedor::create([
+        $provedor = Provedor::create([
             'email' => $usuario->email,
             'apresentacao' => $dados['apresentacao'] ?? null,
             'dados' => $dados['dados'],
         ]);
+
+        // o controller já carregou a relação (vazia) ao checar ehPrestador(); atualiza para o resumo() sair certo
+        $usuario->setRelation('provedor', $provedor);
+
+        return $provedor;
     }
 }

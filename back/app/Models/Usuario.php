@@ -35,9 +35,10 @@ class Usuario extends Authenticatable implements JWTSubject
     return $this->hasOne(Provedor::class, "email", "email");
   }
 
+  // usa a relação carregada: o middleware e o resumo() consultam o banco uma vez só
   public function ehPrestador(): bool
   {
-    return $this->provedor()->exists();
+    return $this->provedor !== null;
   }
 
   // dados do usuário devolvidos pela API (login e /me)

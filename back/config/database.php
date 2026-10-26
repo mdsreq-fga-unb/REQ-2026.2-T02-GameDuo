@@ -95,8 +95,14 @@ return [
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => 'public',
+            // sem 'search_path': o padrão do Supabase já inclui public, e definir aqui custa 1 ida e volta por requisição
             'sslmode' => env('DB_SSLMODE', 'prefer'),
+            'options' => [
+                // o banco fica longe (Supabase): prepare emulado faz 1 ida e volta por consulta em vez de 3
+                PDO::ATTR_EMULATE_PREPARES => true,
+                // reaproveita a conexão entre requisições em vez de abrir uma nova (~2 s) a cada uma
+                PDO::ATTR_PERSISTENT => (bool) env('DB_PERSISTENT', false),
+            ],
         ],
 
         'sqlsrv' => [
