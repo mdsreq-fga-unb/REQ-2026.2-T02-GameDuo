@@ -36,8 +36,8 @@ return [
     ],
 
     'supabase' => [
-        'url' => env('SUPABASE_URL'),
-        'publishable_key' => env('SUPABASE_PUBLISHABLE_KEY'),
+        'url' => env('SUPABASE_URL', 'https://diycnvfgahorgxaqhtyw.supabase.co'),
+        'publishable_key' => env('SUPABASE_PUBLISHABLE_KEY', 'sb_publishable_icV40uyNRkgiOBtFlDv2RQ_4XfS_bSn'),
     ],
 
 ];
