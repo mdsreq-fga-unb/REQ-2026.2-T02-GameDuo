@@ -365,8 +365,21 @@ Gravação ainda sem URL informada para incorporação.
 
 ## Iteração 6 — Construção {#iteracao-6}
 
-**Status:** Planejada.  
+**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
 **Período:** 14/10/2026 a 27/10/2026.
+
+### Artefatos
+
+#### Modelagens do Banco de dados
+
+[Modelagem Conceitual Tela de Login](https://app.brmodeloweb.com/conceptual/6ad2a9ef296a5f28e44532db)
+
+[Modelagem Física Tela de Login](https://app.brmodeloweb.com/logic/6ad2d4f3296a5f28e4453b0b)
+
+#### Diagrama de telas
+
+[Funcionalidade de telas](https://www.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%C3%ADtulo?node-id=0-1&p=f&t=GCe9FLCYMb5P8rra-0)
+
 
 ## Iteração 7 — Construção {#iteracao-7}
 
