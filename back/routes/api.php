@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\AsaasWebhookController;
+use App\Http\Controllers\Api\CarteiraController;
+use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\OfertaController;
 use App\Http\Controllers\Api\PrestadorController;
@@ -20,11 +23,20 @@ Route::post('/usuarios', [UsuarioController::class, 'store'])
 Route::get('/ofertas', [OfertaController::class, 'index']);
 Route::get('/ofertas/{oferta}', [OfertaController::class, 'show'])->whereNumber('oferta');
 
+// chamado pelo Asaas, sem login: a autenticação é o token no header
+Route::post('/webhooks/asaas', AsaasWebhookController::class)->middleware('asaas.webhook');
+
 // rotas que exigem o token do login (Authorization: Bearer <token>)
 Route::middleware('auth:api')->group(function () {
     Route::get('/me', [LoginController::class, 'me']);
     Route::post('/logout', [LoginController::class, 'logout']);
     Route::post('/prestador', [PrestadorController::class, 'store']);
+
+    // compra de moedas (Asaas) e carteira do cliente
+    Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('throttle:10,1');
+    Route::get('/checkout/{cobranca}', [CheckoutController::class, 'show'])->whereNumber('cobranca');
+    Route::get('/carteira', [CarteiraController::class, 'saldo']);
+    Route::get('/carteira/extrato', [CarteiraController::class, 'extrato']);
 
     // gestão de ofertas: só para quem tem perfil de prestador
     Route::middleware('prestador')->group(function () {

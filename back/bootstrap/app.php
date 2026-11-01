@@ -18,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'prestador' => \App\Http\Middleware\GarantirPrestador::class,
+            'asaas.webhook' => \App\Http\Middleware\VerificaTokenAsaas::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
