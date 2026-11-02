@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Cobranca;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 use Tests\CriaTabelasDoSupabase;
@@ -134,6 +135,19 @@ class CheckoutTest extends TestCase
             ->postJson('/api/checkout', ['pacote' => 'basico', 'forma' => 'pix', 'cpf' => '11111111111'])
             ->assertStatus(502)
             ->assertJsonPath('detalhes.0', 'O CPF informado é inválido.');
+
+        $this->assertDatabaseCount('Cobranca', 0);
+    }
+
+    public function test_falha_de_conexao_com_o_asaas_responde_502(): void
+    {
+        Http::fake(fn () => throw new ConnectionException('cURL error 60: SSL certificate problem'));
+
+        $this->withToken($this->tokenDe('jogador@gameduo.com'))
+            ->postJson('/api/checkout', ['pacote' => 'basico', 'forma' => 'pix', 'cpf' => '52998224725'])
+            ->assertStatus(502)
+            ->assertJsonPath('detalhes', null)
+            ->assertJsonMissingPath('trace');
 
         $this->assertDatabaseCount('Cobranca', 0);
     }
