@@ -152,3 +152,4 @@ Explore as principais áreas da documentação:
 | 12/10/2026 | 0.26 | Revisão da seção 9 com checklists de DoR e DoD e remoção das menções a BDD | Rodrigo Átila |
 | 12/10/2026 | 0.27 | Inclusão do vídeo da entrega da Unidade 2 | Rodrigo Átila |
 | 26/10/2026 | 0.28 | Inclusão de provas da Iteração 6 | Ricardo Lucas |
+| 03/11/2026 | 0.29 | Correções das issues #12 a #23 da Unidade 2: tecnologias e regras de conclusão consolidadas (seção 2), cobertura do MVP, origem dos requisitos e inventário de dados (seção 8), aplicabilidade do DoD e registro de testes (seção 9), justificativas do recorte, backlog do MVP por iteração, narrativas descritivas da Iteração 7 e pendências de decisão (seção 10), riscos da Elaboração (seção 6), situação das práticas de ER (seção 5), acompanhamento das ações (seção 11) e redução de repetições nas evidências | Equipe GoHorse |

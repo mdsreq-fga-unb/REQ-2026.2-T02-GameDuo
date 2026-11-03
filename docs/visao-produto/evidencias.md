@@ -13,8 +13,8 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 | [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2); [Validação dos requisitos com o monitor](#validacao-monitor) |
 | [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
 | [5](#iteracao-5) | Elaboração | 07/10/2026 a 13/10/2026 | [Reunião 5 — Validação do MVP](#reuniao-5) |
-| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Planejada |
-| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Planejada |
+| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Modelagem do banco e diagrama de telas; demonstração a Ciro pendente de registro |
+| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Em andamento |
 | [8](#iteracao-8) | Construção | 11/11/2026 a 17/11/2026 | Planejada |
 | [9](#iteracao-9) | Construção | 18/11/2026 a 01/12/2026 | Planejada |
 | [10](#iteracao-10) | Transição | 02/12/2026 a 10/12/2026 | Planejada |
@@ -109,7 +109,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 **Fluxograma completo — Figma**
 
-[Figma no contexto do MVP](10.backlog-produto.md#1013-fluxograma-completo)
+[Figma no contexto do MVP](10.backlog-produto.md#1011-fluxograma-completo)
 
 [Abrir no Figma](https://embed.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%C3%ADtulo?node-id=0-1&p=f&embed-host=share)
 
@@ -134,10 +134,11 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 **Período:** 23/09/2026 a 06/10/2026.
 
-### Escolha de APIS:
-    Pagamento: ASAAS
-    League of Legends: Riot API
-    Counter Strike 2: leetify, que utiliza steam D64
+### Escolha de APIs
+
+- **Pagamento:** ASAAS
+- **League of Legends:** Riot API
+- **Counter-Strike 2:** Leetify, que utiliza o Steam ID 64
 
 
 
@@ -241,17 +242,15 @@ O PDF contém um resumo automático e a transcrição, sem uma tabela final pree
 **Objetivo:** combinar a priorização do cliente com a análise de esforço técnico na matriz 4x4 e definir a proposta de MVP da equipe.
 
 !!! abstract "Resumo"
-    A atividade informada para esta reunião é a avaliação pela matriz 4x4 e a definição do MVP da equipe. O quadro “MVP Definido” registra 24 RFs e nove RNFs selecionados, com RNF15 indicado parcialmente, além da classificação dos 16 RNFs em quatro grupos. O quadro permite transcrever o resultado, mas não reconstituir a discussão, as pontuações ou as justificativas individuais sem a ata ou a gravação.
+    A atividade informada para esta reunião é a avaliação pela matriz 4x4 e a definição do MVP da equipe. O quadro “MVP Definido” registra 24 RFs e nove RNFs selecionados, com RNF15 indicado parcialmente, além da classificação dos 16 RNFs em quatro grupos. As justificativas das decisões fora da ordem de valor e esforço estão no [backlog](10.backlog-produto.md#1024-matriz-valor-esforco-e-decisao-de-escopo).
 
 !!! success "Decisões"
     - O resultado registrado pela equipe é o conjunto de RFs e RNFs transcrito abaixo.
     - Os RNFs foram organizados em Obrigatórios ao MVP, Associados a RFs do MVP, Evolutivos e Não aplicáveis ao MVP.
-    - Essa seleção constitui a proposta da equipe a ser validada pelo cliente; a imagem não comprova, por si, o aceite de Ciro.
+    - Essa seleção foi a proposta da equipe levada a Ciro na [Reunião 5](#reuniao-5), onde foi aprovada.
 
 !!! warning "Pontos em aberto"
-    - Informar data e participantes da reunião.
-    - Registrar as pontuações e justificativas da matriz 4x4 e o alcance da implementação parcial de RNF15.
-    - Vincular a proposta ao resultado da validação do cliente na Reunião 5.
+    - Registrar as pontuações individuais da matriz 4x4, que estão apenas no Figma.
 
 #### Vídeos
 
@@ -284,59 +283,7 @@ O PDF contém um resumo automático e a transcrição, sem uma tabela final pree
 
 [Abrir imagem do MVP em tamanho original](../assets/evidencias/mvp-definido.jpg).
 
-##### RFs selecionados no quadro
-
-| Código | Nome |
-| --- | --- |
-| RF01 | Cadastrar usuários |
-| RF02 | Autenticar usuários |
-| RF03 | Recuperar senha |
-| RF04 | Configurar perfil de prestação |
-| RF05 | Manter dados de recebimento |
-| RF07 | Consultar perfil de prestador |
-| RF09 | Filtrar ofertas do catálogo |
-| RF10 | Consultar detalhes de oferta |
-| RF11 | Manter ofertas |
-| RF13 | Encerrar oferta |
-| RF14 | Configurar agenda semanal |
-| RF15 | Consultar disponibilidade de atendimento |
-| RF16 | Agendar serviço |
-| RF18 | Cancelar contratação |
-| RF22 | Comprar combo de créditos |
-| RF23 | Consultar carteira |
-| RF25 | Reservar créditos |
-| RF26 | Liberar valores retidos |
-| RF27 | Processar divisão de receita |
-| RF28 | Processar saques |
-| RF31 | Registrar resultado da sessão |
-| RF38 | Consultar denúncias e disputas |
-| RF44 | Consultar usuários |
-| RF50 | Manter jogos do catálogo |
-
-O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “Cadastrar usuários” está legível e foi associado a RF01 pela seção 8.
-
-##### RNFs selecionados no quadro
-
-| Código | Nome | Classificação no quadro |
-| --- | --- | --- |
-| RNF02 | Restrição de acesso | Obrigatórios ao MVP |
-| RNF06 | Tecnologias de implementação | Obrigatórios ao MVP |
-| RNF07 | Proteção de dados pessoais | Obrigatórios ao MVP |
-| RNF09 | Consistência da agenda | Obrigatórios ao MVP |
-| RNF10 | Identificação do usuário logado | Obrigatórios ao MVP |
-| RNF11 | Prevenção de ações involuntárias | Associados a RFs do MVP |
-| RNF13 | Integridade financeira | Obrigatórios ao MVP |
-| RNF14 | Proteção de credenciais e comunicação | Obrigatórios ao MVP |
-| RNF15 | Tolerância a falhas de integração **(Parte)** | Associados a RFs do MVP |
-
-##### Classificação completa dos RNFs
-
-| Classificação | Critério transcrito do quadro | RNFs |
-| --- | --- | --- |
-| Obrigatórios ao MVP | Necessários por razões de segurança, privacidade, acessibilidade, legislação, operação ou qualidade mínima | RNF02 — Restrição de acesso; RNF10 — Identificação do usuário logado; RNF13 — Integridade financeira; RNF14 — Proteção de credenciais e comunicação; RNF07 — Proteção de dados pessoais; RNF09 — Consistência da agenda; RNF06 — Tecnologias de implementação |
-| Associados a RFs do MVP | Aplicáveis apenas a determinadas funcionalidades selecionadas | RNF15 — Tolerância a falhas de integração; RNF11 — Prevenção de ações involuntárias |
-| Evolutivos | Podem ser aprimorados em entregas futuras | RNF16 — Responsividade de interface; RNF08 — Clareza das mensagens de validação; RNF12 — Consistência visual entre telas; RNF03 — Auditabilidade administrativa e financeira |
-| Não aplicáveis ao MVP | Relacionados exclusivamente a funcionalidades ainda não selecionadas | RNF01 — Autenticação em dois fatores; RNF04 — Configurabilidade de taxas; RNF05 — Periodicidade do cálculo de reputação |
+O quadro acima é o registro histórico da proposta discutida nesta reunião: 24 RFs e nove RNFs, com os RNFs organizados em quatro grupos (obrigatórios, associados a RFs do MVP, evolutivos e não aplicáveis). A lista vigente dos itens selecionados, com prioridade, esforço e situação, está no [backlog do MVP](10.backlog-produto.md#1025-backlog-do-mvp).
 
 ## Iteração 5 — Elaboração {#iteracao-5}
 
@@ -349,22 +296,14 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “
 **Objetivo:** submeter o MVP definido pela equipe à validação de Ciro Vargas.
 
 !!! abstract "Resumo"
-    A realização desta reunião foi informada no registro das iterações, mas não foi fornecida ata ou transcrição que permita resumir sua discussão e seu resultado.
+    A equipe explicou a Ciro a situação do projeto e apresentou os RFs e RNFs escolhidos para o MVP, item a item.
 
 !!! success "Decisões"
-    O resultado da validação do MVP ainda precisa ser documentado com base na ata ou gravação desta reunião.
+    - Ciro aprovou, sem alterações, o recorte do quadro “MVP Definido” de 05/10/2026 ([Reunião 4](#reuniao-4)): 24 RFs e nove RNFs.
+    - Não houve discordância sobre nenhum requisito incluído ou excluído.
 
 !!! warning "Pontos em aberto"
-    - Registrar data efetiva, participantes, resumo e resultado da validação: itens aceitos, recusados ou sujeitos a ajustes.
-    - Informar o link da gravação.
-
-#### Vídeo
-
-**Sem link, segue os pontos importantes discutidos**
-
-A reunião abriu com a discussão contextual, explicando ao Ciro qual a situação atual do projeto, que a equipe escolheu os RFs e os RNFs para o MVP, e começou a mostragem.
-
-Não houve nenhuma discordância sobre qual requisito deveria ou não deveria parar no MVP, os requisitos selecionados pela equipe foram aprovados pelo Ciro e o projeto poderá andar para frente.
+    - A reunião não foi gravada. O registro acima foi feito pelos participantes da equipe.
 
 
 #### Artefatos
@@ -377,7 +316,7 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 6 — Construção {#iteracao-6}
 
-**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
+**Status:** Incremento concluído pela equipe; a demonstração a Ciro ainda não foi registrada.  
 **Período:** 14/10/2026 a 27/10/2026.
 
 ### Artefatos
@@ -395,7 +334,7 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 7 — Construção {#iteracao-7}
 
-**Status:** Planejada.  
+**Status:** Em andamento. Itens e narrativas no [backlog do MVP](10.backlog-produto.md#104-narrativas-descritivas-da-iteracao-7).  
 **Período:** 28/10/2026 a 10/11/2026.
 
 ## Iteração 8 — Construção {#iteracao-8}

@@ -8,6 +8,8 @@
 
 :root {
   --gd-radius: 12px;
+  /* cor única dos links, igual nos modos claro e escuro */
+  --gd-link-color: #4CAF50;
 }
 
 /* Footer inferior (Anterior/Próximo + "Made with Material for MkDocs") removido */
@@ -23,6 +25,8 @@
   --md-accent-fg-color:         #22C55E;
 
   --md-default-bg-color:        #F3F5F3;
+
+  --md-typeset-a-color:         var(--gd-link-color);
 }
 
 [data-md-color-scheme="slate"] {
@@ -32,6 +36,14 @@
   --md-primary-fg-color--dark:  #0B0F0D;
 
   --md-accent-fg-color:         #34D399;
+
+  --md-typeset-a-color:         var(--gd-link-color);
+}
+
+/* Links do conteúdo: mesma cor verde em qualquer modo */
+.md-typeset a,
+.md-typeset a:visited {
+  color: var(--gd-link-color);
 }
 
 /* ---------------------------------------------------------------------
