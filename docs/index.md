@@ -48,7 +48,7 @@ Explore as principais áreas da documentação:
 
     Cenário atual do cliente, oportunidade de negócio, solução proposta e estratégias de engenharia.
 
-    [:octicons-arrow-right-24: Acessar](visao-produto/cenario-atual.md)
+    [:octicons-arrow-right-24: Acessar](visao-produto/1.cenario-atual.md)
 
 -   :material-format-list-checks: __Requisitos e Regras de Negócio__
 
@@ -56,7 +56,7 @@ Explore as principais áreas da documentação:
 
     Requisitos funcionais e não funcionais, rastreabilidade e regras de negócio do MVP.
 
-    [:octicons-arrow-right-24: Acessar](visao-produto/requisitos-software.md)
+    [:octicons-arrow-right-24: Acessar](visao-produto/8.1requisitos-software.md)
 
 -   :material-calendar-range: __Cronograma__
 
@@ -64,7 +64,7 @@ Explore as principais áreas da documentação:
 
     Fases do OpenUP, iterações executadas e planejamento da construção do MVP.
 
-    [:octicons-arrow-right-24: Acessar](visao-produto/cronograma-entregas.md)
+    [:octicons-arrow-right-24: Acessar](visao-produto/6.cronograma-entregas.md)
 
 -   :material-folder-check-outline: __Entregas e Evidências__
 

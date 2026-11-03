@@ -2,7 +2,7 @@
 
 Registro das evidências do GameDuo, marketplace de coaching e duo remunerado desenvolvido pela equipe GoHorse na disciplina de Requisitos de Software da UnB/FCTE, turma T02, semestre 2026.2. A organização acompanha as iterações do OpenUP e as validações quinzenais com Ciro Vargas, cliente, idealizador e único tomador de decisão.
 
-As decisões abaixo representam o momento de cada reunião. Para as especificações atuais, consultar a [seção 8 — Requisitos de Software](requisitos-software.md); para o processo de aceite, consultar a [seção 7 — Interação entre Equipe e Cliente](interacao-equipe.md).
+As decisões abaixo representam o momento de cada reunião. Para as especificações atuais, consultar a [seção 8 — Requisitos de Software](8.1requisitos-software.md); para o processo de aceite, consultar a [seção 7 — Interação entre Equipe e Cliente](7.interacao-equipe.md).
 
 ## Índice
 
@@ -109,9 +109,9 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 **Fluxograma completo — Figma**
 
-[Figma no contexto do MVP](backlog-produto.md#1013-fluxograma-completo)
+[Figma no contexto do MVP](10.backlog-produto.md#1013-fluxograma-completo)
 
-[Abrir no Figma](https://embed.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%25C3%25ADtulo?node-id=0-1&p=f&embed-host=share)
+[Abrir no Figma](https://embed.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%C3%ADtulo?node-id=0-1&p=f&embed-host=share)
 
 [Transcrição da Reunião 2 — Fluxograma (PDF)](../Evidencias/Reuniao%2002%20-%20Evidencias%20-Fluxograma.pdf). Evidências: cadastro e agenda, pp. 1–6; pagamentos e cancelamento, pp. 7–17; moderação e conta única, pp. 18–25; comissões, avaliação e encaminhamentos, pp. 26–34.
 
@@ -371,7 +371,7 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 **Fluxograma do MVP — Figma**
 
-[Fluxograma no contexto do Backlog](backlog-produto.md#fluxograma-do-mvp)
+[Fluxograma no contexto do Backlog](10.backlog-produto.md#fluxograma-do-mvp)
 
 [Abrir no Figma](https://embed.figma.com/board/LH2mEi8MRBysizoEl4KS4D/Untitled?node-id=0-1&embed-host=share)
 

@@ -1,6 +1,6 @@
 # Registro de análise e ajuste dos requisitos
 
-Esta página registra a decisão da equipe para cada apontamento feito pela equipe ByteLab na avaliação dos nossos requisitos, e o que foi alterado na [lista de requisitos](../visao-produto/requisitos-software.md).
+Esta página registra a decisão da equipe para cada apontamento feito pela equipe ByteLab na avaliação dos nossos requisitos, e o que foi alterado na [lista de requisitos](../visao-produto/8.1requisitos-software.md).
 
 ## Critérios de decisão
 
