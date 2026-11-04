@@ -1,0 +1,60 @@
+# Objetivos específicos (seção 2.2) e características de produto (seção 2.3).
+# Base da rastreabilidade OE → CP → RF/RNF.
+
+objetivos:
+- id: OE1
+  nome: ''
+  descricao: Disponibilizar uma jornada de contratação de serviços online (coaching e duo) estável, padronizada e rastreável para as duas partes.
+- id: OE2
+  nome: ''
+  descricao: Reduzir riscos de fraude, inadimplência e abandono de serviço nas transações, com regras explícitas de disputa e prazos definidos.
+- id: OE3
+  nome: Credencial técnica
+  descricao: Assegurar que o ranque (Elo) e as estatísticas declaradas pelo prestador correspondam à conta verificada, quando a API do jogo permitir essa verificação.
+- id: OE4
+  nome: Capacidade de prestação
+  descricao: Tornar observável para o consumidor a experiência de ensino do prestador — modalidades atendidas, formato da sessão, idioma, histórico de sessões concluídas — de modo independente do desempenho competitivo.
+- id: OE5
+  nome: Reputação de serviço e conduta
+  descricao: Acompanhar o cumprimento do que foi contratado (comparecimento, pontualidade, duração acordada, conduta) por meio de indicadores resistentes a retaliação e manipulação.
+- id: OE6
+  nome: ''
+  descricao: Criar uma base tecnológica que suporte o aumento do volume de transações e a futura expansão do catálogo de jogos.
+
+caracteristicas:
+- id: CP1
+  nome: Verificação de credencial técnica
+  valor_negocio: Redução de anúncio falso de nível técnico
+  oe_principal: OE3
+  oe_secundario: OE1
+- id: CP2
+  nome: Perfil de prestação e capacidade de ensino
+  valor_negocio: Permite ao consumidor escolher por adequação, não só por ranque
+  oe_principal: OE4
+  oe_secundario: OE1
+- id: CP3
+  nome: Catálogo e busca de serviços
+  valor_negocio: Conecta oferta e demanda de forma estruturada
+  oe_principal: OE1
+  oe_secundario: OE6
+- id: CP4
+  nome: Intermediação de pagamentos com custódia
+  observacao: hipótese arquitetural — ver 2.4
+  valor_negocio: Redução de inadimplência e quebra de acordo
+  oe_principal: OE2
+  oe_secundario: OE1
+- id: CP5
+  nome: Regras de conclusão e disputa
+  valor_negocio: Torna a custódia operável na prática
+  oe_principal: OE2
+  oe_secundario: OE5
+- id: CP6
+  nome: Avaliação, reputação e denúncia
+  valor_negocio: Qualidade do serviço com risco de abuso controlado
+  oe_principal: OE5
+  oe_secundario: OE4
+- id: CP7
+  nome: Administração e moderação
+  valor_negocio: Operação segura e escalável
+  oe_principal: OE6
+  oe_secundario: OE2
