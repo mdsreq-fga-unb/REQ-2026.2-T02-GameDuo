@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import { api, lerToken, salvarToken } from '../services/api';
 
 // Guarda quem está logado e oferece entrar / sair para qualquer tela.
-// usuario: { email, nome, nickname, prestador } ou null (visitante).
+// usuario: { email, nome, nickname, prestador, role } ou null (visitante).
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
@@ -30,6 +30,7 @@ export function AuthProvider({ children }) {
     const data = await api("/login", { method: "POST", body: { email, senha } });
     salvarToken(data.token);
     setUsuario(data.usuario);
+    return data.usuario;
   };
 
   const sair = async () => {

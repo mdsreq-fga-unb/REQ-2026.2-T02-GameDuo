@@ -9,6 +9,7 @@ import { iniciais } from '../../utils/ofertas';
 function Header() {
   const navigate = useNavigate();
   const { usuario, sair } = useAuth();
+  const ehAdmin = usuario?.role === "admin";
 
   const logout = async () => {
     await sair();
@@ -23,8 +24,9 @@ function Header() {
           <>
             <button className="player-chip" onClick={() => navigate("/minha-conta")}>
               <Avatar initials={iniciais(usuario.nickname || usuario.nome)} size="small" />
-              <span><b>{usuario.nome}</b><small>@{usuario.nickname}{usuario.prestador ? " · prestador" : ""}</small></span>
+              <span><b>{ehAdmin ? `${usuario.nickname} (Administrador)` : usuario.nome}</b><small>@{usuario.nickname}{usuario.prestador ? " · prestador" : ""}</small></span>
             </button>
+            {ehAdmin && <Button variant="ghost" onClick={() => navigate("/admin")}>Painel Admin</Button>}
             {usuario.prestador && <Button variant="ghost" onClick={() => navigate("/minhas-ofertas")}>Minhas ofertas</Button>}
             <Button variant="ghost" onClick={() => navigate("/minha-conta")}>Minha conta</Button>
             <Button variant="link" onClick={logout}>Sair</Button>

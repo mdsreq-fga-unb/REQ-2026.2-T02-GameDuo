@@ -11,14 +11,14 @@ import { useAuth } from '../../context/AuthContext';
 // Rota: /login
 // Outras telas podem mandar, junto com a navegação (location.state):
 //   success    → mensagem verde no topo (ex.: "Conta criada com sucesso!")
-//   voltarPara → para onde ir depois de entrar (padrão: catálogo)
+//   voltarPara → para onde ir depois de entrar (padrão: painel para admin, catálogo para os demais)
 // Os estilos desta página estão no AuthLayout.css, por isso ela não tem .css próprio.
 function PaginaLogin() {
   const navigate = useNavigate();
   const location = useLocation();
   const { entrar } = useAuth();
   const success = location.state?.success;
-  const voltarPara = location.state?.voltarPara ?? "/";
+  const voltarPara = location.state?.voltarPara;
 
   const [email, setEmail] = useState(location.state?.email ?? "");
   const [password, setPassword] = useState("");
@@ -36,8 +36,9 @@ function PaginaLogin() {
     setError("");
     setEnviando(true);
     try {
-      await entrar(email, password);
-      navigate(voltarPara, { replace: true });
+      const logado = await entrar(email, password);
+      const inicio = logado.role === "admin" ? "/admin" : "/";
+      navigate(voltarPara ?? inicio, { replace: true });
     } catch (err) {
       setError(err.status === 401 ? "E-mail ou senha incorretos. Confira os dados e tente novamente." : err.message);
       setEnviando(false);

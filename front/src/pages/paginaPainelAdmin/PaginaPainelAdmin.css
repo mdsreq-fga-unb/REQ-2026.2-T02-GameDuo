@@ -1,0 +1,40 @@
+/*
+  PÁGINA: PaginaPainelAdmin (pages/paginaPainelAdmin/PaginaPainelAdmin.jsx)
+  Painel inicial do administrador: saudação e um cartão por área
+  (Usuários e Jogos). A coluna central (.detail-main) está no index.css.
+*/
+
+/* Saudação acima dos cartões */
+.admin-title {
+  margin-bottom: 32px;
+}
+
+/* Cartões lado a lado; um embaixo do outro no celular */
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.admin-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 3px solid var(--border);
+  background: var(--night);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+.admin-card p {
+  color: var(--muted);
+}
+
+.admin-card b {
+  color: var(--coin);
+}
+
+/* Botão sempre no pé do cartão */
+.admin-card .btn {
+  margin-top: auto;
+}
