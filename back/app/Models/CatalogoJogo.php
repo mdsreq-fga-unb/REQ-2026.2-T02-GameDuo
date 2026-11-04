@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
-// Jogo do catálogo da plataforma (RF50). Não se exclui: desativa-se (ativo = false),
-// porque ofertas antigas guardam o nome do jogo.
+// Jogo do catálogo da plataforma (RF50). Jogo usado em ofertas não se exclui:
+// desativa-se (ativo = false), porque as ofertas guardam o nome do jogo.
 class CatalogoJogo extends Model
 {
   protected $table = "CatalogoJogo";

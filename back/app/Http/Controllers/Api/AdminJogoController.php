@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\JogoRequest;
 use App\Models\CatalogoJogo;
+use App\Models\Oferta;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\JsonResponse;
 
-// RF50: o admin cadastra, edita e ativa/desativa jogos. Não há exclusão.
+// RF50: o admin cadastra, edita, ativa/desativa e exclui jogos (só os que nenhuma oferta usa).
 class AdminJogoController extends Controller
 {
     public function index(): JsonResponse
@@ -62,6 +63,31 @@ class AdminJogoController extends Controller
         return response()->json([
             'message' => 'Jogo salvo com sucesso!',
             'jogo' => $jogo->resumo(),
+        ]);
+    }
+
+    // Só exclui jogo que nenhuma oferta usa (ex.: cadastrado por engano).
+    // Oferta.jogo guarda o nome do jogo, então apagar um jogo em uso deixaria ofertas órfãs.
+    public function destroy(int $id): JsonResponse
+    {
+        $jogo = CatalogoJogo::find($id);
+
+        if (! $jogo) {
+            return response()->json(['message' => 'Jogo não encontrado.'], 404);
+        }
+
+        $ofertas = Oferta::where('jogo', $jogo->nome)->count();
+
+        if ($ofertas > 0) {
+            return response()->json([
+                'message' => "Este jogo é usado em {$ofertas} oferta(s) e não pode ser excluído. Desative-o para tirá-lo do catálogo.",
+            ], 409);
+        }
+
+        $jogo->delete();
+
+        return response()->json([
+            'message' => 'Jogo excluído com sucesso!',
         ]);
     }
 

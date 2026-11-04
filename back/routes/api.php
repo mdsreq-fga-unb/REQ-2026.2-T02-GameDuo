@@ -47,9 +47,10 @@ Route::middleware('auth:api')->group(function () {
         Route::get('/usuarios', [AdminUsuarioController::class, 'index']);
         Route::get('/usuarios/{email}', [AdminUsuarioController::class, 'show']);
 
-        // RF50: manter jogos (sem exclusão: desativar com ativo = false)
+        // RF50: manter jogos (exclusão só de jogo sem ofertas; os demais se desativam)
         Route::get('/jogos', [AdminJogoController::class, 'index']);
         Route::post('/jogos', [AdminJogoController::class, 'store']);
         Route::put('/jogos/{id}', [AdminJogoController::class, 'update'])->whereNumber('id');
+        Route::delete('/jogos/{id}', [AdminJogoController::class, 'destroy'])->whereNumber('id');
     });
 });

@@ -155,6 +155,40 @@ class AdminJogosTest extends TestCase
             ->assertOk();
     }
 
+    public function test_admin_exclui_jogo_sem_ofertas(): void
+    {
+        $jogo = CatalogoJogo::create(['nome' => 'Valorant', 'ativo' => true]);
+
+        $this->withToken($this->tokenDoAdmin())
+            ->deleteJson("/api/admin/jogos/{$jogo->id}")
+            ->assertOk()
+            ->assertJsonPath('message', 'Jogo excluído com sucesso!');
+
+        $this->assertDatabaseMissing('CatalogoJogo', ['nome' => 'Valorant']);
+    }
+
+    public function test_nao_exclui_jogo_usado_em_oferta(): void
+    {
+        $this->criarUsuario('coach@gameduo.com', prestador: true);
+        $oferta = new Oferta([...$this->oferta, 'jogo' => 'League of Legends']);
+        $oferta->email = 'coach@gameduo.com';
+        $oferta->save();
+
+        $this->withToken($this->tokenDoAdmin())
+            ->deleteJson('/api/admin/jogos/' . $this->idDe('League of Legends'))
+            ->assertStatus(409)
+            ->assertJsonPath('message', 'Este jogo é usado em 1 oferta(s) e não pode ser excluído. Desative-o para tirá-lo do catálogo.');
+
+        $this->assertDatabaseHas('CatalogoJogo', ['nome' => 'League of Legends']);
+    }
+
+    public function test_excluir_jogo_inexistente_retorna_404(): void
+    {
+        $this->withToken($this->tokenDoAdmin())
+            ->deleteJson('/api/admin/jogos/9999')
+            ->assertNotFound();
+    }
+
     public function test_usuario_comum_nao_mantem_jogos(): void
     {
         $this->criarUsuario('jogador@gameduo.com');
@@ -162,12 +196,14 @@ class AdminJogosTest extends TestCase
 
         $this->withToken($token)->getJson('/api/admin/jogos')->assertForbidden();
         $this->withToken($token)->postJson('/api/admin/jogos', ['nome' => 'Valorant', 'ativo' => true])->assertForbidden();
+        $this->withToken($token)->deleteJson('/api/admin/jogos/' . $this->idDe('Counter-Strike 2'))->assertForbidden();
     }
 
     public function test_visitante_nao_mantem_jogos_mas_ve_a_lista_publica(): void
     {
         $this->getJson('/api/admin/jogos')->assertUnauthorized();
         $this->postJson('/api/admin/jogos', ['nome' => 'Valorant', 'ativo' => true])->assertUnauthorized();
+        $this->deleteJson('/api/admin/jogos/' . $this->idDe('Counter-Strike 2'))->assertUnauthorized();
 
         $this->getJson('/api/jogos')
             ->assertOk()
