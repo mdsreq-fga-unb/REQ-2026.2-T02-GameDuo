@@ -18,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'prestador' => \App\Http\Middleware\GarantirPrestador::class,
+            'admin' => \App\Http\Middleware\GarantirAdmin::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

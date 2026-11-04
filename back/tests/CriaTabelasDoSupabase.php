@@ -45,6 +45,15 @@ trait CriaTabelasDoSupabase
         return $usuario;
     }
 
+    protected function criarAdmin(string $email): Usuario
+    {
+        $admin = $this->criarUsuario($email);
+        $admin->role = 'admin';
+        $admin->save();
+
+        return $admin;
+    }
+
     protected function tokenDe(string $email): string
     {
         return $this->postJson('/api/login', [
