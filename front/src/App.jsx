@@ -13,6 +13,8 @@ import PaginaNovaSenha from './pages/paginaNovaSenha/PaginaNovaSenha';
 import PaginaSenhaAlterada from './pages/paginaSenhaAlterada/PaginaSenhaAlterada';
 import PaginaPainelAdmin from './pages/paginaPainelAdmin/PaginaPainelAdmin';
 import PaginaAcessoNegado from './pages/paginaAcessoNegado/PaginaAcessoNegado';
+import PaginaAdminUsuarios from './pages/paginaAdminUsuarios/PaginaAdminUsuarios';
+import PaginaAdminDetalheUsuario from './pages/paginaAdminDetalheUsuario/PaginaAdminDetalheUsuario';
 
 // Só deixa entrar quem está logado (e, com soPrestador, quem tem perfil de prestador).
 function RotaPrivada({ children, soPrestador = false }) {
@@ -52,6 +54,8 @@ function App() {
 
           {/* Área administrativa */}
           <Route path="/admin" element={<RotaAdmin><PaginaPainelAdmin /></RotaAdmin>} />
+          <Route path="/admin/usuarios" element={<RotaAdmin><PaginaAdminUsuarios /></RotaAdmin>} />
+          <Route path="/admin/usuarios/:email" element={<RotaAdmin><PaginaAdminDetalheUsuario /></RotaAdmin>} />
 
           {/* Autenticação */}
           <Route path="/login" element={<PaginaLogin />} />
