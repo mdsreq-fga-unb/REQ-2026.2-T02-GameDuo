@@ -1,8 +1,5 @@
 export const ALL = "Todos";
 
-// Jogos suportados pela plataforma.
-export const gameOptions = [ALL, "Counter-Strike 2", "League of Legends"];
-
 // Cada faixa de preço é uma função que diz se o preço entra nela.
 const priceRanges = {
   [ALL]: () => true,

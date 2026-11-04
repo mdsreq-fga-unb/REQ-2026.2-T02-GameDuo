@@ -10,12 +10,12 @@ import PixelIcon from '../../components/pixelIcon/PixelIcon';
 import Select from '../../components/select/Select';
 import TagRow from '../../components/tagRow/TagRow';
 import { api, errosPorCampo } from '../../services/api';
-import { ALL, gameOptions } from '../../utils/filterOffers';
+import { useJogosAtivos } from '../../utils/useJogosAtivos';
 
-const jogos = gameOptions.filter((jogo) => jogo !== ALL);
 const modalidades = ["Coaching", "Duo"];
 
-const emptyForm = { titulo: "", descricao: "", jogo: jogos[0], modalidade: modalidades[0], nivel: "", duracao: "60", preco: "" };
+// jogo vazio: assume o primeiro jogo ativo quando a lista chegar da API
+const emptyForm = { titulo: "", descricao: "", jogo: "", modalidade: modalidades[0], nivel: "", duracao: "60", preco: "" };
 
 // Oferta da API → valores do formulário (os inputs trabalham com texto).
 function paraFormulario(oferta) {
@@ -41,6 +41,10 @@ function PaginaMinhasOfertas() {
   const [errors, setErrors] = useState({});
   const [feedback, setFeedback] = useState(null);
   const [enviando, setEnviando] = useState(false);
+  const jogosAtivos = useJogosAtivos();
+  const jogoEscolhido = form.jogo || jogosAtivos[0] || "";
+  // ao editar uma oferta cujo jogo foi desativado, o jogo atual continua na lista
+  const jogos = jogoEscolhido && !jogosAtivos.includes(jogoEscolhido) ? [jogoEscolhido, ...jogosAtivos] : jogosAtivos;
 
   const carregar = () =>
     api("/minhas-ofertas")
@@ -74,6 +78,7 @@ function PaginaMinhasOfertas() {
 
     const body = {
       ...form,
+      jogo: jogoEscolhido,
       titulo: form.titulo.trim(),
       descricao: form.descricao.trim() || null,
       nivel: form.nivel.trim() || null,
@@ -125,7 +130,7 @@ function PaginaMinhasOfertas() {
               <Input label="Título" value={form.titulo} onChange={update("titulo")} placeholder="Ex.: Mira e spray control no CS2" error={errors.titulo} />
               <Input label="Descrição (opcional)" value={form.descricao} onChange={update("descricao")} placeholder="O que o jogador vai aprender ou fazer" error={errors.descricao} />
               <div className="offer-form__row">
-                <Select label="Jogo" value={form.jogo} options={jogos} onChange={update("jogo")} />
+                <Select label="Jogo" value={jogoEscolhido} options={jogos} onChange={update("jogo")} />
                 <Select label="Modalidade" value={form.modalidade} options={modalidades} onChange={update("modalidade")} />
               </div>
               <Input label="Nível (opcional)" value={form.nivel} onChange={update("nivel")} placeholder="Ex.: Faceit Nível 10, Diamante I" error={errors.nivel} />

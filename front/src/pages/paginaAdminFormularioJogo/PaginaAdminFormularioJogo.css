@@ -1,0 +1,42 @@
+/*
+  PÁGINA: PaginaAdminFormularioJogo (pages/paginaAdminFormularioJogo/PaginaAdminFormularioJogo.jsx)
+  Formulário de jogo: nome, situação (Ativo/Inativo) e botões.
+*/
+
+/* Grupo "Situação": (●) Ativo ( ) Inativo */
+.situacao-campo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 0 0 22px;
+  padding: 0;
+  border: 0;
+}
+
+.situacao-campo legend {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.situacao-campo label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.situacao-campo input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.situacao-campo small {
+  width: 100%;
+  color: var(--muted);
+}
+
+/* Espaço entre "Salvar Jogo" e "Cancelar" */
+.situacao-campo ~ .btn + .btn {
+  margin-top: 12px;
+}

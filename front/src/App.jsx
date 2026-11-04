@@ -15,6 +15,8 @@ import PaginaPainelAdmin from './pages/paginaPainelAdmin/PaginaPainelAdmin';
 import PaginaAcessoNegado from './pages/paginaAcessoNegado/PaginaAcessoNegado';
 import PaginaAdminUsuarios from './pages/paginaAdminUsuarios/PaginaAdminUsuarios';
 import PaginaAdminDetalheUsuario from './pages/paginaAdminDetalheUsuario/PaginaAdminDetalheUsuario';
+import PaginaAdminJogos from './pages/paginaAdminJogos/PaginaAdminJogos';
+import PaginaAdminFormularioJogo from './pages/paginaAdminFormularioJogo/PaginaAdminFormularioJogo';
 
 // Só deixa entrar quem está logado (e, com soPrestador, quem tem perfil de prestador).
 function RotaPrivada({ children, soPrestador = false }) {
@@ -56,6 +58,9 @@ function App() {
           <Route path="/admin" element={<RotaAdmin><PaginaPainelAdmin /></RotaAdmin>} />
           <Route path="/admin/usuarios" element={<RotaAdmin><PaginaAdminUsuarios /></RotaAdmin>} />
           <Route path="/admin/usuarios/:email" element={<RotaAdmin><PaginaAdminDetalheUsuario /></RotaAdmin>} />
+          <Route path="/admin/jogos" element={<RotaAdmin><PaginaAdminJogos /></RotaAdmin>} />
+          <Route path="/admin/jogos/novo" element={<RotaAdmin><PaginaAdminFormularioJogo /></RotaAdmin>} />
+          <Route path="/admin/jogos/:id/editar" element={<RotaAdmin><PaginaAdminFormularioJogo /></RotaAdmin>} />
 
           {/* Autenticação */}
           <Route path="/login" element={<PaginaLogin />} />
