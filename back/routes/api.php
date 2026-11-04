@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\AdminController;   
+use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Api\AdminUsuarioController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\OfertaController;
 use App\Http\Controllers\Api\PrestadorController;
@@ -35,8 +36,12 @@ Route::middleware('auth:api')->group(function () {
         Route::delete('/ofertas/{oferta}', [OfertaController::class, 'destroy'])->whereNumber('oferta');
     });
 
-    // área administrativa: só contas com role = 'admin'              
+    // área administrativa: só contas com role = 'admin'
     Route::middleware('admin')->prefix('admin')->group(function () {
         Route::get('/resumo', [AdminController::class, 'resumo']);
+
+        // RF44: consultar usuários (somente leitura)
+        Route::get('/usuarios', [AdminUsuarioController::class, 'index']);
+        Route::get('/usuarios/{email}', [AdminUsuarioController::class, 'show']);
     });
 });
