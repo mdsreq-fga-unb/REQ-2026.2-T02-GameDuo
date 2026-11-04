@@ -19,6 +19,7 @@ trait CriaTabelasDoSupabase
             $table->string('nome');
             $table->string('nickname')->nullable();
             $table->string('senha');
+            $table->string('role', 10)->default('user');
         });
 
         Schema::create('Provedor', function (Blueprint $table) {
