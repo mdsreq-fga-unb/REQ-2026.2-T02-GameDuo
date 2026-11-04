@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Api\AdminJogoController;
 use App\Http\Controllers\Api\AdminUsuarioController;
+use App\Http\Controllers\Api\JogoController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\OfertaController;
 use App\Http\Controllers\Api\PrestadorController;
@@ -21,6 +23,7 @@ Route::post('/usuarios', [UsuarioController::class, 'store'])
 // catálogo público
 Route::get('/ofertas', [OfertaController::class, 'index']);
 Route::get('/ofertas/{oferta}', [OfertaController::class, 'show'])->whereNumber('oferta');
+Route::get('/jogos', [JogoController::class, 'index']);
 
 // rotas que exigem o token do login (Authorization: Bearer <token>)
 Route::middleware('auth:api')->group(function () {
@@ -43,5 +46,10 @@ Route::middleware('auth:api')->group(function () {
         // RF44: consultar usuários (somente leitura)
         Route::get('/usuarios', [AdminUsuarioController::class, 'index']);
         Route::get('/usuarios/{email}', [AdminUsuarioController::class, 'show']);
+
+        // RF50: manter jogos (sem exclusão: desativar com ativo = false)
+        Route::get('/jogos', [AdminJogoController::class, 'index']);
+        Route::post('/jogos', [AdminJogoController::class, 'store']);
+        Route::put('/jogos/{id}', [AdminJogoController::class, 'update'])->whereNumber('id');
     });
 });

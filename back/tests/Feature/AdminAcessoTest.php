@@ -59,7 +59,7 @@ class AdminAcessoTest extends TestCase
         $this->withToken($this->tokenDe('ciro@gameduo.com'))
             ->getJson('/api/admin/resumo')
             ->assertOk()
-            ->assertExactJson(['total_usuarios' => 3, 'total_prestadores' => 1]);
+            ->assertExactJson(['total_usuarios' => 3, 'total_prestadores' => 1, 'jogos_ativos' => 2]);
     }
 
     public function test_cadastro_pelo_site_nao_cria_admin(): void
