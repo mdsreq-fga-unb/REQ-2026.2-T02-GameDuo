@@ -949,3 +949,88 @@
 .md-typeset .req-copiar--ok {
   font-size: .7em;
 }
+
+/* ---------------------------------------------------------------------
+   Tabelas longas recolhidas pelo hook hooks/tabelas.py
+   --------------------------------------------------------------------- */
+
+.md-typeset details.gd-recolhida {
+  margin: 1em 0;
+  padding: 0;
+  border: 1px solid var(--req-borda);
+  border-radius: var(--gd-radius);
+  background: var(--req-superficie);
+  box-shadow: none;
+  font-size: inherit;
+  page-break-inside: auto;
+}
+
+.md-typeset details.gd-recolhida > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5em;
+  min-height: 0;
+  margin: 0;
+  padding: .6em .9em;
+  border: 0;
+  background-color: transparent;
+  font-size: .74rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.md-typeset details.gd-recolhida > summary::-webkit-details-marker,
+.md-typeset details.gd-recolhida > summary::after {
+  display: none;
+}
+
+.md-typeset details.gd-recolhida > summary::before {
+  content: "▸";
+  position: static;
+  width: auto;
+  height: auto;
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-color: transparent;
+  color: var(--req-texto-suave);
+  transition: transform .15s ease;
+}
+
+.md-typeset details.gd-recolhida[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.md-typeset details.gd-recolhida:focus-within {
+  box-shadow: none;
+}
+
+.md-typeset .gd-recolhida__titulo {
+  flex: 1 1 12rem;
+  font-weight: 500;
+  color: var(--req-texto-suave);
+}
+
+.md-typeset .gd-recolhida__linhas {
+  color: var(--req-texto-suave);
+  white-space: nowrap;
+}
+
+.md-typeset details.gd-recolhida > :not(summary) {
+  margin: 0 .9em .9em;
+}
+
+.md-typeset .gd-recolhida__acao::before {
+  content: "Mostrar tabela";
+  padding: .1em .6em;
+  border: 1px solid var(--req-borda);
+  border-radius: 999px;
+  font-size: .9em;
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  white-space: nowrap;
+}
+
+.md-typeset details.gd-recolhida[open] .gd-recolhida__acao::before {
+  content: "Ocultar tabela";
+}

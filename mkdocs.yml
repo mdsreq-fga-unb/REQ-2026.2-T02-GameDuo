@@ -37,6 +37,7 @@ theme:
 hooks:
   - hooks/dialog_block.py
   - hooks/autolink.py
+  - hooks/tabelas.py
 
 plugins:
   - search:
