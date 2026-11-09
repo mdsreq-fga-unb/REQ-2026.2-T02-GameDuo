@@ -2,10 +2,13 @@ import './FilterPanel.css';
 import Button from '../button/Button';
 import Select from '../select/Select';
 import ModalityTabs from '../modalityTabs/ModalityTabs';
-import { gameOptions, priceRangeOptions } from '../../utils/filterOffers';
+import { ALL, priceRangeOptions } from '../../utils/filterOffers';
+import { useJogosAtivos } from '../../utils/useJogosAtivos';
 
 // onChange(chave, valor): chave é "modality", "game" ou "price".
 function FilterPanel({ filters, resultCount, onChange, onApply, onClear }) {
+  const gameOptions = [ALL, ...useJogosAtivos()];
+
   return (
     <section className="filter-panel" aria-label="Filtros de ofertas">
       <div className="filter-panel__head">

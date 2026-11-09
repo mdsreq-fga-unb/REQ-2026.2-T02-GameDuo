@@ -11,6 +11,12 @@ import PaginaRecuperarSenha from './pages/paginaRecuperarSenha/PaginaRecuperarSe
 import PaginaValidarCodigo from './pages/paginaValidarCodigo/PaginaValidarCodigo';
 import PaginaNovaSenha from './pages/paginaNovaSenha/PaginaNovaSenha';
 import PaginaSenhaAlterada from './pages/paginaSenhaAlterada/PaginaSenhaAlterada';
+import PaginaPainelAdmin from './pages/paginaPainelAdmin/PaginaPainelAdmin';
+import PaginaAcessoNegado from './pages/paginaAcessoNegado/PaginaAcessoNegado';
+import PaginaAdminUsuarios from './pages/paginaAdminUsuarios/PaginaAdminUsuarios';
+import PaginaAdminDetalheUsuario from './pages/paginaAdminDetalheUsuario/PaginaAdminDetalheUsuario';
+import PaginaAdminJogos from './pages/paginaAdminJogos/PaginaAdminJogos';
+import PaginaAdminFormularioJogo from './pages/paginaAdminFormularioJogo/PaginaAdminFormularioJogo';
 
 // Só deixa entrar quem está logado (e, com soPrestador, quem tem perfil de prestador).
 function RotaPrivada({ children, soPrestador = false }) {
@@ -21,6 +27,18 @@ function RotaPrivada({ children, soPrestador = false }) {
   if (carregando) return null;
   if (!usuario) return <Navigate to="/login" replace state={{ voltarPara: location.pathname }} />;
   if (soPrestador && !usuario.prestador) return <Navigate to="/minha-conta" replace />;
+  return children;
+}
+
+// Área administrativa: visitante vai para o login; conta sem papel admin vê Acesso Negado.
+// É só experiência de uso: quem protege de verdade é o backend (401/403 em /api/admin).
+function RotaAdmin({ children }) {
+  const { usuario, carregando } = useAuth();
+  const location = useLocation();
+
+  if (carregando) return null;
+  if (!usuario) return <Navigate to="/login" replace state={{ voltarPara: location.pathname }} />;
+  if (usuario.role !== "admin") return <PaginaAcessoNegado />;
   return children;
 }
 
@@ -35,6 +53,14 @@ function App() {
           <Route path="/oferta/:id" element={<PaginaDetalhesOferta />} />
           <Route path="/minha-conta" element={<RotaPrivada><PaginaMinhaConta /></RotaPrivada>} />
           <Route path="/minhas-ofertas" element={<RotaPrivada soPrestador><PaginaMinhasOfertas /></RotaPrivada>} />
+
+          {/* Área administrativa */}
+          <Route path="/admin" element={<RotaAdmin><PaginaPainelAdmin /></RotaAdmin>} />
+          <Route path="/admin/usuarios" element={<RotaAdmin><PaginaAdminUsuarios /></RotaAdmin>} />
+          <Route path="/admin/usuarios/:email" element={<RotaAdmin><PaginaAdminDetalheUsuario /></RotaAdmin>} />
+          <Route path="/admin/jogos" element={<RotaAdmin><PaginaAdminJogos /></RotaAdmin>} />
+          <Route path="/admin/jogos/novo" element={<RotaAdmin><PaginaAdminFormularioJogo /></RotaAdmin>} />
+          <Route path="/admin/jogos/:id/editar" element={<RotaAdmin><PaginaAdminFormularioJogo /></RotaAdmin>} />
 
           {/* Autenticação */}
           <Route path="/login" element={<PaginaLogin />} />

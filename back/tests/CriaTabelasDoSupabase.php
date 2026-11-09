@@ -19,6 +19,7 @@ trait CriaTabelasDoSupabase
             $table->string('nome');
             $table->string('nickname')->nullable();
             $table->string('senha');
+            $table->string('role', 10)->default('user');
         });
 
         Schema::create('Provedor', function (Blueprint $table) {
@@ -42,6 +43,15 @@ trait CriaTabelasDoSupabase
         }
 
         return $usuario;
+    }
+
+    protected function criarAdmin(string $email): Usuario
+    {
+        $admin = $this->criarUsuario($email);
+        $admin->role = 'admin';
+        $admin->save();
+
+        return $admin;
     }
 
     protected function tokenDe(string $email): string

@@ -1,0 +1,35 @@
+/*
+  PÁGINA: PaginaAdminJogos (pages/paginaAdminJogos/PaginaAdminJogos.jsx)
+  Lista de jogos do painel admin. A lista (.admin-lista / .admin-item)
+  vem do PaginaAdminUsuarios.css e o título (.admin-title) do PaginaPainelAdmin.css.
+*/
+
+/* Título à esquerda e "Adicionar Jogo" à direita; empilham no celular */
+.admin-jogos__topo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+/* Selo Ativo / Inativo */
+.situacao {
+  align-self: flex-start;
+  padding: 4px 8px;
+  border: 2px solid var(--border);
+  font-family: var(--title);
+  font-size: .5rem;
+}
+
+.situacao--ativo {
+  border-color: var(--lime);
+  background: var(--lime);
+  color: var(--night) !important;
+}
+
+/* Editar / Excluir lado a lado */
+.admin-item__acoes {
+  display: flex;
+  gap: 16px;
+}

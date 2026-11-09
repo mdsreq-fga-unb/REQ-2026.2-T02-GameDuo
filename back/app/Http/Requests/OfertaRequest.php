@@ -10,8 +10,6 @@ class OfertaRequest extends FormRequest
     // RN08: nesta entrega as ofertas são de coaching e duo
     public const MODALIDADES = ['Coaching', 'Duo'];
 
-    public const JOGOS = ['Counter-Strike 2', 'League of Legends'];
-
     public function authorize(): bool
     {
         return true;
@@ -22,12 +20,25 @@ class OfertaRequest extends FormRequest
         return [
             'titulo' => ['required', 'string', 'min:5', 'max:120'],
             'descricao' => ['nullable', 'string', 'max:1000'],
-            'jogo' => ['required', 'string', Rule::in(self::JOGOS)],
+            'jogo' => ['required', 'string', ...$this->regrasDoJogo()],
             'modalidade' => ['required', 'string', Rule::in(self::MODALIDADES)],
             'nivel' => ['nullable', 'string', 'max:50'],
             'duracao' => ['required', 'integer', 'min:15', 'max:480'],
             'preco' => ['required', 'integer', 'min:1', 'max:100000'],
         ];
+    }
+
+    // RF50: o jogo precisa estar ativo no catálogo. Ao editar, a oferta pode
+    // manter o jogo que já tinha, mesmo que o admin o tenha desativado depois.
+    private function regrasDoJogo(): array
+    {
+        $jogoAtual = $this->route('oferta')?->jogo;
+
+        if ($jogoAtual !== null && $this->input('jogo') === $jogoAtual) {
+            return [];
+        }
+
+        return [Rule::exists('CatalogoJogo', 'nome')->where('ativo', true)];
     }
 
     public function messages(): array
@@ -37,7 +48,7 @@ class OfertaRequest extends FormRequest
             'titulo.min' => 'O título deve ter pelo menos 5 caracteres.',
             'titulo.max' => 'O título deve ter no máximo 120 caracteres.',
             'jogo.required' => 'Escolha o jogo.',
-            'jogo.in' => 'Escolha um jogo da lista.',
+            'jogo.exists' => 'Escolha um jogo da lista.',
             'modalidade.required' => 'Escolha a modalidade.',
             'modalidade.in' => 'A modalidade deve ser Coaching ou Duo.',
             'duracao.required' => 'Informe a duração.',

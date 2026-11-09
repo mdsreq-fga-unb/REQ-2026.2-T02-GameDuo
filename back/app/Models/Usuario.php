@@ -41,6 +41,20 @@ class Usuario extends Authenticatable implements JWTSubject
     return $this->provedor !== null;
   }
 
+  // o papel vem sempre do banco; ninguém vira admin pelo site      ← NOVO
+  public function ehAdmin(): bool
+  {
+    return $this->role === "admin";
+  }
+
+  // e-mail parcialmente escondido para listagens: fulano@gmail.com → fu***@gmail.com
+  public function emailMascarado(): string
+  {
+    [$nome, $dominio] = explode("@", $this->email, 2) + [1 => ""];
+
+    return mb_substr($nome, 0, 2) . "***@" . $dominio;
+  }
+
   // dados do usuário devolvidos pela API (login e /me)
   public function resumo(): array
   {
@@ -49,6 +63,7 @@ class Usuario extends Authenticatable implements JWTSubject
       "nome" => $this->nome,
       "nickname" => $this->nickname,
       "prestador" => $this->ehPrestador(),
+      "role" => $this->role,                                       // ← NOVO
     ];
   }
 

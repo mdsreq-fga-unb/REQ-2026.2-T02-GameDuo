@@ -1,0 +1,57 @@
+/*
+  PÁGINA: PaginaAdminUsuarios (pages/paginaAdminUsuarios/PaginaAdminUsuarios.jsx)
+  Lista de usuários do painel admin: filtros, itens e paginação.
+  O título (.admin-title) vem do PaginaPainelAdmin.css e a coluna
+  central (.detail-main) do index.css.
+*/
+
+/* Busca + tipo + botões na mesma linha; quebram no celular */
+.admin-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.admin-filtros .field {
+  flex: 1 1 220px;
+  margin-bottom: 0;
+}
+
+/* Lista de usuários */
+.admin-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 3px solid var(--border);
+  background: var(--night);
+}
+
+.admin-item__dados {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-item__dados small {
+  color: var(--muted);
+}
+
+/* ‹ Anterior   Página X de N   Próxima › */
+.admin-paginacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+}

@@ -1,0 +1,32 @@
+/*
+  PÁGINA: PaginaAdminDetalheUsuario (pages/paginaAdminDetalheUsuario/PaginaAdminDetalheUsuario.jsx)
+  Ficha somente leitura de um usuário, dentro de um DialogPanel.
+*/
+
+/* Rótulo à esquerda, valor à direita; um embaixo do outro no celular */
+.admin-detalhe {
+  display: grid;
+  grid-template-columns: minmax(140px, auto) 1fr;
+  gap: 12px 24px;
+  margin-top: 24px;
+}
+
+.admin-detalhe dt {
+  color: var(--muted);
+}
+
+.admin-detalhe dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 680px) {
+  .admin-detalhe {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .admin-detalhe dd {
+    margin-bottom: 10px;
+  }
+}
