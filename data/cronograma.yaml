@@ -1,0 +1,55 @@
+# Situação das iterações. O status de cada requisito é derivado da iteração
+# em que ele está planejado (requisitos.yaml → entrega.iteracao).
+# Status: Executada | Em andamento | Planejada
+
+iteracoes:
+- numero: 1
+  fase: Iniciação
+  inicio: 11/08/2026
+  fim: 31/08/2026
+  status: Executada
+- numero: 2
+  fase: Iniciação
+  inicio: 01/09/2026
+  fim: 08/09/2026
+  status: Executada
+- numero: 3
+  fase: Elaboração
+  inicio: 09/09/2026
+  fim: 22/09/2026
+  status: Executada
+- numero: 4
+  fase: Elaboração
+  inicio: 23/09/2026
+  fim: 06/10/2026
+  status: Executada
+- numero: 5
+  fase: Elaboração
+  inicio: 07/10/2026
+  fim: 13/10/2026
+  status: Executada
+- numero: 6
+  fase: Construção
+  inicio: 14/10/2026
+  fim: 27/10/2026
+  status: Executada
+- numero: 7
+  fase: Construção
+  inicio: 28/10/2026
+  fim: 10/11/2026
+  status: Executada
+- numero: 8
+  fase: Construção
+  inicio: 11/11/2026
+  fim: 17/11/2026
+  status: Em andamento
+- numero: 9
+  fase: Construção
+  inicio: 18/11/2026
+  fim: 01/12/2026
+  status: Planejada
+- numero: 10
+  fase: Transição
+  inicio: 02/12/2026
+  fim: 10/12/2026
+  status: Planejada

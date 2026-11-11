@@ -123,6 +123,14 @@ Explore as principais áreas da documentação:
 
 ## Histórico de Revisão
 
+Atualizações terão as seguintes motivações:
+
+- Fim de iteração, veja [cronograma](visao-produto/6.cronograma-entregas.md) para ver os dias que serão modificados
+
+- Novas regras de negócio discutidas, vindas de uma reunião com o cliente.
+
+- Em caso de ambiguidade em um requisito, discutida em uma reunião com a equipe, terá o dia e a mudança no requisito.
+
 | Data | Versão | Descrição | Autor(es) |
 |:---|:---|:---|:---|
 | 02/09/2026 | 0.1 | Abertura do documento e estruturação inicial | Guilherme Brandão |
@@ -152,3 +160,5 @@ Explore as principais áreas da documentação:
 | 12/10/2026 | 0.26 | Revisão da seção 9 com checklists de DoR e DoD e remoção das menções a BDD | Rodrigo Átila |
 | 12/10/2026 | 0.27 | Inclusão do vídeo da entrega da Unidade 2 | Rodrigo Átila |
 | 26/10/2026 | 0.28 | Inclusão de provas da Iteração 6 | Ricardo Lucas |
+| 04/11/2026 | 0.29 | Mudanças na amostragem de requisitos | Rodrigo Átila |
+| 10/11/2026 | 0.30 | Fechamento da iteração 7 | Ricardo Lucas |

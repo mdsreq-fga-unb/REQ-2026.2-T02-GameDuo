@@ -36,10 +36,20 @@ theme:
 
 hooks:
   - hooks/dialog_block.py
+  - hooks/autolink.py
+  - hooks/tabelas.py
 
 plugins:
   - search:
       lang: pt
+  # Gera as tabelas e os cards de requisitos a partir de data/*.yaml (ver main.py).
+  # Só renderiza páginas com "render_macros: true" no front matter.
+  - macros:
+      render_by_default: false
+
+watch:
+  - data
+  - main.py
 
 markdown_extensions:
   - attr_list
@@ -65,10 +75,12 @@ extra:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/modais.css
+  - stylesheets/requisitos.css
 
 extra_javascript:
   - javascripts/sidebar-toggle.js
   - javascripts/modais.js
+  - javascripts/requisitos.js
 
 nav:
   - Início: index.md
@@ -81,10 +93,14 @@ nav:
       - "6. Cronograma e Entregas": visao-produto/6.cronograma-entregas.md
       - "7. Interação entre Equipe e Cliente": visao-produto/7.interacao-equipe.md
       - "8. Requisitos de Software":
-          - "Requisitos Funcionais e Não Funcionais": visao-produto/8.1requisitos-software.md
-          - "Regras de Negócio": visao-produto/8.2regras-negocio.md
+          - "8.1–8.2 Catálogo de Requisitos": visao-produto/8.1requisitos-software.md
+          - "8.3 Rastreabilidade": visao-produto/8.3rastreabilidade.md
+          - "8.4 Regras de Negócio": visao-produto/8.4regras-negocio.md
       - "9. DoR e DoD": visao-produto/9.dordod.md
-      - "10. Backlog de Produto": visao-produto/10.backlog-produto.md
+      - "10. Backlog de Produto":
+          - "10.1 Backlog Geral": visao-produto/10.1backlog-geral.md
+          - "10.2 Priorização": visao-produto/10.2priorizacao.md
+          - "10.3 MVP": visao-produto/10.3mvp.md
       - "11. Lições Aprendidas": visao-produto/11.licoes-aprendidas.md
       - "12. Referências Bibliográficas": visao-produto/12.referencias.md
   - Entregas:

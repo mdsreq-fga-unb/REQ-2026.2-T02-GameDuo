@@ -109,7 +109,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 **Fluxograma completo — Figma**
 
-[Figma no contexto do MVP](10.backlog-produto.md#1013-fluxograma-completo)
+[Figma no contexto do MVP](10.1backlog-geral.md#1013-fluxograma-completo)
 
 [Abrir no Figma](https://embed.figma.com/board/VFyXnt4X2cWQW8LYxHXFft/Sem-t%C3%ADtulo?node-id=0-1&p=f&embed-host=share)
 
@@ -371,7 +371,7 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 **Fluxograma do MVP — Figma**
 
-[Fluxograma no contexto do Backlog](10.backlog-produto.md#fluxograma-do-mvp)
+[Fluxograma no contexto do Backlog](10.3mvp.md#1033-fluxograma-do-mvp)
 
 [Abrir no Figma](https://embed.figma.com/board/LH2mEi8MRBysizoEl4KS4D/Untitled?node-id=0-1&embed-host=share)
 
@@ -395,8 +395,10 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 7 — Construção {#iteracao-7}
 
-**Status:** Planejada.  
+**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
 **Período:** 28/10/2026 a 10/11/2026.
+
+
 
 ## Iteração 8 — Construção {#iteracao-8}
 

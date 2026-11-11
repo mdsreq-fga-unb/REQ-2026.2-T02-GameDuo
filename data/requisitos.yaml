@@ -1,0 +1,965 @@
+# Fonte única dos requisitos do GameDuo.
+#
+# Todas as páginas que listam requisitos (catálogo, backlog, priorização, MVP,
+# rastreabilidade e cronograma) são geradas a partir deste arquivo pelo
+# mkdocs-macros-plugin (ver main.py). Para alterar um requisito, altere APENAS aqui.
+#
+# Campos dos RFs
+#   id, nome               identidade estável do requisito
+#   descricao              descrição atual do comportamento ("O sistema deve...")
+#   narrativa_descritiva   declaração na técnica de Narrativas Descritivas, a escrever:
+#     tecnica              "Texto narrativo" | "Caso de uso (breve descrição)" | "Cenário narrativo"
+#     texto                a narrativa
+#   origem                 características de produto (CP) — o OE vem de produto.yaml
+#   priorizacao.moscow     Must Have (4) | Should Have (3) | Could Have (2) | Won't Have (1)
+#   priorizacao.esforco    notas 1–4 de esforço (e), complexidade (c) e capacitação (ce);
+#                          média e ET são calculados na renderização, nunca digitados
+#   entrega.escopo         MVP | Backlog
+#   entrega.jornada        parte da jornada do MVP que o requisito apoia
+#   entrega.iteracao       iteração planejada (o status vem de cronograma.yaml)
+#   rnfs_associados        vínculos RF→RNF já documentados nas regras de negócio e
+#                          nos critérios dos RNFs; lista parcial, a revisar pela equipe
+#
+# Campos dos RNFs
+#   classificacao, criterio   classificação URPS+/Sommerville e critério verificável
+#   entrega.tratamento        tratamento registrado no quadro "MVP Definido"
+#   entrega.iteracoes         iterações em que o RNF passa a se aplicar
+
+rf:
+- id: RF01
+  nome: Cadastrar usuários
+  descricao: O sistema deve permitir o cadastro de usuários com e-mail, telefone, senha e nickname público, permitindo corrigir os dados informados.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 1, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Conta e acesso
+    iteracao: 6
+  rnfs_associados: []
+- id: RF02
+  nome: Autenticar usuários
+  descricao: O sistema deve permitir ao usuário acessar o sistema após a validação das credenciais informadas.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Conta e acesso
+    iteracao: 6
+  rnfs_associados: [RNF02]
+- id: RF03
+  nome: Recuperar senha
+  descricao: O sistema deve permitir ao usuário recuperar a senha por e-mail ou telefone e definir uma nova senha após validar a solicitação.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 2, c: 3, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Conta e acesso
+    iteracao: 8
+  rnfs_associados: []
+- id: RF04
+  nome: Configurar perfil de prestação
+  descricao: O sistema deve permitir ao prestador configurar sua apresentação, jogos, nível declarado, modalidades, formatos de atendimento e idiomas.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP2]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 3, c: 2, ce: 1}
+  entrega:
+    escopo: MVP
+    jornada: Perfil de prestação
+    iteracao: 6
+  rnfs_associados: []
+- id: RF05
+  nome: Manter dados de recebimento
+  descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dados bancários utilizados para recebimento.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 2, c: 2, ce: 3}
+  entrega:
+    escopo: MVP
+    jornada: Perfil de prestação
+    iteracao: 9
+  rnfs_associados: []
+- id: RF06
+  nome: Verificar credencial de jogo
+  descricao: O sistema deve permitir ao usuário vincular sua conta de jogo ao perfil e apresentar o resultado da verificação da credencial pela integração disponível.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP1]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 3, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF07
+  nome: Consultar perfil de prestador
+  descricao: O sistema deve permitir ao usuário consultar a apresentação, os jogos, as modalidades, as credenciais verificadas, a reputação e os indicadores do prestador.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP1, CP2]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 3, c: 3, ce: 1}
+  entrega:
+    escopo: MVP
+    jornada: Perfil de prestação
+    iteracao: 9
+  rnfs_associados: []
+- id: RF08
+  nome: Calcular indicadores de atendimento
+  descricao: O sistema deve calcular a quantidade de sessões concluídas e a taxa de comparecimento do prestador a partir dos registros de atendimento.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP2]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 4, c: 2, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF09
+  nome: Filtrar ofertas do catálogo
+  descricao: O sistema deve permitir ao usuário buscar ofertas no catálogo, aplicando filtros de modalidade, jogo, elo, preço, idioma, disponibilidade, reputação e selo.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 1, c: 1, ce: 1}
+  entrega:
+    escopo: MVP
+    jornada: Catálogo e ofertas
+    iteracao: 9
+  rnfs_associados: []
+- id: RF10
+  nome: Consultar detalhes de oferta
+  descricao: O sistema deve permitir ao usuário consultar os detalhes de uma oferta, incluindo prestador, preço, duração, condições e forma de comunicação.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Catálogo e ofertas
+    iteracao: 6
+  rnfs_associados: []
+- id: RF11
+  nome: Manter ofertas
+  descricao: O sistema deve permitir ao prestador cadastrar, editar e publicar ofertas de coaching, duo e conteúdos, associando os vídeos ou documentos às ofertas de conteúdo.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 3, c: 2, ce: 3}
+  entrega:
+    escopo: MVP
+    jornada: Catálogo e ofertas
+    iteracao: 6
+  rnfs_associados: []
+- id: RF12
+  nome: Pausar oferta
+  descricao: O sistema deve permitir ao prestador pausar uma oferta, retirando-a do catálogo e mantendo seus dados no painel do prestador.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF13
+  nome: Encerrar oferta
+  descricao: O sistema deve permitir ao prestador encerrar uma oferta, retirando-a do catálogo e de sua lista de ofertas.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 1, c: 1, ce: 1}
+  entrega:
+    escopo: MVP
+    jornada: Catálogo e ofertas
+    iteracao: 7
+  rnfs_associados: [RNF11]
+- id: RF14
+  nome: Configurar agenda semanal
+  descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dias e intervalos disponíveis para atendimento de cada oferta de coaching ou duo.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP2]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 4, c: 3, ce: 4}
+  entrega:
+    escopo: MVP
+    jornada: Agenda e contratação
+    iteracao: 6
+  rnfs_associados: [RNF09]
+- id: RF15
+  nome: Consultar disponibilidade de atendimento
+  descricao: O sistema deve permitir ao consumidor consultar os horários disponíveis do prestador em cada oferta.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP2, CP3]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Agenda e contratação
+    iteracao: 7
+  rnfs_associados: [RNF09]
+- id: RF16
+  nome: Agendar serviço
+  descricao: O sistema deve registrar automaticamente a contratação de coaching ou duo para o horário disponível selecionado pelo consumidor.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3, CP5]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Agenda e contratação
+    iteracao: 6
+  rnfs_associados: [RNF09]
+- id: RF17
+  nome: Reagendar serviço
+  descricao: O sistema deve permitir aos participantes solicitar, aceitar, recusar ou contrapropor um reagendamento e registrar o resultado da negociação.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 4, c: 3, ce: 4}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF18
+  nome: Cancelar contratação
+  descricao: O sistema deve permitir ao consumidor ou ao prestador cancelar uma contratação e consultar o resultado do cancelamento.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 1, c: 2, ce: 1}
+  entrega:
+    escopo: MVP
+    jornada: Agenda e contratação
+    iteracao: 7
+  rnfs_associados: [RNF11]
+- id: RF19
+  nome: Publicar solicitação de serviço
+  descricao: O sistema deve permitir ao consumidor publicar uma solicitação de coaching ou duo, com jogo, data, horário, elo mínimo e preço.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF20
+  nome: Oferecer atendimento a solicitações de serviço
+  descricao: O sistema deve permitir ao prestador apresentar uma oferta de atendimento a uma solicitação de coaching ou duo.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 4, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF21
+  nome: Selecionar prestador para solicitações
+  descricao: O sistema deve permitir ao consumidor selecionar uma oferta de atendimento recebida, com registro automático da contratação correspondente.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3, CP5]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF22
+  nome: Comprar combo de créditos
+  descricao: O sistema deve permitir ao consumidor comprar um combo de créditos e acompanhar o resultado do pagamento.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 3, c: 3, ce: 3}
+  entrega:
+    escopo: MVP
+    jornada: Créditos e recebimentos
+    iteracao: 7
+  rnfs_associados: []
+- id: RF23
+  nome: Consultar carteira
+  descricao: O sistema deve apresentar os saldos disponíveis, retidos e pendentes do usuário.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 4, c: 4, ce: 4}
+  entrega:
+    escopo: MVP
+    jornada: Créditos e recebimentos
+    iteracao: 7
+  rnfs_associados: [RNF13]
+- id: RF24
+  nome: Consultar histórico de prestação
+  descricao: O sistema deve permitir ao prestador consultar os serviços realizados e a situação dos recebimentos correspondentes.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP2, CP4]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 3, c: 3, ce: 4}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF25
+  nome: Reservar créditos
+  descricao: O sistema deve reservar o valor de uma contratação, tornando-o indisponível para outros usos.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Créditos e recebimentos
+    iteracao: 7
+  rnfs_associados: []
+- id: RF26
+  nome: Liberar valores retidos
+  descricao: O sistema deve liberar os valores retidos de uma contratação encerrada para distribuição.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4, CP5]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 4, c: 4, ce: 4}
+  entrega:
+    escopo: MVP
+    jornada: Créditos e recebimentos
+    iteracao: 8
+  rnfs_associados: []
+- id: RF27
+  nome: Processar divisão de receita
+  descricao: O sistema deve dividir a receita de uma contratação entre prestador e plataforma.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Créditos e recebimentos
+    iteracao: 8
+  rnfs_associados: []
+- id: RF28
+  nome: Processar saques
+  descricao: O sistema deve permitir ao prestador solicitar a transferência do saldo elegível para sua conta bancária e acompanhar o resultado do processamento.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 4, c: 4, ce: 4}
+  entrega:
+    escopo: MVP
+    jornada: Créditos e recebimentos
+    iteracao: 9
+  rnfs_associados: [RNF13]
+- id: RF29
+  nome: Comprar conteúdo
+  descricao: O sistema deve permitir ao consumidor adquirir guias ou tutoriais com créditos e registrar a compra.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3, CP4]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 4, c: 4, ce: 4}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF30
+  nome: Acessar conteúdo adquirido
+  descricao: O sistema deve permitir ao comprador acessar os vídeos ou documentos correspondentes ao conteúdo adquirido.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 1, c: 1, ce: 1}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF31
+  nome: Registrar resultado da sessão
+  descricao: O sistema deve permitir que cada participante informe se a sessão ocorreu, não ocorreu ou apresentou problemas, incluindo justificativa quando aplicável.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Resultado e atendimento
+    iteracao: 8
+  rnfs_associados: []
+- id: RF32
+  nome: Avaliar participante
+  descricao: O sistema deve permitir ao consumidor avaliar o prestador e ao prestador avaliar o consumidor, registrando nota e comentário relativos à sessão.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP6]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 3, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF33
+  nome: Avaliar conteúdo
+  descricao: O sistema deve permitir ao comprador registrar uma avaliação do guia ou tutorial adquirido.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP6]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF34
+  nome: Calcular reputação
+  descricao: O sistema deve calcular e atualizar a reputação do prestador a partir das notas das avaliações de suas sessões.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP6]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF35
+  nome: Publicar avaliações
+  descricao: O sistema deve publicar as avaliações das sessões e dos conteúdos para consulta pelos usuários.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP6]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 2, c: 1, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF36
+  nome: Registrar denúncia
+  descricao: O sistema deve permitir a consumidores e prestadores registrar denúncias relacionadas a usuário, contratação ou conteúdo, informando o motivo.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5, CP6]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 4, c: 3, ce: 4}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF37
+  nome: Apresentar relatos e evidências
+  descricao: O sistema deve permitir aos participantes de uma ocorrência apresentar relatos e evidências associados ao caso.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5, CP6]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 3, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF38
+  nome: Consultar denúncias e disputas
+  descricao: O sistema deve permitir à moderação consultar as ocorrências, os participantes e as evidências para as quais possui autorização.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 3, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Resultado e atendimento
+    iteracao: 9
+  rnfs_associados: [RNF02]
+- id: RF39
+  nome: Registrar decisão de ocorrência
+  descricao: O sistema deve permitir à moderação registrar a decisão de uma ocorrência e as providências determinadas.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5, CP7]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF40
+  nome: Executar decisão financeira
+  descricao: O sistema deve executar a devolução, a liberação ou a divisão parcial dos valores determinada na decisão, registrando os valores e seus destinatários.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4, CP5, CP7]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 4, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF41
+  nome: Aplicar sanção a usuário
+  descricao: O sistema deve permitir à moderação aplicar sanções a consumidores e prestadores, incluindo banimento, registrando o motivo e o responsável.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP6, CP7]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 4, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: [RNF11]
+- id: RF42
+  nome: Encerrar ocorrência
+  descricao: O sistema deve permitir à moderação encerrar uma ocorrência, mantendo o registro de sua decisão.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5, CP7]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF43
+  nome: Notificar participantes
+  descricao: O sistema deve notificar os participantes de contratações sobre sua confirmação, propostas e respostas de reagendamento, cancelamentos e liberações de valores, e os participantes de ocorrências sobre as decisões registradas.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP5, CP6, CP7]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 3, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF44
+  nome: Consultar usuários
+  descricao: O sistema deve permitir à administração localizar usuários e consultar seus dados cadastrais e sanções.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 2, c: 2, ce: 2}
+  entrega:
+    escopo: MVP
+    jornada: Consulta administrativa
+    iteracao: 9
+  rnfs_associados: [RNF02]
+- id: RF45
+  nome: Consultar contratações e transações
+  descricao: O sistema deve permitir à administração consultar contratações e transações individuais, identificando participantes, valores e situações.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 4, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF46
+  nome: Acompanhar movimentações financeiras
+  descricao: O sistema deve permitir à administração acompanhar, de forma agregada, os repasses, as devoluções, os saques e as falhas de processamento.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4, CP7]
+  priorizacao:
+    moscow: Should Have
+    esforco: {e: 4, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF47
+  nome: Configurar comissões
+  descricao: O sistema deve permitir à administração configurar a comissão padrão e as comissões específicas por modalidade e perfil de prestador.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4, CP7]
+  priorizacao:
+    moscow: Could Have
+    esforco: {e: 3, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF48
+  nome: Configurar penalidades de cancelamento
+  descricao: O sistema deve permitir à administração configurar as penalidades de cancelamento e os valores aplicados a elas.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP4, CP5, CP7]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 2, ce: 2}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF49
+  nome: Gerenciar permissões administrativas
+  descricao: O sistema deve permitir ao responsável autorizado conceder e revogar permissões de administração e moderação.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF50
+  nome: Manter jogos do catálogo
+  descricao: O sistema deve permitir à administração cadastrar e atualizar os jogos disponíveis no catálogo.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3, CP7]
+  priorizacao:
+    moscow: Must Have
+    esforco: {e: 4, c: 2, ce: 3}
+  entrega:
+    escopo: MVP
+    jornada: Catálogo e ofertas
+    iteracao: 7
+  rnfs_associados: [RNF02]
+- id: RF51
+  nome: Atualizar informações institucionais
+  descricao: O sistema deve permitir à administração atualizar a apresentação da plataforma e suas informações de contato.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP7]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 1, c: 1, ce: 1}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF52
+  nome: Consultar solicitações de serviço
+  descricao: O sistema deve permitir ao prestador consultar as solicitações de coaching ou duo publicadas pelos consumidores.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF53
+  nome: Consultar ofertas de atendimento
+  descricao: O sistema deve permitir ao consumidor consultar as ofertas de atendimento recebidas em suas solicitações de serviço.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 3, c: 3, ce: 3}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+- id: RF54
+  nome: Consultar histórico de compras
+  descricao: O sistema deve permitir ao consumidor consultar suas contratações, compras de conteúdo e movimentações de créditos, identificando valores e situações.
+  narrativa_descritiva:
+    tecnica: ''
+    texto: ''
+  origem: [CP3, CP4, CP5]
+  priorizacao:
+    moscow: Won't Have
+    esforco: {e: 4, c: 4, ce: 4}
+  entrega:
+    escopo: Backlog
+  rnfs_associados: []
+
+rnf:
+- id: RNF01
+  nome: Autenticação em dois fatores
+  descricao: O sistema deve exigir um segundo fator nas operações definidas pela política de autenticação, utilizando os canais previstos de e-mail e telefone.
+  classificacao: 'Sommerville — requisito de produto: segurança'
+  criterio: Uma operação protegida não deve ser concluída sem a validação do segundo fator.
+  origem: [CP4, CP7]
+  priorizacao:
+    moscow: Could Have
+  entrega:
+    escopo: Backlog
+    tratamento: Não aplicável ao recorte
+- id: RNF02
+  nome: Restrição de acesso
+  descricao: O sistema deve restringir o acesso a dados pessoais, dados bancários, denúncias e avaliações ainda não publicadas conforme o papel do usuário e a situação do registro.
+  classificacao: 'Sommerville — requisito de produto: segurança'
+  criterio: Testes por papel, titularidade e situação do registro devem permitir os acessos autorizados e recusar os demais, inclusive por chamada direta à API.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Must Have
+  entrega:
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [6, 7, 8, 9]
+- id: RNF03
+  nome: Auditabilidade administrativa e financeira
+  descricao: As alterações administrativas e movimentações financeiras devem possuir registros rastreáveis de autoria, data, operação, registro afetado e resultado.
+  classificacao: 'Sommerville — requisito de produto: segurança e auditabilidade'
+  criterio: Cada alteração administrativa e movimentação financeira testada deve ser localizável por seu identificador e apresentar os elementos de auditoria; ações automáticas devem identificar o processo responsável.
+  origem: [CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Could Have
+  entrega:
+    escopo: Backlog
+    tratamento: Evolutivo
+- id: RNF04
+  nome: Configurabilidade de taxas
+  descricao: As taxas, comissões e penalidades configuráveis devem poder ser alteradas pelo painel administrativo sem modificação do código-fonte.
+  classificacao: URPS+ — suportabilidade
+  criterio: Uma alteração autorizada pelo painel deve ser persistida e produzir efeito conforme as regras de vigência, sem edição do código-fonte.
+  origem: [CP4, CP5, CP7]
+  priorizacao:
+    moscow: Won't Have
+  entrega:
+    escopo: Backlog
+    tratamento: Não aplicável ao recorte
+- id: RNF05
+  nome: Periodicidade do cálculo de reputação
+  descricao: O processamento de atualização da reputação deve ocorrer diariamente.
+  classificacao: 'Sommerville — requisito organizacional: operacional'
+  criterio: O histórico de processamento deve comprovar pelo menos uma atualização concluída por dia, no fuso de referência da plataforma.
+  origem: [CP6]
+  priorizacao:
+    moscow: Won't Have
+  entrega:
+    escopo: Backlog
+    tratamento: Não aplicável ao recorte
+- id: RNF06
+  nome: Tecnologias de implementação
+  descricao: O sistema deve utilizar React no frontend e PHP no backend.
+  classificacao: URPS+ — restrição de implementação
+  criterio: A implementação deve utilizar essas tecnologias nas respectivas camadas.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Won't Have
+  entrega:
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [6, 7, 8, 9]
+- id: RNF07
+  nome: Proteção de dados pessoais
+  descricao: O tratamento de dados pessoais deve observar os requisitos aplicáveis da LGPD.
+  classificacao: 'Sommerville — requisito externo: legislativo'
+  criterio: O inventário de dados deve relacionar cada dado pessoal à finalidade, ao acesso e à retenção definidos; a revisão deve verificar a correspondência entre esse inventário, as interfaces e o armazenamento do sistema.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Should Have
+  entrega:
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [6, 7, 8, 9]
+- id: RNF08
+  nome: Clareza das mensagens de validação
+  descricao: As mensagens de validação devem identificar o campo ou a operação com problema e indicar como corrigir a informação, em linguagem compreensível ao usuário.
+  classificacao: URPS+ — usabilidade
+  criterio: Nos cenários de entrada inválida de cadastro, contratação e pagamento, a mensagem deve identificar o campo ou a operação afetada e informar a ação necessária para corrigir o problema, sem expor detalhes técnicos internos.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Should Have
+  entrega:
+    escopo: Backlog
+    tratamento: Evolutivo
+- id: RNF09
+  nome: Consistência da agenda
+  descricao: O sistema deve preservar a consistência dos horários reservados diante de solicitações simultâneas ou repetidas.
+  classificacao: URPS+ — confiabilidade
+  criterio: Tentativas simultâneas de reservar horários sobrepostos do mesmo prestador não devem produzir contratações incompatíveis; a repetição da mesma solicitação não deve criar outra reserva.
+  origem: [CP2, CP3, CP5]
+  priorizacao:
+    moscow: Should Have
+  entrega:
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [6]
+- id: RNF10
+  nome: Identificação do usuário logado
+  descricao: O sistema deve exibir de forma visível, em todas as telas autenticadas, qual usuário está logado e seu papel (consumidor, prestador ou administração).
+  classificacao: URPS+ — usabilidade
+  criterio: Em qualquer tela acessada após autenticação, deve ser possível identificar o usuário logado e seu papel.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Must Have
+  entrega:
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [6, 7, 8, 9]
+- id: RNF11
+  nome: Prevenção de ações involuntárias
+  descricao: A interface deve exigir confirmação explícita antes do cancelamento de contratação, encerramento de oferta ou aplicação de sanção.
+  classificacao: URPS+ — usabilidade
+  criterio: Em cada uma das três ações, desistir da confirmação deve preservar o estado anterior; a ação somente deve prosseguir após confirmação explícita.
+  origem: [CP3, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Should Have
+  entrega:
+    escopo: MVP
+    tratamento: Associado aos RFs selecionados (parcial)
+    iteracoes: [7]
+- id: RNF12
+  nome: Consistência visual entre telas
+  descricao: O sistema deve manter um padrão visual consistente de cores, tipografia, botões e espaçamentos em todas as telas, seguindo um guia de estilo definido.
+  classificacao: URPS+ — usabilidade
+  criterio: Nas telas de cadastro, catálogo, contratação, carteira e administração, componentes de mesma função e estado devem usar os mesmos estilos de cor, tipografia, botão e espaçamento definidos no guia de estilo.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Should Have
+  entrega:
+    escopo: Backlog
+    tratamento: Evolutivo
+- id: RNF13
+  nome: Integridade financeira
+  descricao: O sistema deve preservar a consistência dos saldos e lançamentos em operações financeiras simultâneas, repetidas ou interrompidas.
+  classificacao: URPS+ — confiabilidade
+  criterio: Repetir ou executar simultaneamente a mesma compra, confirmação de pagamento, liberação, divisão, devolução ou saque não deve duplicar débitos ou créditos nem reutilizar saldo reservado; as parcelas devem recompor o total distribuído.
+  origem: [CP3, CP4, CP5, CP7]
+  priorizacao:
+    moscow: Must Have
+  entrega:
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [7, 8, 9]
+- id: RNF14
+  nome: Proteção de credenciais e comunicação
+  descricao: O sistema deve proteger as credenciais armazenadas e a transmissão de dados pessoais e financeiros.
+  classificacao: 'Sommerville — requisito de produto: segurança'
+  criterio: Senhas devem ser armazenadas com hash próprio para senhas, sem formato reversível, e não devem aparecer em logs ou respostas; interfaces e integrações que transmitam dados privados devem usar conexão criptografada.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Must Have
+  entrega:
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [6, 7, 8, 9]
+- id: RNF15
+  nome: Tolerância a falhas de integração
+  descricao: O sistema deve manter resultados consistentes e informar indisponibilidade ou falha nas integrações de jogos e pagamentos.
+  classificacao: URPS+ — confiabilidade
+  criterio: Simular indisponibilidade e resposta inválida não deve gerar credencial verificada, pagamento confirmado ou repasse concluído sem confirmação correspondente; repetir o processamento não deve duplicar seus efeitos.
+  origem: [CP1, CP4, CP5]
+  priorizacao:
+    moscow: Should Have
+  entrega:
+    escopo: MVP
+    tratamento: Associado aos RFs selecionados (parcial)
+    iteracoes: [7, 9]
+- id: RNF16
+  nome: Responsividade de interface
+  descricao: O sistema deve adaptar a exibição das telas a diferentes tamanhos de dispositivo (desktop, tablet e celular), preservando a leitura do conteúdo e o acesso a todas as funcionalidades.
+  classificacao: URPS+ — usabilidade
+  criterio: Nas telas de cadastro, catálogo, contratação, carteira e administração, o conteúdo deve permanecer legível e todas as funcionalidades devem permanecer acessíveis nas larguras de referência de desktop, tablet e celular, sem sobreposição, corte ou perda de acesso a elementos da interface.
+  origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
+  priorizacao:
+    moscow: Must Have
+  entrega:
+    escopo: Backlog
+    tratamento: Evolutivo
