@@ -37,12 +37,12 @@ iteracoes:
   fase: Construção
   inicio: 28/10/2026
   fim: 10/11/2026
-  status: Em andamento
+  status: Executada
 - numero: 8
   fase: Construção
   inicio: 11/11/2026
   fim: 17/11/2026
-  status: Planejada
+  status: Em andamento
 - numero: 9
   fase: Construção
   inicio: 18/11/2026

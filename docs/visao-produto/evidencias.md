@@ -395,8 +395,10 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 7 — Construção {#iteracao-7}
 
-**Status:** Planejada.  
+**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
 **Período:** 28/10/2026 a 10/11/2026.
+
+
 
 ## Iteração 8 — Construção {#iteracao-8}
 
