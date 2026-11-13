@@ -11,7 +11,7 @@ function OfferList({ offers }) {
         <span className="result-count">{offers.length.toString().padStart(2, "0")}</span>
       </div>
       {offers.length ? (
-        <div className="offer-grid">
+        <div className="offer-grid stagger">
           {offers.map((offer) => <OfferCard key={offer.id} offer={offer} />)}
         </div>
       ) : <EmptyState />}

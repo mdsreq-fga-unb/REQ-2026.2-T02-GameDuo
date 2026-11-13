@@ -23,6 +23,8 @@
 .btn:hover:not(:disabled) {
   background: var(--primary-hover);
   color: var(--night);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow);
 }
 
 /* Efeito de "afundar" ao clicar */
@@ -79,6 +81,8 @@
 .btn--link:hover:not(:disabled) {
   color: var(--cyan);
   background: transparent;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn--link:active:not(:disabled) {

@@ -238,6 +238,52 @@ h3 {
 /* ========== Animação de piscar ==========
    Usada nos componentes Message, ModalityTabs e RecoveryChannelPicker. */
 
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-5px);
+  }
+}
+
+.scene > main,
+.auth-layout > * {
+  animation: rise-in .45s steps(6) backwards;
+}
+
+.stagger > * {
+  animation: rise-in .4s steps(5) backwards;
+}
+
+.stagger > :nth-child(2) { animation-delay: .07s; }
+.stagger > :nth-child(3) { animation-delay: .14s; }
+.stagger > :nth-child(4) { animation-delay: .21s; }
+.stagger > :nth-child(5) { animation-delay: .28s; }
+.stagger > :nth-child(6) { animation-delay: .35s; }
+.stagger > :nth-child(n + 7) { animation-delay: .42s; }
+
+
 @keyframes blink {
   50% {
     opacity: 0;
