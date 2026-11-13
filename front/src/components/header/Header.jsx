@@ -3,6 +3,7 @@ import './Header.css';
 import Button from '../button/Button';
 import Logo from '../logo/Logo';
 import Avatar from '../avatar/Avatar';
+import CoinBalance from '../coinBalance/CoinBalance';
 import { useAuth } from '../../context/AuthContext';
 import { iniciais } from '../../utils/ofertas';
 
@@ -26,6 +27,7 @@ function Header() {
               <Avatar initials={iniciais(usuario.nickname || usuario.nome)} size="small" />
               <span><b>{ehAdmin ? `${usuario.nickname} (Administrador)` : usuario.nome}</b><small>@{usuario.nickname}{usuario.prestador ? " · prestador" : ""}</small></span>
             </button>
+            <CoinBalance />
             {ehAdmin && <Button variant="ghost" onClick={() => navigate("/admin")}>Painel Admin</Button>}
             {usuario.prestador && <Button variant="ghost" onClick={() => navigate("/minhas-ofertas")}>Minhas ofertas</Button>}
             <Button variant="ghost" onClick={() => navigate("/minha-conta")}>Minha conta</Button>

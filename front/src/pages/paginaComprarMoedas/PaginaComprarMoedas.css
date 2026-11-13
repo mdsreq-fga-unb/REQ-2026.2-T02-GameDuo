@@ -1,0 +1,277 @@
+.shop-main {
+  width: min(calc(100% - 48px), 1150px);
+}
+
+.shop-title {
+  margin-bottom: 34px;
+}
+
+.shop-title h1 {
+  margin: 6px 0 10px;
+}
+
+.shop-title .detail-copy {
+  max-width: 640px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 34px;
+  align-items: start;
+}
+
+.shop-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.shop-step {
+  min-width: 0;
+  padding: 24px;
+  border: 3px solid var(--border);
+  background: rgba(17, 19, 34, .92);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.shop-step legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: var(--title);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.shop-step legend + * {
+  clear: both;
+}
+
+.shop-step legend span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--night);
+  background: var(--coin);
+  box-shadow: 3px 3px 0 var(--shadow);
+  font-size: 1.3rem;
+}
+
+.shop-step .field {
+  margin-bottom: 0;
+}
+
+.pack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pack-card,
+.pay-card {
+  position: relative;
+  cursor: pointer;
+  border: 3px solid var(--border);
+  background: var(--night);
+  box-shadow: 4px 4px 0 var(--shadow);
+  transition: border-color .12s, transform .12s, background .12s;
+}
+
+.pack-card input,
+.pay-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pack-card:hover,
+.pay-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-3px);
+}
+
+.pack-card:has(input:focus-visible),
+.pay-card:has(input:focus-visible) {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+.pack-card.is-selected,
+.pay-card.is-selected {
+  animation: pop .3s steps(3);
+  border-color: var(--cyan);
+  background: var(--panel);
+  box-shadow: inset 0 -5px 0 var(--blue), 4px 4px 0 var(--shadow);
+}
+
+.pack-card.is-selected::after,
+.pay-card.is-selected::after {
+  content: "►";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: var(--coin);
+  font-size: .75rem;
+  animation: blink .9s steps(1) infinite;
+}
+
+.pack-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 10px 22px;
+  text-align: center;
+}
+
+.pack-card__tier {
+  display: flex;
+  gap: 4px;
+}
+
+.pack-card__tier i {
+  width: 9px;
+  height: 9px;
+  background: var(--border);
+}
+
+.pack-card__tier i.on {
+  background: var(--coin);
+}
+
+.pack-card__name {
+  color: var(--muted);
+  font-family: var(--title);
+  font-size: 1.15rem;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pack-card__coins {
+  color: var(--coin);
+  font-family: var(--title);
+  font-size: 2.4rem;
+  line-height: 1;
+  text-shadow: 3px 3px 0 var(--purple);
+}
+
+.pack-card__coins .pixel-icon {
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
+
+.pack-card__price {
+  font-size: .9rem;
+}
+
+.pay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pay-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+}
+
+.pay-card__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  height: 48px;
+  color: var(--night);
+  background: var(--blue);
+  border: 3px solid var(--text);
+  font-size: 1.4rem;
+}
+
+.pay-card.is-selected .pay-card__icon {
+  background: var(--cyan);
+}
+
+.pay-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 14px;
+}
+
+.pay-card__text b {
+  font-family: var(--title);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.pay-card__text small {
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.35;
+}
+
+.shop-error {
+  margin-top: 12px;
+  color: var(--primary-hover);
+  font-size: .85rem;
+}
+
+.shop-summary {
+  position: sticky;
+  top: 110px;
+}
+
+.shop-summary .dialog-panel {
+  width: 100%;
+  padding: 30px;
+}
+
+@media (max-width: 1100px) {
+  .pack-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 680px) {
+  .shop-main {
+    width: min(calc(100% - 28px), 1150px);
+  }
+
+  .shop-step {
+    padding: 18px 14px;
+  }
+
+  .pack-grid {
+    gap: 10px;
+  }
+
+  .pack-card__coins {
+    font-size: 2rem;
+  }
+
+  .pay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-summary .dialog-panel {
+    padding: 24px 18px;
+  }
+}
