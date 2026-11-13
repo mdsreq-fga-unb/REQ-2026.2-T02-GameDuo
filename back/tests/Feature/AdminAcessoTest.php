@@ -68,8 +68,8 @@ class AdminAcessoTest extends TestCase
             'email' => 'espertinho@gameduo.com',
             'nome' => 'Espertinho',
             'nickname' => 'espertinho',
-            'senha' => 'senha12345',
-            'senha_confirmation' => 'senha12345',
+            'senha' => 'Senha@12345',
+            'senha_confirmation' => 'Senha@12345',
             'role' => 'admin',
         ])->assertCreated();
 

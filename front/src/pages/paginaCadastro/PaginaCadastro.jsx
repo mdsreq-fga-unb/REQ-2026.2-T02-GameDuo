@@ -7,8 +7,9 @@ import Button from '../../components/button/Button';
 import DialogPanel from '../../components/dialogPanel/DialogPanel';
 import Input from '../../components/input/Input';
 import Message from '../../components/message/Message';
+import PasswordRulesChecklist from '../../components/passwordRulesChecklist/PasswordRulesChecklist';
 import { api, errosPorCampo } from '../../services/api';
-import { isValidEmail } from '../../utils/validators';
+import { isStrongPassword, isValidEmail } from '../../utils/validators';
 
 const emptyForm = { nickname: "", nome: "", email: "", password: "", confirm: "" };
 
@@ -18,7 +19,7 @@ function validate(data) {
   if (data.nickname.trim().length < 3) errors.nickname = "Use pelo menos 3 caracteres.";
   if (!data.nome.trim()) errors.nome = "Informe seu nome.";
   if (!isValidEmail(data.email)) errors.email = "Informe um e-mail válido.";
-  if (data.password.length < 8) errors.password = "A senha precisa ter 8 caracteres.";
+  if (!isStrongPassword(data.password)) errors.password = "Complete todos os itens da senha forte.";
   if (data.confirm !== data.password) errors.confirm = "As senhas não coincidem.";
   return errors;
 }
@@ -79,6 +80,7 @@ function PaginaCadastro() {
           <Input label="E-mail" value={data.email} onChange={update("email")} placeholder="Digite seu e-mail" type="email" autoComplete="email" error={errors.email} />
           <Input label="Senha" value={data.password} onChange={update("password")} placeholder="Crie sua senha" type="password" reveal={revealPassword} onReveal={() => setRevealPassword(!revealPassword)} autoComplete="new-password" error={errors.password} />
           <Input label="Confirmar senha" value={data.confirm} onChange={update("confirm")} placeholder="Repita sua senha" type="password" reveal={revealConfirm} onReveal={() => setRevealConfirm(!revealConfirm)} autoComplete="new-password" error={errors.confirm} />
+          <div className="form-grid__full"><PasswordRulesChecklist password={data.password} /></div>
           <div className="form-grid__full"><Button type="submit" className="btn--full" disabled={enviando}>{enviando ? "Criando..." : "Criar conta"}</Button></div>
         </form>
         <div className="auth-links">

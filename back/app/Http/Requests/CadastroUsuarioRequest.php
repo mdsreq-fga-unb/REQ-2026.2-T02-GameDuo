@@ -26,7 +26,7 @@ class CadastroUsuarioRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:100', 'unique:Usuario,email'],
             'nome' => ['required', 'string', 'max:100'],
             'nickname' => ['required', 'string', 'max:50'],
-            'senha' => ['required', 'string', 'max:100', 'confirmed', Password::min(8)],
+            'senha' => ['required', 'string', 'max:100', 'confirmed', Password::min(8), 'regex:/[A-Z]/', 'regex:/[0-9]/', 'regex:/[^A-Za-z0-9]/'],
         ];
     }
     
@@ -41,6 +41,7 @@ class CadastroUsuarioRequest extends FormRequest
             'senha.required' => 'Informe a senha.',
             'senha.confirmed' => 'A confirmação de senha não confere.',
             'senha.min' => 'A senha deve ter pelo menos 8 caracteres.',
+            'senha.regex' => 'A senha precisa ter uma letra maiúscula, um número e um símbolo.',
         ];
     }
 }
