@@ -165,9 +165,9 @@ function PaginaMinhasOfertas() {
                     <TagRow tags={[oferta.jogo, oferta.modalidade]} />
                     <span className="my-offers__meta">{oferta.duracao} min · <PixelIcon type="coin" /> {oferta.preco}</span>
                     <div className="my-offers__actions">
-                      <Button variant="ghost" onClick={() => navigate(`/oferta/${oferta.id}`)}>Ver</Button>
-                      <Button variant="secondary" onClick={() => editar(oferta)}>Editar</Button>
-                      <Button variant="link" onClick={() => setParaExcluir(oferta)}>Excluir</Button>
+                      <Button variant="ghost" onClick={() => navigate(`/oferta/${oferta.id}`)}><PixelIcon type="eye" /> Ver</Button>
+                      <Button variant="secondary" onClick={() => editar(oferta)} disabled={editando === oferta.id}>{editando === oferta.id ? "Editando" : "Editar"}</Button>
+                      <Button variant="ghost" className="my-offers__excluir" onClick={() => setParaExcluir(oferta)}>Excluir</Button>
                     </div>
                   </li>
                 ))}
