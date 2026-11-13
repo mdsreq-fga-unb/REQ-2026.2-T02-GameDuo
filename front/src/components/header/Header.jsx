@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
 import Button from '../button/Button';
 import Logo from '../logo/Logo';
 import Avatar from '../avatar/Avatar';
 import CoinBalance from '../coinBalance/CoinBalance';
+import Modal from '../modal/Modal';
 import { useAuth } from '../../context/AuthContext';
 import { iniciais } from '../../utils/ofertas';
 
@@ -11,9 +13,14 @@ function Header() {
   const navigate = useNavigate();
   const { usuario, sair } = useAuth();
   const ehAdmin = usuario?.role === "admin";
+  const [confirmandoSaida, setConfirmandoSaida] = useState(false);
+  const [saindo, setSaindo] = useState(false);
 
   const logout = async () => {
+    setSaindo(true);
     await sair();
+    setSaindo(false);
+    setConfirmandoSaida(false);
     navigate("/");
   };
 
@@ -31,7 +38,7 @@ function Header() {
             {ehAdmin && <Button variant="ghost" onClick={() => navigate("/admin")}>Painel Admin</Button>}
             {usuario.prestador && <Button variant="ghost" onClick={() => navigate("/minhas-ofertas")}>Minhas ofertas</Button>}
             <Button variant="ghost" onClick={() => navigate("/minha-conta")}>Minha conta</Button>
-            <Button variant="link" onClick={logout}>Sair</Button>
+            <Button variant="link" onClick={() => setConfirmandoSaida(true)}>Sair</Button>
           </>
         ) : (
           <>
@@ -40,6 +47,17 @@ function Header() {
           </>
         )}
       </nav>
+      <Modal
+        aberto={confirmandoSaida}
+        titulo="Sair da conta?"
+        confirmar="Sair"
+        cancelar="Continuar aqui"
+        carregando={saindo}
+        onConfirmar={logout}
+        onCancelar={() => setConfirmandoSaida(false)}
+      >
+        <p>Você vai precisar entrar de novo para ver suas ofertas e moedas.</p>
+      </Modal>
     </header>
   );
 }

@@ -6,6 +6,7 @@ import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
 import DialogPanel from '../../components/dialogPanel/DialogPanel';
 import Message from '../../components/message/Message';
+import Modal from '../../components/modal/Modal';
 import PixelIcon from '../../components/pixelIcon/PixelIcon';
 import TagRow from '../../components/tagRow/TagRow';
 import { useAuth } from '../../context/AuthContext';
@@ -19,6 +20,7 @@ function PaginaDetalhesOferta() {
   const { loggedIn } = useAuth();
   const [offer, setOffer] = useState(null);
   const [error, setError] = useState(null);
+  const [avisoContratar, setAvisoContratar] = useState(false);
 
   useEffect(() => {
     api(`/ofertas/${id}`)
@@ -29,7 +31,6 @@ function PaginaDetalhesOferta() {
   // Oferta inexistente (ex.: /oferta/999): volta para o catálogo.
   if (error?.status === 404) return <Navigate to="/" replace />;
 
-  const hire = () => alert("Solicitação enviada! O prestador entrará em contato.");
 
   return (
     <MainLayout>
@@ -61,7 +62,7 @@ function PaginaDetalhesOferta() {
                 <strong><PixelIcon type="coin" /> {offer.price} créditos</strong>
               </div>
               {loggedIn ? (
-                <Button className="btn--full" onClick={hire}>Contratar agora</Button>
+                <Button className="btn--full" onClick={() => setAvisoContratar(true)}>Contratar agora</Button>
               ) : (
                 <>
                   <Message kind="info">Entre na sua conta para contratar esta oferta.</Message>
@@ -72,6 +73,9 @@ function PaginaDetalhesOferta() {
           </div>
         )}
       </main>
+      <Modal aberto={avisoContratar} titulo="Em breve!" confirmar="Entendi" onConfirmar={() => setAvisoContratar(false)}>
+        <p>A contratação pelo GameDuo está quase pronta. Enquanto isso, guarde esta oferta e volte logo.</p>
+      </Modal>
     </MainLayout>
   );
 }

@@ -5,6 +5,7 @@ import MainLayout from '../../components/mainLayout/MainLayout';
 import Button from '../../components/button/Button';
 import EmptyState from '../../components/emptyState/EmptyState';
 import Message from '../../components/message/Message';
+import Modal from '../../components/modal/Modal';
 import { api } from '../../services/api';
 
 // Rota: /admin/jogos — RF50. Jogos ativos aparecem no catálogo e nas ofertas; inativos não.
@@ -16,6 +17,8 @@ function PaginaAdminJogos() {
   const [jogos, setJogos] = useState(null);
   const [error, setError] = useState("");
   const [feedback, setFeedback] = useState(location.state?.success ? { kind: "success", text: location.state.success } : null);
+  const [paraExcluir, setParaExcluir] = useState(null);
+  const [excluindo, setExcluindo] = useState(false);
 
   const tratarErro = (err) => {
     if (err.status === 401) {
@@ -37,14 +40,18 @@ function PaginaAdminJogos() {
       });
   }, [navigate]);
 
-  const excluir = async (jogo) => {
-    if (!window.confirm(`Excluir o jogo "${jogo.nome}"? Esta ação não pode ser desfeita.`)) return;
+  const excluir = async () => {
+    const jogo = paraExcluir;
+    setExcluindo(true);
     try {
       const data = await api(`/admin/jogos/${jogo.id}`, { method: "DELETE" });
-      setJogos(jogos.filter((item) => item.id !== jogo.id));
+      setJogos((lista) => lista.filter((item) => item.id !== jogo.id));
       setFeedback({ kind: "success", text: data.message });
     } catch (err) {
       tratarErro(err);
+    } finally {
+      setExcluindo(false);
+      setParaExcluir(null);
     }
   };
 
@@ -78,13 +85,26 @@ function PaginaAdminJogos() {
                 </span>
                 <span className="admin-item__acoes">
                   <Button variant="link" onClick={() => navigate(`/admin/jogos/${jogo.id}/editar`)}>Editar</Button>
-                  <Button variant="link" onClick={() => excluir(jogo)}>Excluir</Button>
+                  <Button variant="link" onClick={() => setParaExcluir(jogo)}>Excluir</Button>
                 </span>
               </li>
             ))}
           </ul>
         )}
       </main>
+      <Modal
+        aberto={Boolean(paraExcluir)}
+        tipo="perigo"
+        titulo="Excluir jogo?"
+        confirmar="Excluir jogo"
+        cancelar="Cancelar"
+        carregando={excluindo}
+        onConfirmar={excluir}
+        onCancelar={() => setParaExcluir(null)}
+      >
+        <p><b>{paraExcluir?.nome}</b></p>
+        <p>Esta ação não pode ser desfeita.</p>
+      </Modal>
     </MainLayout>
   );
 }

@@ -60,6 +60,16 @@
   background: var(--cyan);
 }
 
+.btn--danger {
+  border-color: var(--text);
+  background: var(--danger);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: #ff7a86;
+  color: var(--night);
+}
+
 /* Variação link: parece um link sublinhado, sem caixa */
 .btn--link {
   min-height: 0;
