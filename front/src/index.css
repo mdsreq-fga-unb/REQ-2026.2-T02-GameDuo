@@ -24,9 +24,11 @@
   --green: #38b764;
   --lime: #a7f070;
   --coin: #ffcd75;
+  --danger: #e04f5f;
   --shadow: #0b0c18;
-  --title: "Press Start 2P", monospace;
-  --body: "Pixelify Sans", system-ui, sans-serif;
+  --title: "Jersey 15", system-ui, sans-serif;
+  --body: "Kode Mono", ui-monospace, monospace;
+  --logo: "Press Start 2P", monospace;
 }
 
 
@@ -98,6 +100,7 @@ html {
 
 body {
   min-width: 320px;
+  font-size: .9rem;
   min-height: 100vh;
 }
 
@@ -174,28 +177,30 @@ select:focus-visible {
 
 h1, h2, h3 {
   font-family: var(--title);
-  line-height: 1.55;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 h1 {
-  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
 }
 
 h2 {
-  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
 }
 
 h3 {
-  font-size: .8rem;
+  font-size: 1.7rem;
 }
 
 /* Texto pequeno em ciano acima dos títulos (ex.: "PLAYER SELECT") */
 .eyebrow {
   color: var(--cyan);
   font-family: var(--title);
-  font-size: .6rem;
-  letter-spacing: .16em;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 
@@ -233,6 +238,52 @@ h3 {
 
 /* ========== Animação de piscar ==========
    Usada nos componentes Message, ModalityTabs e RecoveryChannelPicker. */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-5px);
+  }
+}
+
+.scene > main,
+.auth-layout > * {
+  animation: rise-in .45s steps(6) backwards;
+}
+
+.stagger > * {
+  animation: rise-in .4s steps(5) backwards;
+}
+
+.stagger > :nth-child(2) { animation-delay: .07s; }
+.stagger > :nth-child(3) { animation-delay: .14s; }
+.stagger > :nth-child(4) { animation-delay: .21s; }
+.stagger > :nth-child(5) { animation-delay: .28s; }
+.stagger > :nth-child(6) { animation-delay: .35s; }
+.stagger > :nth-child(n + 7) { animation-delay: .42s; }
+
 
 @keyframes blink {
   50% {

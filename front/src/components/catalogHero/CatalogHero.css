@@ -15,8 +15,7 @@
 
 .catalog-hero h1 {
   margin-bottom: 20px;
-  font-size: clamp(1.7rem, 4.4vw, 3.3rem);
-  letter-spacing: -.04em;
+  font-size: clamp(3rem, 7vw, 5.1rem);
   text-shadow: 5px 5px 0 var(--purple);
 }
 
@@ -29,7 +28,8 @@
 .catalog-hero > div > p:last-child {
   max-width: 590px;
   color: var(--muted);
-  font-size: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 /* Área dos bonecos */
@@ -48,7 +48,8 @@
   color: var(--night);
   background: var(--text);
   font-family: var(--title);
-  font-size: .58rem;
+  font-size: 1.3rem;
+  line-height: 1;
   box-shadow: 5px 5px 0 var(--purple);
 }
 
@@ -120,6 +121,6 @@
   }
 
   .catalog-hero h1 {
-    font-size: 1.75rem;
+    font-size: 3rem;
   }
 }

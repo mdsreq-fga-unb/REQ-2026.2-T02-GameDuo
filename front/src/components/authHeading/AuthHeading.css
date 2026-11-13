@@ -15,7 +15,7 @@
 
 .auth-heading h1 {
   margin-bottom: 10px;
-  font-size: clamp(1rem, 2.3vw, 1.5rem);
+  font-size: clamp(2rem, 4.4vw, 3rem);
 }
 
 /* Subtítulo */

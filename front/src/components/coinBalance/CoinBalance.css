@@ -1,0 +1,74 @@
+.coin-balance {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  min-height: 45px;
+  padding: 10px 14px;
+  border: 3px solid var(--coin);
+  background: var(--night);
+  box-shadow: 3px 3px 0 var(--shadow);
+  color: var(--coin);
+  font-family: var(--title);
+  line-height: 1;
+  transition: background .12s, color .12s, transform .08s, box-shadow .08s;
+}
+
+.coin-balance span {
+  font-size: 1.45rem;
+}
+
+.coin-balance small {
+  color: var(--muted);
+  font-size: 1rem;
+  letter-spacing: .04em;
+}
+
+.coin-balance .pixel-icon {
+  font-size: 1.1rem;
+}
+
+.coin-balance.is-updated {
+  animation: pop .45s steps(4);
+}
+
+.coin-balance.is-updated .pixel-icon {
+  display: inline-block;
+  animation: coin-flip .6s steps(4) 2;
+}
+
+@keyframes coin-flip {
+  50% {
+    transform: scaleX(.2);
+  }
+}
+
+.coin-balance:hover {
+  background: var(--coin);
+  color: var(--night);
+}
+
+.coin-balance:hover small,
+.coin-balance:hover .pixel-icon {
+  color: var(--night);
+  text-shadow: none;
+}
+
+.coin-balance:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--shadow);
+}
+
+@media (max-width: 680px) {
+  .coin-balance {
+    min-height: 38px;
+    padding: 8px 9px;
+  }
+
+  .coin-balance span {
+    font-size: 1.15rem;
+  }
+
+  .coin-balance small {
+    display: none;
+  }
+}

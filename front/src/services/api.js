@@ -47,7 +47,7 @@ export async function api(path, { method = "GET", body } = {}) {
       body: body !== undefined ? JSON.stringify(body) : undefined,
     });
   } catch {
-    throw new ApiError(0, "Não foi possível conectar ao servidor. Verifique se o backend está rodando.");
+    throw new ApiError(0, "Sem conexão no momento. Verifique sua internet e tente de novo.");
   }
 
   const data = await response.json().catch(() => ({}));

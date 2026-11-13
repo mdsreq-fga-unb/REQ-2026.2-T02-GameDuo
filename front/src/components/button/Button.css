@@ -13,8 +13,9 @@
   color: var(--text);
   box-shadow: 4px 4px 0 var(--shadow);
   font-family: var(--title);
-  font-size: .58rem;
-  letter-spacing: .03em;
+  font-size: 1.3rem;
+  line-height: 1;
+  letter-spacing: .05em;
   text-transform: uppercase;
   transition: color .12s, background .12s, transform .08s, box-shadow .08s;
 }
@@ -22,6 +23,8 @@
 .btn:hover:not(:disabled) {
   background: var(--primary-hover);
   color: var(--night);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow);
 }
 
 /* Efeito de "afundar" ao clicar */
@@ -57,6 +60,16 @@
   background: var(--cyan);
 }
 
+.btn--danger {
+  border-color: var(--text);
+  background: var(--danger);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: #ff7a86;
+  color: var(--night);
+}
+
 /* Variação link: parece um link sublinhado, sem caixa */
 .btn--link {
   min-height: 0;
@@ -67,6 +80,8 @@
   box-shadow: none;
   font-family: var(--body);
   font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
   text-transform: none;
   text-decoration: underline;
   text-decoration-style: dashed;
@@ -76,6 +91,8 @@
 .btn--link:hover:not(:disabled) {
   color: var(--cyan);
   background: transparent;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn--link:active:not(:disabled) {

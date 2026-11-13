@@ -41,7 +41,7 @@
   color: var(--coin);
   background: var(--night);
   font-family: var(--title);
-  font-size: .55rem;
+  font-size: 1.1rem;
   box-shadow: 4px 4px 0 var(--shadow);
 }
 

@@ -40,7 +40,7 @@
   color: var(--night);
   background: var(--coin);
   font-family: var(--title);
-  font-size: .65rem;
+  font-size: 1.25rem;
 }
 
 .message--success .message__portrait {

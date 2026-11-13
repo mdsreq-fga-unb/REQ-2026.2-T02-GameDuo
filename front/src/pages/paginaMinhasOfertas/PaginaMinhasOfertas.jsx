@@ -6,6 +6,7 @@ import Button from '../../components/button/Button';
 import DialogPanel from '../../components/dialogPanel/DialogPanel';
 import Input from '../../components/input/Input';
 import Message from '../../components/message/Message';
+import Modal from '../../components/modal/Modal';
 import PixelIcon from '../../components/pixelIcon/PixelIcon';
 import Select from '../../components/select/Select';
 import TagRow from '../../components/tagRow/TagRow';
@@ -41,6 +42,8 @@ function PaginaMinhasOfertas() {
   const [errors, setErrors] = useState({});
   const [feedback, setFeedback] = useState(null);
   const [enviando, setEnviando] = useState(false);
+  const [paraExcluir, setParaExcluir] = useState(null);
+  const [excluindo, setExcluindo] = useState(false);
   const jogosAtivos = useJogosAtivos();
   const jogoEscolhido = form.jogo || jogosAtivos[0] || "";
   // ao editar uma oferta cujo jogo foi desativado, o jogo atual continua na lista
@@ -101,8 +104,9 @@ function PaginaMinhasOfertas() {
     }
   };
 
-  const excluir = async (oferta) => {
-    if (!window.confirm(`Excluir a oferta "${oferta.titulo}"? Ela sai do catálogo.`)) return;
+  const excluir = async () => {
+    const oferta = paraExcluir;
+    setExcluindo(true);
     try {
       const data = await api(`/ofertas/${oferta.id}`, { method: "DELETE" });
       setFeedback({ kind: "success", text: data.message });
@@ -110,6 +114,9 @@ function PaginaMinhasOfertas() {
       carregar();
     } catch (err) {
       setFeedback({ kind: "error", text: err.message });
+    } finally {
+      setExcluindo(false);
+      setParaExcluir(null);
     }
   };
 
@@ -158,9 +165,9 @@ function PaginaMinhasOfertas() {
                     <TagRow tags={[oferta.jogo, oferta.modalidade]} />
                     <span className="my-offers__meta">{oferta.duracao} min · <PixelIcon type="coin" /> {oferta.preco}</span>
                     <div className="my-offers__actions">
-                      <Button variant="ghost" onClick={() => navigate(`/oferta/${oferta.id}`)}>Ver</Button>
-                      <Button variant="secondary" onClick={() => editar(oferta)}>Editar</Button>
-                      <Button variant="link" onClick={() => excluir(oferta)}>Excluir</Button>
+                      <Button variant="ghost" onClick={() => navigate(`/oferta/${oferta.id}`)}><PixelIcon type="eye" /> Ver</Button>
+                      <Button variant="secondary" onClick={() => editar(oferta)} disabled={editando === oferta.id}>{editando === oferta.id ? "Editando" : "Editar"}</Button>
+                      <Button variant="ghost" className="my-offers__excluir" onClick={() => setParaExcluir(oferta)}>Excluir</Button>
                     </div>
                   </li>
                 ))}
@@ -169,6 +176,19 @@ function PaginaMinhasOfertas() {
           </DialogPanel>
         </div>
       </main>
+      <Modal
+        aberto={Boolean(paraExcluir)}
+        tipo="perigo"
+        titulo="Excluir oferta?"
+        confirmar="Excluir oferta"
+        cancelar="Manter oferta"
+        carregando={excluindo}
+        onConfirmar={excluir}
+        onCancelar={() => setParaExcluir(null)}
+      >
+        <p><b>{paraExcluir?.titulo}</b></p>
+        <p>Ela deixa de aparecer para os jogadores e não dá para desfazer.</p>
+      </Modal>
     </MainLayout>
   );
 }

@@ -1,0 +1,100 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px 16px;
+  overflow-y: auto;
+  background: rgba(11, 12, 24, .78);
+  animation: modal-fundo .2s steps(3) backwards;
+}
+
+.modal__janela {
+  width: min(100%, 520px);
+  animation: modal-entrada .28s steps(4) backwards;
+}
+
+.modal__janela .dialog-panel {
+  width: 100%;
+  text-align: center;
+}
+
+.modal__icone {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 16px;
+  border: 4px solid var(--night);
+  background: var(--cyan);
+  box-shadow: 4px 4px 0 var(--shadow);
+  color: var(--night);
+  font-family: var(--title);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.modal__janela--perigo .modal__icone {
+  background: var(--danger);
+  color: var(--text);
+}
+
+.modal__janela--sucesso .modal__icone {
+  background: var(--lime);
+}
+
+.modal h2 {
+  margin: 0 0 12px;
+}
+
+.modal__texto {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.modal__texto p {
+  margin: 0 0 8px;
+}
+
+.modal__texto b {
+  color: var(--text);
+}
+
+.modal__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.modal__acoes .btn {
+  flex: 1 1 0;
+  padding-inline: 12px;
+  white-space: nowrap;
+}
+
+@keyframes modal-fundo {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(.96);
+  }
+}
+
+@media (max-width: 680px) {
+  .modal__acoes {
+    flex-direction: column-reverse;
+  }
+
+  .modal__acoes .btn {
+    flex: none;
+    width: 100%;
+  }
+}

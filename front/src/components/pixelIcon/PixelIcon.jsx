@@ -10,6 +10,10 @@ const symbols = {
   people: "♟♟",
   shield: "◆",
   heart: "♥",
+  pix: "◈",
+  card: "▤",
+  copy: "❐",
+  wallet: "▣",
 };
 
 // type: uma das chaves de "symbols" acima.

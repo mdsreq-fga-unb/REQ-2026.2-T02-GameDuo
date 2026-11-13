@@ -5,6 +5,9 @@ import PaginaInicial from './pages/paginaInicial/PaginaInicial';
 import PaginaDetalhesOferta from './pages/paginaDetalhesOferta/PaginaDetalhesOferta';
 import PaginaMinhaConta from './pages/paginaMinhaConta/PaginaMinhaConta';
 import PaginaMinhasOfertas from './pages/paginaMinhasOfertas/PaginaMinhasOfertas';
+import PaginaCarteira from './pages/paginaCarteira/PaginaCarteira';
+import PaginaComprarMoedas from './pages/paginaComprarMoedas/PaginaComprarMoedas';
+import PaginaPagamento from './pages/paginaPagamento/PaginaPagamento';
 import PaginaLogin from './pages/paginaLogin/PaginaLogin';
 import PaginaCadastro from './pages/paginaCadastro/PaginaCadastro';
 import PaginaRecuperarSenha from './pages/paginaRecuperarSenha/PaginaRecuperarSenha';
@@ -53,6 +56,9 @@ function App() {
           <Route path="/oferta/:id" element={<PaginaDetalhesOferta />} />
           <Route path="/minha-conta" element={<RotaPrivada><PaginaMinhaConta /></RotaPrivada>} />
           <Route path="/minhas-ofertas" element={<RotaPrivada soPrestador><PaginaMinhasOfertas /></RotaPrivada>} />
+          <Route path="/carteira" element={<RotaPrivada><PaginaCarteira /></RotaPrivada>} />
+          <Route path="/comprar-moedas" element={<RotaPrivada><PaginaComprarMoedas /></RotaPrivada>} />
+          <Route path="/pagamento/:id" element={<RotaPrivada><PaginaPagamento /></RotaPrivada>} />
 
           {/* Área administrativa */}
           <Route path="/admin" element={<RotaAdmin><PaginaPainelAdmin /></RotaAdmin>} />
