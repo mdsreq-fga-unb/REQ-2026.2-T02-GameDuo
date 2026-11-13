@@ -13,8 +13,9 @@
   color: var(--text);
   box-shadow: 4px 4px 0 var(--shadow);
   font-family: var(--title);
-  font-size: .58rem;
-  letter-spacing: .03em;
+  font-size: 1.3rem;
+  line-height: 1;
+  letter-spacing: .05em;
   text-transform: uppercase;
   transition: color .12s, background .12s, transform .08s, box-shadow .08s;
 }
@@ -67,6 +68,8 @@
   box-shadow: none;
   font-family: var(--body);
   font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
   text-transform: none;
   text-decoration: underline;
   text-decoration-style: dashed;

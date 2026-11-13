@@ -9,7 +9,7 @@
 .code-input {
   height: 66px !important;
   font-family: var(--title) !important;
-  font-size: 1.3rem !important;
-  letter-spacing: .48em;
+  font-size: 2.4rem !important;
+  letter-spacing: .3em;
   text-align: center;
 }

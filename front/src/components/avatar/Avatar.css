@@ -15,21 +15,21 @@
   background: var(--blue);
   box-shadow: 3px 3px 0 var(--shadow);
   font-family: var(--title);
-  font-size: .55rem;
+  font-size: 1rem;
 }
 
 /* Tamanhos */
 .avatar--small {
   flex-basis: 38px;
   height: 38px;
-  font-size: .4rem;
+  font-size: .8rem;
 }
 
 .avatar--large {
   width: 86px;
   height: 86px;
   margin: auto;
-  font-size: .85rem;
+  font-size: 1.6rem;
 }
 
 /* Cores */

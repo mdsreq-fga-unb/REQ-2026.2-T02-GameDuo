@@ -25,8 +25,8 @@
   margin: -8px 0 20px;
   color: var(--coin);
   font-family: var(--title);
-  font-size: .48rem;
-  line-height: 1.7;
+  font-size: .95rem;
+  line-height: 1.3;
 }
 
 /* Links no fim do formulário ("Criar conta", "Recuperar senha"...) */

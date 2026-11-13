@@ -19,7 +19,9 @@
   border: 3px solid var(--border);
   background: var(--night);
   color: var(--muted);
-  font-weight: 700;
+  font-family: var(--title);
+  font-size: 1.3rem;
+  letter-spacing: .04em;
 }
 
 /* Tira a borda dupla entre as duas abas */

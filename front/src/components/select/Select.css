@@ -18,6 +18,6 @@
   top: 17px;
   color: var(--coin);
   font-family: var(--title);
-  font-size: .55rem;
+  font-size: 1.1rem;
   pointer-events: none;
 }

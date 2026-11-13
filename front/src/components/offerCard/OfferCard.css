@@ -47,7 +47,9 @@
   margin: 0 0 3px;
   color: var(--coin);
   font-family: var(--title);
-  font-size: .45rem;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  letter-spacing: .06em;
   text-transform: uppercase;
 }
 
@@ -66,12 +68,13 @@
   color: var(--lime);
   border: 1px solid var(--green);
   font-family: var(--title);
-  font-size: .38rem;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 /* Título da oferta */
 .offer-card h3 {
-  min-height: 49px;
+  min-height: 2.2em;
   margin-bottom: 18px;
 }
 
@@ -90,7 +93,10 @@
 /* Preço */
 .offer-card__meta strong {
   color: var(--coin);
-  font-size: 1.2rem;
+  font-family: var(--title);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1;
 }
 
 /* Botão "Ver detalhes" com largura total */

@@ -23,7 +23,9 @@
   border: 3px solid var(--border);
   color: var(--muted);
   background: var(--night);
-  font-weight: 700;
+  font-family: var(--title);
+  font-size: 1.25rem;
+  letter-spacing: .04em;
 }
 
 /* Setinha ► (só aparece na opção escolhida) */

@@ -17,7 +17,10 @@
   display: block;
   margin-bottom: 8px;
   color: var(--text);
-  font-weight: 700;
+  font-family: var(--title);
+  font-size: 1.2rem;
+  line-height: 1.1;
+  letter-spacing: .04em;
 }
 
 /* Envolve a caixa (para posicionar o olho e a setinha do select) */
