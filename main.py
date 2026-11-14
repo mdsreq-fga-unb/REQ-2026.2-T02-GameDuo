@@ -26,13 +26,8 @@ PAGINA = {
     "regras": "visao-produto/8.4regras-negocio.md",
 }
 
-MOSCOW = ["Must Have", "Should Have", "Could Have", "Won't Have"]
-VALOR = {m: 4 - i for i, m in enumerate(MOSCOW)}
-STATUS = ["Executada", "Em andamento", "Planejada"]
-ESFORCO_ROTULO = {"e": "Esforço estimado", "c": "Complexidade", "ce": "Capacitação da equipe"}
-# Critérios dos RNFs: só as linhas preenchidas aparecem no card.
-CRITERIOS = [("criterio_mvp", "Verificável no MVP"), ("parametro_pendente", "Parâmetro pendente"),
-             ("melhoria_futura", "Melhoria futura")]
+ATENDIMENTO = ["Integral", "Parcial", "Adiado"]
+
 
 
 def _carregar(nome):
@@ -72,6 +67,15 @@ def _mvp(req):
     return req["entrega"]["escopo"] == "MVP"
 
 
+
+def _validar(req, prod):
+    for item in prod["objetivos"] + prod["caracteristicas"]:
+        a = item.get("mvp", {}).get("atendimento")
+        if a not in ATENDIMENTO:
+            raise ValueError(f'{item["id"]}: mvp.atendimento inválido "{a}" (use {", ".join(ATENDIMENTO)})')
+
+
+
 def _slug(texto):
     return re.sub(r"[^a-z0-9]+", "-", texto.lower()).strip("-")
 
@@ -85,6 +89,7 @@ def define_env(env):
         req = _carregar("requisitos.yaml")
         prod = _carregar("produto.yaml")
         cron = _carregar("cronograma.yaml")
+        _validar(req, prod)
         return {
             "rf": req["rf"],
             "rnf": req["rnf"],
@@ -139,6 +144,16 @@ def define_env(env):
     def selo_status(status):
         return f'<span class="selo selo--{_slug(status)}">{status}</span>'
 
+    def selo_atendimento(item):
+        a = item["mvp"]["atendimento"]
+        return f'<span class="selo selo--{_slug(a)}" title="Atendimento no MVP">{a}</span>'
+
+    def contagem_mvp(rfs):
+        """Barra e texto 'X de N no MVP' para uma lista de RFs."""
+        dentro = sum(1 for r in rfs if _mvp(r))
+        texto = f"{dentro} de {len(rfs)} no MVP"
+        return f'{barra(dentro, len(rfs) or 1, texto)} <span class="contagem">{texto}</span>', dentro / (len(rfs) or 1)
+
     def barra(n, maximo=4, rotulo=""):
         return (f'<span class="barra" style="--n:{n};--max:{maximo}" title="{e(rotulo)}">'
                 f'<span class="barra__fill"></span></span>')
@@ -165,19 +180,20 @@ def define_env(env):
             for i, (_, conteudo) in enumerate(abas))
         return f'<div class="gd-tabs"><div class="gd-tabs__lista" role="tablist">{botoes}</div>{paineis}</div>'
 
-    def tabela(cabecalho, linhas, ordenavel=True):
-        """Tabela HTML; células podem ser (html, valor_de_ordenacao)."""
+    def tabela(cabecalho, linhas, ordenavel=True, extra=""):
+        """Tabela HTML; células podem ser (html, valor_de_ordenacao[, title])."""
         th = "".join(f"<th>{c}</th>" for c in cabecalho)
         corpo = []
         for linha in linhas:
             tds = []
             for c in linha:
                 if isinstance(c, tuple):
-                    tds.append(f'<td data-ordem="{e(str(c[1]))}">{c[0]}</td>')
+                    titulo = f' title="{e(c[2])}"' if len(c) > 2 else ""
+                    tds.append(f'<td data-ordem="{e(str(c[1]))}"{titulo}>{c[0]}</td>')
                 else:
                     tds.append(f"<td>{c}</td>")
             corpo.append("<tr>" + "".join(tds) + "</tr>")
-        classe = "gd-tabela gd-ordenavel" if ordenavel else "gd-tabela"
+        classe = ("gd-tabela gd-ordenavel" if ordenavel else "gd-tabela") + (f" {extra}" if extra else "")
         return (f'<div class="{classe}"><table><thead><tr>{th}</tr></thead>'
                 f'<tbody>{"".join(corpo)}</tbody></table></div>')
 
@@ -436,14 +452,16 @@ def define_env(env):
             dentro = [r["id"] for r in rfs if _mvp(r)]
             fora = [r["id"] for r in rfs if not _mvp(r)]
             rnfs = [r["id"] for r in d["rnf"] if cid in r["origem"]]
+            cobertura, _ = contagem_mvp(rfs)
             blocos.append(
                 f'<details class="gd-acordeao" id="rastro-{cid.lower()}">'
                 f'<summary>{chip(d, cid)} <span class="gd-acordeao__titulo">{e(c["nome"])}</span>'
-                f'<span class="cobertura" title="{len(dentro)} de {len(rfs)} RFs no MVP">'
-                f'{barra(len(dentro), len(rfs) or 1)} {len(dentro)}/{len(rfs)} no MVP</span></summary>'
+                f'{selo_atendimento(c)}'
+                f'<span class="cobertura" title="RFs da característica no MVP">{cobertura}</span></summary>'
                 f'<div class="gd-acordeao__corpo">'
                 f'<div class="req-linha"><span class="req-rotulo">Objetivos</span>{chip(d, c["oe_principal"])} principal · {chip(d, c["oe_secundario"], fraco=True)} secundário</div>'
                 f'<div class="req-linha"><span class="req-rotulo">Valor de negócio</span>{e(c["valor_negocio"])}</div>'
+                f'<div class="req-linha"><span class="req-rotulo">Alcance no MVP</span><span class="req-texto">{e(c["mvp"]["alcance"])}</span></div>'
                 f'<div class="req-linha"><span class="req-rotulo">RFs no MVP</span><span class="req-chips">{chips(d, dentro)}</span></div>'
                 f'<div class="req-linha"><span class="req-rotulo">RFs fora do MVP</span><span class="req-chips">{chips(d, fora)}</span></div>'
                 f'<div class="req-linha"><span class="req-rotulo">RNFs</span><span class="req-chips">{chips(d, rnfs)}</span></div>'
@@ -453,19 +471,23 @@ def define_env(env):
 
     @env.macro
     def cobertura_objetivos():
-        """Quantos RFs ligados a cada OE (via CP principal) estão no MVP."""
+        """Atendimento de cada OE no MVP e RFs das CPs em que ele é a contribuição principal."""
         d = dados()
         linhas = []
         for oid, o in d["oe"].items():
             cps = [c for c, v in d["cp"].items() if v["oe_principal"] == oid]
             rfs = [r for r in d["rf"] if set(r["origem"]) & set(cps)]
-            dentro = sum(1 for r in rfs if _mvp(r))
-            pct = dentro / len(rfs) if rfs else 0
+            cobertura, pct = contagem_mvp(rfs)
+            nome = o["nome"] or o["descricao"][:48] + "…"
             linhas.append([
-                (f'{chip(d, oid)} {e(o["nome"] or o["descricao"])}', oid), chips(d, cps),
-                (f'{barra(dentro, len(rfs) or 1)} {dentro} de {len(rfs)}', pct),
+                (f'{chip(d, oid)} {e(nome)}', oid, o["descricao"]),
+                (selo_atendimento(o), ATENDIMENTO.index(o["mvp"]["atendimento"])),
+                e(o["mvp"]["alcance"]),
+                chips(d, cps),
+                (cobertura, pct),
             ])
-        return tabela(["Objetivo específico", "CPs (contribuição principal)", "RFs no MVP"], linhas)
+        return tabela(["Objetivo específico", "Atendimento no MVP", "Alcance",
+                       "CPs (contribuição principal)", "RFs no MVP"], linhas, extra="gd-tabela--texto")
 
     @env.macro
     def diagrama_rastreabilidade():
