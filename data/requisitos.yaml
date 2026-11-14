@@ -344,7 +344,7 @@ rf:
   rnfs_associados: []
 - id: RF23
   nome: Consultar carteira
-  descricao: O sistema deve apresentar os saldos disponíveis, retidos e pendentes do usuário.
+  descricao: O sistema deve apresentar os saldos disponíveis, retidos e pendentes do usuário, identificando a contratação de origem de cada valor retido ou pendente e, quando houver, a data prevista de liberação.
   narrativa_descritiva:
     tecnica: ''
     texto: ''
@@ -355,7 +355,7 @@ rf:
   entrega:
     escopo: MVP
     jornada: Créditos e recebimentos
-    iteracao: 7
+    iteracao: 8
   rnfs_associados: [RNF13]
 - id: RF24
   nome: Consultar histórico de prestação
