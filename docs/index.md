@@ -162,3 +162,4 @@ Atualizações terão as seguintes motivações:
 | 26/10/2026 | 0.28 | Inclusão de provas da Iteração 6 | Ricardo Lucas |
 | 04/11/2026 | 0.29 | Mudanças na amostragem de requisitos | Rodrigo Átila |
 | 10/11/2026 | 0.30 | Fechamento da iteração 7 | Ricardo Lucas |
+| 14/11/2026 | 0.31 | Ajustes da issue #16: RF38 fora do MVP e RN44 (atendimento por SAC), RN27 (cancelamento até o horário), RN11 (contratações de oferta encerrada), RF23 (origem dos saldos) e dependências entre RFs do MVP | Pedro Araujo |
