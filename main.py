@@ -67,6 +67,10 @@ def _mvp(req):
     return req["entrega"]["escopo"] == "MVP"
 
 
+def _parcial(req):
+    """RF no MVP com alcance parcial (campo entrega.alcance_mvp)."""
+    return _mvp(req) and bool(req["entrega"].get("alcance_mvp"))
+
 
 def _validar(req, prod):
     for item in prod["objetivos"] + prod["caracteristicas"]:
@@ -148,11 +152,18 @@ def define_env(env):
         a = item["mvp"]["atendimento"]
         return f'<span class="selo selo--{_slug(a)}" title="Atendimento no MVP">{a}</span>'
 
+    def selo_parcial(req):
+        return ('<span class="selo selo--parcial" title="No MVP com alcance parcial">MVP parcial</span>'
+                if _parcial(req) else "")
+
     def contagem_mvp(rfs):
-        """Barra e texto 'X de N no MVP' para uma lista de RFs."""
+        """Barra e texto 'X de N no MVP', com '(Y parcial)' quando houver RF parcial."""
         dentro = sum(1 for r in rfs if _mvp(r))
-        texto = f"{dentro} de {len(rfs)} no MVP"
-        return f'{barra(dentro, len(rfs) or 1, texto)} <span class="contagem">{texto}</span>', dentro / (len(rfs) or 1)
+        parcial = sum(1 for r in rfs if _parcial(r))
+        texto = f"{dentro} de {len(rfs)} no MVP" + (f" ({parcial} parcial)" if parcial else "")
+        partes = f'<span class="contagem">{dentro} de {len(rfs)} no MVP</span>' + (
+            f' <span class="contagem">({parcial} parcial)</span>' if parcial else "")
+        return f"{barra(dentro, len(rfs) or 1, texto)} {partes}", dentro / (len(rfs) or 1)
 
     def barra(n, maximo=4, rotulo=""):
         return (f'<span class="barra" style="--n:{n};--max:{maximo}" title="{e(rotulo)}">'
@@ -308,6 +319,9 @@ def define_env(env):
                            f'{e(r["entrega"].get("jornada", "Fora do MVP"))}</div>')
                 if n:
                     entrega += f'<div class="req-linha">{chip(d, n)} {selo_status(d["it"][n]["status"])}</div>'
+                if _parcial(r):
+                    entrega += (f'<div class="req-linha"><span class="req-rotulo">Alcance no MVP</span>'
+                                f'<span class="req-texto">{e(r["entrega"]["alcance_mvp"])}</span></div>')
                 entrega += (f'<div class="req-linha"><span class="req-rotulo">Depende de</span>{chips(d, r.get("depende_de", []))}</div>'
                             f'<div class="req-linha"><span class="req-rotulo">RNFs</span>{chips(d, r["rnfs_associados"])}</div>'
                             f'<div class="req-linha"><span class="req-rotulo">Regras</span>{chips(d, regras_de.get(rid, []))}</div>')
@@ -335,7 +349,8 @@ def define_env(env):
                 f'<section class="req-meta"><h4 class="req-meta__titulo">{t}</h4>{c}</section>'
                 for t, c in zip(titulo_meta, (origem, prioridade, entrega)))
             busca = " ".join([rid, r["nome"], r["descricao"], " ".join(r["origem"]),
-                              *(r.get(c, "") for c, _ in CRITERIOS), r["entrega"].get("jornada", "")]).lower()
+                              *(r.get(c, "") for c, _ in CRITERIOS), r["entrega"].get("jornada", ""),
+                              r["entrega"].get("alcance_mvp", "")]).lower()
             selos_status = "".join(selo_status(s) for s in status)
             cards.append(
                 f'<article class="req-card req-card--{tipo}" id="{ancora}" data-tipo="{rid[:-2]}"'
@@ -345,7 +360,7 @@ def define_env(env):
                 f'<a class="req-id" href="#{ancora}">{rid}</a>'
                 f'<button type="button" class="req-copiar" data-ancora="{ancora}" title="Copiar link para {rid}" aria-label="Copiar link para {rid}">#</button>'
                 f'<p class="req-card__titulo">{e(r["nome"])}</p>'
-                f'<div class="req-card__selos">{selo_escopo(r)}{selo_moscow(r)}{selos_status}</div>'
+                f'<div class="req-card__selos">{selo_escopo(r)}{selo_parcial(r)}{selo_moscow(r)}{selos_status}</div>'
                 f'</header>'
                 f'<div class="req-card__corpo"><p class="req-card__descricao">{e(r["descricao"])}</p>'
                 f'<div class="req-card__meta">{meta}</div>'
@@ -444,15 +459,18 @@ def define_env(env):
 
     @env.macro
     def matriz_rastreabilidade():
-        """Acordeões por CP: OE → CP → RFs (dentro e fora do MVP) e RNFs."""
+        """Acordeões por CP: OE → CP → RFs (MVP, MVP parcial, backlog) e RNFs."""
         d = dados()
         blocos = []
         for cid, c in sorted(d["cp"].items()):
             rfs = [r for r in d["rf"] if cid in r["origem"]]
-            dentro = [r["id"] for r in rfs if _mvp(r)]
+            integral = [r["id"] for r in rfs if _mvp(r) and not _parcial(r)]
+            parcial = [r["id"] for r in rfs if _parcial(r)]
             fora = [r["id"] for r in rfs if not _mvp(r)]
             rnfs = [r["id"] for r in d["rnf"] if cid in r["origem"]]
             cobertura, _ = contagem_mvp(rfs)
+            linha_parcial = (f'<div class="req-linha"><span class="req-rotulo">RFs no MVP com alcance parcial</span>'
+                             f'<span class="req-chips">{chips(d, parcial)}</span></div>') if parcial else ""
             blocos.append(
                 f'<details class="gd-acordeao" id="rastro-{cid.lower()}">'
                 f'<summary>{chip(d, cid)} <span class="gd-acordeao__titulo">{e(c["nome"])}</span>'
@@ -462,7 +480,8 @@ def define_env(env):
                 f'<div class="req-linha"><span class="req-rotulo">Objetivos</span>{chip(d, c["oe_principal"])} principal · {chip(d, c["oe_secundario"], fraco=True)} secundário</div>'
                 f'<div class="req-linha"><span class="req-rotulo">Valor de negócio</span>{e(c["valor_negocio"])}</div>'
                 f'<div class="req-linha"><span class="req-rotulo">Alcance no MVP</span><span class="req-texto">{e(c["mvp"]["alcance"])}</span></div>'
-                f'<div class="req-linha"><span class="req-rotulo">RFs no MVP</span><span class="req-chips">{chips(d, dentro)}</span></div>'
+                f'<div class="req-linha"><span class="req-rotulo">RFs no MVP</span><span class="req-chips">{chips(d, integral)}</span></div>'
+                f'{linha_parcial}'
                 f'<div class="req-linha"><span class="req-rotulo">RFs fora do MVP</span><span class="req-chips">{chips(d, fora)}</span></div>'
                 f'<div class="req-linha"><span class="req-rotulo">RNFs</span><span class="req-chips">{chips(d, rnfs)}</span></div>'
                 f"</div></details>"
@@ -502,6 +521,7 @@ def define_env(env):
             "classDef oe fill:#0f766e,stroke:#0f766e,color:#fff",
             "classDef cp fill:#1d4ed8,stroke:#1d4ed8,color:#fff",
             "classDef mvp fill:#10b981,stroke:#047857,color:#fff",
+            "classDef mvpParcial fill:#6ee7b7,stroke:#047857,stroke-width:3px,stroke-dasharray:6 4,color:#064e3b",
             "classDef backlog fill:#e2e8f0,stroke:#94a3b8,color:#334155",
         ]
 
@@ -524,7 +544,7 @@ def define_env(env):
             g = ["flowchart LR"] + oe_no(c["oe_principal"]) + cp_no(cid) + [f"{c['oe_principal']} --> {cid}"]
             for r in d["rf"]:
                 if cid in r["origem"]:
-                    g += no(r["id"], f"{r['id']} · {r['nome']}", "mvp" if _mvp(r) else "backlog",
+                    g += no(r["id"], f"{r['id']} · {r['nome']}", "mvpParcial" if _parcial(r) else "mvp" if _mvp(r) else "backlog",
                             href("catalogo", r["id"].lower()))
                     g.append(f"{cid} --> {r['id']}")
             abas.append((f"{cid}", g))

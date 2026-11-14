@@ -17,6 +17,8 @@
 #   entrega.escopo         MVP | Backlog
 #   entrega.jornada        parte da jornada do MVP que o requisito apoia
 #   entrega.iteracao       iteração planejada (o status vem de cronograma.yaml)
+#   entrega.alcance_mvp    opcional; quando preenchido, o RF está no MVP com alcance parcial
+#                          ("MVP parcial") e o texto diz o que entra e o que fica de fora
 #   rnfs_associados        vínculos RF→RNF já documentados nas regras de negócio e
 #                          nos critérios dos RNFs; lista parcial, a revisar pela equipe
 #   depende_de             RFs que precisam estar disponíveis para que o requisito
@@ -140,6 +142,7 @@ rf:
     escopo: MVP
     jornada: Perfil de prestação
     iteracao: 9
+    alcance_mvp: No MVP, o perfil exibe apresentação, jogos, modalidades e o nível declarado pelo prestador (RN13). Credenciais verificadas, reputação e indicadores dependem de RF06, RF08 e RF34, fora do recorte. Consultar o perfil não comprova o nível técnico do prestador.
   rnfs_associados: []
   depende_de: [RF04]
 - id: RF08
@@ -169,6 +172,7 @@ rf:
     escopo: MVP
     jornada: Catálogo e ofertas
     iteracao: 9
+    alcance_mvp: No MVP, a busca usa os filtros de modalidade, jogo, preço, idioma e disponibilidade; o elo filtrado é o declarado. Os filtros de reputação e selo dependem de RF06 e RF34, fora do recorte.
   rnfs_associados: []
   depende_de: [RF11, RF50]
 - id: RF10
@@ -201,6 +205,7 @@ rf:
     escopo: MVP
     jornada: Catálogo e ofertas
     iteracao: 6
+    alcance_mvp: No MVP, as ofertas são de coaching e duo (RN08). Ofertas de conteúdo, com vídeos ou documentos associados, ficam fora do recorte.
   rnfs_associados: []
   depende_de: [RF04, RF50]
 - id: RF12
@@ -669,6 +674,7 @@ rf:
     escopo: MVP
     jornada: Consulta administrativa
     iteracao: 9
+    alcance_mvp: No MVP, a administração consulta os dados cadastrais autorizados. A consulta de sanções depende de RF41, fora do recorte.
   rnfs_associados: [RNF02]
   depende_de: [RF02]
 - id: RF45
