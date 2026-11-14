@@ -24,10 +24,27 @@ PAGINA = {
     "produto": "visao-produto/2.solucao-proposta.md",
     "cronograma": "visao-produto/6.cronograma-entregas.md",
     "regras": "visao-produto/8.4regras-negocio.md",
+    "evidencias": "visao-produto/evidencias.md",
 }
 
 ATENDIMENTO = ["Integral", "Parcial", "Adiado"]
+# Âncoras da página Evidências aceitas em origem_levantamento.
+EVIDENCIAS = {
+    "reuniao-1": "Reunião 1",
+    "reuniao-2": "Reunião 2",
+    "validacao-pagamentos": "Validação do fluxo de pagamentos",
+    "reuniao-3": "Reunião 3",
+    "reuniao-4": "Reunião 4",
+    "reuniao-5": "Reunião 5",
+}
 
+MOSCOW = ["Must Have", "Should Have", "Could Have", "Won't Have"]
+VALOR = {m: 4 - i for i, m in enumerate(MOSCOW)}
+STATUS = ["Executada", "Em andamento", "Planejada"]
+ESFORCO_ROTULO = {"e": "Esforço estimado", "c": "Complexidade", "ce": "Capacitação da equipe"}
+# Critérios dos RNFs: só as linhas preenchidas aparecem no card.
+CRITERIOS = [("criterio_mvp", "Verificável no MVP"), ("parametro_pendente", "Parâmetro pendente"),
+             ("melhoria_futura", "Melhoria futura")]
 
 
 def _carregar(nome):
@@ -77,7 +94,10 @@ def _validar(req, prod):
         a = item.get("mvp", {}).get("atendimento")
         if a not in ATENDIMENTO:
             raise ValueError(f'{item["id"]}: mvp.atendimento inválido "{a}" (use {", ".join(ATENDIMENTO)})')
-
+    for r in req["rf"]:
+        for o in r.get("origem_levantamento", []):
+            if o["evidencia"] not in EVIDENCIAS:
+                raise ValueError(f'{r["id"]}: evidência desconhecida "{o["evidencia"]}" em origem_levantamento')
 
 
 def _slug(texto):
@@ -155,6 +175,11 @@ def define_env(env):
     def selo_parcial(req):
         return ('<span class="selo selo--parcial" title="No MVP com alcance parcial">MVP parcial</span>'
                 if _parcial(req) else "")
+
+    def evidencia(o):
+        """Link para a reunião ou validação seguido da decisão registrada."""
+        return (f'<a class="req-evidencia" href="{href("evidencias", o["evidencia"])}">{EVIDENCIAS[o["evidencia"]]}</a>: '
+                f'{e(o["decisao"])}')
 
     def contagem_mvp(rfs):
         """Barra e texto 'X de N no MVP', com '(Y parcial)' quando houver RF parcial."""
@@ -306,6 +331,9 @@ def define_env(env):
                 f'{chip(d, d["cp"][c]["oe_principal"])}{chip(d, d["cp"][c]["oe_secundario"], fraco=True)}'
                 f'<span class="req-origem__nome">{e(d["cp"][c]["nome"])}</span></div>'
                 for c in r["origem"])
+            if r.get("origem_levantamento"):
+                origem += (f'<div class="req-linha"><span class="req-rotulo">Levantamento</span>'
+                           f'<span>{"<br>".join(evidencia(o) for o in r["origem_levantamento"])}</span></div>')
 
             if tipo == "rf":
                 esf = r["priorizacao"]["esforco"]
@@ -507,6 +535,17 @@ def define_env(env):
             ])
         return tabela(["Objetivo específico", "Atendimento no MVP", "Alcance",
                        "CPs (contribuição principal)", "RFs no MVP"], linhas, extra="gd-tabela--texto")
+
+    @env.macro
+    def origem_requisitos():
+        """RFs do MVP com a reunião ou validação em que a necessidade ou decisão foi registrada."""
+        d = dados()
+        linhas = [[
+            (chip(d, r["id"]), r["id"]), e(r["nome"]),
+            "<br>".join(evidencia(o) for o in r.get("origem_levantamento", [])) or '<span class="req-vazio">—</span>',
+            chips(d, r["origem"]),
+        ] for r in d["rf"] if _mvp(r)]
+        return tabela(["Requisito", "Nome", "Origem no levantamento", "CP"], linhas)
 
     @env.macro
     def diagrama_rastreabilidade():

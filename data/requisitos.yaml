@@ -11,6 +11,10 @@
 #     tecnica              "Texto narrativo" | "Caso de uso (breve descrição)" | "Cenário narrativo"
 #     texto                a narrativa
 #   origem                 características de produto (CP) — o OE vem de produto.yaml
+#   origem_levantamento    opcional; lista de {evidencia, decisao}: a reunião ou validação
+#                          da página Evidências (âncora reuniao-1, reuniao-2,
+#                          validacao-pagamentos, reuniao-3, reuniao-4 ou reuniao-5) e a
+#                          decisão ou necessidade registrada nela
 #   priorizacao.moscow     Must Have (4) | Should Have (3) | Could Have (2) | Won't Have (1)
 #   priorizacao.esforco    notas 1–4 de esforço (e), complexidade (c) e capacitação (ce);
 #                          média e ET são calculados na renderização, nunca digitados
@@ -42,6 +46,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Fluxo de cadastro mantido como apresentado; uma mesma conta contrata e presta serviços.
   priorizacao:
     moscow: Must Have
     esforco: {e: 1, c: 2, ce: 2}
@@ -58,6 +65,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Fluxo de login mantido como apresentado.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -74,6 +84,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Presente no fluxograma completo validado.
   priorizacao:
     moscow: Should Have
     esforco: {e: 2, c: 3, ce: 2}
@@ -90,6 +103,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP2]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: 'Conta única: a mesma conta pode contratar e prestar serviços.'
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 2, ce: 1}
@@ -106,6 +122,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Prever cadastro bancário do prestador.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 3}
@@ -135,6 +154,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP1, CP2]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Selo de verificação opcional e sem restrição a prestadores sem selo; no MVP o nível é declarado (RN13).
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 3, ce: 1}
@@ -165,6 +187,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Possibilidade de filtrar por verificação.
   priorizacao:
     moscow: Could Have
     esforco: {e: 1, c: 1, ce: 1}
@@ -182,6 +207,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Proposta inicial concentrada no atendimento ao vivo, com ofertas simplificadas.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -198,6 +226,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Gerenciamento de ofertas simplificado; coaching e duo compartilham o fluxo.
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 2, ce: 3}
@@ -228,6 +259,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Manter o encerramento de oferta, sem exigir operação independente de pausa.
   priorizacao:
     moscow: Must Have
     esforco: {e: 1, c: 1, ce: 1}
@@ -244,6 +278,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP2]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Substituir a negociação de horários por agenda semanal configurada pelo prestador.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 3, ce: 4}
@@ -260,6 +297,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP2, CP3]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Consumidor seleciona o horário na agenda semanal do prestador.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -276,6 +316,11 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3, CP5]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Seleção de horário na agenda semanal do prestador.
+  - evidencia: reuniao-3
+    decisao: Contratação registrada automaticamente, sem aceite prévio.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -305,6 +350,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP5]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Se não puder atender, o prestador pode cancelar. A penalidade ficou em aberto na Reunião 2; no MVP a devolução é integral (RN27).
   priorizacao:
     moscow: Must Have
     esforco: {e: 1, c: 2, ce: 1}
@@ -360,6 +408,11 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Creditar a carteira após a confirmação do pagamento.
+  - evidencia: validacao-pagamentos
+    decisao: Fluxo de pagamentos aceito pelo cliente.
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 3, ce: 3}
@@ -376,6 +429,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Apresentar ao prestador os ganhos e a disponibilidade do saldo.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 4, ce: 4}
@@ -405,6 +461,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Manter o valor reservado até a prestação do serviço.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -421,6 +480,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4, CP5]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Liberação após 48 horas sem disputa, ou antes mediante confirmação do serviço.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 4, ce: 4}
@@ -437,6 +499,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Pagamentos com divisão de receita entre prestador e plataforma.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -453,6 +518,11 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Prever solicitação de saque.
+  - evidencia: validacao-pagamentos
+    decisao: O cliente pediu a rota de solicitação de saque no fluxo de pagamentos.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 4, ce: 4}
@@ -495,6 +565,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP5]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Confirmação da sessão permitindo informar que ela não ocorreu e justificar o motivo.
   priorizacao:
     moscow: Could Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -667,6 +740,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Ciro como administrador e moderador inicial, com permissões previstas para futuros funcionários.
   priorizacao:
     moscow: Should Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -749,6 +825,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3, CP7]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Detalhar a administração, incluindo o cadastro dos jogos disponíveis.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 2, ce: 3}

@@ -154,6 +154,18 @@
 .md-typeset .selo--em-andamento { background: var(--selo-andamento-bg); color: var(--selo-andamento); }
 .md-typeset .selo--planejada    { background: var(--selo-plan-bg);      color: var(--selo-plan); }
 
+/* Link da reunião na linha "Levantamento" do card: no tema escuro a cor
+   padrão de link (primary) some no fundo, então usa a cor de destaque. */
+.md-typeset a.req-evidencia {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a.req-evidencia {
+  color: var(--md-accent-fg-color);
+}
+
 .md-typeset .selo--integral     { background: var(--selo-integral-bg);  color: var(--selo-integral); }
 .md-typeset .selo--parcial      { background: var(--selo-parcial-bg);   color: var(--selo-parcial); }
 .md-typeset .selo--adiado {
