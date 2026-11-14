@@ -916,9 +916,9 @@ rnf:
     iteracoes: [6]
 - id: RNF10
   nome: Identificação do usuário logado
-  descricao: O sistema deve exibir de forma visível, em todas as telas autenticadas, qual usuário está logado e seu papel (consumidor, prestador ou administração).
+  descricao: O sistema deve exibir de forma visível, em todas as telas autenticadas, o nickname do usuário logado e os perfis habilitados em sua conta (prestação e administração). Toda conta autenticada pode atuar como consumidora.
   classificacao: URPS+ — usabilidade
-  criterio: Em qualquer tela acessada após autenticação, deve ser possível identificar o usuário logado e seu papel.
+  criterio_mvp: Em qualquer tela acessada após a autenticação, deve ser possível identificar o nickname do usuário e se a conta possui perfil de prestação ou de administração; as áreas de prestador e de administração devem ser identificadas pelo título e pela navegação.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Must Have
