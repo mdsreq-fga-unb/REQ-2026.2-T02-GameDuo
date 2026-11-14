@@ -23,7 +23,10 @@
 #                          funcione no fluxo do MVP (preenchido apenas nos RFs do MVP)
 #
 # Campos dos RNFs
-#   classificacao, criterio   classificação URPS+/Sommerville e critério verificável
+#   classificacao             classificação URPS+/Sommerville
+#   criterio_mvp              o que já é verificável no MVP (opcional)
+#   parametro_pendente        parâmetro ainda a definir, sem valor estimado (opcional)
+#   melhoria_futura           melhoria prevista para versões futuras (opcional)
 #   entrega.tratamento        tratamento registrado no quadro "MVP Definido"
 #   entrega.iteracoes         iterações em que o RNF passa a se aplicar
 
@@ -805,7 +808,7 @@ rnf:
   nome: Autenticação em dois fatores
   descricao: O sistema deve exigir um segundo fator nas operações definidas pela política de autenticação, utilizando os canais previstos de e-mail e telefone.
   classificacao: 'Sommerville — requisito de produto: segurança'
-  criterio: Uma operação protegida não deve ser concluída sem a validação do segundo fator.
+  melhoria_futura: Uma operação protegida não deve ser concluída sem a validação do segundo fator.
   origem: [CP4, CP7]
   priorizacao:
     moscow: Could Have
@@ -816,7 +819,8 @@ rnf:
   nome: Restrição de acesso
   descricao: O sistema deve restringir o acesso a dados pessoais, dados bancários, denúncias e avaliações ainda não publicadas conforme o papel do usuário e a situação do registro.
   classificacao: 'Sommerville — requisito de produto: segurança'
-  criterio: Testes por papel, titularidade e situação do registro devem permitir os acessos autorizados e recusar os demais, inclusive por chamada direta à API.
+  criterio_mvp: 'Testes por papel, titularidade e situação do registro devem permitir os acessos autorizados e recusar os demais, inclusive por chamada direta à API (sem autenticação: 401; sem autorização: 403).'
+  parametro_pendente: Matriz completa de permissões por perfil e tipo de dado.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Must Have
@@ -839,7 +843,7 @@ rnf:
   nome: Configurabilidade de taxas
   descricao: As taxas, comissões e penalidades configuráveis devem poder ser alteradas pelo painel administrativo sem modificação do código-fonte.
   classificacao: URPS+ — suportabilidade
-  criterio: Uma alteração autorizada pelo painel deve ser persistida e produzir efeito conforme as regras de vigência, sem edição do código-fonte.
+  melhoria_futura: Uma alteração autorizada pelo painel deve ser persistida e produzir efeito conforme as regras de vigência, sem edição do código-fonte.
   origem: [CP4, CP5, CP7]
   priorizacao:
     moscow: Won't Have
@@ -850,7 +854,7 @@ rnf:
   nome: Periodicidade do cálculo de reputação
   descricao: O processamento de atualização da reputação deve ocorrer diariamente.
   classificacao: 'Sommerville — requisito organizacional: operacional'
-  criterio: O histórico de processamento deve comprovar pelo menos uma atualização concluída por dia, no fuso de referência da plataforma.
+  melhoria_futura: O histórico de processamento deve comprovar pelo menos uma atualização concluída por dia, no fuso de referência da plataforma.
   origem: [CP6]
   priorizacao:
     moscow: Won't Have
@@ -861,7 +865,7 @@ rnf:
   nome: Tecnologias de implementação
   descricao: O sistema deve utilizar React no frontend e PHP no backend.
   classificacao: URPS+ — restrição de implementação
-  criterio: A implementação deve utilizar essas tecnologias nas respectivas camadas.
+  criterio_mvp: A implementação deve utilizar React no frontend e PHP no backend.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Won't Have
@@ -885,7 +889,7 @@ rnf:
   nome: Clareza das mensagens de validação
   descricao: As mensagens de validação devem identificar o campo ou a operação com problema e indicar como corrigir a informação, em linguagem compreensível ao usuário.
   classificacao: URPS+ — usabilidade
-  criterio: Nos cenários de entrada inválida de cadastro, contratação e pagamento, a mensagem deve identificar o campo ou a operação afetada e informar a ação necessária para corrigir o problema, sem expor detalhes técnicos internos.
+  melhoria_futura: Nos cenários de entrada inválida de cadastro, contratação e pagamento, a mensagem deve identificar o campo ou a operação afetada e a ação necessária, sem expor detalhes técnicos internos. O mínimo de clareza exigido pelo DoR e DoD aplica-se desde o MVP.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -896,7 +900,7 @@ rnf:
   nome: Consistência da agenda
   descricao: O sistema deve preservar a consistência dos horários reservados diante de solicitações simultâneas ou repetidas.
   classificacao: URPS+ — confiabilidade
-  criterio: Tentativas simultâneas de reservar horários sobrepostos do mesmo prestador não devem produzir contratações incompatíveis; a repetição da mesma solicitação não deve criar outra reserva.
+  criterio_mvp: Tentativas simultâneas de reservar horários sobrepostos do mesmo prestador não devem produzir contratações incompatíveis; a repetição da mesma solicitação não deve criar outra reserva.
   origem: [CP2, CP3, CP5]
   priorizacao:
     moscow: Should Have
@@ -920,7 +924,8 @@ rnf:
   nome: Prevenção de ações involuntárias
   descricao: A interface deve exigir confirmação explícita antes do cancelamento de contratação, encerramento de oferta ou aplicação de sanção.
   classificacao: URPS+ — usabilidade
-  criterio: Em cada uma das três ações, desistir da confirmação deve preservar o estado anterior; a ação somente deve prosseguir após confirmação explícita.
+  criterio_mvp: Ao cancelar uma contratação ou encerrar uma oferta, desistir da confirmação deve preservar o estado anterior; a ação somente prossegue após confirmação explícita.
+  melhoria_futura: Confirmação explícita antes da aplicação de sanção (RF41).
   origem: [CP3, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -932,7 +937,7 @@ rnf:
   nome: Consistência visual entre telas
   descricao: O sistema deve manter um padrão visual consistente de cores, tipografia, botões e espaçamentos em todas as telas, seguindo um guia de estilo definido.
   classificacao: URPS+ — usabilidade
-  criterio: Nas telas de cadastro, catálogo, contratação, carteira e administração, componentes de mesma função e estado devem usar os mesmos estilos de cor, tipografia, botão e espaçamento definidos no guia de estilo.
+  melhoria_futura: Nas telas de cadastro, catálogo, contratação, carteira e administração, componentes de mesma função e estado devem usar os mesmos estilos definidos no guia de estilo. O mínimo de consistência exigido pelo DoR e DoD aplica-se desde o MVP.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -943,7 +948,7 @@ rnf:
   nome: Integridade financeira
   descricao: O sistema deve preservar a consistência dos saldos e lançamentos em operações financeiras simultâneas, repetidas ou interrompidas.
   classificacao: URPS+ — confiabilidade
-  criterio: Repetir ou executar simultaneamente a mesma compra, confirmação de pagamento, liberação, divisão, devolução ou saque não deve duplicar débitos ou créditos nem reutilizar saldo reservado; as parcelas devem recompor o total distribuído.
+  criterio_mvp: Repetir ou executar simultaneamente a mesma compra, confirmação de pagamento, liberação, divisão, devolução ou saque não deve duplicar débitos ou créditos nem reutilizar saldo reservado; as parcelas devem recompor o total distribuído.
   origem: [CP3, CP4, CP5, CP7]
   priorizacao:
     moscow: Must Have
@@ -955,7 +960,8 @@ rnf:
   nome: Proteção de credenciais e comunicação
   descricao: O sistema deve proteger as credenciais armazenadas e a transmissão de dados pessoais e financeiros.
   classificacao: 'Sommerville — requisito de produto: segurança'
-  criterio: Senhas devem ser armazenadas com hash próprio para senhas, sem formato reversível, e não devem aparecer em logs ou respostas; interfaces e integrações que transmitam dados privados devem usar conexão criptografada.
+  criterio_mvp: Senhas devem ser armazenadas com hash próprio para senhas, sem formato reversível, e não devem aparecer em logs ou respostas da API.
+  parametro_pendente: Conexão criptografada (HTTPS) no ambiente de hospedagem, a definir.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Must Have
@@ -967,7 +973,8 @@ rnf:
   nome: Tolerância a falhas de integração
   descricao: O sistema deve manter resultados consistentes e informar indisponibilidade ou falha nas integrações de jogos e pagamentos.
   classificacao: URPS+ — confiabilidade
-  criterio: Simular indisponibilidade e resposta inválida não deve gerar credencial verificada, pagamento confirmado ou repasse concluído sem confirmação correspondente; repetir o processamento não deve duplicar seus efeitos.
+  criterio_mvp: Simular indisponibilidade ou resposta inválida do gateway de pagamento não deve gerar pagamento confirmado ou repasse concluído sem confirmação correspondente; repetir o processamento não deve duplicar seus efeitos.
+  melhoria_futura: Mesmo comportamento para a integração de verificação de credenciais de jogo (RF06).
   origem: [CP1, CP4, CP5]
   priorizacao:
     moscow: Should Have

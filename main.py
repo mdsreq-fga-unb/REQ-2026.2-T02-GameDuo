@@ -30,6 +30,9 @@ MOSCOW = ["Must Have", "Should Have", "Could Have", "Won't Have"]
 VALOR = {m: 4 - i for i, m in enumerate(MOSCOW)}
 STATUS = ["Executada", "Em andamento", "Planejada"]
 ESFORCO_ROTULO = {"e": "Esforço estimado", "c": "Complexidade", "ce": "Capacitação da equipe"}
+# Critérios dos RNFs: só as linhas preenchidas aparecem no card.
+CRITERIOS = [("criterio_mvp", "Verificável no MVP"), ("parametro_pendente", "Parâmetro pendente"),
+             ("melhoria_futura", "Melhoria futura")]
 
 
 def _carregar(nome):
@@ -301,15 +304,17 @@ def define_env(env):
                            f'<div class="req-linha"><span class="req-rotulo">Iterações</span>{chips(d, iters)}</div>'
                            f'<div class="req-linha"><span class="req-rotulo">Aplicado em</span>{chips(d, aplicado_em.get(rid, []), "nenhum RF vinculado")}</div>'
                            f'<div class="req-linha"><span class="req-rotulo">Regras</span>{chips(d, regras_de.get(rid, []))}</div>')
-                rodape = (f'<details class="req-detalhe"><summary>Critério verificável</summary>'
-                          f'<p>{e(r["criterio"])}</p></details>')
+                criterios = "".join(
+                    f'<div class="req-linha"><span class="req-rotulo">{rotulo}</span>{e(r[campo])}</div>'
+                    for campo, rotulo in CRITERIOS if r.get(campo))
+                rodape = f'<details class="req-detalhe"><summary>Critérios</summary>{criterios}</details>'
                 titulo_meta = ("Origem", "Priorização &amp; classificação", "Entrega &amp; vínculos")
 
             meta = "".join(
                 f'<section class="req-meta"><h4 class="req-meta__titulo">{t}</h4>{c}</section>'
                 for t, c in zip(titulo_meta, (origem, prioridade, entrega)))
             busca = " ".join([rid, r["nome"], r["descricao"], " ".join(r["origem"]),
-                              r.get("criterio", ""), r["entrega"].get("jornada", "")]).lower()
+                              *(r.get(c, "") for c, _ in CRITERIOS), r["entrega"].get("jornada", "")]).lower()
             selos_status = "".join(selo_status(s) for s in status)
             cards.append(
                 f'<article class="req-card req-card--{tipo}" id="{ancora}" data-tipo="{rid[:-2]}"'
