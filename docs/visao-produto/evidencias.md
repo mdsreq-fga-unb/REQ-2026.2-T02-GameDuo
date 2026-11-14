@@ -2,7 +2,16 @@
 
 Registro das evidências do GameDuo, marketplace de coaching e duo remunerado desenvolvido pela equipe GoHorse na disciplina de Requisitos de Software da UnB/FCTE, turma T02, semestre 2026.2. A organização acompanha as iterações do OpenUP e as validações quinzenais com Ciro Vargas, cliente, idealizador e único tomador de decisão.
 
-As decisões abaixo representam o momento de cada reunião. Para as especificações atuais, consultar a [seção 8 — Requisitos de Software](8.1requisitos-software.md); para o processo de aceite, consultar a [seção 7 — Interação entre Equipe e Cliente](7.interacao-equipe.md).
+As decisões abaixo representam o momento de cada reunião: esta página preserva a versão discutida e o que foi decidido, sem reproduzir a especificação atual. Para a informação vigente, consultar:
+
+| Assunto | Fonte vigente |
+| --- | --- |
+| Descrição e critérios dos requisitos | [Catálogo de requisitos (8.1–8.2)](8.1requisitos-software.md) |
+| Recorte do MVP, iteração e status de cada requisito | [Backlog geral (10.1)](10.1backlog-geral.md) |
+| Prazos, percentuais e regras de conclusão e disputa | [Regras de negócio (8.4)](8.4regras-negocio.md) |
+| Participantes e responsabilidade pelas validações | [Interação entre Equipe e Cliente (7.3)](7.interacao-equipe.md#73-processos-de-validacao) |
+
+Quando um ponto em aberto de uma reunião foi resolvido depois, o encaminhamento é indicado ao lado dele.
 
 ## Índice
 
@@ -11,11 +20,11 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 | [1](#iteracao-1) | Iniciação | 11/08/2026 a 31/08/2026 | Escolha do projeto |
 | [2](#iteracao-2) | Iniciação | 01/09/2026 a 08/09/2026 | [Reunião 1 — Características de Produto](#reuniao-1) |
 | [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2); [Validação dos requisitos com o monitor](#validacao-monitor) |
-| [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
+| [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Escolha das APIs](#escolha-apis); [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
 | [5](#iteracao-5) | Elaboração | 07/10/2026 a 13/10/2026 | [Reunião 5 — Validação do MVP](#reuniao-5) |
-| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Planejada |
-| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Planejada |
-| [8](#iteracao-8) | Construção | 11/11/2026 a 17/11/2026 | Planejada |
+| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Executada — modelagem do banco e diagrama de telas |
+| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Executada — evidências não registradas |
+| [8](#iteracao-8) | Construção | 11/11/2026 a 17/11/2026 | Em andamento |
 | [9](#iteracao-9) | Construção | 18/11/2026 a 01/12/2026 | Planejada |
 | [10](#iteracao-10) | Transição | 02/12/2026 a 10/12/2026 | Planejada |
 
@@ -50,8 +59,8 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
     - Manter liberdade de escolha tecnológica. Ciro ofereceu apoio técnico caso a equipe adotasse PHP e React; a conversa interna posterior indicou preferência por essas tecnologias.
 
 !!! warning "Pontos em aberto"
-    - Selecionar o gateway e estudar split, prazos de disponibilidade, saque e integração.
-    - Investigar a viabilidade das APIs de jogos e das informações de perfil sugeridas.
+    - Selecionar o gateway e estudar split, prazos de disponibilidade, saque e integração. *Encaminhamento: Asaas escolhido na [Iteração 4](#escolha-apis); divisão e carência vigentes em [RN33](8.4regras-negocio.md#rn33) e [RN40](8.4regras-negocio.md#rn40).*
+    - Investigar a viabilidade das APIs de jogos e das informações de perfil sugeridas. *Encaminhamento: APIs escolhidas na [Iteração 4](#escolha-apis); a verificação de credenciais ficou fora do MVP ([RN13](8.4regras-negocio.md#rn13)).*
     - Refinar as Características de Produto e validar a estratégia tecnológica com a equipe.
     - Torneios e desafios pagos foram ideias de evolução; a equipe indicou dificuldade de incluí-los no MVP, sem assumir compromisso de entrega.
     - A gravação começa durante a discussão de split. A parte anterior da conversa não pode ser reconstituída integralmente a partir deste PDF.
@@ -83,8 +92,8 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
     - Manter o fluxo de cadastro e login apresentado. Uma mesma conta poderá contratar e prestar serviços, inclusive reutilizar o saldo recebido dentro da plataforma.
     - Substituir a negociação inicial de horários pela seleção de uma agenda semanal configurada pelo prestador. Recusa e reagendamento foram discutidos; a confirmação automática foi esclarecida posteriormente na Reunião 3.
     - Tornar o selo de verificação opcional e específico por jogo. A discussão encaminhou a ausência de restrições a prestadores sem selo e a possibilidade de filtrar por verificação.
-    - Creditar a carteira após a confirmação do pagamento. Manter o valor na conta do consumidor até a prestação e prever liberação após 48 horas sem disputa, ou antes mediante confirmação do serviço. A disponibilidade para saque depende do gateway.
-    - Parametrizar comissões pelo painel administrativo, com valor padrão e ajustes por modalidade e perfil. Preservar preço e comissão das contratações já realizadas.
+    - Creditar a carteira após a confirmação do pagamento. Manter o valor na conta do consumidor até a prestação e prever liberação após 48 horas sem disputa, ou antes mediante confirmação do serviço. A disponibilidade para saque depende do gateway. *Regra vigente: [RN29](8.4regras-negocio.md#rn29)–[RN30](8.4regras-negocio.md#rn30).*
+    - Parametrizar comissões pelo painel administrativo, com valor padrão e ajustes por modalidade e perfil. Preservar preço e comissão das contratações já realizadas. *No MVP a divisão é fixa ([RN33](8.4regras-negocio.md#rn33)); a parametrização ficou para versões futuras ([RN34](8.4regras-negocio.md#rn34)).*
     - Unificar a confirmação da sessão e a avaliação na interação com o usuário, permitindo informar que a sessão não ocorreu e justificar o motivo.
     - Permitir denúncias a qualquer momento e análise manual de disputas, com decisões financeiras e sanções registradas pela moderação.
     - Prever Ciro como administrador e moderador inicial e permissões para futuros funcionários.
@@ -92,8 +101,8 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
     - Encaminhar o fluxograma ajustado para validação assíncrona por WhatsApp.
 
 !!! warning "Pontos em aberto"
-    - Escolha do gateway, prazo de repasse e política de antecipação, incluindo quem absorveria suas taxas.
-    - Política e percentual de penalidade por cancelamento: 50% foi questionado, 10% foi mencionado como alternativa e ficou acordada a parametrização administrativa, com pesquisa comparativa pendente.
+    - Escolha do gateway, prazo de repasse e política de antecipação, incluindo quem absorveria suas taxas. *Encaminhamento: gateway escolhido na [Iteração 4](#escolha-apis); a política de antecipação continua sem definição.*
+    - Política e percentual de penalidade por cancelamento: 50% foi questionado, 10% foi mencionado como alternativa e ficou acordada a parametrização administrativa, com pesquisa comparativa pendente. *No MVP o cancelamento devolve integralmente os créditos ([RN27](8.4regras-negocio.md#rn27)); a configuração de penalidades ficou fora do recorte.*
     - Forma de comunicação durante o serviço e risco de contratações posteriores fora da plataforma. Não houve compromisso de construir comunicação própria.
     - A recomputação diária da reputação foi recomendada por Leonardo; Ciro discutiu alternativas de cálculo e publicação após avaliações de ambas as partes. A transcrição não contém um aceite inequívoco de uma periodicidade única.
 
@@ -134,12 +143,17 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 **Período:** 23/09/2026 a 06/10/2026.
 
-### Escolha de APIS:
-    Pagamento: ASAAS
-    League of Legends: Riot API
-    Counter Strike 2: leetify, que utiliza steam D64
+### Escolha das APIs {#escolha-apis}
 
+**Objetivo:** definir os serviços externos de pagamento e de consulta de dados dos jogos.
 
+!!! success "Decisões"
+    - **Pagamentos:** Asaas.
+    - **League of Legends:** Riot API.
+    - **Counter-Strike 2:** Leetify, que utiliza o identificador Steam ID64.
+
+!!! warning "Pontos em aberto"
+    Data, participantes e registro da discussão não foram anexados. As APIs de jogos apoiam a verificação de credenciais, que está fora do MVP ([RN13](8.4regras-negocio.md#rn13)).
 
 ### Validação assíncrona do fluxo de pagamentos {#validacao-pagamentos}
 
@@ -154,7 +168,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
     Ciro solicitou a inclusão da rota/endpoint de solicitação de saque, observando que o fluxo apresentado contemplava apenas o cadastro do Pix. Sobre o restante do fluxo, respondeu: “O resto, tá ok”.
 
 !!! warning "Pontos em aberto"
-    Vincular evidência de atendimento à solicitação de saque. O print registra o pedido e a concordância com o restante do fluxo, mas não comprova a implementação do ajuste.
+    O pedido foi incorporado ao escopo como saque para a chave Pix cadastrada ([RN35](8.4regras-negocio.md#rn35)), planejado no backlog geral. O print registra o pedido e a concordância com o restante do fluxo, mas não comprova a atualização do documento do fluxo.
 
 #### Artefatos
 
@@ -185,9 +199,9 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
     - Encaminhar dúvidas sobre pagamentos ao grupo para feedback assíncrono de Ciro, inclusive sobre solicitação de saque e disponibilidade do saldo.
 
 !!! warning "Pontos em aberto"
-    - Concluir a avaliação do esforço técnico, incluindo alinhamento com Rodrigo, e submeter o recorte do MVP ao cliente.
+    - Concluir a avaliação do esforço técnico, incluindo alinhamento com Rodrigo, e submeter o recorte do MVP ao cliente. *Encaminhamento: concluído nas [Reuniões 4](#reuniao-4) e [5](#reuniao-5).*
     - Confirmar o comportamento da integração quanto à consulta ou notificação de disponibilidade para saque.
-    - Recuperar as classificações que ficaram truncadas ou ausentes na transcrição, conforme as tabelas abaixo.
+    - Recuperar as classificações que ficaram truncadas ou ausentes na transcrição, listadas abaixo.
 
 #### Vídeo
 
@@ -201,7 +215,7 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 
 ##### Resultado MoSCoW recuperável do PDF
 
-O PDF contém um resumo automático e a transcrição, sem uma tabela final preenchida. As tabelas abaixo reconstituem apenas as classificações recuperáveis. **Must have** indica essencial; **Should have**, importante; **Could have**, desejável; **Won't have**, fora do recorte inicial. Os códigos foram associados pelo nome à seção 8; a classificação histórica não equivale à seleção posterior da equipe.
+O PDF contém um resumo automático e a transcrição, sem uma tabela final preenchida. As tabelas abaixo reconstituem apenas as classificações recuperáveis **tal como ditas na reunião**, com a localização na transcrição. Os códigos foram associados pelo nome à seção 8. Esta é a versão histórica: a classificação MoSCoW vigente de cada requisito está na [priorização (10.2)](10.2priorizacao.md#1023-avaliacao-consolidada), e a seleção do MVP, no [backlog geral (10.1)](10.1backlog-geral.md).
 
 | Classificação | Requisitos funcionais identificados | Localização na transcrição |
 | --- | --- | --- |
@@ -236,22 +250,21 @@ O PDF contém um resumo automático e a transcrição, sem uma tabela final pree
 
 ### Reunião 4 — Equipe: matriz 4x4 e MVP da equipe {#reuniao-4}
 
-**Data:** 05/10/2026.
-**Participantes:** equipe GoHorse. 
+**Data:** 05/10/2026.  
+**Participantes:** equipe GoHorse.  
 **Objetivo:** combinar a priorização do cliente com a análise de esforço técnico na matriz 4x4 e definir a proposta de MVP da equipe.
 
 !!! abstract "Resumo"
-    A atividade informada para esta reunião é a avaliação pela matriz 4x4 e a definição do MVP da equipe. O quadro “MVP Definido” registra 24 RFs e nove RNFs selecionados, com RNF15 indicado parcialmente, além da classificação dos 16 RNFs em quatro grupos. O quadro permite transcrever o resultado, mas não reconstituir a discussão, as pontuações ou as justificativas individuais sem a ata ou a gravação.
+    A equipe posicionou os requisitos na matriz 4x4 e registrou o resultado no quadro “MVP Definido”, reproduzido abaixo: 24 RFs e nove RNFs selecionados, com RNF15 indicado parcialmente, e os 16 RNFs classificados em quatro grupos — obrigatórios ao MVP, associados a RFs do MVP, evolutivos e não aplicáveis ao MVP.
 
 !!! success "Decisões"
-    - O resultado registrado pela equipe é o conjunto de RFs e RNFs transcrito abaixo.
-    - Os RNFs foram organizados em Obrigatórios ao MVP, Associados a RFs do MVP, Evolutivos e Não aplicáveis ao MVP.
-    - Essa seleção constitui a proposta da equipe a ser validada pelo cliente; a imagem não comprova, por si, o aceite de Ciro.
+    - Adotar o conjunto de RFs e RNFs do quadro como proposta de MVP da equipe, a ser submetida a Ciro.
+    - Classificar os RNFs nos quatro grupos acima, conforme sua necessidade no recorte.
+
+    A proposta foi aprovada por Ciro sem alterações na [Reunião 5](#reuniao-5). A relação vigente dos itens, com códigos, nomes, grupos dos RNFs e iterações, está no [backlog geral](10.1backlog-geral.md); o alcance parcial de RNF11 e RNF15 está na [seção 10.3](10.3mvp.md#1032-requisitos-nao-funcionais-e-alcance-no-mvp).
 
 !!! warning "Pontos em aberto"
-    - Informar data e participantes da reunião.
-    - Registrar as pontuações e justificativas da matriz 4x4 e o alcance da implementação parcial de RNF15.
-    - Vincular a proposta ao resultado da validação do cliente na Reunião 5.
+    - As justificativas individuais de inclusão e exclusão não foram registradas — por exemplo, a ausência de RF24, classificado como Must Have.
 
 #### Vídeos
 
@@ -284,59 +297,7 @@ O PDF contém um resumo automático e a transcrição, sem uma tabela final pree
 
 [Abrir imagem do MVP em tamanho original](../assets/evidencias/mvp-definido.jpg).
 
-##### RFs selecionados no quadro
-
-| Código | Nome |
-| --- | --- |
-| RF01 | Cadastrar usuários |
-| RF02 | Autenticar usuários |
-| RF03 | Recuperar senha |
-| RF04 | Configurar perfil de prestação |
-| RF05 | Manter dados de recebimento |
-| RF07 | Consultar perfil de prestador |
-| RF09 | Filtrar ofertas do catálogo |
-| RF10 | Consultar detalhes de oferta |
-| RF11 | Manter ofertas |
-| RF13 | Encerrar oferta |
-| RF14 | Configurar agenda semanal |
-| RF15 | Consultar disponibilidade de atendimento |
-| RF16 | Agendar serviço |
-| RF18 | Cancelar contratação |
-| RF22 | Comprar combo de créditos |
-| RF23 | Consultar carteira |
-| RF25 | Reservar créditos |
-| RF26 | Liberar valores retidos |
-| RF27 | Processar divisão de receita |
-| RF28 | Processar saques |
-| RF31 | Registrar resultado da sessão |
-| RF38 | Consultar denúncias e disputas |
-| RF44 | Consultar usuários |
-| RF50 | Manter jogos do catálogo |
-
-O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “Cadastrar usuários” está legível e foi associado a RF01 pela seção 8.
-
-##### RNFs selecionados no quadro
-
-| Código | Nome | Classificação no quadro |
-| --- | --- | --- |
-| RNF02 | Restrição de acesso | Obrigatórios ao MVP |
-| RNF06 | Tecnologias de implementação | Obrigatórios ao MVP |
-| RNF07 | Proteção de dados pessoais | Obrigatórios ao MVP |
-| RNF09 | Consistência da agenda | Obrigatórios ao MVP |
-| RNF10 | Identificação do usuário logado | Obrigatórios ao MVP |
-| RNF11 | Prevenção de ações involuntárias | Associados a RFs do MVP |
-| RNF13 | Integridade financeira | Obrigatórios ao MVP |
-| RNF14 | Proteção de credenciais e comunicação | Obrigatórios ao MVP |
-| RNF15 | Tolerância a falhas de integração **(Parte)** | Associados a RFs do MVP |
-
-##### Classificação completa dos RNFs
-
-| Classificação | Critério transcrito do quadro | RNFs |
-| --- | --- | --- |
-| Obrigatórios ao MVP | Necessários por razões de segurança, privacidade, acessibilidade, legislação, operação ou qualidade mínima | RNF02 — Restrição de acesso; RNF10 — Identificação do usuário logado; RNF13 — Integridade financeira; RNF14 — Proteção de credenciais e comunicação; RNF07 — Proteção de dados pessoais; RNF09 — Consistência da agenda; RNF06 — Tecnologias de implementação |
-| Associados a RFs do MVP | Aplicáveis apenas a determinadas funcionalidades selecionadas | RNF15 — Tolerância a falhas de integração; RNF11 — Prevenção de ações involuntárias |
-| Evolutivos | Podem ser aprimorados em entregas futuras | RNF16 — Responsividade de interface; RNF08 — Clareza das mensagens de validação; RNF12 — Consistência visual entre telas; RNF03 — Auditabilidade administrativa e financeira |
-| Não aplicáveis ao MVP | Relacionados exclusivamente a funcionalidades ainda não selecionadas | RNF01 — Autenticação em dois fatores; RNF04 — Configurabilidade de taxas; RNF05 — Periodicidade do cálculo de reputação |
+O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; o nome “Cadastrar usuários” está legível e foi associado a RF01.
 
 ## Iteração 5 — Elaboração {#iteracao-5}
 
@@ -344,27 +305,19 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “
 
 ### Reunião 5 — Cliente: validação do MVP {#reuniao-5}
 
-**Data:** 07/10/2026  
-**Participantes:** Ricardo Lucas, Pedro Araujo Lucena e Ciro Vargas.
+**Data:** 07/10/2026.  
+**Participantes:** Ciro Vargas, Pedro Araujo Lucena e Ricardo Lucas.  
 **Objetivo:** submeter o MVP definido pela equipe à validação de Ciro Vargas.
 
 !!! abstract "Resumo"
-    A realização desta reunião foi informada no registro das iterações, mas não foi fornecida ata ou transcrição que permita resumir sua discussão e seu resultado.
+    A equipe contextualizou a situação do projeto e apresentou os RFs e RNFs escolhidos para o MVP na [Reunião 4](#reuniao-4). Ciro não manifestou discordância sobre a inclusão ou exclusão de nenhum requisito.
 
 !!! success "Decisões"
-    O resultado da validação do MVP ainda precisa ser documentado com base na ata ou gravação desta reunião.
+    - Aprovar sem alterações o recorte proposto pela equipe na Reunião 4. O recorte vigente está no [backlog geral](10.1backlog-geral.md).
+    - Seguir para a fase de Construção.
 
 !!! warning "Pontos em aberto"
-    - Registrar data efetiva, participantes, resumo e resultado da validação: itens aceitos, recusados ou sujeitos a ajustes.
-    - Informar o link da gravação.
-
-#### Vídeo
-
-**Sem link, segue os pontos importantes discutidos**
-
-A reunião abriu com a discussão contextual, explicando ao Ciro qual a situação atual do projeto, que a equipe escolheu os RFs e os RNFs para o MVP, e começou a mostragem.
-
-Não houve nenhuma discordância sobre qual requisito deveria ou não deveria parar no MVP, os requisitos selecionados pela equipe foram aprovados pelo Ciro e o projeto poderá andar para frente.
+    A reunião não foi gravada e não há ata; este registro se baseia no relato dos participantes da equipe.
 
 
 #### Artefatos
@@ -377,8 +330,11 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 6 — Construção {#iteracao-6}
 
-**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
+**Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md).  
 **Período:** 14/10/2026 a 27/10/2026.
+
+!!! warning "Pontos em aberto"
+    A demonstração do incremento a Ciro ainda não foi registrada nesta página.
 
 ### Artefatos
 
@@ -395,14 +351,15 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 7 — Construção {#iteracao-7}
 
-**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
+**Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md).  
 **Período:** 28/10/2026 a 10/11/2026.
 
-
+!!! warning "Pontos em aberto"
+    Artefatos e demonstração do incremento a Ciro ainda não foram registrados nesta página.
 
 ## Iteração 8 — Construção {#iteracao-8}
 
-**Status:** Planejada.  
+**Status:** Em andamento.  
 **Período:** 11/11/2026 a 17/11/2026.
 
 ## Iteração 9 — Construção {#iteracao-9}

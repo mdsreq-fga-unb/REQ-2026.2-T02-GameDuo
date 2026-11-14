@@ -355,10 +355,20 @@ def define_env(env):
         return tabs("backlog", abas)
 
     @env.macro
+    def backlog_rnf():
+        """Relação vigente dos RNFs: escopo, tratamento no recorte e iterações."""
+        d = dados()
+        linhas = [[(chip(d, r["id"]), r["id"]), r["nome"],
+                   (f'{selo_escopo(r)} {e(r["entrega"]["tratamento"])}', r["entrega"]["tratamento"]),
+                   chips(d, r["entrega"].get("iteracoes", []))]
+                  for r in sorted(d["rnf"], key=lambda r: (not _mvp(r), r["entrega"]["tratamento"], r["id"]))]
+        return tabela(["Requisito", "Nome", "Tratamento no recorte", "Iterações"], linhas)
+
+    @env.macro
     def tabela_priorizacao():
         """RFs em abas por classificação MoSCoW, ordenados por esforço."""
         d = dados()
-        cab = ["Requisito", "Funcionalidade", "CP", "E", "C", "CE", "Média", "ET", "MVP"]
+        cab = ["Requisito", "Funcionalidade", "CP", "E", "C", "CE", "Média", "ET"]
         abas = []
         for m in MOSCOW:
             reqs = sorted((r for r in d["rf"] if r["priorizacao"]["moscow"] == m), key=lambda r: (_et(r), r["id"]))
@@ -370,7 +380,6 @@ def define_env(env):
                     *[(str(esf[k]), esf[k]) for k in ("e", "c", "ce")],
                     (_decimal(_soma(r) / 3), _soma(r)),
                     (f"{barra(_et(r), rotulo=f'ET {_et(r)}')} {_et(r)}", _et(r)),
-                    (selo_escopo(r), r["entrega"]["escopo"]),
                 ])
             rotulo = f'{selo_moscow(reqs[0]) if reqs else m} <span class="pilula__n">{len(reqs)}</span>'
             abas.append((rotulo, tabela(cab, linhas)))
@@ -378,12 +387,11 @@ def define_env(env):
 
     @env.macro
     def tabela_priorizacao_rnf():
-        """RNFs com valor de negócio e tratamento no quadro do MVP."""
+        """RNFs com valor de negócio (o tratamento no recorte fica no backlog geral)."""
         d = dados()
-        linhas = [[(chip(d, r["id"]), r["id"]), r["nome"], (selo_moscow(r), _valor(r)),
-                   (f'{selo_escopo(r)} {e(r["entrega"]["tratamento"])}', r["entrega"]["tratamento"])]
+        linhas = [[(chip(d, r["id"]), r["id"]), r["nome"], (selo_moscow(r), _valor(r))]
                   for r in sorted(d["rnf"], key=lambda r: (-_valor(r), r["id"]))]
-        return tabela(["Requisito", "Nome", "MoSCoW (VB)", "Tratamento no quadro do MVP"], linhas)
+        return tabela(["Requisito", "Nome", "MoSCoW (VB)"], linhas)
 
     # ------------------------------------------------------------- MVP
 
