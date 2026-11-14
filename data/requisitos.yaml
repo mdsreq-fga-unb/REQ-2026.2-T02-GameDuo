@@ -583,9 +583,7 @@ rf:
     moscow: Should Have
     esforco: {e: 3, c: 2, ce: 2}
   entrega:
-    escopo: MVP
-    jornada: Resultado e atendimento
-    iteracao: 9
+    escopo: Backlog
   rnfs_associados: [RNF02]
 - id: RF39
   nome: Registrar decisão de ocorrência
