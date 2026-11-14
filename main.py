@@ -284,7 +284,8 @@ def define_env(env):
                            f'{e(r["entrega"].get("jornada", "Fora do MVP"))}</div>')
                 if n:
                     entrega += f'<div class="req-linha">{chip(d, n)} {selo_status(d["it"][n]["status"])}</div>'
-                entrega += (f'<div class="req-linha"><span class="req-rotulo">RNFs</span>{chips(d, r["rnfs_associados"])}</div>'
+                entrega += (f'<div class="req-linha"><span class="req-rotulo">Depende de</span>{chips(d, r.get("depende_de", []))}</div>'
+                            f'<div class="req-linha"><span class="req-rotulo">RNFs</span>{chips(d, r["rnfs_associados"])}</div>'
                             f'<div class="req-linha"><span class="req-rotulo">Regras</span>{chips(d, regras_de.get(rid, []))}</div>')
                 narr = r["narrativa_descritiva"]
                 if narr["texto"]:

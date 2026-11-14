@@ -19,6 +19,8 @@
 #   entrega.iteracao       iteração planejada (o status vem de cronograma.yaml)
 #   rnfs_associados        vínculos RF→RNF já documentados nas regras de negócio e
 #                          nos critérios dos RNFs; lista parcial, a revisar pela equipe
+#   depende_de             RFs que precisam estar disponíveis para que o requisito
+#                          funcione no fluxo do MVP (preenchido apenas nos RFs do MVP)
 #
 # Campos dos RNFs
 #   classificacao, criterio   classificação URPS+/Sommerville e critério verificável
@@ -41,6 +43,7 @@ rf:
     jornada: Conta e acesso
     iteracao: 6
   rnfs_associados: []
+  depende_de: []
 - id: RF02
   nome: Autenticar usuários
   descricao: O sistema deve permitir ao usuário acessar o sistema após a validação das credenciais informadas.
@@ -56,6 +59,7 @@ rf:
     jornada: Conta e acesso
     iteracao: 6
   rnfs_associados: [RNF02]
+  depende_de: [RF01]
 - id: RF03
   nome: Recuperar senha
   descricao: O sistema deve permitir ao usuário recuperar a senha por e-mail ou telefone e definir uma nova senha após validar a solicitação.
@@ -71,6 +75,7 @@ rf:
     jornada: Conta e acesso
     iteracao: 8
   rnfs_associados: []
+  depende_de: [RF01]
 - id: RF04
   nome: Configurar perfil de prestação
   descricao: O sistema deve permitir ao prestador configurar sua apresentação, jogos, nível declarado, modalidades, formatos de atendimento e idiomas.
@@ -86,6 +91,7 @@ rf:
     jornada: Perfil de prestação
     iteracao: 6
   rnfs_associados: []
+  depende_de: [RF02]
 - id: RF05
   nome: Manter dados de recebimento
   descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dados bancários utilizados para recebimento.
@@ -101,6 +107,7 @@ rf:
     jornada: Perfil de prestação
     iteracao: 9
   rnfs_associados: []
+  depende_de: [RF04]
 - id: RF06
   nome: Verificar credencial de jogo
   descricao: O sistema deve permitir ao usuário vincular sua conta de jogo ao perfil e apresentar o resultado da verificação da credencial pela integração disponível.
@@ -129,6 +136,7 @@ rf:
     jornada: Perfil de prestação
     iteracao: 9
   rnfs_associados: []
+  depende_de: [RF04]
 - id: RF08
   nome: Calcular indicadores de atendimento
   descricao: O sistema deve calcular a quantidade de sessões concluídas e a taxa de comparecimento do prestador a partir dos registros de atendimento.
@@ -157,6 +165,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 9
   rnfs_associados: []
+  depende_de: [RF11, RF50]
 - id: RF10
   nome: Consultar detalhes de oferta
   descricao: O sistema deve permitir ao usuário consultar os detalhes de uma oferta, incluindo prestador, preço, duração, condições e forma de comunicação.
@@ -172,6 +181,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 6
   rnfs_associados: []
+  depende_de: [RF11]
 - id: RF11
   nome: Manter ofertas
   descricao: O sistema deve permitir ao prestador cadastrar, editar e publicar ofertas de coaching, duo e conteúdos, associando os vídeos ou documentos às ofertas de conteúdo.
@@ -187,6 +197,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 6
   rnfs_associados: []
+  depende_de: [RF04, RF50]
 - id: RF12
   nome: Pausar oferta
   descricao: O sistema deve permitir ao prestador pausar uma oferta, retirando-a do catálogo e mantendo seus dados no painel do prestador.
@@ -215,6 +226,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 7
   rnfs_associados: [RNF11]
+  depende_de: [RF11]
 - id: RF14
   nome: Configurar agenda semanal
   descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dias e intervalos disponíveis para atendimento de cada oferta de coaching ou duo.
@@ -230,6 +242,7 @@ rf:
     jornada: Agenda e contratação
     iteracao: 6
   rnfs_associados: [RNF09]
+  depende_de: [RF11]
 - id: RF15
   nome: Consultar disponibilidade de atendimento
   descricao: O sistema deve permitir ao consumidor consultar os horários disponíveis do prestador em cada oferta.
@@ -245,6 +258,7 @@ rf:
     jornada: Agenda e contratação
     iteracao: 7
   rnfs_associados: [RNF09]
+  depende_de: [RF14]
 - id: RF16
   nome: Agendar serviço
   descricao: O sistema deve registrar automaticamente a contratação de coaching ou duo para o horário disponível selecionado pelo consumidor.
@@ -260,6 +274,7 @@ rf:
     jornada: Agenda e contratação
     iteracao: 6
   rnfs_associados: [RNF09]
+  depende_de: [RF02, RF15, RF22]
 - id: RF17
   nome: Reagendar serviço
   descricao: O sistema deve permitir aos participantes solicitar, aceitar, recusar ou contrapropor um reagendamento e registrar o resultado da negociação.
@@ -288,6 +303,7 @@ rf:
     jornada: Agenda e contratação
     iteracao: 7
   rnfs_associados: [RNF11]
+  depende_de: [RF16, RF25]
 - id: RF19
   nome: Publicar solicitação de serviço
   descricao: O sistema deve permitir ao consumidor publicar uma solicitação de coaching ou duo, com jogo, data, horário, elo mínimo e preço.
@@ -342,6 +358,7 @@ rf:
     jornada: Créditos e recebimentos
     iteracao: 7
   rnfs_associados: []
+  depende_de: [RF02]
 - id: RF23
   nome: Consultar carteira
   descricao: O sistema deve apresentar os saldos disponíveis, retidos e pendentes do usuário, identificando a contratação de origem de cada valor retido ou pendente e, quando houver, a data prevista de liberação.
@@ -357,6 +374,7 @@ rf:
     jornada: Créditos e recebimentos
     iteracao: 8
   rnfs_associados: [RNF13]
+  depende_de: [RF22]
 - id: RF24
   nome: Consultar histórico de prestação
   descricao: O sistema deve permitir ao prestador consultar os serviços realizados e a situação dos recebimentos correspondentes.
@@ -385,6 +403,7 @@ rf:
     jornada: Créditos e recebimentos
     iteracao: 7
   rnfs_associados: []
+  depende_de: [RF16, RF23]
 - id: RF26
   nome: Liberar valores retidos
   descricao: O sistema deve liberar os valores retidos de uma contratação encerrada para distribuição.
@@ -400,6 +419,7 @@ rf:
     jornada: Créditos e recebimentos
     iteracao: 8
   rnfs_associados: []
+  depende_de: [RF25, RF31]
 - id: RF27
   nome: Processar divisão de receita
   descricao: O sistema deve dividir a receita de uma contratação entre prestador e plataforma.
@@ -415,6 +435,7 @@ rf:
     jornada: Créditos e recebimentos
     iteracao: 8
   rnfs_associados: []
+  depende_de: [RF26]
 - id: RF28
   nome: Processar saques
   descricao: O sistema deve permitir ao prestador solicitar a transferência do saldo elegível para sua conta bancária e acompanhar o resultado do processamento.
@@ -430,6 +451,7 @@ rf:
     jornada: Créditos e recebimentos
     iteracao: 9
   rnfs_associados: [RNF13]
+  depende_de: [RF05, RF27]
 - id: RF29
   nome: Comprar conteúdo
   descricao: O sistema deve permitir ao consumidor adquirir guias ou tutoriais com créditos e registrar a compra.
@@ -471,6 +493,7 @@ rf:
     jornada: Resultado e atendimento
     iteracao: 8
   rnfs_associados: []
+  depende_de: [RF16]
 - id: RF32
   nome: Avaliar participante
   descricao: O sistema deve permitir ao consumidor avaliar o prestador e ao prestador avaliar o consumidor, registrando nota e comentário relativos à sessão.
@@ -644,6 +667,7 @@ rf:
     jornada: Consulta administrativa
     iteracao: 9
   rnfs_associados: [RNF02]
+  depende_de: [RF02]
 - id: RF45
   nome: Consultar contratações e transações
   descricao: O sistema deve permitir à administração consultar contratações e transações individuais, identificando participantes, valores e situações.
@@ -724,6 +748,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 7
   rnfs_associados: [RNF02]
+  depende_de: [RF02]
 - id: RF51
   nome: Atualizar informações institucionais
   descricao: O sistema deve permitir à administração atualizar a apresentação da plataforma e suas informações de contato.
