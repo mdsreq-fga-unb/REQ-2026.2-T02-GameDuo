@@ -883,7 +883,8 @@ rnf:
   nome: Proteção de dados pessoais
   descricao: O tratamento de dados pessoais deve observar os requisitos aplicáveis da LGPD.
   classificacao: 'Sommerville — requisito externo: legislativo'
-  criterio: O inventário de dados deve relacionar cada dado pessoal à finalidade, ao acesso e à retenção definidos; a revisão deve verificar a correspondência entre esse inventário, as interfaces e o armazenamento do sistema.
+  criterio_mvp: O inventário de dados pessoais deve relacionar cada dado à finalidade e aos perfis com acesso; a revisão deve confirmar que interfaces e respostas da API não expõem dados fora do inventário, como senha, CPF e chave Pix na área administrativa.
+  parametro_pendente: Prazo de retenção de cada dado, a definir com o cliente.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -891,6 +892,7 @@ rnf:
     escopo: MVP
     tratamento: Obrigatório
     iteracoes: [6, 7, 8, 9]
+    status: Em andamento
 - id: RNF08
   nome: Clareza das mensagens de validação
   descricao: As mensagens de validação devem identificar o campo ou a operação com problema e indicar como corrigir a informação, em linguagem compreensível ao usuário.
