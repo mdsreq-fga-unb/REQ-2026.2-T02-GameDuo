@@ -29,6 +29,8 @@
 #   melhoria_futura           melhoria prevista para versões futuras (opcional)
 #   entrega.tratamento        tratamento registrado no quadro "MVP Definido"
 #   entrega.iteracoes         iterações em que o RNF passa a se aplicar
+#   entrega.status            opcional; quando preenchido, substitui o status calculado
+#                             a partir das iterações (Executada | Em andamento | Planejada)
 
 rf:
 - id: RF01
@@ -305,7 +307,7 @@ rf:
     escopo: MVP
     jornada: Agenda e contratação
     iteracao: 7
-  rnfs_associados: [RNF11]
+  rnfs_associados: [RNF03, RNF11]
   depende_de: [RF16, RF25]
 - id: RF19
   nome: Publicar solicitação de serviço
@@ -360,7 +362,7 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 7
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
   depende_de: [RF02]
 - id: RF23
   nome: Consultar carteira
@@ -405,7 +407,7 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 7
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
   depende_de: [RF16, RF23]
 - id: RF26
   nome: Liberar valores retidos
@@ -421,7 +423,7 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 8
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
   depende_de: [RF25, RF31]
 - id: RF27
   nome: Processar divisão de receita
@@ -437,7 +439,7 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 8
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
   depende_de: [RF26]
 - id: RF28
   nome: Processar saques
@@ -453,7 +455,7 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 9
-  rnfs_associados: [RNF13]
+  rnfs_associados: [RNF03, RNF13]
   depende_de: [RF05, RF27]
 - id: RF29
   nome: Comprar conteúdo
@@ -832,13 +834,17 @@ rnf:
   nome: Auditabilidade administrativa e financeira
   descricao: As alterações administrativas e movimentações financeiras devem possuir registros rastreáveis de autoria, data, operação, registro afetado e resultado.
   classificacao: 'Sommerville — requisito de produto: segurança e auditabilidade'
-  criterio: Cada alteração administrativa e movimentação financeira testada deve ser localizável por seu identificador e apresentar os elementos de auditoria; ações automáticas devem identificar o processo responsável.
+  criterio_mvp: Cada compra de créditos deve ser localizável pela cobrança e indicar data, valor, situação e identificador do pagamento no gateway. Cada retenção, devolução, liberação, divisão e saque deve indicar data, valor, operação, registro de origem (contratação, cobrança ou saque), autor (usuário, processo automático ou administração) e, quando houver, o motivo.
+  parametro_pendente: Prazo de guarda dos registros financeiros.
+  melhoria_futura: Registro de autoria das alterações administrativas que não movimentam valores, como a manutenção de jogos.
   origem: [CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Could Have
   entrega:
-    escopo: Backlog
-    tratamento: Evolutivo
+    escopo: MVP
+    tratamento: Associado aos RFs selecionados (parcial)
+    iteracoes: [7, 8, 9]
+    status: Em andamento
 - id: RNF04
   nome: Configurabilidade de taxas
   descricao: As taxas, comissões e penalidades configuráveis devem poder ser alteradas pelo painel administrativo sem modificação do código-fonte.

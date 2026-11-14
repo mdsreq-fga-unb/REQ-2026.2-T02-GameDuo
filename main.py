@@ -144,6 +144,11 @@ def define_env(env):
                 f'<span class="barra__fill"></span></span>')
 
     def status_req(d, req):
+        # Status informado no registro substitui o calculado a partir das iterações.
+        if req["entrega"].get("status"):
+            if req["entrega"]["status"] not in STATUS:
+                raise ValueError(f'{req["id"]}: status inválido "{req["entrega"]["status"]}"')
+            return [req["entrega"]["status"]]
         if req["id"].startswith("RNF"):
             return sorted({d["it"][n]["status"] for n in req["entrega"].get("iteracoes", [])}, key=STATUS.index)
         n = req["entrega"].get("iteracao")
