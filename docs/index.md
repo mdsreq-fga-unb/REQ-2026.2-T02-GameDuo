@@ -165,3 +165,4 @@ Atualizações terão as seguintes motivações:
 | 14/11/2026 | 0.31 | Ajustes da issue #16: RF38 fora do MVP e RN44 (atendimento por SAC), RN27 (cancelamento até o horário), RN11 (contratações de oferta encerrada), RF23 (origem dos saldos) e dependências entre RFs do MVP | Pedro Araujo |
 | 14/11/2026 | 0.32 | Ajustes da issue #17: RNF03 parcial no MVP, RNF16 obrigatório com larguras de referência, RNF10 com perfis da conta única, inventário de dados pessoais (RNF07), expectativas de operação e critérios separados em verificável, pendente e futuro | Pedro Araujo |
 | 14/11/2026 | 0.33 | Telefone fora do MVP: cadastro sem telefone e recuperação de senha por e-mail (RF01, RF03, RN03, RN04) | Pedro Araujo |
+| 14/11/2026 | 0.34 | Ajustes da issue #15: atendimento dos objetivos e características no MVP, RFs com alcance parcial (RF07, RF09, RF11 e RF44), ligação do problema aos objetivos, origem no levantamento dos RFs do MVP e cobertura da CP5 | Pedro Araujo |
