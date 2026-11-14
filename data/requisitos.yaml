@@ -35,7 +35,7 @@
 rf:
 - id: RF01
   nome: Cadastrar usuários
-  descricao: O sistema deve permitir o cadastro de usuários com e-mail, telefone, senha e nickname público, permitindo corrigir os dados informados.
+  descricao: O sistema deve permitir o cadastro de usuários com e-mail, senha e nickname público, permitindo corrigir os dados informados.
   narrativa_descritiva:
     tecnica: ''
     texto: ''
@@ -67,7 +67,7 @@ rf:
   depende_de: [RF01]
 - id: RF03
   nome: Recuperar senha
-  descricao: O sistema deve permitir ao usuário recuperar a senha por e-mail ou telefone e definir uma nova senha após validar a solicitação.
+  descricao: O sistema deve permitir ao usuário recuperar a senha por e-mail e definir uma nova senha após validar a solicitação.
   narrativa_descritiva:
     tecnica: ''
     texto: ''
