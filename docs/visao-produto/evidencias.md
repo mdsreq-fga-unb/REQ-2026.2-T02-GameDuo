@@ -22,13 +22,8 @@ Quando um ponto em aberto de uma reunião foi resolvido depois, o encaminhamento
 | [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2); [Validação dos requisitos com o monitor](#validacao-monitor) |
 | [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Escolha das APIs](#escolha-apis); [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
 | [5](#iteracao-5) | Elaboração | 07/10/2026 a 13/10/2026 | [Reunião 5 — Validação do MVP](#reuniao-5) |
-<<<<<<< HEAD
-| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Executada |
-| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Executada |
-=======
 | [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Executada — modelagem do banco e diagrama de telas |
 | [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Executada — evidências não registradas |
->>>>>>> 2105a01ccf9c5ece80ef1a9bd2586a7377424b8c
 | [8](#iteracao-8) | Construção | 11/11/2026 a 17/11/2026 | Em andamento |
 | [9](#iteracao-9) | Construção | 18/11/2026 a 01/12/2026 | Planejada |
 | [10](#iteracao-10) | Transição | 02/12/2026 a 10/12/2026 | Planejada |
@@ -315,8 +310,6 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 **Objetivo:** submeter o MVP definido pela equipe à validação de Ciro Vargas.
 
 !!! abstract "Resumo"
-<<<<<<< HEAD
-
     A reunião abriu com a discussão contextual, explicando ao Ciro qual a situação atual do projeto, que a equipe escolheu os RFs e os RNFs para o MVP, e começou a mostragem.
 
 !!! success "Decisões"
@@ -326,17 +319,9 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 #### Vídeo
 
     Sem link de vídeo
-=======
-    A equipe contextualizou a situação do projeto e apresentou os RFs e RNFs escolhidos para o MVP na [Reunião 4](#reuniao-4). Ciro não manifestou discordância sobre a inclusão ou exclusão de nenhum requisito.
 
-!!! success "Decisões"
-    - Aprovar sem alterações o recorte proposto pela equipe na Reunião 4. O recorte vigente está no [backlog geral](10.1backlog-geral.md).
-    - Seguir para a fase de Construção.
-
-!!! warning "Pontos em aberto"
-    A reunião não foi gravada e não há ata; este registro se baseia no relato dos participantes da equipe.
-
->>>>>>> 2105a01ccf9c5ece80ef1a9bd2586a7377424b8c
+!!! warning "Validação com usuários não realizada"
+    A validação do protótipo com pelo menos um consumidor e um prestador, prevista até 13/10/2026 nas Lições Aprendidas da Unidade 1, não foi realizada por falta de conciliação de tempo com usuários em potencial. A decisão foi remover os usuários como stakeholders do projeto, mantendo Ciro Vargas como único tomador de decisão.
 
 #### Artefatos
 
@@ -348,11 +333,7 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 
 ## Iteração 6 — Construção {#iteracao-6}
 
-<<<<<<< HEAD
-**Status:** Executada.  
-=======
 **Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md).  
->>>>>>> 2105a01ccf9c5ece80ef1a9bd2586a7377424b8c
 **Período:** 14/10/2026 a 27/10/2026.
 
 !!! warning "Pontos em aberto"
@@ -373,20 +354,22 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 
 ## Iteração 7 — Construção {#iteracao-7}
 
-<<<<<<< HEAD
-**Status:** Executada.  
-=======
 **Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md).  
->>>>>>> 2105a01ccf9c5ece80ef1a9bd2586a7377424b8c
 **Período:** 28/10/2026 a 10/11/2026.
 
-!!! warning "Pontos em aberto"
-    Artefatos e demonstração do incremento a Ciro ainda não foram registrados nesta página.
+
 
 ## Iteração 8 — Construção {#iteracao-8}
 
 **Status:** Em andamento.  
 **Período:** 11/11/2026 a 17/11/2026.
+
+### Decisões feitas pela equipe
+    Devido a falta de conciliação de tempo com os usuários finais, foi decidido que os representantes citados serão removidos do escopo do projeto.
+
+!!! warning "Pontos em aberto"
+    - A demonstração do incremento a Ciro foi consolidada com a da Iteração 7 ao final da Iteração 8. O registro será incluído nesta seção quando recebido do cliente.
+    - **Débito técnico:** RF14 (configuração de agenda semanal) e RF16 (registro automático da contratação) não foram concluídos conforme a descrição do catálogo. As descrições não corresponderam ao que a equipe planejou entregar, e o desalinhamento não foi percebido na época. A resolução está prevista para a Iteração 8.
 
 ## Iteração 9 — Construção {#iteracao-9}
 
