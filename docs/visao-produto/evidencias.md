@@ -13,9 +13,9 @@ As decisões abaixo representam o momento de cada reunião. Para as especificaç
 | [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2); [Validação dos requisitos com o monitor](#validacao-monitor) |
 | [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
 | [5](#iteracao-5) | Elaboração | 07/10/2026 a 13/10/2026 | [Reunião 5 — Validação do MVP](#reuniao-5) |
-| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Planejada |
-| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Planejada |
-| [8](#iteracao-8) | Construção | 11/11/2026 a 17/11/2026 | Planejada |
+| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Executada |
+| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Executada |
+| [8](#iteracao-8) | Construção | 11/11/2026 a 17/11/2026 | Em andamento |
 | [9](#iteracao-9) | Construção | 18/11/2026 a 01/12/2026 | Planejada |
 | [10](#iteracao-10) | Transição | 02/12/2026 a 10/12/2026 | Planejada |
 
@@ -349,23 +349,16 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão; o nome “
 **Objetivo:** submeter o MVP definido pela equipe à validação de Ciro Vargas.
 
 !!! abstract "Resumo"
-    A realização desta reunião foi informada no registro das iterações, mas não foi fornecida ata ou transcrição que permita resumir sua discussão e seu resultado.
+
+    A reunião abriu com a discussão contextual, explicando ao Ciro qual a situação atual do projeto, que a equipe escolheu os RFs e os RNFs para o MVP, e começou a mostragem.
 
 !!! success "Decisões"
-    O resultado da validação do MVP ainda precisa ser documentado com base na ata ou gravação desta reunião.
-
-!!! warning "Pontos em aberto"
-    - Registrar data efetiva, participantes, resumo e resultado da validação: itens aceitos, recusados ou sujeitos a ajustes.
-    - Informar o link da gravação.
+    
+    Não houve nenhuma discordância sobre qual requisito deveria ou não deveria parar no MVP, os requisitos selecionados pela equipe foram aprovados pelo Ciro e o projeto poderá andar para frente.
 
 #### Vídeo
 
-**Sem link, segue os pontos importantes discutidos**
-
-A reunião abriu com a discussão contextual, explicando ao Ciro qual a situação atual do projeto, que a equipe escolheu os RFs e os RNFs para o MVP, e começou a mostragem.
-
-Não houve nenhuma discordância sobre qual requisito deveria ou não deveria parar no MVP, os requisitos selecionados pela equipe foram aprovados pelo Ciro e o projeto poderá andar para frente.
-
+    Sem link de vídeo
 
 #### Artefatos
 
@@ -377,7 +370,7 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 6 — Construção {#iteracao-6}
 
-**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
+**Status:** Executada.  
 **Período:** 14/10/2026 a 27/10/2026.
 
 ### Artefatos
@@ -395,14 +388,14 @@ Não houve nenhuma discordância sobre qual requisito deveria ou não deveria pa
 
 ## Iteração 7 — Construção {#iteracao-7}
 
-**Status:** Em passos finais de finalização, esperando a reunião com cliente para validação.  
+**Status:** Executada.  
 **Período:** 28/10/2026 a 10/11/2026.
 
 
 
 ## Iteração 8 — Construção {#iteracao-8}
 
-**Status:** Planejada.  
+**Status:** Em andamento.  
 **Período:** 11/11/2026 a 17/11/2026.
 
 ## Iteração 9 — Construção {#iteracao-9}
