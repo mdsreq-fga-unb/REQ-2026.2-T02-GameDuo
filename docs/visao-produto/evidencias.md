@@ -310,15 +310,18 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 **Objetivo:** submeter o MVP definido pela equipe à validação de Ciro Vargas.
 
 !!! abstract "Resumo"
-    A equipe contextualizou a situação do projeto e apresentou os RFs e RNFs escolhidos para o MVP na [Reunião 4](#reuniao-4). Ciro não manifestou discordância sobre a inclusão ou exclusão de nenhum requisito.
+    A reunião abriu com a discussão contextual, explicando ao Ciro qual a situação atual do projeto, que a equipe escolheu os RFs e os RNFs para o MVP, e começou a mostragem.
 
 !!! success "Decisões"
-    - Aprovar sem alterações o recorte proposto pela equipe na Reunião 4. O recorte vigente está no [backlog geral](10.1backlog-geral.md).
-    - Seguir para a fase de Construção.
+    
+    Não houve nenhuma discordância sobre qual requisito deveria ou não deveria parar no MVP, os requisitos selecionados pela equipe foram aprovados pelo Ciro e o projeto poderá andar para frente.
 
-!!! warning "Pontos em aberto"
-    A reunião não foi gravada e não há ata; este registro se baseia no relato dos participantes da equipe.
+#### Vídeo
 
+    Sem link de vídeo
+
+!!! warning "Validação com usuários não realizada"
+    A validação do protótipo com pelo menos um consumidor e um prestador, prevista até 13/10/2026 nas Lições Aprendidas da Unidade 1, não foi realizada por falta de conciliação de tempo com usuários em potencial. A decisão foi remover os usuários como stakeholders do projeto, mantendo Ciro Vargas como único tomador de decisão.
 
 #### Artefatos
 
@@ -361,6 +364,13 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 
 **Status:** Em andamento.  
 **Período:** 11/11/2026 a 17/11/2026.
+
+### Decisões feitas pela equipe
+    Devido a falta de conciliação de tempo com os usuários finais, foi decidido que os representantes citados serão removidos do escopo do projeto.
+
+!!! warning "Pontos em aberto"
+    - A demonstração do incremento a Ciro foi consolidada com a da Iteração 7 ao final da Iteração 8. O registro será incluído nesta seção quando recebido do cliente.
+    - **Débito técnico:** RF14 (configuração de agenda semanal) e RF16 (registro automático da contratação) não foram concluídos conforme a descrição do catálogo. As descrições não corresponderam ao que a equipe planejou entregar, e o desalinhamento não foi percebido na época. A resolução está prevista para a Iteração 8.
 
 ## Iteração 9 — Construção {#iteracao-9}
 
