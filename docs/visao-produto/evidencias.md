@@ -357,7 +357,8 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 **Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md).  
 **Período:** 28/10/2026 a 10/11/2026.
 
-
+!!! warning "Pontos em aberto"
+    Artefatos e demonstração do incremento a Ciro ainda não foram registrados nesta página.
 
 ## Iteração 8 — Construção {#iteracao-8}
 
