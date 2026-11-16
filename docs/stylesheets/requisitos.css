@@ -33,6 +33,10 @@
   --selo-andamento-bg: #FEF3C7;   --selo-andamento: #92400E;
   --selo-plan-bg: #EDE9FE;        --selo-plan: #5B21B6;
   --selo-pendente-bg: transparent; --selo-pendente: #64748B;
+  /* atendimento no MVP (objetivos, características e RFs parciais) */
+  --selo-integral-bg: #CCFBF1;    --selo-integral: #115E59;
+  --selo-parcial-bg: #FFEDD5;     --selo-parcial: #9A3412;
+  --selo-adiado-bg: transparent;  --selo-adiado: #64748B;
 }
 
 [data-md-color-scheme="slate"] {
@@ -61,6 +65,9 @@
   --selo-andamento-bg: rgba(245, 158, 11, .2); --selo-andamento: #FCD34D;
   --selo-plan-bg: rgba(139, 92, 246, .22); --selo-plan: #C4B5FD;
   --selo-pendente: #94A3B8;
+  --selo-integral-bg: rgba(20, 184, 166, .22); --selo-integral: #5EEAD4;
+  --selo-parcial-bg: rgba(249, 115, 22, .22);  --selo-parcial: #FDBA74;
+  --selo-adiado: #94A3B8;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -146,6 +153,26 @@
 .md-typeset .selo--executada    { background: var(--selo-exec-bg);      color: var(--selo-exec); }
 .md-typeset .selo--em-andamento { background: var(--selo-andamento-bg); color: var(--selo-andamento); }
 .md-typeset .selo--planejada    { background: var(--selo-plan-bg);      color: var(--selo-plan); }
+
+/* Link da reunião na linha "Levantamento" do card: no tema escuro a cor
+   padrão de link (primary) some no fundo, então usa a cor de destaque. */
+.md-typeset a.req-evidencia {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a.req-evidencia {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .selo--integral     { background: var(--selo-integral-bg);  color: var(--selo-integral); }
+.md-typeset .selo--parcial      { background: var(--selo-parcial-bg);   color: var(--selo-parcial); }
+.md-typeset .selo--adiado {
+  border: 1px dashed currentColor;
+  background: var(--selo-adiado-bg);
+  color: var(--selo-adiado);
+}
 
 .md-typeset .selo--pendente {
   border: 1px dashed currentColor;
@@ -925,6 +952,38 @@
 .md-typeset .gd-tabela td:has(.selo),
 .md-typeset .gd-tabela td:first-child {
   white-space: nowrap;
+}
+
+/* Tabelas com colunas de texto longo (ex.: cobertura dos objetivos na 8.3.3):
+   o texto quebra linha e a coluna de alcance fica com a maior parte da largura. */
+.md-typeset .gd-tabela--texto th,
+.md-typeset .gd-tabela--texto td:first-child,
+.md-typeset .gd-tabela--texto td:has(.barra) {
+  white-space: normal;
+}
+
+.md-typeset .gd-tabela--texto td:first-child {
+  min-width: 7rem;
+}
+
+.md-typeset .gd-tabela--texto td:nth-child(3) {
+  min-width: 17rem;
+}
+
+.md-typeset .gd-tabela--texto td:nth-child(5) {
+  min-width: 6.5rem;
+}
+
+/* "X de N no MVP" e "(Y parcial)" quebram como blocos, nunca no meio. */
+.md-typeset .contagem {
+  white-space: nowrap;
+}
+
+/* Texto corrido ao lado do rótulo (ex.: alcance na matriz da 8.3.2):
+   ocupa o resto da linha e quebra ali dentro, junto com os chips. */
+.md-typeset .req-linha > .req-texto {
+  flex: 1 1 16rem;
+  min-width: 0;
 }
 
 /* Só a linha de busca fica fixa; o painel de filtros rola com a página. */

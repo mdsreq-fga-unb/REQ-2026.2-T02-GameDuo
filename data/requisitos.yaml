@@ -11,28 +11,44 @@
 #     tecnica              "Texto narrativo" | "Caso de uso (breve descrição)" | "Cenário narrativo"
 #     texto                a narrativa
 #   origem                 características de produto (CP) — o OE vem de produto.yaml
+#   origem_levantamento    opcional; lista de {evidencia, decisao}: a reunião ou validação
+#                          da página Evidências (âncora reuniao-1, reuniao-2,
+#                          validacao-pagamentos, reuniao-3, reuniao-4 ou reuniao-5) e a
+#                          decisão ou necessidade registrada nela
 #   priorizacao.moscow     Must Have (4) | Should Have (3) | Could Have (2) | Won't Have (1)
 #   priorizacao.esforco    notas 1–4 de esforço (e), complexidade (c) e capacitação (ce);
 #                          média e ET são calculados na renderização, nunca digitados
 #   entrega.escopo         MVP | Backlog
 #   entrega.jornada        parte da jornada do MVP que o requisito apoia
 #   entrega.iteracao       iteração planejada (o status vem de cronograma.yaml)
+#   entrega.alcance_mvp    opcional; quando preenchido, o RF está no MVP com alcance parcial
+#                          ("MVP parcial") e o texto diz o que entra e o que fica de fora
 #   rnfs_associados        vínculos RF→RNF já documentados nas regras de negócio e
 #                          nos critérios dos RNFs; lista parcial, a revisar pela equipe
+#   depende_de             RFs que precisam estar disponíveis para que o requisito
+#                          funcione no fluxo do MVP (preenchido apenas nos RFs do MVP)
 #
 # Campos dos RNFs
-#   classificacao, criterio   classificação URPS+/Sommerville e critério verificável
+#   classificacao             classificação URPS+/Sommerville
+#   criterio_mvp              o que já é verificável no MVP (opcional)
+#   parametro_pendente        parâmetro ainda a definir, sem valor estimado (opcional)
+#   melhoria_futura           melhoria prevista para versões futuras (opcional)
 #   entrega.tratamento        tratamento registrado no quadro "MVP Definido"
 #   entrega.iteracoes         iterações em que o RNF passa a se aplicar
+#   entrega.status            opcional; quando preenchido, substitui o status calculado
+#                             a partir das iterações (Executada | Em andamento | Planejada)
 
 rf:
 - id: RF01
   nome: Cadastrar usuários
-  descricao: O sistema deve permitir o cadastro de usuários com e-mail, telefone, senha e nickname público, permitindo corrigir os dados informados.
+  descricao: O sistema deve permitir o cadastro de usuários com e-mail, senha e nickname público, permitindo corrigir os dados informados.
   narrativa_descritiva:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Fluxo de cadastro mantido como apresentado; uma mesma conta contrata e presta serviços.
   priorizacao:
     moscow: Must Have
     esforco: {e: 1, c: 2, ce: 2}
@@ -41,6 +57,7 @@ rf:
     jornada: Conta e acesso
     iteracao: 6
   rnfs_associados: []
+  depende_de: []
 - id: RF02
   nome: Autenticar usuários
   descricao: O sistema deve permitir ao usuário acessar o sistema após a validação das credenciais informadas.
@@ -48,6 +65,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Fluxo de login mantido como apresentado.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -56,13 +76,17 @@ rf:
     jornada: Conta e acesso
     iteracao: 6
   rnfs_associados: [RNF02]
+  depende_de: [RF01]
 - id: RF03
   nome: Recuperar senha
-  descricao: O sistema deve permitir ao usuário recuperar a senha por e-mail ou telefone e definir uma nova senha após validar a solicitação.
+  descricao: O sistema deve permitir ao usuário recuperar a senha por e-mail e definir uma nova senha após validar a solicitação.
   narrativa_descritiva:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Presente no fluxograma completo validado.
   priorizacao:
     moscow: Should Have
     esforco: {e: 2, c: 3, ce: 2}
@@ -71,6 +95,7 @@ rf:
     jornada: Conta e acesso
     iteracao: 8
   rnfs_associados: []
+  depende_de: [RF01]
 - id: RF04
   nome: Configurar perfil de prestação
   descricao: O sistema deve permitir ao prestador configurar sua apresentação, jogos, nível declarado, modalidades, formatos de atendimento e idiomas.
@@ -78,6 +103,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP2]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: 'Conta única: a mesma conta pode contratar e prestar serviços.'
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 2, ce: 1}
@@ -86,6 +114,7 @@ rf:
     jornada: Perfil de prestação
     iteracao: 6
   rnfs_associados: []
+  depende_de: [RF02]
 - id: RF05
   nome: Manter dados de recebimento
   descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dados bancários utilizados para recebimento.
@@ -93,6 +122,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Prever cadastro bancário do prestador.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 3}
@@ -101,6 +133,7 @@ rf:
     jornada: Perfil de prestação
     iteracao: 9
   rnfs_associados: []
+  depende_de: [RF04]
 - id: RF06
   nome: Verificar credencial de jogo
   descricao: O sistema deve permitir ao usuário vincular sua conta de jogo ao perfil e apresentar o resultado da verificação da credencial pela integração disponível.
@@ -121,6 +154,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP1, CP2]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Selo de verificação opcional e sem restrição a prestadores sem selo; no MVP o nível é declarado (RN13).
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 3, ce: 1}
@@ -128,7 +164,9 @@ rf:
     escopo: MVP
     jornada: Perfil de prestação
     iteracao: 9
+    alcance_mvp: No MVP, o perfil exibe apresentação, jogos, modalidades e o nível declarado pelo prestador (RN13). Credenciais verificadas, reputação e indicadores dependem de RF06, RF08 e RF34, fora do recorte. Consultar o perfil não comprova o nível técnico do prestador.
   rnfs_associados: []
+  depende_de: [RF04]
 - id: RF08
   nome: Calcular indicadores de atendimento
   descricao: O sistema deve calcular a quantidade de sessões concluídas e a taxa de comparecimento do prestador a partir dos registros de atendimento.
@@ -149,6 +187,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Possibilidade de filtrar por verificação.
   priorizacao:
     moscow: Could Have
     esforco: {e: 1, c: 1, ce: 1}
@@ -156,7 +197,9 @@ rf:
     escopo: MVP
     jornada: Catálogo e ofertas
     iteracao: 9
+    alcance_mvp: No MVP, a busca usa os filtros de modalidade, jogo, preço, idioma e disponibilidade; o elo filtrado é o declarado. Os filtros de reputação e selo dependem de RF06 e RF34, fora do recorte.
   rnfs_associados: []
+  depende_de: [RF11, RF50]
 - id: RF10
   nome: Consultar detalhes de oferta
   descricao: O sistema deve permitir ao usuário consultar os detalhes de uma oferta, incluindo prestador, preço, duração, condições e forma de comunicação.
@@ -164,6 +207,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Proposta inicial concentrada no atendimento ao vivo, com ofertas simplificadas.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -172,6 +218,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 6
   rnfs_associados: []
+  depende_de: [RF11]
 - id: RF11
   nome: Manter ofertas
   descricao: O sistema deve permitir ao prestador cadastrar, editar e publicar ofertas de coaching, duo e conteúdos, associando os vídeos ou documentos às ofertas de conteúdo.
@@ -179,6 +226,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Gerenciamento de ofertas simplificado; coaching e duo compartilham o fluxo.
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 2, ce: 3}
@@ -186,7 +236,9 @@ rf:
     escopo: MVP
     jornada: Catálogo e ofertas
     iteracao: 6
+    alcance_mvp: No MVP, as ofertas são de coaching e duo (RN08). Ofertas de conteúdo, com vídeos ou documentos associados, ficam fora do recorte.
   rnfs_associados: []
+  depende_de: [RF04, RF50]
 - id: RF12
   nome: Pausar oferta
   descricao: O sistema deve permitir ao prestador pausar uma oferta, retirando-a do catálogo e mantendo seus dados no painel do prestador.
@@ -207,6 +259,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Manter o encerramento de oferta, sem exigir operação independente de pausa.
   priorizacao:
     moscow: Must Have
     esforco: {e: 1, c: 1, ce: 1}
@@ -215,6 +270,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 7
   rnfs_associados: [RNF11]
+  depende_de: [RF11]
 - id: RF14
   nome: Configurar agenda semanal
   descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dias e intervalos disponíveis para atendimento de cada oferta de coaching ou duo.
@@ -222,6 +278,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP2]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Substituir a negociação de horários por agenda semanal configurada pelo prestador.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 3, ce: 4}
@@ -230,6 +289,7 @@ rf:
     jornada: Agenda e contratação
     iteracao: 6
   rnfs_associados: [RNF09]
+  depende_de: [RF11]
 - id: RF15
   nome: Consultar disponibilidade de atendimento
   descricao: O sistema deve permitir ao consumidor consultar os horários disponíveis do prestador em cada oferta.
@@ -237,6 +297,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP2, CP3]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Consumidor seleciona o horário na agenda semanal do prestador.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -245,6 +308,7 @@ rf:
     jornada: Agenda e contratação
     iteracao: 7
   rnfs_associados: [RNF09]
+  depende_de: [RF14]
 - id: RF16
   nome: Agendar serviço
   descricao: O sistema deve registrar automaticamente a contratação de coaching ou duo para o horário disponível selecionado pelo consumidor.
@@ -252,6 +316,11 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3, CP5]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Seleção de horário na agenda semanal do prestador.
+  - evidencia: reuniao-3
+    decisao: Contratação registrada automaticamente, sem aceite prévio.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -260,6 +329,7 @@ rf:
     jornada: Agenda e contratação
     iteracao: 6
   rnfs_associados: [RNF09]
+  depende_de: [RF02, RF15, RF22]
 - id: RF17
   nome: Reagendar serviço
   descricao: O sistema deve permitir aos participantes solicitar, aceitar, recusar ou contrapropor um reagendamento e registrar o resultado da negociação.
@@ -280,6 +350,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP5]
+  origem_levantamento:
+  - evidencia: reuniao-3
+    decisao: Se não puder atender, o prestador pode cancelar. A penalidade ficou em aberto na Reunião 2; no MVP a devolução é integral (RN27).
   priorizacao:
     moscow: Must Have
     esforco: {e: 1, c: 2, ce: 1}
@@ -287,7 +360,8 @@ rf:
     escopo: MVP
     jornada: Agenda e contratação
     iteracao: 7
-  rnfs_associados: [RNF11]
+  rnfs_associados: [RNF03, RNF11]
+  depende_de: [RF16, RF25]
 - id: RF19
   nome: Publicar solicitação de serviço
   descricao: O sistema deve permitir ao consumidor publicar uma solicitação de coaching ou duo, com jogo, data, horário, elo mínimo e preço.
@@ -334,6 +408,11 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Creditar a carteira após a confirmação do pagamento.
+  - evidencia: validacao-pagamentos
+    decisao: Fluxo de pagamentos aceito pelo cliente.
   priorizacao:
     moscow: Must Have
     esforco: {e: 3, c: 3, ce: 3}
@@ -341,22 +420,27 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 7
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
+  depende_de: [RF02]
 - id: RF23
   nome: Consultar carteira
-  descricao: O sistema deve apresentar os saldos disponíveis, retidos e pendentes do usuário.
+  descricao: O sistema deve apresentar os saldos disponíveis, retidos e pendentes do usuário, identificando a contratação de origem de cada valor retido ou pendente e, quando houver, a data prevista de liberação.
   narrativa_descritiva:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Apresentar ao prestador os ganhos e a disponibilidade do saldo.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 4, ce: 4}
   entrega:
     escopo: MVP
     jornada: Créditos e recebimentos
-    iteracao: 7
+    iteracao: 8
   rnfs_associados: [RNF13]
+  depende_de: [RF22]
 - id: RF24
   nome: Consultar histórico de prestação
   descricao: O sistema deve permitir ao prestador consultar os serviços realizados e a situação dos recebimentos correspondentes.
@@ -377,6 +461,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Manter o valor reservado até a prestação do serviço.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -384,7 +471,8 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 7
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
+  depende_de: [RF16, RF23]
 - id: RF26
   nome: Liberar valores retidos
   descricao: O sistema deve liberar os valores retidos de uma contratação encerrada para distribuição.
@@ -392,6 +480,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4, CP5]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Liberação após 48 horas sem disputa, ou antes mediante confirmação do serviço.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 4, ce: 4}
@@ -399,7 +490,8 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 8
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
+  depende_de: [RF25, RF31]
 - id: RF27
   nome: Processar divisão de receita
   descricao: O sistema deve dividir a receita de uma contratação entre prestador e plataforma.
@@ -407,6 +499,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Pagamentos com divisão de receita entre prestador e plataforma.
   priorizacao:
     moscow: Must Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -414,7 +509,8 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 8
-  rnfs_associados: []
+  rnfs_associados: [RNF03]
+  depende_de: [RF26]
 - id: RF28
   nome: Processar saques
   descricao: O sistema deve permitir ao prestador solicitar a transferência do saldo elegível para sua conta bancária e acompanhar o resultado do processamento.
@@ -422,6 +518,11 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP4]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Prever solicitação de saque.
+  - evidencia: validacao-pagamentos
+    decisao: O cliente pediu a rota de solicitação de saque no fluxo de pagamentos.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 4, ce: 4}
@@ -429,7 +530,8 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 9
-  rnfs_associados: [RNF13]
+  rnfs_associados: [RNF03, RNF13]
+  depende_de: [RF05, RF27]
 - id: RF29
   nome: Comprar conteúdo
   descricao: O sistema deve permitir ao consumidor adquirir guias ou tutoriais com créditos e registrar a compra.
@@ -463,6 +565,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP5]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Confirmação da sessão permitindo informar que ela não ocorreu e justificar o motivo.
   priorizacao:
     moscow: Could Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -471,6 +576,7 @@ rf:
     jornada: Resultado e atendimento
     iteracao: 8
   rnfs_associados: []
+  depende_de: [RF16]
 - id: RF32
   nome: Avaliar participante
   descricao: O sistema deve permitir ao consumidor avaliar o prestador e ao prestador avaliar o consumidor, registrando nota e comentário relativos à sessão.
@@ -560,9 +666,7 @@ rf:
     moscow: Should Have
     esforco: {e: 3, c: 2, ce: 2}
   entrega:
-    escopo: MVP
-    jornada: Resultado e atendimento
-    iteracao: 9
+    escopo: Backlog
   rnfs_associados: [RNF02]
 - id: RF39
   nome: Registrar decisão de ocorrência
@@ -636,6 +740,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP7]
+  origem_levantamento:
+  - evidencia: reuniao-2
+    decisao: Ciro como administrador e moderador inicial, com permissões previstas para futuros funcionários.
   priorizacao:
     moscow: Should Have
     esforco: {e: 2, c: 2, ce: 2}
@@ -643,7 +750,9 @@ rf:
     escopo: MVP
     jornada: Consulta administrativa
     iteracao: 9
+    alcance_mvp: No MVP, a administração consulta os dados cadastrais autorizados. A consulta de sanções depende de RF41, fora do recorte.
   rnfs_associados: [RNF02]
+  depende_de: [RF02]
 - id: RF45
   nome: Consultar contratações e transações
   descricao: O sistema deve permitir à administração consultar contratações e transações individuais, identificando participantes, valores e situações.
@@ -716,6 +825,9 @@ rf:
     tecnica: ''
     texto: ''
   origem: [CP3, CP7]
+  origem_levantamento:
+  - evidencia: reuniao-1
+    decisao: Detalhar a administração, incluindo o cadastro dos jogos disponíveis.
   priorizacao:
     moscow: Must Have
     esforco: {e: 4, c: 2, ce: 3}
@@ -724,6 +836,7 @@ rf:
     jornada: Catálogo e ofertas
     iteracao: 7
   rnfs_associados: [RNF02]
+  depende_de: [RF02]
 - id: RF51
   nome: Atualizar informações institucionais
   descricao: O sistema deve permitir à administração atualizar a apresentação da plataforma e suas informações de contato.
@@ -782,7 +895,7 @@ rnf:
   nome: Autenticação em dois fatores
   descricao: O sistema deve exigir um segundo fator nas operações definidas pela política de autenticação, utilizando os canais previstos de e-mail e telefone.
   classificacao: 'Sommerville — requisito de produto: segurança'
-  criterio: Uma operação protegida não deve ser concluída sem a validação do segundo fator.
+  melhoria_futura: Uma operação protegida não deve ser concluída sem a validação do segundo fator.
   origem: [CP4, CP7]
   priorizacao:
     moscow: Could Have
@@ -793,7 +906,8 @@ rnf:
   nome: Restrição de acesso
   descricao: O sistema deve restringir o acesso a dados pessoais, dados bancários, denúncias e avaliações ainda não publicadas conforme o papel do usuário e a situação do registro.
   classificacao: 'Sommerville — requisito de produto: segurança'
-  criterio: Testes por papel, titularidade e situação do registro devem permitir os acessos autorizados e recusar os demais, inclusive por chamada direta à API.
+  criterio_mvp: 'Testes por papel, titularidade e situação do registro devem permitir os acessos autorizados e recusar os demais, inclusive por chamada direta à API (sem autenticação: 401; sem autorização: 403).'
+  parametro_pendente: Matriz completa de permissões por perfil e tipo de dado.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Must Have
@@ -805,18 +919,22 @@ rnf:
   nome: Auditabilidade administrativa e financeira
   descricao: As alterações administrativas e movimentações financeiras devem possuir registros rastreáveis de autoria, data, operação, registro afetado e resultado.
   classificacao: 'Sommerville — requisito de produto: segurança e auditabilidade'
-  criterio: Cada alteração administrativa e movimentação financeira testada deve ser localizável por seu identificador e apresentar os elementos de auditoria; ações automáticas devem identificar o processo responsável.
+  criterio_mvp: Cada compra de créditos deve ser localizável pela cobrança e indicar data, valor, situação e identificador do pagamento no gateway. Cada retenção, devolução, liberação, divisão e saque deve indicar data, valor, operação, registro de origem (contratação, cobrança ou saque), autor (usuário, processo automático ou administração) e, quando houver, o motivo.
+  parametro_pendente: Prazo de guarda dos registros financeiros.
+  melhoria_futura: Registro de autoria das alterações administrativas que não movimentam valores, como a manutenção de jogos.
   origem: [CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Could Have
   entrega:
-    escopo: Backlog
-    tratamento: Evolutivo
+    escopo: MVP
+    tratamento: Associado aos RFs selecionados (parcial)
+    iteracoes: [7, 8, 9]
+    status: Em andamento
 - id: RNF04
   nome: Configurabilidade de taxas
   descricao: As taxas, comissões e penalidades configuráveis devem poder ser alteradas pelo painel administrativo sem modificação do código-fonte.
   classificacao: URPS+ — suportabilidade
-  criterio: Uma alteração autorizada pelo painel deve ser persistida e produzir efeito conforme as regras de vigência, sem edição do código-fonte.
+  melhoria_futura: Uma alteração autorizada pelo painel deve ser persistida e produzir efeito conforme as regras de vigência, sem edição do código-fonte.
   origem: [CP4, CP5, CP7]
   priorizacao:
     moscow: Won't Have
@@ -827,7 +945,7 @@ rnf:
   nome: Periodicidade do cálculo de reputação
   descricao: O processamento de atualização da reputação deve ocorrer diariamente.
   classificacao: 'Sommerville — requisito organizacional: operacional'
-  criterio: O histórico de processamento deve comprovar pelo menos uma atualização concluída por dia, no fuso de referência da plataforma.
+  melhoria_futura: O histórico de processamento deve comprovar pelo menos uma atualização concluída por dia, no fuso de referência da plataforma.
   origem: [CP6]
   priorizacao:
     moscow: Won't Have
@@ -838,7 +956,7 @@ rnf:
   nome: Tecnologias de implementação
   descricao: O sistema deve utilizar React no frontend e PHP no backend.
   classificacao: URPS+ — restrição de implementação
-  criterio: A implementação deve utilizar essas tecnologias nas respectivas camadas.
+  criterio_mvp: A implementação deve utilizar React no frontend e PHP no backend.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Won't Have
@@ -850,7 +968,8 @@ rnf:
   nome: Proteção de dados pessoais
   descricao: O tratamento de dados pessoais deve observar os requisitos aplicáveis da LGPD.
   classificacao: 'Sommerville — requisito externo: legislativo'
-  criterio: O inventário de dados deve relacionar cada dado pessoal à finalidade, ao acesso e à retenção definidos; a revisão deve verificar a correspondência entre esse inventário, as interfaces e o armazenamento do sistema.
+  criterio_mvp: O inventário de dados pessoais deve relacionar cada dado à finalidade e aos perfis com acesso; a revisão deve confirmar que interfaces e respostas da API não expõem dados fora do inventário, como senha, CPF e chave Pix na área administrativa.
+  parametro_pendente: Prazo de retenção de cada dado, a definir com o cliente.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -858,11 +977,12 @@ rnf:
     escopo: MVP
     tratamento: Obrigatório
     iteracoes: [6, 7, 8, 9]
+    status: Em andamento
 - id: RNF08
   nome: Clareza das mensagens de validação
   descricao: As mensagens de validação devem identificar o campo ou a operação com problema e indicar como corrigir a informação, em linguagem compreensível ao usuário.
   classificacao: URPS+ — usabilidade
-  criterio: Nos cenários de entrada inválida de cadastro, contratação e pagamento, a mensagem deve identificar o campo ou a operação afetada e informar a ação necessária para corrigir o problema, sem expor detalhes técnicos internos.
+  melhoria_futura: Nos cenários de entrada inválida de cadastro, contratação e pagamento, a mensagem deve identificar o campo ou a operação afetada e a ação necessária, sem expor detalhes técnicos internos. O mínimo de clareza exigido pelo DoR e DoD aplica-se desde o MVP.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -873,7 +993,7 @@ rnf:
   nome: Consistência da agenda
   descricao: O sistema deve preservar a consistência dos horários reservados diante de solicitações simultâneas ou repetidas.
   classificacao: URPS+ — confiabilidade
-  criterio: Tentativas simultâneas de reservar horários sobrepostos do mesmo prestador não devem produzir contratações incompatíveis; a repetição da mesma solicitação não deve criar outra reserva.
+  criterio_mvp: Tentativas simultâneas de reservar horários sobrepostos do mesmo prestador não devem produzir contratações incompatíveis; a repetição da mesma solicitação não deve criar outra reserva.
   origem: [CP2, CP3, CP5]
   priorizacao:
     moscow: Should Have
@@ -883,9 +1003,9 @@ rnf:
     iteracoes: [6]
 - id: RNF10
   nome: Identificação do usuário logado
-  descricao: O sistema deve exibir de forma visível, em todas as telas autenticadas, qual usuário está logado e seu papel (consumidor, prestador ou administração).
+  descricao: O sistema deve exibir de forma visível, em todas as telas autenticadas, o nickname do usuário logado e os perfis habilitados em sua conta (prestação e administração). Toda conta autenticada pode atuar como consumidora.
   classificacao: URPS+ — usabilidade
-  criterio: Em qualquer tela acessada após autenticação, deve ser possível identificar o usuário logado e seu papel.
+  criterio_mvp: Em qualquer tela acessada após a autenticação, deve ser possível identificar o nickname do usuário e se a conta possui perfil de prestação ou de administração; as áreas de prestador e de administração devem ser identificadas pelo título e pela navegação.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Must Have
@@ -897,7 +1017,8 @@ rnf:
   nome: Prevenção de ações involuntárias
   descricao: A interface deve exigir confirmação explícita antes do cancelamento de contratação, encerramento de oferta ou aplicação de sanção.
   classificacao: URPS+ — usabilidade
-  criterio: Em cada uma das três ações, desistir da confirmação deve preservar o estado anterior; a ação somente deve prosseguir após confirmação explícita.
+  criterio_mvp: Ao cancelar uma contratação ou encerrar uma oferta, desistir da confirmação deve preservar o estado anterior; a ação somente prossegue após confirmação explícita.
+  melhoria_futura: Confirmação explícita antes da aplicação de sanção (RF41).
   origem: [CP3, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -909,7 +1030,7 @@ rnf:
   nome: Consistência visual entre telas
   descricao: O sistema deve manter um padrão visual consistente de cores, tipografia, botões e espaçamentos em todas as telas, seguindo um guia de estilo definido.
   classificacao: URPS+ — usabilidade
-  criterio: Nas telas de cadastro, catálogo, contratação, carteira e administração, componentes de mesma função e estado devem usar os mesmos estilos de cor, tipografia, botão e espaçamento definidos no guia de estilo.
+  melhoria_futura: Nas telas de cadastro, catálogo, contratação, carteira e administração, componentes de mesma função e estado devem usar os mesmos estilos definidos no guia de estilo. O mínimo de consistência exigido pelo DoR e DoD aplica-se desde o MVP.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Should Have
@@ -920,7 +1041,7 @@ rnf:
   nome: Integridade financeira
   descricao: O sistema deve preservar a consistência dos saldos e lançamentos em operações financeiras simultâneas, repetidas ou interrompidas.
   classificacao: URPS+ — confiabilidade
-  criterio: Repetir ou executar simultaneamente a mesma compra, confirmação de pagamento, liberação, divisão, devolução ou saque não deve duplicar débitos ou créditos nem reutilizar saldo reservado; as parcelas devem recompor o total distribuído.
+  criterio_mvp: Repetir ou executar simultaneamente a mesma compra, confirmação de pagamento, liberação, divisão, devolução ou saque não deve duplicar débitos ou créditos nem reutilizar saldo reservado; as parcelas devem recompor o total distribuído.
   origem: [CP3, CP4, CP5, CP7]
   priorizacao:
     moscow: Must Have
@@ -932,7 +1053,8 @@ rnf:
   nome: Proteção de credenciais e comunicação
   descricao: O sistema deve proteger as credenciais armazenadas e a transmissão de dados pessoais e financeiros.
   classificacao: 'Sommerville — requisito de produto: segurança'
-  criterio: Senhas devem ser armazenadas com hash próprio para senhas, sem formato reversível, e não devem aparecer em logs ou respostas; interfaces e integrações que transmitam dados privados devem usar conexão criptografada.
+  criterio_mvp: Senhas devem ser armazenadas com hash próprio para senhas, sem formato reversível, e não devem aparecer em logs ou respostas da API.
+  parametro_pendente: Conexão criptografada (HTTPS) no ambiente de hospedagem, a definir.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Must Have
@@ -944,7 +1066,8 @@ rnf:
   nome: Tolerância a falhas de integração
   descricao: O sistema deve manter resultados consistentes e informar indisponibilidade ou falha nas integrações de jogos e pagamentos.
   classificacao: URPS+ — confiabilidade
-  criterio: Simular indisponibilidade e resposta inválida não deve gerar credencial verificada, pagamento confirmado ou repasse concluído sem confirmação correspondente; repetir o processamento não deve duplicar seus efeitos.
+  criterio_mvp: Simular indisponibilidade ou resposta inválida do gateway de pagamento não deve gerar pagamento confirmado ou repasse concluído sem confirmação correspondente; repetir o processamento não deve duplicar seus efeitos.
+  melhoria_futura: Mesmo comportamento para a integração de verificação de credenciais de jogo (RF06).
   origem: [CP1, CP4, CP5]
   priorizacao:
     moscow: Should Have
@@ -956,10 +1079,12 @@ rnf:
   nome: Responsividade de interface
   descricao: O sistema deve adaptar a exibição das telas a diferentes tamanhos de dispositivo (desktop, tablet e celular), preservando a leitura do conteúdo e o acesso a todas as funcionalidades.
   classificacao: URPS+ — usabilidade
-  criterio: Nas telas de cadastro, catálogo, contratação, carteira e administração, o conteúdo deve permanecer legível e todas as funcionalidades devem permanecer acessíveis nas larguras de referência de desktop, tablet e celular, sem sobreposição, corte ou perda de acesso a elementos da interface.
+  criterio_mvp: Nas telas do MVP, o conteúdo deve permanecer legível e todas as funcionalidades acessíveis nas larguras de referência de 375px (celular), 768px (tablet) e 1280px (desktop), sem sobreposição, corte ou perda de acesso a elementos da interface.
+  melhoria_futura: Refinamentos de layout específicos para cada faixa de tamanho.
   origem: [CP1, CP2, CP3, CP4, CP5, CP6, CP7]
   priorizacao:
     moscow: Must Have
   entrega:
-    escopo: Backlog
-    tratamento: Evolutivo
+    escopo: MVP
+    tratamento: Obrigatório
+    iteracoes: [8, 9]

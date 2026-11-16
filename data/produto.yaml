@@ -1,25 +1,47 @@
 # Objetivos específicos (seção 2.2) e características de produto (seção 2.3).
 # Base da rastreabilidade OE → CP → RF/RNF.
+#
+# mvp.atendimento   atendimento do objetivo ou da característica no MVP:
+#                   Integral | Parcial | Adiado (outro valor interrompe o build)
+# mvp.alcance       o que entra e o que fica de fora do recorte, em texto curto
 
 objetivos:
 - id: OE1
   nome: ''
   descricao: Disponibilizar uma jornada de contratação de serviços online (coaching e duo) estável, padronizada e rastreável para as duas partes.
+  mvp:
+    atendimento: Integral
+    alcance: Coaching e duo percorrem catálogo, agenda, contratação automática, sessão e conclusão financeira em um fluxo único. Solicitações de serviço e conteúdos gravados não fazem parte deste objetivo no recorte.
 - id: OE2
   nome: ''
   descricao: Reduzir riscos de fraude, inadimplência e abandono de serviço nas transações, com regras explícitas de disputa e prazos definidos.
+  mvp:
+    atendimento: Parcial
+    alcance: Compra confirmada pelo gateway, retenção dos créditos, prazo de 48 horas e carência de 30 dias são tratados no sistema. A disputa é decidida pela administração fora do sistema e executada por lançamento na carteira (RN44); decisão, execução financeira e encerramento de ocorrência no sistema (RF39, RF40 e RF42) permanecem no backlog.
 - id: OE3
   nome: Credencial técnica
   descricao: Assegurar que o ranque (Elo) e as estatísticas declaradas pelo prestador correspondam à conta verificada, quando a API do jogo permitir essa verificação.
+  mvp:
+    atendimento: Adiado
+    alcance: A verificação de credencial (RF06) está fora do recorte. O perfil exibe o nível declarado pelo prestador (RN13), sem confirmação por API.
 - id: OE4
   nome: Capacidade de prestação
   descricao: Tornar observável para o consumidor a experiência de ensino do prestador — modalidades atendidas, formato da sessão, idioma, histórico de sessões concluídas — de modo independente do desempenho competitivo.
+  mvp:
+    atendimento: Parcial
+    alcance: Modalidades, formatos, idiomas e disponibilidade são informados e consultados. O histórico de sessões concluídas e os indicadores de atendimento (RF08 e RF24) permanecem no backlog.
 - id: OE5
   nome: Reputação de serviço e conduta
   descricao: Acompanhar o cumprimento do que foi contratado (comparecimento, pontualidade, duração acordada, conduta) por meio de indicadores resistentes a retaliação e manipulação.
+  mvp:
+    atendimento: Adiado
+    alcance: Avaliação, reputação e denúncia (CP6) não têm RFs no recorte. O registro do resultado da sessão (RF31) é o único insumo coletado.
 - id: OE6
   nome: ''
   descricao: Criar uma base tecnológica que suporte o aumento do volume de transações e a futura expansão do catálogo de jogos.
+  mvp:
+    atendimento: Parcial
+    alcance: Manutenção dos jogos e consulta de usuários atendem à operação inicial. Monitoramento financeiro, configuração de comissões e permissões para outros administradores permanecem no backlog.
 
 caracteristicas:
 - id: CP1
@@ -27,34 +49,55 @@ caracteristicas:
   valor_negocio: Redução de anúncio falso de nível técnico
   oe_principal: OE3
   oe_secundario: OE1
+  mvp:
+    atendimento: Adiado
+    alcance: Sem verificação por API (RF06). O RF07 exibe apenas o nível declarado.
 - id: CP2
   nome: Perfil de prestação e capacidade de ensino
   valor_negocio: Permite ao consumidor escolher por adequação, não só por ranque
   oe_principal: OE4
   oe_secundario: OE1
+  mvp:
+    atendimento: Parcial
+    alcance: Perfil, agenda e disponibilidade entram; indicadores e histórico de prestação (RF08 e RF24) não.
 - id: CP3
   nome: Catálogo e busca de serviços
   valor_negocio: Conecta oferta e demanda de forma estruturada
   oe_principal: OE1
   oe_secundario: OE6
+  mvp:
+    atendimento: Parcial
+    alcance: Busca, detalhe, manutenção e encerramento de ofertas de coaching e duo entram; solicitações de serviço e conteúdos gravados não.
 - id: CP4
   nome: Intermediação de pagamentos com custódia
   observacao: hipótese arquitetural — ver 2.4
   valor_negocio: Redução de inadimplência e quebra de acordo
   oe_principal: OE2
   oe_secundario: OE1
+  mvp:
+    atendimento: Parcial
+    alcance: Compra, carteira, reserva, liberação, divisão e saque entram; execução de decisão financeira no sistema (RF40), acompanhamento administrativo (RF46) e configuração de comissões e penalidades (RF47 e RF48) não.
 - id: CP5
   nome: Regras de conclusão e disputa
   valor_negocio: Torna a custódia operável na prática
   oe_principal: OE2
   oe_secundario: OE5
+  mvp:
+    atendimento: Parcial
+    alcance: Agendamento, cancelamento até o horário marcado, registro do resultado e liberação entram. A disputa é decidida fora do sistema (RN44); RF39, RF40 e RF42 permanecem no backlog.
 - id: CP6
   nome: Avaliação, reputação e denúncia
   valor_negocio: Qualidade do serviço com risco de abuso controlado
   oe_principal: OE5
   oe_secundario: OE4
+  mvp:
+    atendimento: Adiado
+    alcance: Nenhum RF no recorte.
 - id: CP7
   nome: Administração e moderação
   valor_negocio: Operação segura e escalável
   oe_principal: OE6
   oe_secundario: OE2
+  mvp:
+    atendimento: Parcial
+    alcance: Cadastro, autenticação, recuperação de senha, consulta de usuários e manutenção de jogos entram; fila de ocorrências, decisões, sanções e configurações não.
