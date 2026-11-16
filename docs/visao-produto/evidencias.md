@@ -264,7 +264,7 @@ O PDF contém um resumo automático e a transcrição, sem uma tabela final pree
     A proposta foi aprovada por Ciro sem alterações na [Reunião 5](#reuniao-5). A relação vigente dos itens, com códigos, nomes, grupos dos RNFs e iterações, está no [backlog geral](10.1backlog-geral.md); o alcance parcial de RNF11 e RNF15 está na [seção 10.3](10.3mvp.md#1032-requisitos-nao-funcionais-e-alcance-no-mvp).
 
 !!! warning "Pontos em aberto"
-    - As justificativas individuais de inclusão e exclusão não foram registradas — por exemplo, a ausência de RF24, classificado como Must Have.
+    - As justificativas individuais de inclusão e exclusão não foram registradas — por exemplo, a ausência de RF24, classificado como Must Have. *Encaminhamento: as justificativas das escolhas que contrariam a prioridade (RF24, RF09 e RF31) foram registradas na [seção 10.3](10.3mvp.md).*
 
 #### Vídeos
 
