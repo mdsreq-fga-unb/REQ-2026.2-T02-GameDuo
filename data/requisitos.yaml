@@ -43,8 +43,8 @@ rf:
   nome: Cadastrar usuários
   descricao: O sistema deve permitir o cadastro de usuários com e-mail, senha e nickname público, permitindo corrigir os dados informados.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Uma pessoa que conhece o GameDuo decide criar sua conta. Ela informa um nickname, que será sua identificação pública, um e-mail e uma senha. O sistema confere se o e-mail e o nickname ainda não estão em uso e se a senha atende às regras de segurança; se algo estiver errado, indica o campo a corrigir sem perder o que já foi preenchido. Criada a conta, a mesma pessoa pode contratar serviços e, se quiser, passar a oferecê-los, sem um segundo cadastro. Depois, ela pode corrigir seus dados na área da conta.'
   origem: [CP7]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -62,8 +62,8 @@ rf:
   nome: Autenticar usuários
   descricao: O sistema deve permitir ao usuário acessar o sistema após a validação das credenciais informadas.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Com a conta criada, o usuário informa seu e-mail e sua senha para entrar no GameDuo. Se as credenciais estiverem corretas, o sistema abre a sessão e libera as funções da conta, como contratar, ofertar serviços ou, para quem tem autorização, acessar a área administrativa. Se estiverem incorretas, o sistema informa que o acesso não foi possível, sem revelar qual dos dois dados está errado. Visitantes continuam podendo navegar pelo catálogo sem entrar, mas precisam se autenticar para contratar.'
   origem: [CP7]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -81,8 +81,8 @@ rf:
   nome: Recuperar senha
   descricao: O sistema deve permitir ao usuário recuperar a senha por e-mail e definir uma nova senha após validar a solicitação.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Um usuário esqueceu a senha e pede para recuperá-la informando o e-mail da conta. O sistema envia a esse e-mail um código ou link de uso único, válido por 30 minutos. Com ele, o usuário define uma nova senha, e a anterior deixa de funcionar. Se o código estiver vencido ou já tiver sido usado, o sistema recusa a troca e permite pedir um novo. A recuperação é feita apenas por e-mail.'
   origem: [CP7]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -100,8 +100,8 @@ rf:
   nome: Configurar perfil de prestação
   descricao: O sistema deve permitir ao prestador configurar sua apresentação, jogos, nível declarado, modalidades, formatos de atendimento e idiomas.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Um usuário que quer oferecer coaching ou duo configura seu perfil de prestação. Ele escreve uma apresentação e informa os jogos em que atua, com o nível que declara ter em cada um, além das modalidades, dos formatos de atendimento e dos idiomas. O nível é declarado pelo próprio prestador e não é verificado pelo sistema no MVP. Ao configurar o perfil, o usuário passa a poder publicar ofertas, sem perder a possibilidade de contratar serviços como consumidor.'
   origem: [CP2]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -119,8 +119,8 @@ rf:
   nome: Manter dados de recebimento
   descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dados bancários utilizados para recebimento.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Antes de solicitar um saque, o prestador cadastra os dados que serão usados para receber: a chave Pix e o CPF. Ele pode atualizar esses dados quando precisar. O sistema só permite pedir saque quando os dados obrigatórios estiverem completos e mostra apenas ao próprio prestador as informações cadastradas.'
   origem: [CP4]
   origem_levantamento:
   - evidencia: reuniao-1
@@ -151,8 +151,8 @@ rf:
   nome: Consultar perfil de prestador
   descricao: O sistema deve permitir ao usuário consultar a apresentação, os jogos, as modalidades, as credenciais verificadas, a reputação e os indicadores do prestador.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Antes de contratar, o consumidor abre o perfil de um prestador para conhecê-lo. O sistema mostra a apresentação, os jogos, as modalidades e o nível que o prestador declarou. No MVP, credenciais verificadas, reputação e indicadores de atendimento ainda não existem, e o perfil deixa claro que o nível é declarado, sem comprovar a habilidade técnica do prestador.'
   origem: [CP1, CP2]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -184,8 +184,8 @@ rf:
   nome: Filtrar ofertas do catálogo
   descricao: O sistema deve permitir ao usuário buscar ofertas no catálogo, aplicando filtros de modalidade, jogo, elo, preço, idioma, disponibilidade, reputação e selo.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Um jogador procura uma sessão e usa os filtros do catálogo para encontrar o que quer. Ele pode combinar modalidade, jogo, faixa de preço, idioma, disponibilidade e nível declarado. O sistema mostra apenas as ofertas publicadas que atendem a todos os filtros escolhidos e avisa quando nenhuma oferta corresponde à busca. Filtros por reputação e selo de verificação não fazem parte do MVP.'
   origem: [CP3]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -204,8 +204,8 @@ rf:
   nome: Consultar detalhes de oferta
   descricao: O sistema deve permitir ao usuário consultar os detalhes de uma oferta, incluindo prestador, preço, duração, condições e forma de comunicação.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'No catálogo, o consumidor escolhe uma oferta e abre seus detalhes. O sistema apresenta o prestador, o jogo, a modalidade, a descrição, a duração, o preço, a forma de comunicação e as condições do serviço. A partir dessa tela ele segue para escolher um horário e contratar. Uma oferta encerrada não pode mais ser aberta pelo catálogo.'
   origem: [CP3]
   origem_levantamento:
   - evidencia: reuniao-3
@@ -223,8 +223,8 @@ rf:
   nome: Manter ofertas
   descricao: O sistema deve permitir ao prestador cadastrar, editar e publicar ofertas de coaching, duo e conteúdos, associando os vídeos ou documentos às ofertas de conteúdo.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'O prestador cria uma oferta de coaching ou duo informando jogo, modalidade, descrição, duração, preço, forma de comunicação e condições. Enquanto não publica, ele pode editar a oferta livremente; ao publicar, ela passa a aparecer no catálogo. Se depois alterar o preço, as contratações já feitas mantêm o valor combinado. Ofertas de conteúdo, com vídeos ou documentos, ficam fora do MVP.'
   origem: [CP3]
   origem_levantamento:
   - evidencia: reuniao-3
@@ -256,8 +256,8 @@ rf:
   nome: Encerrar oferta
   descricao: O sistema deve permitir ao prestador encerrar uma oferta, retirando-a do catálogo e de sua lista de ofertas.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'O prestador decide parar de oferecer um serviço e encerra a oferta. O sistema pede confirmação e, confirmada a ação, retira a oferta do catálogo e de sua lista de ofertas, impedindo novas contratações por esse anúncio. As contratações feitas antes do encerramento continuam valendo, com os dados da oferta do momento em que foram contratadas, e devem ser cumpridas, salvo cancelamento.'
   origem: [CP3]
   origem_levantamento:
   - evidencia: reuniao-3
@@ -275,8 +275,8 @@ rf:
   nome: Configurar agenda semanal
   descricao: O sistema deve permitir ao prestador cadastrar e atualizar os dias e intervalos disponíveis para atendimento de cada oferta de coaching ou duo.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Para cada oferta de coaching ou duo, o prestador informa em quais dias da semana e em quais intervalos de horário pode atender. Ele pode atualizar essa agenda sempre que sua rotina mudar. Os horários informados são os únicos que o consumidor poderá contratar, e um horário já contratado deixa de aparecer em todas as ofertas do mesmo prestador.'
   origem: [CP2]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -294,8 +294,8 @@ rf:
   nome: Consultar disponibilidade de atendimento
   descricao: O sistema deve permitir ao consumidor consultar os horários disponíveis do prestador em cada oferta.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Ao se interessar por uma oferta, o consumidor consulta os horários em que o prestador pode atendê-lo. O sistema mostra apenas os horários livres da agenda semanal, sem os que já foram contratados em qualquer oferta do prestador. Se não houver horários livres, o sistema informa isso para que o consumidor escolha outra data ou outra oferta.'
   origem: [CP2, CP3]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -313,8 +313,8 @@ rf:
   nome: Agendar serviço
   descricao: O sistema deve registrar automaticamente a contratação de coaching ou duo para o horário disponível selecionado pelo consumidor.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'O consumidor escolhe um horário disponível e confirma a contratação. O sistema verifica se ele está autenticado, se o horário continua livre e se há créditos disponíveis suficientes; atendidas as condições, registra a contratação sem pedir aceite do prestador, reserva o valor do serviço e informa a cada parte como entrar em contato com a outra. Se dois consumidores tentarem o mesmo horário ao mesmo tempo, apenas um consegue, e o outro é avisado de que o horário deixou de estar disponível.'
   origem: [CP3, CP5]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -347,8 +347,8 @@ rf:
   nome: Cancelar contratação
   descricao: O sistema deve permitir ao consumidor ou ao prestador cancelar uma contratação e consultar o resultado do cancelamento.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Antes do horário marcado, o consumidor ou o prestador pode cancelar a contratação. O sistema pede confirmação, registra o cancelamento, devolve integralmente ao consumidor os créditos reservados e libera o horário na agenda. Os dois podem consultar o resultado do cancelamento. Depois do horário marcado, não há mais cancelamento: o participante deve registrar o resultado da sessão.'
   origem: [CP5]
   origem_levantamento:
   - evidencia: reuniao-3
@@ -405,8 +405,8 @@ rf:
   nome: Comprar combo de créditos
   descricao: O sistema deve permitir ao consumidor comprar um combo de créditos e acompanhar o resultado do pagamento.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'O consumidor quer créditos para contratar sessões e escolhe um dos combos disponíveis. O sistema gera o pagamento pelo gateway e mostra ao consumidor como pagar e em que situação o pagamento está. Os créditos só entram na carteira depois que o gateway confirma o pagamento, e uma mesma confirmação nunca credita o valor duas vezes. Se o pagamento vencer ou for cancelado, nenhum crédito é adicionado.'
   origem: [CP4]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -426,8 +426,8 @@ rf:
   nome: Consultar carteira
   descricao: O sistema deve apresentar os saldos disponíveis, retidos e pendentes do usuário, identificando a contratação de origem de cada valor retido ou pendente e, quando houver, a data prevista de liberação.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'O usuário abre sua carteira para entender seu dinheiro na plataforma. O sistema mostra separadamente o saldo disponível, o saldo retido em contratações e o saldo pendente. Para cada valor retido ou pendente, indica de qual contratação ele veio e, quando houver, a data prevista de liberação. Para o prestador, mostra também o que já pode ser sacado e o que ainda está em carência. Valores retidos ou pendentes nunca aparecem como disponíveis para uma nova contratação.'
   origem: [CP4]
   origem_levantamento:
   - evidencia: reuniao-1
@@ -458,8 +458,8 @@ rf:
   nome: Reservar créditos
   descricao: O sistema deve reservar o valor de uma contratação, tornando-o indisponível para outros usos.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'No momento da contratação, o sistema separa do saldo do consumidor o valor do serviço. Esse valor fica reservado e não pode ser usado em outra contratação enquanto a sessão não for concluída, cancelada ou resolvida pela administração. A reserva aparece na carteira do consumidor ligada à contratação de origem.'
   origem: [CP4]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -477,8 +477,8 @@ rf:
   nome: Liberar valores retidos
   descricao: O sistema deve liberar os valores retidos de uma contratação encerrada para distribuição.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Quando uma sessão é concluída, porque os dois participantes confirmaram que ela ocorreu ou porque o prazo de 48 horas terminou sem registro de problema, o sistema libera o valor que estava reservado para ser distribuído. Se algum participante tiver registrado que a sessão não ocorreu ou teve problemas, a liberação fica suspensa até a decisão da administração. A liberação acontece uma única vez por contratação.'
   origem: [CP4, CP5]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -496,8 +496,8 @@ rf:
   nome: Processar divisão de receita
   descricao: O sistema deve dividir a receita de uma contratação entre prestador e plataforma.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Com o valor da sessão liberado, o sistema divide a receita: 70% para o prestador e 30% para a plataforma. A parte do prestador entra em sua carteira como saldo em carência por 30 dias e só depois fica disponível para saque. Cada sessão gera um único repasse ao prestador.'
   origem: [CP4]
   origem_levantamento:
   - evidencia: reuniao-1
@@ -515,8 +515,8 @@ rf:
   nome: Processar saques
   descricao: O sistema deve permitir ao prestador solicitar a transferência do saldo elegível para sua conta bancária e acompanhar o resultado do processamento.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'O prestador quer transferir seus ganhos e solicita um saque do saldo disponível para a chave Pix cadastrada. O sistema confere se os dados de recebimento estão completos e se o valor respeita o mínimo permitido, reserva o valor pedido para que não seja usado em outro saque e acompanha o processamento junto ao gateway, mostrando ao prestador o resultado. Se o saque falhar, o valor volta ao saldo disponível.'
   origem: [CP4]
   origem_levantamento:
   - evidencia: reuniao-1
@@ -562,8 +562,8 @@ rf:
   nome: Registrar resultado da sessão
   descricao: O sistema deve permitir que cada participante informe se a sessão ocorreu, não ocorreu ou apresentou problemas, incluindo justificativa quando aplicável.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Depois do horário da sessão, consumidor e prestador informam, cada um, se ela ocorreu, não ocorreu ou apresentou problemas, com uma justificativa quando for o caso. Eles têm 48 horas para isso. Se os dois confirmarem que ocorreu, a sessão é concluída na hora; se ninguém registrar problema no prazo, ela é concluída automaticamente. Se alguém registrar que não ocorreu ou teve problemas, o valor continua retido e o participante é orientado a enviar o relato ao e-mail de SAC para análise da administração.'
   origem: [CP5]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -737,8 +737,8 @@ rf:
   nome: Consultar usuários
   descricao: O sistema deve permitir à administração localizar usuários e consultar seus dados cadastrais e sanções.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'Um administrador precisa localizar um usuário, por exemplo para analisar um relato recebido pelo SAC. Ele busca pelo nickname ou pelo e-mail, e o sistema mostra os dados cadastrais que a administração está autorizada a ver. Apenas contas com autorização administrativa acessam essa consulta. A consulta de sanções não faz parte do MVP.'
   origem: [CP7]
   origem_levantamento:
   - evidencia: reuniao-2
@@ -822,8 +822,8 @@ rf:
   nome: Manter jogos do catálogo
   descricao: O sistema deve permitir à administração cadastrar e atualizar os jogos disponíveis no catálogo.
   narrativa_descritiva:
-    tecnica: ''
-    texto: ''
+    tecnica: Texto narrativo
+    texto: 'O administrador mantém a lista de jogos que podem ser usados nas ofertas. Ele cadastra novos jogos e atualiza os existentes, podendo desativar um jogo que não deve mais receber ofertas. Só os jogos ativos aparecem para o prestador ao criar uma oferta e nos filtros do catálogo. Apenas contas com autorização administrativa fazem essa manutenção.'
   origem: [CP3, CP7]
   origem_levantamento:
   - evidencia: reuniao-1
