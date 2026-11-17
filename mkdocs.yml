@@ -27,6 +27,9 @@ theme:
     code: Fira Code
   features:
     - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.footer
     - navigation.top
     - toc.integrate
     - search.suggest

@@ -10,8 +10,8 @@
   --gd-radius: 12px;
 }
 
-/* Footer inferior (Anterior/Próximo + "Made with Material for MkDocs") removido */
-.md-footer {
+/* Rodapé: mantém só os botões Anterior/Próximo; a faixa "Made with Material" fica oculta */
+.md-footer-meta {
   display: none;
 }
 
