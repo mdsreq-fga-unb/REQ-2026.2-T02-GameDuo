@@ -107,5 +107,6 @@ nav:
   - Entregas:
       - "Unidade 1": entregas/unidade-1.md
       - "Unidade 2": entregas/unidade-2.md
+      - "Unidade 3": entregas/unidade-3.md
       - "Ajuste e validação de requisitos": entregas/ajuste-validacao-requisitos.md
       - "Evidências": visao-produto/evidencias.md
