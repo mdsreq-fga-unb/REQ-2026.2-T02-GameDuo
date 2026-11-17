@@ -432,6 +432,27 @@ body.gd-nav-collapsed .gd-sidebar-btn svg {
 }
 
 /* ---------------------------------------------------------------------
+   Vídeos das entregas (proporção 16:9)
+   --------------------------------------------------------------------- */
+
+.gd-video {
+  position: relative;
+  padding-top: 56.25%;
+  margin: 1.5em 0;
+  border-radius: var(--gd-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gd-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------------
    Menu lateral — subtópicos da página aberta
    Troca a linha reta do tema por um trilho suave, com o item em leitura
    marcado em verde.
@@ -556,3 +577,4 @@ body.gd-nav-collapsed .gd-sidebar-btn svg {
 .md-typeset details.gd-secao > .gd-secao__corpo > :first-child {
   margin-top: .2em;
 }
+
