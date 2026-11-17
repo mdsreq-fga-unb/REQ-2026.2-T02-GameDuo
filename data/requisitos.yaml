@@ -21,6 +21,9 @@
 #   entrega.escopo         MVP | Backlog
 #   entrega.jornada        parte da jornada do MVP que o requisito apoia
 #   entrega.iteracao       iteração planejada (o status vem de cronograma.yaml)
+#   entrega.status         opcional; quando preenchido, substitui o status da iteração.
+#                          Usado quando o item não foi concluído no período da iteração
+#                          planejada (Executada | Em andamento | Planejada)
 #   entrega.alcance_mvp    opcional; quando preenchido, o RF está no MVP com alcance parcial
 #                          ("MVP parcial") e o texto diz o que entra e o que fica de fora
 #   rnfs_associados        vínculos RF→RNF já documentados nas regras de negócio e
@@ -269,6 +272,7 @@ rf:
     escopo: MVP
     jornada: Catálogo e ofertas
     iteracao: 7
+    status: Em andamento
   rnfs_associados: [RNF11]
   depende_de: [RF11]
 - id: RF14
@@ -288,6 +292,7 @@ rf:
     escopo: MVP
     jornada: Agenda e contratação
     iteracao: 6
+    status: Em andamento
   rnfs_associados: [RNF09]
   depende_de: [RF11]
 - id: RF15
@@ -307,6 +312,7 @@ rf:
     escopo: MVP
     jornada: Agenda e contratação
     iteracao: 7
+    status: Em andamento
   rnfs_associados: [RNF09]
   depende_de: [RF14]
 - id: RF16
@@ -328,6 +334,7 @@ rf:
     escopo: MVP
     jornada: Agenda e contratação
     iteracao: 6
+    status: Em andamento
   rnfs_associados: [RNF09]
   depende_de: [RF02, RF15, RF22]
 - id: RF17
@@ -360,6 +367,7 @@ rf:
     escopo: MVP
     jornada: Agenda e contratação
     iteracao: 7
+    status: Em andamento
   rnfs_associados: [RNF03, RNF11]
   depende_de: [RF16, RF25]
 - id: RF19
@@ -471,6 +479,7 @@ rf:
     escopo: MVP
     jornada: Créditos e recebimentos
     iteracao: 7
+    status: Em andamento
   rnfs_associados: [RNF03]
   depende_de: [RF16, RF23]
 - id: RF26

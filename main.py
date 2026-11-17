@@ -346,7 +346,13 @@ def define_env(env):
                 entrega = (f'<div class="req-linha"><span class="req-rotulo">Módulo</span>'
                            f'{e(r["entrega"].get("jornada", "Fora do MVP"))}</div>')
                 if n:
-                    entrega += f'<div class="req-linha">{chip(d, n)} {selo_status(d["it"][n]["status"])}</div>'
+                    st_it = d["it"][n]["status"]
+                    if status and status[0] != st_it:
+                        # Item com status próprio: deixa claro que a iteração e o item diferem.
+                        entrega += (f'<div class="req-linha">{chip(d, n)} {selo_status(status[0])}'
+                                    f'<span class="req-vazio">iteração {e(st_it.lower())}; item não concluído no período</span></div>')
+                    else:
+                        entrega += f'<div class="req-linha">{chip(d, n)} {selo_status(st_it)}</div>'
                 if _parcial(r):
                     entrega += (f'<div class="req-linha"><span class="req-rotulo">Alcance no MVP</span>'
                                 f'<span class="req-texto">{e(r["entrega"]["alcance_mvp"])}</span></div>')

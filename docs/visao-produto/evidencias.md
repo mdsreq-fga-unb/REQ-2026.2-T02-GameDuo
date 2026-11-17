@@ -22,8 +22,8 @@ Quando um ponto em aberto de uma reunião foi resolvido depois, o encaminhamento
 | [3](#iteracao-3) | Elaboração | 09/09/2026 a 22/09/2026 | [Reunião 2 — Fluxograma completo](#reuniao-2); [Validação dos requisitos com o monitor](#validacao-monitor) |
 | [4](#iteracao-4) | Elaboração | 23/09/2026 a 06/10/2026 | [Escolha das APIs](#escolha-apis); [Validação do fluxo de pagamentos](#validacao-pagamentos); [Reunião 3 — MoSCoW](#reuniao-3); [Reunião 4 — Matriz 4x4 e MVP da equipe](#reuniao-4) |
 | [5](#iteracao-5) | Elaboração | 07/10/2026 a 13/10/2026 | [Reunião 5 — Validação do MVP](#reuniao-5) |
-| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Executada — modelagem do banco e diagrama de telas |
-| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Executada — evidências não registradas |
+| [6](#iteracao-6) | Construção | 14/10/2026 a 27/10/2026 | Executada — modelagem do banco e diagrama de telas; RF14 e RF16 em andamento |
+| [7](#iteracao-7) | Construção | 28/10/2026 a 10/11/2026 | Executada — evidências não registradas; RF13, RF15, RF18 e RF25 em andamento |
 | [8](#iteracao-8) | Construção | 11/11/2026 a 17/11/2026 | Em andamento |
 | [9](#iteracao-9) | Construção | 18/11/2026 a 01/12/2026 | Planejada |
 | [10](#iteracao-10) | Transição | 02/12/2026 a 10/12/2026 | Planejada |
@@ -333,7 +333,7 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 
 ## Iteração 6 — Construção {#iteracao-6}
 
-**Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md).  
+**Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md). O período foi encerrado com RF14 e RF16 em andamento; ver o débito técnico na [Iteração 8](#iteracao-8).  
 **Período:** 14/10/2026 a 27/10/2026.
 
 !!! warning "Pontos em aberto"
@@ -354,7 +354,7 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 
 ## Iteração 7 — Construção {#iteracao-7}
 
-**Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md).  
+**Status:** Executada, conforme o [cronograma](6.cronograma-entregas.md). O período foi encerrado com RF13, RF15, RF18 e RF25 em andamento; ver o débito técnico na [Iteração 8](#iteracao-8).  
 **Período:** 28/10/2026 a 10/11/2026.
 
 !!! warning "Pontos em aberto"
@@ -370,7 +370,11 @@ O rótulo “MVP Definido” sobrepõe o código do primeiro cartão do quadro; 
 
 !!! warning "Pontos em aberto"
     - A demonstração do incremento a Ciro foi consolidada com a da Iteração 7 ao final da Iteração 8. O registro será incluído nesta seção quando recebido do cliente.
-    - **Débito técnico:** RF14 (configuração de agenda semanal) e RF16 (registro automático da contratação) não foram concluídos conforme a descrição do catálogo. As descrições não corresponderam ao que a equipe planejou entregar, e o desalinhamento não foi percebido na época. A resolução está prevista para a Iteração 8.
+    - **Débito técnico:** seis RFs não foram concluídos no período da iteração em que foram planejados e estão em andamento na Iteração 8:
+        - Iteração 6: RF14 (configuração de agenda semanal) e RF16 (registro automático da contratação). As descrições do catálogo não corresponderam ao que a equipe planejou entregar, e o desalinhamento não foi percebido na época.
+        - Iteração 7: RF13 (encerrar oferta), RF15 (consultar disponibilidade), RF18 (cancelar contratação) e RF25 (reservar créditos).
+
+        O status desses itens é mantido no [catálogo de requisitos](8.1requisitos-software.md), separado do status das iterações.
 
 ## Iteração 9 — Construção {#iteracao-9}
 
