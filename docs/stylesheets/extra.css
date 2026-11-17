@@ -479,3 +479,80 @@ body.gd-nav-collapsed .gd-sidebar-btn svg {
   padding-top: .05rem;
   padding-bottom: .05rem;
 }
+
+/* ---------------------------------------------------------------------
+   Seções recolhíveis (Evidências: uma por iteração)
+   --------------------------------------------------------------------- */
+
+.md-typeset details.gd-secao {
+  margin: .6em 0;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--gd-radius);
+  background-color: transparent;
+  box-shadow: none;
+  font-size: inherit;
+  page-break-inside: auto;
+  transition: border-color .2s ease;
+}
+
+.md-typeset details.gd-secao[open],
+.md-typeset details.gd-secao:hover {
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+.md-typeset details.gd-secao:focus-within {
+  box-shadow: none;
+}
+
+.md-typeset details.gd-secao > summary {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  min-height: 0;
+  margin: 0;
+  padding: .7rem 1rem;
+  border: 0;
+  border-radius: var(--gd-radius);
+  background-color: transparent;
+  cursor: pointer;
+  list-style: none;
+}
+
+.md-typeset details.gd-secao > summary::-webkit-details-marker {
+  display: none;
+}
+
+.md-typeset details.gd-secao > summary::before {
+  content: "";
+  position: static;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--md-accent-fg-color);
+  -webkit-mask: var(--md-nav-icon--next) center / contain no-repeat;
+  mask: var(--md-nav-icon--next) center / contain no-repeat;
+  transition: transform .2s ease;
+}
+
+.md-typeset details.gd-secao[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.md-typeset details.gd-secao > summary::after {
+  content: none;
+}
+
+.md-typeset details.gd-secao > summary h2 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.md-typeset details.gd-secao > .gd-secao__corpo {
+  padding: 0 1rem .6rem;
+}
+
+.md-typeset details.gd-secao > .gd-secao__corpo > :first-child {
+  margin-top: .2em;
+}
