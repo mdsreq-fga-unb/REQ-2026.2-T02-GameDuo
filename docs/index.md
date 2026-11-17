@@ -89,7 +89,7 @@ Explore as principais áreas da documentação:
     </a>
   </li>
   <li>
-    <a class="gd-team__card" href="https://github.com/Rukkakun" title="Desenvolvimento Backend · Banco de Dados">
+    <a class="gd-team__card" href="https://github.com/Rukkakun" title="Banco de Dados · Analista de Requisitos">
       <img src="img/paulo-lucca.jpg" alt="Paulo Lucca" loading="lazy">
       <span class="gd-team__name">Paulo Lucca</span>
     
@@ -97,7 +97,7 @@ Explore as principais áreas da documentação:
     </a>
   </li>
   <li>
-    <a class="gd-team__card" href="https://github.com/PedroAraujo004" title="Product Owner · Analista de Requisitos (líder)">
+    <a class="gd-team__card" href="https://github.com/PedroAraujo004" title="Product Owner · Analista de Requisitos (líder) · Frontend · Backend">
       <img src="img/pedro-araujo.jpg" alt="Pedro Araujo" loading="lazy">
       <span class="gd-team__name">Pedro Araujo</span>
       <span class="gd-team__handle">@PedroAraujo004</span>
