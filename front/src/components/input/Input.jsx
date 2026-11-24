@@ -2,13 +2,16 @@ import './Input.css';
 import PixelIcon from '../pixelIcon/PixelIcon';
 
 // reveal / onReveal: só para type="password", mostram ou escondem a senha.
-function Input({ label, value, onChange, placeholder, type = "text", error, help, reveal, onReveal, name, autoComplete }) {
+function Input({ label, value, onChange, placeholder, type = "text", error, help, reveal, onReveal, name, autoComplete, inputMode, multiline = false }) {
   const isPassword = type === "password";
 
   return (
     <label className={`field ${error ? "field--error" : ""}`}>
       <span className="field__label">{label}</span>
       <span className="field__control">
+        {multiline ? (
+          <textarea name={name} rows={4} value={value} onChange={(event) => onChange(event.target.value)} placeholder={placeholder} aria-invalid={Boolean(error)} />
+        ) : (
         <input
           name={name}
           type={isPassword && reveal ? "text" : type}
@@ -17,7 +20,9 @@ function Input({ label, value, onChange, placeholder, type = "text", error, help
           placeholder={placeholder}
           aria-invalid={Boolean(error)}
           autoComplete={autoComplete}
+          inputMode={inputMode}
         />
+        )}
         {isPassword && (
           <button type="button" className="eye-button" onClick={onReveal} aria-label={reveal ? "Ocultar senha" : "Mostrar senha"}>
             <PixelIcon type={reveal ? "eye-off" : "eye"} />

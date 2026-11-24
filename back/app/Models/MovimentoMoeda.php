@@ -19,6 +19,9 @@ class MovimentoMoeda extends Model
     "moedas",
     "descricao",
     "cobranca_id",
+    "contratacao_id",
+    "autor",
+    "chave",
   ];
 
   protected $casts = [
@@ -32,6 +35,7 @@ class MovimentoMoeda extends Model
       "tipo" => $this->tipo,
       "moedas" => $this->moedas,
       "descricao" => $this->descricao,
+      "contratacao_id" => $this->contratacao_id,
       "data" => $this->created_at,
     ];
   }

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+// Ativação: perfil de prestação (RN05) e dados de recebimento (RN06) juntos
 class PrestadorRequest extends FormRequest
 {
     public function authorize(): bool
@@ -11,20 +12,24 @@ class PrestadorRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation(): void
+    {
+        $this->merge(RecebimentoRequest::normalizar($this->only(['dados', 'tipo_chave', 'cpf_titular'])));
+    }
+
     public function rules(): array
     {
         return [
-            'apresentacao' => ['nullable', 'string', 'max:500'],
-            'dados' => ['required', 'string', 'max:150'],
+            ...PerfilPrestadorRequest::regras(),
+            ...RecebimentoRequest::regras($this->input('tipo_chave')),
         ];
     }
 
     public function messages(): array
     {
         return [
-            'dados.required' => 'Informe sua chave Pix para recebimento.',
-            'dados.max' => 'A chave Pix deve ter no máximo 150 caracteres.',
-            'apresentacao.max' => 'A apresentação deve ter no máximo 500 caracteres.',
+            ...PerfilPrestadorRequest::mensagens(),
+            ...RecebimentoRequest::mensagens(),
         ];
     }
 }

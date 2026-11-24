@@ -1,0 +1,39 @@
+/*
+  PÁGINA: PaginaAgenda (pages/paginaAgenda/PaginaAgenda.jsx)
+  Agenda semanal de uma oferta.
+*/
+
+.schedule {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.schedule__day {
+  padding: 14px;
+  border: 2px solid var(--border);
+  background: var(--night);
+}
+
+.schedule__head,
+.schedule__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.schedule__head {
+  justify-content: space-between;
+}
+
+.schedule__row {
+  margin-top: 12px;
+}
+
+.schedule__row input {
+  height: 44px;
+  padding: 0 10px;
+  border: 2px solid var(--border);
+  color-scheme: dark;
+}

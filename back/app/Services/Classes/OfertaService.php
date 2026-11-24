@@ -10,12 +10,12 @@ class OfertaService
 {
     public function listar(): Collection
     {
-        return Oferta::with('usuario')->latest('id')->get();
+        return Oferta::ativas()->with('usuario.provedor')->latest('id')->get();
     }
 
     public function listarDoPrestador(Usuario $usuario): Collection
     {
-        return Oferta::with('usuario')
+        return Oferta::ativas()->with('usuario.provedor')
             ->where('email', $usuario->email)
             ->latest('id')
             ->get();
@@ -27,19 +27,23 @@ class OfertaService
         $oferta->email = $usuario->email;
         $oferta->save();
 
-        return $oferta->load('usuario');
+        return $oferta->load('usuario.provedor');
     }
 
     public function atualizar(Oferta $oferta, array $dados): Oferta
     {
         $oferta->update($dados);
 
-        return $oferta->load('usuario');
+        return $oferta->load('usuario.provedor');
     }
 
-    public function excluir(Oferta $oferta): void
+    public function encerrar(Oferta $oferta): void
     {
-        $oferta->delete();
+        if ($oferta->ativa()) {
+            $oferta->status = Oferta::ENCERRADA;
+            $oferta->encerrada_em = now();
+            $oferta->save();
+        }
     }
 
     public function pertenceA(Oferta $oferta, Usuario $usuario): bool

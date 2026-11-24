@@ -68,7 +68,7 @@ class AdminUsuarioController extends Controller
             'role' => $usuario->role,
             'presta_servico' => $usuario->ehPrestador(),
             'jogos' => (clone $ofertas)->distinct()->orderBy('jogo')->pluck('jogo'),
-            'ofertas_ativas' => $ofertas->count(),
+            'ofertas_ativas' => $ofertas->ativas()->count(),
             // só diz SE existe; a chave Pix em si nunca sai daqui
             'dados_recebimento_cadastrados' => filled($usuario->provedor?->dados),
         ]);

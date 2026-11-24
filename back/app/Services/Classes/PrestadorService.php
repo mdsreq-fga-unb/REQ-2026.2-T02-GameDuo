@@ -11,8 +11,7 @@ class PrestadorService
     {
         $provedor = Provedor::create([
             'email' => $usuario->email,
-            'apresentacao' => $dados['apresentacao'] ?? null,
-            'dados' => $dados['dados'],
+            ...$dados,
         ]);
 
         // o controller já carregou a relação (vazia) ao checar ehPrestador(); atualiza para o resumo() sair certo

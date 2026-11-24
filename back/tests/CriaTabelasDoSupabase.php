@@ -26,6 +26,13 @@ trait CriaTabelasDoSupabase
             $table->string('email')->primary();
             $table->text('apresentacao')->nullable();
             $table->text('dados');
+            $table->uuid('codigo')->nullable()->unique();
+            $table->json('jogos')->nullable();
+            $table->json('modalidades')->nullable();
+            $table->json('formatos')->nullable();
+            $table->json('idiomas')->nullable();
+            $table->string('tipo_chave', 10)->nullable();
+            $table->text('cpf_titular')->nullable();
         });
     }
 

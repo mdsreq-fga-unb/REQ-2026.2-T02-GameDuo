@@ -55,8 +55,14 @@
     padding: 8px 14px;
   }
 
+  .hud {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
   .hud nav {
-    gap: 5px;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
   .hud nav .btn {
@@ -65,7 +71,23 @@
     font-size: 1.05rem;
   }
 
+  /* RNF10: o nickname e os perfis continuam visíveis no celular */
   .hud .player-chip {
+    padding: 4px 8px;
+  }
+
+  .hud .player-chip .avatar,
+  .hud .player-chip b {
     display: none;
+  }
+}
+
+/* Tablet: muitos botões para uma linha só */
+@media (min-width: 681px) and (max-width: 1100px) {
+  .hud,
+  .hud nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
   }
 }

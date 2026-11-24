@@ -53,3 +53,14 @@ npm run dev
 ```
 
 
+
+### 5. Processos em segundo plano
+
+Além da API e do front, deixe rodando em outros dois terminais, dentro de `back/`:
+
+```bash
+php artisan queue:work      # credita compras e envia saques
+php artisan schedule:work   # conclui sessões após 48 h e reenfileira saques
+```
+
+A recuperação de senha precisa das variáveis `MAIL_*` no `.env`. O que foi entregue no MVP está em [docs/entregas/finalizacao-mvp.md](docs/entregas/finalizacao-mvp.md).

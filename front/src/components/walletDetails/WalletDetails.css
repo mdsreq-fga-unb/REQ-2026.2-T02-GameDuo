@@ -1,0 +1,68 @@
+/*
+  COMPONENTE: WalletDetails (components/walletDetails/WalletDetails.jsx)
+  Saldos retido e pendente e, para prestadores, recebimentos e saque.
+*/
+
+.wallet-details {
+  display: grid;
+  gap: 34px;
+  margin-top: 34px;
+}
+
+.wallet-details__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 16px;
+}
+
+.wallet-details__card {
+  padding: 16px;
+  border: 2px solid var(--border);
+  background: var(--night);
+}
+
+.wallet-details__card b {
+  display: block;
+  color: var(--coin);
+  font-family: var(--title);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.wallet-details__card small,
+.wallet-details__list small {
+  color: var(--muted);
+}
+
+.wallet-details__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.wallet-details__list li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  background: var(--night);
+}
+
+.wallet-details__list span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.wallet-details h3 {
+  margin-top: 24px;
+}
+
+.wallet-details form {
+  margin-top: 22px;
+}

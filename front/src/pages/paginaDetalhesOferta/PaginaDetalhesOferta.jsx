@@ -6,10 +6,9 @@ import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
 import DialogPanel from '../../components/dialogPanel/DialogPanel';
 import Message from '../../components/message/Message';
-import Modal from '../../components/modal/Modal';
+import HireCard from '../../components/hireCard/HireCard';
 import PixelIcon from '../../components/pixelIcon/PixelIcon';
 import TagRow from '../../components/tagRow/TagRow';
-import { useAuth } from '../../context/AuthContext';
 import { api } from '../../services/api';
 import { paraCard } from '../../utils/ofertas';
 
@@ -17,10 +16,8 @@ import { paraCard } from '../../utils/ofertas';
 function PaginaDetalhesOferta() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { loggedIn } = useAuth();
   const [offer, setOffer] = useState(null);
   const [error, setError] = useState(null);
-  const [avisoContratar, setAvisoContratar] = useState(false);
 
   useEffect(() => {
     api(`/ofertas/${id}`)
@@ -45,6 +42,7 @@ function PaginaDetalhesOferta() {
                 <p className="eyebrow">{offer.level}</p>
                 <h1>{offer.title}</h1>
                 <p>com <strong>@{offer.nickname}</strong></p>
+                {offer.providerCode && <Button variant="link" onClick={() => navigate(`/prestador/${offer.providerCode}`)}>Ver perfil</Button>}
                 <TagRow tags={[offer.game, offer.modality]} />
               </div>
             </DialogPanel>
@@ -53,29 +51,20 @@ function PaginaDetalhesOferta() {
               <h2>Prepare sua partida</h2>
               <p className="detail-copy">{offer.description || "Uma sessão personalizada para evoluir, completar objetivos e se divertir com companhia de alto nível."}</p>
               <ul className="perk-list">
-                <li>✓ Comunicação por voz</li>
-                <li>✓ Horário combinado</li>
+                <li>✓ Comunicação: {offer.communication ?? "a combinar"}</li>
+                <li>✓ Horário escolhido por você</li>
                 <li>✓ Sessão de {offer.duration}</li>
               </ul>
+              {offer.conditions && <p className="detail-copy"><b>Condições:</b> {offer.conditions}</p>}
               <div className="detail-price">
                 <span>Total</span>
                 <strong><PixelIcon type="coin" /> {offer.price} créditos</strong>
               </div>
-              {loggedIn ? (
-                <Button className="btn--full" onClick={() => setAvisoContratar(true)}>Contratar agora</Button>
-              ) : (
-                <>
-                  <Message kind="info">Entre na sua conta para contratar esta oferta.</Message>
-                  <Button className="btn--full" onClick={() => navigate("/login", { state: { voltarPara: `/oferta/${offer.id}` } })}>Entrar para contratar</Button>
-                </>
-              )}
+              <HireCard offer={offer} />
             </DialogPanel>
           </div>
         )}
       </main>
-      <Modal aberto={avisoContratar} titulo="Em breve!" confirmar="Entendi" onConfirmar={() => setAvisoContratar(false)}>
-        <p>A contratação pelo GameDuo está quase pronta. Enquanto isso, guarde esta oferta e volte logo.</p>
-      </Modal>
     </MainLayout>
   );
 }

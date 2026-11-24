@@ -15,9 +15,7 @@ class CarteiraController extends Controller
 
     public function saldo(Request $request): JsonResponse
     {
-        return response()->json([
-            'saldo' => $this->service->saldo($request->user()),
-        ]);
+        return response()->json($this->service->resumo($request->user()));
     }
 
     public function extrato(Request $request): JsonResponse

@@ -1,10 +1,11 @@
 import './PlayerProfileCard.css';
 import Avatar from '../avatar/Avatar';
+import Button from '../button/Button';
 import DialogPanel from '../dialogPanel/DialogPanel';
 import { useAuth } from '../../context/AuthContext';
 import { iniciais } from '../../utils/ofertas';
 
-function PlayerProfileCard() {
+function PlayerProfileCard({ onEditar }) {
   const { usuario } = useAuth();
 
   return (
@@ -17,6 +18,7 @@ function PlayerProfileCard() {
         <div><dt>E-mail</dt><dd>{usuario.email}</dd></div>
         <div><dt>Perfil</dt><dd>{usuario.prestador ? "Jogador e prestador" : "Jogador"}</dd></div>
       </dl>
+      <Button variant="secondary" className="btn--full" onClick={onEditar}>Editar dados</Button>
     </DialogPanel>
   );
 }

@@ -8,6 +8,8 @@ use Illuminate\Validation\Rule;
 class OfertaRequest extends FormRequest
 {
     // RN08: nesta entrega as ofertas são de coaching e duo
+    public const COMUNICACOES = ['Discord', 'WhatsApp', 'Telegram', 'Chat do jogo', 'Outro'];
+
     public const MODALIDADES = ['Coaching', 'Duo'];
 
     public function authorize(): bool
@@ -25,6 +27,10 @@ class OfertaRequest extends FormRequest
             'nivel' => ['nullable', 'string', 'max:50'],
             'duracao' => ['required', 'integer', 'min:15', 'max:480'],
             'preco' => ['required', 'integer', 'min:1', 'max:100000'],
+            // RN09 e RN21
+            'comunicacao' => ['required', 'string', Rule::in(self::COMUNICACOES)],
+            'contato' => ['required', 'string', 'max:100'],
+            'condicoes' => ['nullable', 'string', 'max:1000'],
         ];
     }
 
@@ -58,6 +64,11 @@ class OfertaRequest extends FormRequest
             'preco.required' => 'Informe o preço.',
             'preco.integer' => 'O preço deve ser um número inteiro de créditos.',
             'preco.min' => 'O preço deve ser de pelo menos 1 crédito.',
+            'comunicacao.required' => 'Escolha a forma de comunicação.',
+            'comunicacao.in' => 'Escolha uma forma de comunicação da lista.',
+            'contato.required' => 'Informe o contato que será enviado a quem contratar.',
+            'contato.max' => 'O contato deve ter no máximo 100 caracteres.',
+            'condicoes.max' => 'As condições devem ter no máximo 1000 caracteres.',
             'preco.max' => 'O preço deve ser de no máximo 100000 créditos.',
         ];
     }

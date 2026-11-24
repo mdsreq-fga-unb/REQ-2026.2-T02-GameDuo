@@ -26,7 +26,7 @@ cloudflared tunnel --url http://127.0.0.1:8000
 
 - URL: `https://<url-do-tunel>.trycloudflare.com/api/webhooks/asaas`
 - Token: o mesmo `ASAAS_WEBHOOK_TOKEN`
-- Eventos: `PAYMENT_CONFIRMED`, `PAYMENT_RECEIVED`, `PAYMENT_OVERDUE`, `PAYMENT_DELETED`
+- Eventos: `PAYMENT_CONFIRMED`, `PAYMENT_RECEIVED`, `PAYMENT_OVERDUE`, `PAYMENT_DELETED` e, para os saques, `TRANSFER_DONE`, `TRANSFER_FAILED`, `TRANSFER_CANCELLED`
 
 **A URL do túnel muda a cada `cloudflared`. Atualizar no painel sempre.**
 

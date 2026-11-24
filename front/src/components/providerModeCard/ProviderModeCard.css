@@ -48,3 +48,8 @@
   border-color: var(--lime);
   background: var(--lime);
 }
+
+.provider-actions {
+  display: grid;
+  gap: 12px;
+}

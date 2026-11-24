@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AtualizarContaRequest;
 use App\Http\Requests\LoginRequest;
 use App\Services\Classes\LoginService;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Throwable;
 
 class LoginController extends Controller
@@ -50,6 +52,24 @@ class LoginController extends Controller
     {
         return response()->json([
             'usuario' => $request->user()->resumo(),
+        ]);
+    }
+
+    // RF01: correção dos dados da conta
+    public function atualizar(AtualizarContaRequest $request): JsonResponse
+    {
+        $dados = $request->validated();
+        $usuario = $request->user();
+
+        $usuario->fill(['nome' => $dados['nome'], 'nickname' => $dados['nickname']]);
+        if (filled($dados['senha'] ?? null)) {
+            $usuario->senha = Hash::make($dados['senha']);
+        }
+        $usuario->save();
+
+        return response()->json([
+            'message' => 'Dados atualizados!',
+            'usuario' => $usuario->resumo(),
         ]);
     }
 

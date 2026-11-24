@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PaginaCarteira.css';
 import MainLayout from '../../components/mainLayout/MainLayout';
@@ -6,21 +6,23 @@ import Button from '../../components/button/Button';
 import DialogPanel from '../../components/dialogPanel/DialogPanel';
 import EmptyState from '../../components/emptyState/EmptyState';
 import Message from '../../components/message/Message';
+import WalletDetails from '../../components/walletDetails/WalletDetails';
 import { api } from '../../services/api';
 import { formatarDataHora, formatarMoedas, tiposMovimento } from '../../utils/moedas';
 import { useContagem } from '../../utils/useContagem';
 
 function PaginaCarteira() {
   const navigate = useNavigate();
-  const [saldo, setSaldo] = useState(null);
+  const [carteira, setCarteira] = useState(null);
+  const saldo = carteira?.saldo ?? null;
   const [movimentos, setMovimentos] = useState(null);
   const [error, setError] = useState("");
   const saldoAnimado = useContagem(saldo);
 
-  useEffect(() => {
+  const carregar = useCallback(() => {
     Promise.all([api("/carteira"), api("/carteira/extrato")])
-      .then(([carteira, extrato]) => {
-        setSaldo(carteira.saldo);
+      .then(([dados, extrato]) => {
+        setCarteira(dados);
         setMovimentos(extrato.movimentos);
       })
       .catch((err) => {
@@ -31,6 +33,10 @@ function PaginaCarteira() {
         setError(err.message);
       });
   }, [navigate]);
+
+  useEffect(() => {
+    carregar();
+  }, [carregar]);
 
   const carregando = saldo === null && !error;
 
@@ -90,6 +96,7 @@ function PaginaCarteira() {
             </section>
           </div>
         )}
+        {carteira && <WalletDetails carteira={carteira} onAtualizar={carregar} />}
       </main>
     </MainLayout>
   );

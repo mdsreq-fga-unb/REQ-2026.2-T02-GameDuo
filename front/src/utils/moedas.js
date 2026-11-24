@@ -61,6 +61,6 @@ export const statusCobranca = {
 
 export const tiposMovimento = {
   compra: { rotulo: "Compra", tom: "entrada" },
-  contratacao: { rotulo: "Contratação", tom: "saida" },
+  contratacao: { rotulo: "Reserva", tom: "saida" },
   devolucao: { rotulo: "Devolução", tom: "devolucao" },
 };

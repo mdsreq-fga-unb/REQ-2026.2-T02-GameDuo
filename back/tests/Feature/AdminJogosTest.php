@@ -20,7 +20,7 @@ class AdminJogosTest extends TestCase
         'titulo' => 'Coaching de mira',
         'modalidade' => 'Coaching',
         'duracao' => 60,
-        'preco' => 100,
+        'preco' => 100, 'comunicacao' => 'Discord', 'contato' => 'coach#1',
     ];
 
     protected function setUp(): void

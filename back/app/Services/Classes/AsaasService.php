@@ -47,6 +47,19 @@ class AsaasService
         return $this->http()->get("/payments/{$cobrancaId}/pixQrCode")->throw()->json();
     }
 
+    // Transferência Pix (saque). A referência volta no webhook TRANSFER_*.
+    public function transferirPix(float $valor, string $chave, string $tipo, string $referencia): array
+    {
+        return $this->http()->post('/transfers', [
+            'value' => $valor,
+            'operationType' => 'PIX',
+            'pixAddressKey' => $chave,
+            'pixAddressKeyType' => $tipo,
+            'description' => 'GameDuo - saque',
+            'externalReference' => $referencia,
+        ])->throw()->json() ?? [];
+    }
+
     private function http(): PendingRequest
     {
         return Http::baseUrl(config('asaas.url'))

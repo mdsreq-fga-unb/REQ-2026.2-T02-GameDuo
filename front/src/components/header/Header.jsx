@@ -30,14 +30,14 @@ function Header() {
       <nav aria-label="Navegação principal">
         {usuario ? (
           <>
-            <button className="player-chip" onClick={() => navigate("/minha-conta")}>
+            <button className="player-chip" aria-label={`Minha conta: @${usuario.nickname}`} onClick={() => navigate("/minha-conta")}>
               <Avatar initials={iniciais(usuario.nickname || usuario.nome)} size="small" />
-              <span><b>{ehAdmin ? `${usuario.nickname} (Administrador)` : usuario.nome}</b><small>@{usuario.nickname}{usuario.prestador ? " · prestador" : ""}</small></span>
+              <span><b>{ehAdmin ? `${usuario.nickname} (Administrador)` : usuario.nome}</b><small>@{usuario.nickname}{ehAdmin ? " · administração" : ""}{usuario.prestador ? " · prestador" : ""}</small></span>
             </button>
             <CoinBalance />
             {ehAdmin && <Button variant="ghost" onClick={() => navigate("/admin")}>Painel Admin</Button>}
+            <Button variant="ghost" onClick={() => navigate("/contratacoes")}>Sessões</Button>
             {usuario.prestador && <Button variant="ghost" onClick={() => navigate("/minhas-ofertas")}>Minhas ofertas</Button>}
-            <Button variant="ghost" onClick={() => navigate("/minha-conta")}>Minha conta</Button>
             <Button variant="link" onClick={() => setConfirmandoSaida(true)}>Sair</Button>
           </>
         ) : (

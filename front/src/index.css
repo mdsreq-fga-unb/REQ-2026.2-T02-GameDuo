@@ -71,7 +71,7 @@ img, svg {
   max-width: 100%;
 }
 
-button, input, select {
+button, input, select, textarea {
   font: inherit;
   letter-spacing: inherit;
   color: inherit;
@@ -170,6 +170,17 @@ select:focus-visible {
     repeating-linear-gradient(90deg, transparent 0 10%, rgba(65, 166, 246, .3) 10.3% 10.6%, transparent 11% 20%),
     repeating-linear-gradient(0deg, transparent 0 18%, rgba(65, 166, 246, .28) 18.5% 19%, transparent 19.5% 38%);
   clip-path: polygon(0 38%, 12% 18%, 20% 30%, 35% 0, 48% 38%, 66% 8%, 78% 31%, 91% 5%, 100% 22%, 100% 100%, 0 100%);
+}
+
+
+/* Texto só para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 

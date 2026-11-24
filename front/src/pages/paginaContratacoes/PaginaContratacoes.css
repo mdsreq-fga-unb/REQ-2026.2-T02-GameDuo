@@ -1,0 +1,63 @@
+/*
+  PÁGINA: PaginaContratacoes (pages/paginaContratacoes/PaginaContratacoes.jsx)
+  Sessões contratadas e vendidas, com cancelamento e registro de resultado.
+*/
+
+.bookings {
+  display: grid;
+  gap: 20px;
+}
+
+.booking {
+  padding: 20px;
+  border: 3px solid var(--border);
+  background: rgba(17, 19, 34, .92);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.booking__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.booking__status {
+  padding: 5px 10px;
+  border: 2px solid currentColor;
+  font-family: var(--title);
+  line-height: 1;
+}
+
+.booking__status--azul { color: var(--cyan); }
+.booking__status--amarelo { color: var(--coin); }
+.booking__status--verde { color: var(--lime); }
+.booking__status--cinza { color: var(--border-light); }
+
+.booking__data {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 12px 20px;
+  margin: 18px 0;
+}
+
+.booking__data dt {
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+.booking__data dd {
+  overflow-wrap: anywhere;
+}
+
+.booking__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.booking__note {
+  color: var(--muted);
+}

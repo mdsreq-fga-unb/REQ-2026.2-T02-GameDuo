@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\AgendaController;
 use App\Http\Controllers\Api\AsaasWebhookController;
+use App\Http\Controllers\Api\ContratacaoController;
+use App\Http\Controllers\Api\RecuperacaoSenhaController;
+use App\Http\Controllers\Api\SaqueController;
 use App\Http\Controllers\Api\CarteiraController;
 use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\AdminController;
@@ -23,9 +27,18 @@ Route::post('/login', [LoginController::class, 'login'])
 Route::post('/usuarios', [UsuarioController::class, 'store'])
     ->middleware('throttle:10,1');
 
+// RF03: recuperação de senha por e-mail
+Route::middleware('throttle:10,1')->prefix('senha')->name('senha.')->group(function () {
+    Route::post('/solicitar', [RecuperacaoSenhaController::class, 'solicitar'])->name('solicitar');
+    Route::post('/validar', [RecuperacaoSenhaController::class, 'validar'])->name('validar');
+    Route::post('/redefinir', [RecuperacaoSenhaController::class, 'redefinir'])->name('redefinir');
+});
+
 // catálogo público
 Route::get('/ofertas', [OfertaController::class, 'index']);
 Route::get('/ofertas/{oferta}', [OfertaController::class, 'show'])->whereNumber('oferta');
+Route::get('/ofertas/{oferta}/vagas', [AgendaController::class, 'vagas'])->whereNumber('oferta');
+Route::get('/prestadores/{codigo}', [PrestadorController::class, 'show'])->whereUuid('codigo');
 Route::get('/jogos', [JogoController::class, 'index']);
 
 // chamado pelo Asaas, sem login: a autenticação é o token no header
@@ -34,6 +47,7 @@ Route::post('/webhooks/asaas', AsaasWebhookController::class)->middleware('asaas
 // rotas que exigem o token do login (Authorization: Bearer <token>)
 Route::middleware('auth:api')->group(function () {
     Route::get('/me', [LoginController::class, 'me']);
+    Route::put('/me', [LoginController::class, 'atualizar'])->middleware('throttle:10,1');
     Route::post('/logout', [LoginController::class, 'logout']);
     Route::post('/prestador', [PrestadorController::class, 'store']);
 
@@ -43,8 +57,22 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/carteira', [CarteiraController::class, 'saldo']);
     Route::get('/carteira/extrato', [CarteiraController::class, 'extrato']);
 
+    // contratações (consumidor e prestador)
+    Route::get('/contratacoes', [ContratacaoController::class, 'index']);
+    Route::post('/contratacoes', [ContratacaoController::class, 'store'])->middleware('throttle:20,1');
+    Route::post('/contratacoes/{contratacao}/cancelar', [ContratacaoController::class, 'cancelar'])->whereNumber('contratacao');
+    Route::post('/contratacoes/{contratacao}/resultado', [ContratacaoController::class, 'resultado'])->whereNumber('contratacao');
+
     // gestão de ofertas: só para quem tem perfil de prestador
     Route::middleware('prestador')->group(function () {
+        Route::get('/prestador/perfil', [PrestadorController::class, 'perfil']);
+        Route::put('/prestador/perfil', [PrestadorController::class, 'atualizarPerfil']);
+        Route::get('/prestador/recebimento', [PrestadorController::class, 'recebimento']);
+        Route::put('/prestador/recebimento', [PrestadorController::class, 'atualizarRecebimento']);
+        Route::get('/saques', [SaqueController::class, 'index']);
+        Route::post('/saques', [SaqueController::class, 'store'])->middleware('throttle:10,1');
+        Route::get('/ofertas/{oferta}/agenda', [AgendaController::class, 'show'])->whereNumber('oferta');
+        Route::put('/ofertas/{oferta}/agenda', [AgendaController::class, 'update'])->whereNumber('oferta');
         Route::get('/minhas-ofertas', [OfertaController::class, 'minhas']);
         Route::post('/ofertas', [OfertaController::class, 'store']);
         Route::put('/ofertas/{oferta}', [OfertaController::class, 'update'])->whereNumber('oferta');

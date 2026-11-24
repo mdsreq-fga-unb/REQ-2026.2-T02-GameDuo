@@ -24,15 +24,17 @@ class OfertaController extends Controller
 
     public function show(Oferta $oferta): JsonResponse
     {
+        abort_unless($oferta->ativa(), 404, 'Oferta não encontrada.');
+
         return response()->json([
-            'oferta' => $oferta->load('usuario')->resumo(),
+            'oferta' => $oferta->load('usuario.provedor')->resumo(),
         ]);
     }
 
     public function minhas(Request $request): JsonResponse
     {
         return response()->json([
-            'ofertas' => $this->service->listarDoPrestador($request->user())->map->resumo(),
+            'ofertas' => $this->service->listarDoPrestador($request->user())->map->resumoDono(),
         ]);
     }
 
@@ -41,8 +43,8 @@ class OfertaController extends Controller
         $oferta = $this->service->criar($request->user(), $request->validated());
 
         return response()->json([
-            'message' => 'Oferta publicada!',
-            'oferta' => $oferta->resumo(),
+            'message' => 'Oferta publicada! Configure a agenda para receber contratações.',
+            'oferta' => $oferta->resumoDono(),
         ], 201);
     }
 
@@ -52,11 +54,13 @@ class OfertaController extends Controller
             return $this->semPermissao();
         }
 
+        abort_unless($oferta->ativa(), 409, 'Esta oferta foi encerrada.');
+
         $oferta = $this->service->atualizar($oferta, $request->validated());
 
         return response()->json([
             'message' => 'Oferta atualizada!',
-            'oferta' => $oferta->resumo(),
+            'oferta' => $oferta->resumoDono(),
         ]);
     }
 
@@ -66,10 +70,11 @@ class OfertaController extends Controller
             return $this->semPermissao();
         }
 
-        $this->service->excluir($oferta);
+        // RF13: encerra em vez de apagar; as contratações já feitas continuam valendo (RN11)
+        $this->service->encerrar($oferta);
 
         return response()->json([
-            'message' => 'Oferta excluída.',
+            'message' => 'Oferta encerrada.',
         ]);
     }
 

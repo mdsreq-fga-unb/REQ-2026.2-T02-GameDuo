@@ -8,6 +8,10 @@ import PaginaMinhasOfertas from './pages/paginaMinhasOfertas/PaginaMinhasOfertas
 import PaginaCarteira from './pages/paginaCarteira/PaginaCarteira';
 import PaginaComprarMoedas from './pages/paginaComprarMoedas/PaginaComprarMoedas';
 import PaginaPagamento from './pages/paginaPagamento/PaginaPagamento';
+import PaginaContratacoes from './pages/paginaContratacoes/PaginaContratacoes';
+import PaginaAgenda from './pages/paginaAgenda/PaginaAgenda';
+import PaginaConfigPrestador from './pages/paginaConfigPrestador/PaginaConfigPrestador';
+import PaginaPerfilPrestador from './pages/paginaPerfilPrestador/PaginaPerfilPrestador';
 import PaginaLogin from './pages/paginaLogin/PaginaLogin';
 import PaginaCadastro from './pages/paginaCadastro/PaginaCadastro';
 import PaginaRecuperarSenha from './pages/paginaRecuperarSenha/PaginaRecuperarSenha';
@@ -56,6 +60,10 @@ function App() {
           <Route path="/oferta/:id" element={<PaginaDetalhesOferta />} />
           <Route path="/minha-conta" element={<RotaPrivada><PaginaMinhaConta /></RotaPrivada>} />
           <Route path="/minhas-ofertas" element={<RotaPrivada soPrestador><PaginaMinhasOfertas /></RotaPrivada>} />
+          <Route path="/minhas-ofertas/:id/agenda" element={<RotaPrivada soPrestador><PaginaAgenda /></RotaPrivada>} />
+          <Route path="/perfil-prestador" element={<RotaPrivada><PaginaConfigPrestador /></RotaPrivada>} />
+          <Route path="/prestador/:codigo" element={<PaginaPerfilPrestador />} />
+          <Route path="/contratacoes" element={<RotaPrivada><PaginaContratacoes /></RotaPrivada>} />
           <Route path="/carteira" element={<RotaPrivada><PaginaCarteira /></RotaPrivada>} />
           <Route path="/comprar-moedas" element={<RotaPrivada><PaginaComprarMoedas /></RotaPrivada>} />
           <Route path="/pagamento/:id" element={<RotaPrivada><PaginaPagamento /></RotaPrivada>} />

@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Usuario;
+use Closure;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
@@ -25,11 +27,30 @@ class CadastroUsuarioRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email', 'max:100', 'unique:Usuario,email'],
             'nome' => ['required', 'string', 'max:100'],
-            'nickname' => ['required', 'string', 'max:50'],
-            'senha' => ['required', 'string', 'max:100', 'confirmed', Password::min(8), 'regex:/[A-Z]/', 'regex:/[0-9]/', 'regex:/[^A-Za-z0-9]/'],
+            'nickname' => ['required', 'string', 'max:50', self::nicknameLivre()],
+            'senha' => self::regrasDaSenha(),
         ];
     }
     
+    public static function regrasDaSenha(): array
+    {
+        return ['required', 'string', 'max:100', 'confirmed', Password::min(8), 'regex:/[A-Z]/', 'regex:/[0-9]/', 'regex:/[^A-Za-z0-9]/'];
+    }
+
+    // o nickname é a identificação pública: "Ana" e "ana" são o mesmo
+    public static function nicknameLivre(?string $exceto = null): Closure
+    {
+        return function (string $campo, mixed $valor, Closure $falha) use ($exceto) {
+            $emUso = Usuario::whereRaw('LOWER(nickname) = ?', [mb_strtolower((string) $valor)])
+                ->when($exceto, fn ($query) => $query->where('email', '!=', $exceto))
+                ->exists();
+
+            if ($emUso) {
+                $falha('Este nickname já está em uso.');
+            }
+        };
+    }
+
     public function messages(): array
     {
         return [

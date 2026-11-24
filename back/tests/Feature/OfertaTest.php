@@ -19,6 +19,8 @@ class OfertaTest extends TestCase
         'nivel' => 'Faceit Nível 10',
         'duracao' => 60,
         'preco' => 110,
+        'comunicacao' => 'Discord',
+        'contato' => 'coach#1',
     ];
 
     protected function setUp(): void
@@ -100,7 +102,7 @@ class OfertaTest extends TestCase
             ->assertJsonCount(1, 'ofertas');
     }
 
-    public function test_dono_edita_e_exclui_a_oferta(): void
+    public function test_dono_edita_e_encerra_a_oferta(): void
     {
         $oferta = $this->criarOfertaDo('coach@gameduo.com');
         $token = $this->tokenDe('coach@gameduo.com');
@@ -114,7 +116,7 @@ class OfertaTest extends TestCase
             ->deleteJson("/api/ofertas/{$oferta->id}")
             ->assertOk();
 
-        $this->assertDatabaseCount('Oferta', 0);
+        $this->assertDatabaseHas('Oferta', ['id' => $oferta->id, 'status' => 'encerrada']);
     }
 
     public function test_prestador_nao_mexe_na_oferta_de_outro(): void

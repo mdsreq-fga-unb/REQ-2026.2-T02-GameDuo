@@ -11,12 +11,13 @@ import PixelIcon from '../../components/pixelIcon/PixelIcon';
 import Select from '../../components/select/Select';
 import TagRow from '../../components/tagRow/TagRow';
 import { api, errosPorCampo } from '../../services/api';
+import { comunicacoes } from '../../utils/sessoes';
 import { useJogosAtivos } from '../../utils/useJogosAtivos';
 
 const modalidades = ["Coaching", "Duo"];
 
 // jogo vazio: assume o primeiro jogo ativo quando a lista chegar da API
-const emptyForm = { titulo: "", descricao: "", jogo: "", modalidade: modalidades[0], nivel: "", duracao: "60", preco: "" };
+const emptyForm = { titulo: "", descricao: "", jogo: "", modalidade: modalidades[0], nivel: "", duracao: "60", preco: "", comunicacao: comunicacoes[0], contato: "", condicoes: "" };
 
 // Oferta da API → valores do formulário (os inputs trabalham com texto).
 function paraFormulario(oferta) {
@@ -28,6 +29,9 @@ function paraFormulario(oferta) {
     nivel: oferta.nivel ?? "",
     duracao: String(oferta.duracao),
     preco: String(oferta.preco),
+    comunicacao: oferta.comunicacao ?? comunicacoes[0],
+    contato: oferta.contato ?? "",
+    condicoes: oferta.condicoes ?? "",
   };
 }
 
@@ -87,6 +91,8 @@ function PaginaMinhasOfertas() {
       nivel: form.nivel.trim() || null,
       duracao: Number(form.duracao),
       preco: Number(form.preco),
+      contato: form.contato.trim(),
+      condicoes: form.condicoes.trim() || null,
     };
 
     try {
@@ -145,6 +151,9 @@ function PaginaMinhasOfertas() {
                 <Input label="Duração (min)" value={form.duracao} onChange={update("duracao")} type="number" placeholder="60" error={errors.duracao} />
                 <Input label="Preço (créditos)" value={form.preco} onChange={update("preco")} type="number" placeholder="100" error={errors.preco} />
               </div>
+              <Select label="Forma de comunicação" value={form.comunicacao} options={comunicacoes} onChange={update("comunicacao")} />
+              <Input label="Seu contato" value={form.contato} onChange={update("contato")} placeholder="Ex.: seu usuário no Discord" help="Enviado só a quem contratar." error={errors.contato} />
+              <Input label="Condições (opcional)" value={form.condicoes} onChange={update("condicoes")} placeholder="Ex.: ter microfone" error={errors.condicoes} />
               {(errors.jogo || errors.modalidade) && <Message kind="error">{errors.jogo || errors.modalidade}</Message>}
               <Button type="submit" className="btn--full" disabled={enviando}>
                 {enviando ? "Salvando..." : editando ? "Salvar alterações" : "Publicar oferta"}
@@ -166,8 +175,9 @@ function PaginaMinhasOfertas() {
                     <span className="my-offers__meta">{oferta.duracao} min · <PixelIcon type="coin" /> {oferta.preco}</span>
                     <div className="my-offers__actions">
                       <Button variant="ghost" onClick={() => navigate(`/oferta/${oferta.id}`)}><PixelIcon type="eye" /> Ver</Button>
+                      <Button variant="ghost" onClick={() => navigate(`/minhas-ofertas/${oferta.id}/agenda`)}>Agenda</Button>
                       <Button variant="secondary" onClick={() => editar(oferta)} disabled={editando === oferta.id}>{editando === oferta.id ? "Editando" : "Editar"}</Button>
-                      <Button variant="ghost" className="my-offers__excluir" onClick={() => setParaExcluir(oferta)}>Excluir</Button>
+                      <Button variant="ghost" className="my-offers__excluir" onClick={() => setParaExcluir(oferta)}>Encerrar</Button>
                     </div>
                   </li>
                 ))}
@@ -179,15 +189,15 @@ function PaginaMinhasOfertas() {
       <Modal
         aberto={Boolean(paraExcluir)}
         tipo="perigo"
-        titulo="Excluir oferta?"
-        confirmar="Excluir oferta"
+        titulo="Encerrar oferta?"
+        confirmar="Encerrar oferta"
         cancelar="Manter oferta"
         carregando={excluindo}
         onConfirmar={excluir}
         onCancelar={() => setParaExcluir(null)}
       >
         <p><b>{paraExcluir?.titulo}</b></p>
-        <p>Ela deixa de aparecer para os jogadores e não dá para desfazer.</p>
+        <p>Ela sai do catálogo e da sua lista, e não dá para desfazer. As sessões já contratadas continuam valendo.</p>
       </Modal>
     </MainLayout>
   );

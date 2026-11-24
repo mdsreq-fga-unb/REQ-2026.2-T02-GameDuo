@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PaginaMinhaConta.css';
+import '../paginaMinhasOfertas/PaginaMinhasOfertas.css';
 import MainLayout from '../../components/mainLayout/MainLayout';
+import AccountForm from '../../components/accountForm/AccountForm';
 import Button from '../../components/button/Button';
 import PlayerProfileCard from '../../components/playerProfileCard/PlayerProfileCard';
 import ProviderModeCard from '../../components/providerModeCard/ProviderModeCard';
@@ -8,6 +11,7 @@ import ProviderModeCard from '../../components/providerModeCard/ProviderModeCard
 // Rota: /minha-conta — só acessível logado (o App.jsx redireciona para /login).
 function PaginaMinhaConta() {
   const navigate = useNavigate();
+  const [editando, setEditando] = useState(false);
 
   return (
     <MainLayout>
@@ -18,7 +22,7 @@ function PaginaMinhaConta() {
           <h1>Minha conta</h1>
         </div>
         <div className="detail-grid">
-          <PlayerProfileCard />
+          {editando ? <AccountForm onFechar={() => setEditando(false)} /> : <PlayerProfileCard onEditar={() => setEditando(true)} />}
           <ProviderModeCard />
         </div>
       </main>

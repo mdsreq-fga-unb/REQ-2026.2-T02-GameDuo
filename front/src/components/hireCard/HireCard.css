@@ -1,0 +1,47 @@
+/*
+  COMPONENTE: HireCard (components/hireCard/HireCard.jsx)
+  Escolha do horário e contratação, na página da oferta.
+*/
+
+.hire-card {
+  margin-top: 22px;
+}
+
+.hire-card h3 {
+  margin-bottom: 12px;
+}
+
+.hire-card__days {
+  max-height: 320px;
+  margin-bottom: 22px;
+  padding: 4px;
+  overflow-y: auto;
+}
+
+.hire-card__day {
+  margin-bottom: 16px;
+}
+
+.hire-card__day p {
+  margin-bottom: 8px;
+  color: var(--cyan);
+}
+
+.hire-card__slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hire-card__slots button {
+  min-height: 42px;
+  padding: 6px 14px;
+  border: 2px solid var(--border);
+  background: var(--night);
+}
+
+.hire-card__slots button[aria-pressed="true"] {
+  border-color: var(--lime);
+  background: var(--lime);
+  color: var(--night);
+}

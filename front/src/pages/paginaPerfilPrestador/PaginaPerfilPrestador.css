@@ -1,0 +1,24 @@
+/*
+  PÁGINA: PaginaPerfilPrestador (pages/paginaPerfilPrestador/PaginaPerfilPrestador.jsx)
+  Perfil público do prestador.
+*/
+
+.provider-profile {
+  margin-bottom: 34px;
+}
+
+.provider-profile h3 {
+  margin: 22px 0 10px;
+}
+
+.provider-profile li {
+  padding: 8px 0;
+  border-top: 2px dashed var(--border);
+}
+
+.provider-offers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 22px;
+  margin-top: 20px;
+}
